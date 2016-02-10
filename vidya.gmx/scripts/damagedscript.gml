@@ -1,0 +1,1 @@
+if global.sworddir != 0 && inv = false {repeat (round(1*global.damage/8)) instance_create(x, y, blood); {audio_play_sound(choose(slash, slash2, slash3), 10, false)}; hp -= global.damage; inv = true; alarm[0] = 8}
