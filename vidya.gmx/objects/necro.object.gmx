@@ -30,6 +30,7 @@ alarm[1] = 160
 inv = false
 maxhp = 1550
 hp = 1550
+prevhp = hp
 hurt = 35
 image_speed = 0
 shotnum = 30
@@ -238,6 +239,9 @@ if x &lt; 0 {x += 100}
 if x &gt; room_width {x -= 100}
 if y &lt; 0{y += 100}
 if y &gt; room_height {y -= 100}
+
+if prevhp &gt; hp &amp;&amp; inv = false {prevhp -= 1}
+if prevhp &lt; hp {prevhp = hp}
 
 // PHASE 1
 if phase = 1{
@@ -495,7 +499,9 @@ for(var i = 0; i &lt; shotnum; i++)
           <argument>
             <kind>1</kind>
             <string>draw_text_color(5, 690, "Druid Necromancer", c_white, c_white, c_white, c_white, 1)
-draw_healthbar(5, 728, 900, 758, hp / maxhp * 100, c_black, c_red, c_red, 0, true, true)
+draw_healthbar(5, 728, 900, 758, prevhp / maxhp * 100, c_black, c_yellow, c_yellow, 0, true, true)
+draw_healthbar(5, 728, 900, 758, hp / maxhp * 100, c_black, c_red, c_red, 0, false, true)
+draw_sprite(spr_bossbar, 0, 4, 727)
 </string>
           </argument>
         </arguments>

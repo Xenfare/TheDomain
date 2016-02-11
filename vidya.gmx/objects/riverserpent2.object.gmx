@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>maxhp = 1600
 hp = 1600
+prevhp = hp
 inv = false
 degrees = 270
 turnto = 0
@@ -253,6 +254,9 @@ dir=degtorad(degrees)
 x=(xstart+CELL_SIZE*BUFFER_CELLS)+r*cos(dir)
 y=(ystart+CELL_SIZE*BUFFER_CELLS)-r*sin(dir)
 
+if prevhp &gt; hp &amp;&amp; inv = false {prevhp -= 1}
+if prevhp &lt; hp {prevhp = hp}
+
 if hp &lt;= 0 {instance_destroy()}
 if alarm[1] &gt; 0
 {
@@ -423,7 +427,9 @@ if r = 0
           <argument>
             <kind>1</kind>
             <string>draw_text_color(5, 690, "Risen Breacher", c_white, c_white, c_white, c_white, 1)
-draw_healthbar(5, 728, 900, 758, hp / maxhp * 100, c_black, c_red, c_red, 0, true, true)
+draw_healthbar(5, 728, 900, 758, prevhp / maxhp * 100, c_black, c_yellow, c_yellow, 0, true, true)
+draw_healthbar(5, 728, 900, 758, hp / maxhp * 100, c_black, c_red, c_red, 0, false, true)
+draw_sprite(spr_bossbar, 0, 4, 727)
 </string>
           </argument>
         </arguments>

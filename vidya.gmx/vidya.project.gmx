@@ -89,6 +89,7 @@
     </sprites>
     <sprite>sprites\spr_bar</sprite>
     <sprite>sprites\spr_inventoryitems</sprite>
+    <sprite>sprites\spr_bossbar</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg1</background>
@@ -201,13 +202,13 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\init_rom</room>
-    <room>rooms\LEVEL_FIVE</room>
+    <room>rooms\BOSS_TWO</room>
     <room>rooms\LEVEL_ONE</room>
     <room>rooms\LEVEL_TWO</room>
     <room>rooms\BOSS_ONE</room>
     <room>rooms\LEVEL_THREE</room>
     <room>rooms\LEVEL_FOUR</room>
-    <room>rooms\BOSS_TWO</room>
+    <room>rooms\LEVEL_FIVE</room>
     <room>rooms\TEST</room>
   </rooms>
   <constants number="2">
