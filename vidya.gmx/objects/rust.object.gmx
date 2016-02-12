@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>rustspeed = 3
+            <string>direction = image_angle
+rustspeed = 3
 inv = false
 hp = 300
 alarm[0] = 40

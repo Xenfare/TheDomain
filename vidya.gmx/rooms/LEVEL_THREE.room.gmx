@@ -73,8 +73,8 @@
     <instance objName="wall" x="128" y="3712" name="inst_B53708BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="64" y="3712" name="inst_495A323E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="0" y="3712" name="inst_670F6F1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="frenziedzombie" x="128" y="3904" name="inst_C62B3A07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="fisherman" x="1259" y="3968" name="inst_E7C2DA70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="frenziedzombie" x="128" y="3904" name="inst_C62B3A07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-37"/>
+    <instance objName="fisherman" x="1259" y="3968" name="inst_E7C2DA70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-15"/>
     <instance objName="wall" x="704" y="576" name="inst_82BC721D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="704" y="640" name="inst_5C7B5415" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="704" y="704" name="inst_E77818F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -179,18 +179,18 @@
     <instance objName="wall" x="1088" y="896" name="inst_25ED8BE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1152" y="896" name="inst_ECD20644" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1216" y="832" name="inst_0D9A37FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="zombie" x="1600" y="3584" name="inst_D6EA3AD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="zombie" x="1280" y="3520" name="inst_AB47B6A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="zombie" x="1600" y="3584" name="inst_D6EA3AD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-22"/>
+    <instance objName="zombie" x="1280" y="3520" name="inst_AB47B6A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="106"/>
     <instance objName="player" x="768" y="4288" name="inst_0AA7FB0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="zombie" x="1600" y="4160" name="inst_8CC107D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="fisherman" x="1536" y="1536" name="inst_72F20874" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="fisherman" x="1280" y="1536" name="inst_F14D0620" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="rust" x="1408" y="1472" name="inst_DA1AB372" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="frenziedzombie" x="1344" y="2944" name="inst_0D78DE00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="zombie" x="1472" y="2880" name="inst_A6DBA056" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="frenziedzombie" x="1408" y="2304" name="inst_1901FC9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="frenziedzombie" x="1536" y="2304" name="inst_DF5FD5EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="frenziedzombie" x="1280" y="2304" name="inst_30B0898D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="zombie" x="1600" y="4160" name="inst_8CC107D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="17"/>
+    <instance objName="fisherman" x="1536" y="1536" name="inst_72F20874" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-114"/>
+    <instance objName="fisherman" x="1280" y="1536" name="inst_F14D0620" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-65"/>
+    <instance objName="rust" x="1408" y="1472" name="inst_DA1AB372" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="frenziedzombie" x="1344" y="2944" name="inst_0D78DE00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-75"/>
+    <instance objName="zombie" x="1472" y="2880" name="inst_A6DBA056" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-23"/>
+    <instance objName="frenziedzombie" x="1408" y="2272" name="inst_1901FC9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-91"/>
+    <instance objName="frenziedzombie" x="1536" y="2304" name="inst_DF5FD5EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-108"/>
+    <instance objName="frenziedzombie" x="1280" y="2304" name="inst_30B0898D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-76"/>
     <instance objName="wall" x="1152" y="2432" name="inst_C3E505CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="fisherman" x="1536" y="3136" name="inst_F7FB3C7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1152" y="1856" name="inst_CC132F88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
