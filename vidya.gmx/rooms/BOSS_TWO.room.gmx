@@ -134,7 +134,7 @@
     <instance objName="riverserpent2" x="800" y="800" name="inst_7D348B0E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="invis" x="640" y="1152" name="inst_CB9F2D5C" locked="0" code="" scaleX="5" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="serpentwall" x="288" y="1376" name="inst_8FF37859" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="serpentwall" x="416" y="1152" name="inst_EB0A0EBE" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="serpentwall" x="480" y="1184" name="inst_EB0A0EBE" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="serpentwall" x="1120" y="1184" name="inst_E970111B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="serpentwall" x="1312" y="1376" name="inst_2272E2AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="serpentwall" x="1184" y="480" name="inst_9972C859" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

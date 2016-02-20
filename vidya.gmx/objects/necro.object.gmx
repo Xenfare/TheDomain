@@ -35,8 +35,8 @@ hurt = 35
 image_speed = 0
 shotnum = 30
 dist = 200
-audio_stop_sound(music1)
-audio_play_sound(music1, 10, true)
+//audio_stop_sound(music1)
+//audio_play_sound(music1, 10, true)
 </string>
           </argument>
         </arguments>
@@ -240,7 +240,7 @@ if x &gt; room_width {x -= 100}
 if y &lt; 0{y += 100}
 if y &gt; room_height {y -= 100}
 
-if prevhp &gt; hp &amp;&amp; inv = false {prevhp -= 1}
+if prevhp &gt; hp &amp;&amp; inv = false {prevhp -= maxhp / 300}
 if prevhp &lt; hp {prevhp = hp}
 
 // PHASE 1

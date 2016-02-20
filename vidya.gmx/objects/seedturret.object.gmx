@@ -51,6 +51,7 @@ spawn = 24
           <argument>
             <kind>1</kind>
             <string>spawn -= 1
+if spawn &gt; 0 alarm[3] = random_range(100, 250)
 </string>
           </argument>
         </arguments>
@@ -75,11 +76,11 @@ spawn = 24
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1600</string>
+            <string>1600 + B</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>2112</string>
+            <string>2112 + B</string>
           </argument>
         </arguments>
       </action>
@@ -102,6 +103,7 @@ spawn = 24
           <argument>
             <kind>1</kind>
             <string>spawn -= 1
+if spawn &gt; 0 alarm[2] = random_range(100, 250)
 </string>
           </argument>
         </arguments>
@@ -126,11 +128,11 @@ spawn = 24
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1088</string>
+            <string>1088 + B</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>2112</string>
+            <string>2112 + B</string>
           </argument>
         </arguments>
       </action>
@@ -153,6 +155,7 @@ spawn = 24
           <argument>
             <kind>1</kind>
             <string>spawn -= 1
+if spawn &gt; 0 alarm[1] = random_range(100, 250)
 </string>
           </argument>
         </arguments>
@@ -177,11 +180,11 @@ spawn = 24
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1600</string>
+            <string>1600 + B</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1664</string>
+            <string>1664 + B</string>
           </argument>
         </arguments>
       </action>
@@ -204,6 +207,7 @@ spawn = 24
           <argument>
             <kind>1</kind>
             <string>spawn -= 1
+if spawn &gt; 0 alarm[0] = random_range(150, 250)
 </string>
           </argument>
         </arguments>
@@ -228,11 +232,11 @@ spawn = 24
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1088</string>
+            <string>1088 + B</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1664</string>
+            <string>1664 + B</string>
           </argument>
         </arguments>
       </action>
@@ -254,11 +258,18 @@ spawn = 24
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if player.x &lt; 1792 &amp;&amp; player.x &gt; 896 &amp;&amp; player.y &lt; 2176 &amp;&amp; player.y &gt; 1472 {aggro = true}
-if aggro = true &amp;&amp; alarm[0] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[0] = random_range(170, 350)}
-if aggro = true &amp;&amp; alarm[1] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[1] = random_range(170, 350)}
-if aggro = true &amp;&amp; alarm[2] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[2] = random_range(170, 350)}
-if aggro = true &amp;&amp; alarm[3] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[3] = random_range(170, 350)}
+            <string>if player.x &lt; 1792 + B &amp;&amp; player.x &gt; 896 + B &amp;&amp; player.y &lt; 2176 + B &amp;&amp; player.y &gt; 1472 + B &amp;&amp; aggro = false 
+{
+aggro = true;
+alarm[0] = random_range(100, 200);
+alarm[1] = random_range(100, 200);
+alarm[2] = random_range(100, 200);
+alarm[3] = random_range(100, 200);
+}
+if aggro = true &amp;&amp; alarm[0] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[0] = random_range(170 + B, 350 + B)}
+if aggro = true &amp;&amp; alarm[1] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[1] = random_range(170 + B, 350 + B)}
+if aggro = true &amp;&amp; alarm[2] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[2] = random_range(170 + B, 350 + B)}
+if aggro = true &amp;&amp; alarm[3] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[3] = random_range(170 + B, 350 + B)}
 </string>
           </argument>
         </arguments>
@@ -281,10 +292,10 @@ if aggro = true &amp;&amp; alarm[3] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[3] = r
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(spr_hole, 0, 1088, 1664)
-draw_sprite(spr_hole, 0, 1600, 1664)
-draw_sprite(spr_hole, 0, 1088, 2112)
-draw_sprite(spr_hole, 0, 1600, 2112)
+            <string>draw_sprite(spr_hole, 0, 1088 + B, 1664 + B)
+draw_sprite(spr_hole, 0, 1600 + B, 1664 + B)
+draw_sprite(spr_hole, 0, 1088 + B, 2112 + B)
+draw_sprite(spr_hole, 0, 1600 + B, 2112 + B)
 </string>
           </argument>
         </arguments>

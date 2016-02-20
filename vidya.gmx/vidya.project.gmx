@@ -19,7 +19,6 @@
     <sound>sound\bonedead</sound>
     <sound>sound\spellcharge</sound>
     <sound>sound\spellcharge2</sound>
-    <sound>sound\music1</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_wall</sprite>
@@ -36,7 +35,10 @@
     <sprite>sprites\spr_leftyshield</sprite>
     <sprite>sprites\spr_bigleftyshield</sprite>
     <sprite>sprites\spr_rustshield</sprite>
+    <sprite>sprites\spr_ninjasword</sprite>
     <sprite>sprites\spr_magicshot</sprite>
+    <sprite>sprites\spr_shuriken</sprite>
+    <sprite>sprites\spr_bloodshot</sprite>
     <sprite>sprites\spr_fireshot</sprite>
     <sprite>sprites\spr_fireshot2</sprite>
     <sprite>sprites\spr_fireshot3</sprite>
@@ -68,6 +70,7 @@
       <sprite>sprites\spr_archer</sprite>
       <sprite>sprites\spr_wizard</sprite>
       <sprite>sprites\spr_rust</sprite>
+      <sprite>sprites\spr_ninja</sprite>
       <sprite>sprites\spr_lefty</sprite>
       <sprite>sprites\spr_shopkeep</sprite>
       <sprite>sprites\spr_magician</sprite>
@@ -133,9 +136,11 @@
       <object>objects\fireshot3</object>
       <object>objects\fireshot4</object>
       <object>objects\fireshot5</object>
+      <object>objects\bloodshot</object>
       <object>objects\hook</object>
       <object>objects\arrow</object>
       <object>objects\magicshot</object>
+      <object>objects\shuriken</object>
       <object>objects\wizardhoming</object>
       <object>objects\wizardshot</object>
       <object>objects\necroshot</object>
@@ -149,6 +154,24 @@
         <object>objects\eleftyshield</object>
         <object>objects\leftyheal</object>
       </objects>
+      <objects name="riverserpent">
+        <object>objects\serpentminion</object>
+        <object>objects\riverserpent1</object>
+        <object>objects\riverserpent2</object>
+      </objects>
+      <objects name="rust">
+        <object>objects\rust</object>
+        <object>objects\rustsword</object>
+      </objects>
+      <objects name="fisherman">
+        <object>objects\fisherman</object>
+        <object>objects\pole</object>
+      </objects>
+      <objects name="ninja">
+        <object>objects\ninja</object>
+        <object>objects\ninjasword1</object>
+        <object>objects\ninjasword2</object>
+      </objects>
       <object>objects\overgrown</object>
       <object>objects\overgrown2</object>
       <object>objects\zombie</object>
@@ -160,16 +183,9 @@
       <object>objects\magician</object>
       <object>objects\doll</object>
       <object>objects\archer</object>
-      <object>objects\fisherman</object>
-      <object>objects\pole</object>
       <object>objects\wizard</object>
       <object>objects\necro</object>
       <object>objects\wizardspec</object>
-      <object>objects\rust</object>
-      <object>objects\rustsword</object>
-      <object>objects\serpentminion</object>
-      <object>objects\riverserpent1</object>
-      <object>objects\riverserpent2</object>
     </objects>
     <objects name="particles">
       <object>objects\blood</object>
@@ -204,18 +220,19 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\init_rom</room>
-    <room>rooms\LEVEL_FIVE</room>
     <room>rooms\LEVEL_ONE</room>
     <room>rooms\LEVEL_TWO</room>
     <room>rooms\BOSS_ONE</room>
     <room>rooms\LEVEL_THREE</room>
     <room>rooms\LEVEL_FOUR</room>
     <room>rooms\BOSS_TWO</room>
+    <room>rooms\LEVEL_FIVE</room>
     <room>rooms\TEST</room>
   </rooms>
-  <constants number="2">
+  <constants number="3">
     <constant name="CELL_SIZE">64</constant>
     <constant name="BUFFER_CELLS">30</constant>
+    <constant name="B">BUFFER_CELLS * CELL_SIZE</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
