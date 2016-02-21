@@ -72,7 +72,23 @@ for(var xx = 0; xx &lt; hcells; xx++)
 {
     draw_rectangle_colour(x+(xx + 3) * slot_size + (xx + 4) * padding,y+yy * slot_size + (yy + 1) * padding,x+(xx + 4) * slot_size + (xx + 4) * padding,y+(yy + 1) * slot_size + (yy + 1) * padding,c_dkgray,c_dkgray,c_dkgray,c_dkgray,true)
     if ds_list_size(inv) &gt; yy * hcells + xx
+    {
         draw_sprite(spr_inventoryitems,inv[|yy * hcells + xx],x+(xx + 3) * slot_size + (xx + 4) * padding,y+yy * slot_size + (yy + 1) * padding)
+        if mouse_check_button_pressed(mb_left) and point_in_rectangle(mouse_x,mouse_y,x+(xx + 3) * slot_size + (xx + 4) * padding,y+yy * slot_size + (yy + 1) * padding,x+(xx + 4) * slot_size + (xx + 4) * padding,y+(yy + 1) * slot_size + (yy + 1) * padding)
+        {
+            var type = inventoryscript(inv[|yy * hcells + xx],2)
+            if type &lt; 4
+            {
+                //swap weapons
+                var temp = inv[|yy * hcells + xx];
+                inv[|yy * hcells + xx] = equipment[type]
+                equipment[type] = temp 
+                //functionally change the stuff
+                
+                
+            }
+        }
+    }
 }
 //helm
 draw_rectangle_colour(x + slot_size + padding*2,y + padding,x + 2 * slot_size + padding*2,y + padding + slot_size,c_dkgray,c_dkgray,c_dkgray,c_dkgray,true)
