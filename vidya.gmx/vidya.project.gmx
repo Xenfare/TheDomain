@@ -227,6 +227,7 @@
     <room>rooms\LEVEL_FOUR</room>
     <room>rooms\BOSS_TWO</room>
     <room>rooms\LEVEL_FIVE</room>
+    <room>rooms\LEVEL_SIX</room>
     <room>rooms\TEST</room>
   </rooms>
   <constants number="3">
