@@ -41,6 +41,7 @@ height = padding + vcells * padding + vcells * slot_size
 repeat(5)
 ds_list_add(inv,irandom(5))
 ds_list_sort(inv,1)
+ds_list_add(inv, 5)
 
 </string>
           </argument>
@@ -74,14 +75,17 @@ for(var xx = 0; xx &lt; hcells; xx++)
     if ds_list_size(inv) &gt; yy * hcells + xx
     {
         draw_sprite(spr_inventoryitems,inv[|yy * hcells + xx],x+(xx + 3) * slot_size + (xx + 4) * padding,y+yy * slot_size + (yy + 1) * padding)
-        if mouse_check_button_pressed(mb_left) and point_in_rectangle(mouse_x,mouse_y,x+(xx + 3) * slot_size + (xx + 4) * padding,y+yy * slot_size + (yy + 1) * padding,x+(xx + 4) * slot_size + (xx + 4) * padding,y+(yy + 1) * slot_size + (yy + 1) * padding)
+        if mouse_check_button_pressed(mb_left) and point_in_rectangle(window_mouse_get_x(),window_mouse_get_y(),x+(xx + 3) * slot_size + (xx + 4) * padding,y+yy * slot_size + (yy + 1) * padding,x+(xx + 4) * slot_size + (xx + 4) * padding,y+(yy + 1) * slot_size + (yy + 1) * padding)
         {
             var type = inventoryscript(inv[|yy * hcells + xx],2)
             if type &lt; 4
             {
                 //swap weapons
                 var temp = inv[|yy * hcells + xx];
-                inv[|yy * hcells + xx] = equipment[type]
+                if equipment[type] &gt; -1
+                    inv[|yy * hcells + xx] = equipment[type]
+                else
+                    ds_list_delete(inv,yy * hcells + xx)
                 equipment[type] = temp 
                 //functionally change the stuff
                 
@@ -92,15 +96,19 @@ for(var xx = 0; xx &lt; hcells; xx++)
 }
 //helm
 draw_rectangle_colour(x + slot_size + padding*2,y + padding,x + 2 * slot_size + padding*2,y + padding + slot_size,c_dkgray,c_dkgray,c_dkgray,c_dkgray,true)
+if equipment[0] &gt; -1
 draw_sprite(spr_inventoryitems,equipment[0],x + slot_size + padding*2,y + padding)
 //sword
 draw_rectangle_colour(x + padding,y + slot_size + padding * 2,x + slot_size + padding,y + padding * 2 + slot_size * 2,c_dkgray,c_dkgray,c_dkgray,c_dkgray,true)
+if equipment[1] &gt; -1
 draw_sprite(spr_inventoryitems,equipment[1],x + padding,y + slot_size + padding * 2)
 //shield
 draw_rectangle_colour(x + slot_size * 2 + padding*3,y + slot_size + padding*2,x + slot_size * 3 + padding*3,y + padding*2 + slot_size * 2,c_dkgray,c_dkgray,c_dkgray,c_dkgray,true)
+if equipment[2] &gt; -1
 draw_sprite(spr_inventoryitems,equipment[2],x + slot_size * 2 + padding*3,y + slot_size + padding*2)
 //armor
 draw_rectangle_colour(x + slot_size + padding*2,y + slot_size*2 + padding*3,x + 2 * slot_size + padding*2,y + padding*3 + slot_size*3,c_dkgray,c_dkgray,c_dkgray,c_dkgray,true)
+if equipment[3] &gt; -1
 draw_sprite(spr_inventoryitems,equipment[3],x + slot_size + padding*2,y + slot_size*2 + padding*3)
 }
 </string>

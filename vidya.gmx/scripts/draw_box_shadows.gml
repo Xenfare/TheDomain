@@ -43,10 +43,10 @@
                 side_y2 =true_bbox_bottom //+ 1
                 dir1 = point_direction(x,y,side_x1,side_y1)
                 dir2 = point_direction(x,y,side_x2,side_y2)
-                if dtan((dir1)) = 0 or dtan((dir2)) = 0
+                if tan(degtorad(dir1)) = 0 or tan(degtorad(dir2)) = 0
                     return 0;
-                side_ox1 = wall_lining_size/dtan((dir1))
-                side_ox2 = wall_lining_size/dtan((dir2))
+                side_ox1 = wall_lining_size/tan(degtorad(dir1))
+                side_ox2 = wall_lining_size/tan(degtorad(dir2))
                 side_oy1 = -wall_lining_size
                 side_oy2 = side_oy1
                 side_oyy1 = side_oy1
@@ -61,10 +61,10 @@
                 side_y2 =true_bbox_top //- 1
                 dir1 = point_direction(x,y,side_x1,side_y1)
                 dir2 = point_direction(x,y,side_x2,side_y2)
-                if dtan((dir1)) = 0 or dtan(dir2) = 0
+                if tan(degtorad(dir1)) = 0 or tan(degtorad(dir2)) = 0
                     return 0;
-                side_ox1 = -wall_lining_size/dtan(dir1)
-                side_ox2 = -wall_lining_size/dtan(ir2)
+                side_ox1 = -wall_lining_size/tan(degtorad(dir1))
+                side_ox2 = -wall_lining_size/tan(degtorad(dir2))
                 side_oy1 = wall_lining_size
                 side_oy2 = side_oy1
                 side_oyy1 = side_oy1
@@ -83,10 +83,10 @@
                 side_y2 =true_bbox_top// - 1
                 dir1 = point_direction(x,y,side_x1,side_y1)
                 dir2 = point_direction(x,y,side_x2,side_y2)
-                if dtan(dir1+90) = 0 or dtan(dir2+90) = 0
+                if tan(degtorad(dir1+90)) = 0 or tan(degtorad(dir2+90)) = 0
                     return 0;
-                side_oy1 = -wall_lining_size/dtan(dir1+90)
-                side_oy2 = -wall_lining_size/dtan(dir2+90)
+                side_oy1 = -wall_lining_size/tan(degtorad(dir1+90))
+                side_oy2 = -wall_lining_size/tan(degtorad(dir2+90))
                 side_ox1 = -wall_lining_size
                 side_ox2 = side_ox1
                 side_oxx1 = side_ox1
@@ -101,10 +101,10 @@
                 side_y2 =true_bbox_top// - 1
                 dir1 = point_direction(x,y,side_x1,side_y1)
                 dir2 = point_direction(x,y,side_x2,side_y2)
-                if dtan((dir1+90)) = 0 or dtan((dir2+90)) = 0
+                if tan(degtorad(dir1+90)) = 0 or tan(degtorad(dir2+90)) = 0
                     return 0;
-                side_oy1 = wall_lining_size/dtan((dir1+90))
-                side_oy2 = wall_lining_size/dtan((dir2+90))
+                side_oy1 = wall_lining_size/tan(degtorad(dir1+90))
+                side_oy2 = wall_lining_size/tan(degtorad(dir2+90))
                 side_ox1 = wall_lining_size
                 side_ox2 = side_ox1
                 side_oxx1 = side_ox1

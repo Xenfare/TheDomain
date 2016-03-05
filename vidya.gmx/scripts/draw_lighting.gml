@@ -32,7 +32,7 @@ if floor((y - e_view_range * CELL_SIZE) / CELL_SIZE) - 2 < 0
 }*/
 //show_debug_message(string(y/CELL_SIZE - e_view_range) + " " + string(e_view_range) + " " + string(round(view_range)))
 
-ds_grid_set_grid_region(sub_grid,global.wall_grid,floor(x / CELL_SIZE) - e_view_range -2,floor(y / CELL_SIZE) - e_view_range-2,round((x + e_view_range * CELL_SIZE) / CELL_SIZE) + 2,round((y + e_view_range * CELL_SIZE) / CELL_SIZE) + 2,x_grid_offset,y_grid_offset)
+ds_grid_set_grid_region(sub_grid,global.wall_grid,floor(x / CELL_SIZE) - e_view_range - 2,floor(y / CELL_SIZE) - e_view_range - 2,round((x + e_view_range * CELL_SIZE) / CELL_SIZE) + 2,round((y + e_view_range * CELL_SIZE) / CELL_SIZE) + 2,x_grid_offset,y_grid_offset)
 
 var cells = e_view_range + 2
 
@@ -47,9 +47,10 @@ var top = 0
 var bottom = 0
 var right = 0
 var left = 0
-for(var i = 0;i <= cells + 1;i++)
-    for(var ii = 0;ii <= cells + 1;ii++)
-    {
+for(var i = 0;i < cells - 1;i++)
+{
+    for(var ii = 0;ii < cells - 1;ii++)
+    { 
         //up - left
         if sub_grid[# cells - i,cells - ii - 1] = 1
         {
@@ -59,10 +60,10 @@ for(var i = 0;i <= cells + 1;i++)
             left = cells - i
             right = left
             //left
-            while(sub_grid[# left - 1,top] > 0)
+            while(left - 1 > 0 and sub_grid[# left - 1,top] > 0)
                 sub_grid[# --left,top] = .5
             //right
-            while(sub_grid[# right + 1,top] > 0)
+            while(right + 1< cells * 2 and sub_grid[# right + 1,top] > 0)
                 sub_grid[# ++right,top] = .5
             //clear grid behind wall
             if cells >= floor(left) and cells <= floor(right)
@@ -72,7 +73,7 @@ for(var i = 0;i <= cells + 1;i++)
             //top
             else if cells > right
             {
-                 while(sub_grid[# right,top - 1] > 0)
+                 while(top - 1 > 0 and sub_grid[# right,top - 1] > 0)
                     sub_grid[# right,--top] = .5   
             }
             draw_box_shadows(left,top,right,bottom)
@@ -86,10 +87,10 @@ for(var i = 0;i <= cells + 1;i++)
             left = cells + i + 1
             right = left
             //left
-            while(sub_grid[# left - 1,top] > 0)
+            while(left - 1 > 0 and sub_grid[# left - 1,top] > 0)
                 sub_grid[# --left,top] = .5
             //right
-            while(sub_grid[# right + 1,top] > 0)
+            while(right + 1< cells * 2 and sub_grid[# right + 1,top] > 0)
                 sub_grid[# ++right,top] = .5
             if cells >= left and cells <= right
             {
@@ -98,7 +99,7 @@ for(var i = 0;i <= cells + 1;i++)
             //top
             else if cells < left
             {
-                 while(sub_grid[# left,top - 1] > 0)
+                 while(top - 1 > 0 and sub_grid[# left,top - 1] > 0)
                     sub_grid[# left,--top] = .5   
             }
             
@@ -113,10 +114,10 @@ for(var i = 0;i <= cells + 1;i++)
             left = cells - i
             right = left
             //left
-            while(sub_grid[# left - 1,top] > 0)
+            while(left - 1 > 0 and sub_grid[# left - 1,top] > 0)
                 sub_grid[# --left,top] = .5
             //right
-            while(sub_grid[# right + 1,top] > 0)
+            while(right + 1< cells * 2 and sub_grid[# right + 1,top] > 0)
                 sub_grid[# ++right,top] = .5
             if cells >= left and cells <= right
             {
@@ -126,7 +127,7 @@ for(var i = 0;i <= cells + 1;i++)
             else if cells > right
             {
                 //show_debug_message(sub_grid[# right,bottom + 1])
-                 while(sub_grid[# right,bottom + 1] > 0)
+                 while(bottom + 1< cells * 2 and sub_grid[# right,bottom + 1] > 0)
                     sub_grid[# right,++bottom] = .5    
             }
             draw_box_shadows(left,top,right,bottom)
@@ -140,10 +141,10 @@ for(var i = 0;i <= cells + 1;i++)
             left = cells + i
             right = left
             //left
-            while(sub_grid[# left - 1,top] > 0)
+            while(left - 1 > 0 and sub_grid[# left - 1,top] > 0)
                 sub_grid[# --left,top] = .5
             //right
-            while(sub_grid[# right + 1,top] > 0)
+            while(right + 1< cells * 2 and sub_grid[# right + 1,top] > 0)
                 sub_grid[# ++right,top] = .5
             if cells >= left and cells <= right
             {
@@ -152,7 +153,7 @@ for(var i = 0;i <= cells + 1;i++)
             //top
             else if cells < left
             {
-                 while(sub_grid[# left,bottom + 1] > 0)
+                 while(bottom + 1< cells * 2 and sub_grid[# left,bottom + 1] > 0)
                     sub_grid[# left,++bottom] = .5   
             }
             draw_box_shadows(left,top,right,bottom)
@@ -166,9 +167,9 @@ for(var i = 0;i <= cells + 1;i++)
             left = cells - ii - 1
             right = left
             //left
-            while(sub_grid[# left, top - 1] > 0)
+            while(top - 1 > 0 and sub_grid[# left, top - 1] > 0)
                 sub_grid[# left, --top] = .5
-            while(sub_grid[# left, bottom + 1] > 0)
+            while(bottom + 1< cells * 2 and sub_grid[# left, bottom + 1] > 0)
                 sub_grid[# left, ++bottom] = .5
             //clear grid behind wall
             if cells >= floor(top) and cells <= ceil(bottom)
@@ -178,7 +179,7 @@ for(var i = 0;i <= cells + 1;i++)
             //top
             else if cells  > bottom
             {
-                 while(sub_grid[# left - 1,bottom] > 0)
+                 while(left - 1 > 0 and sub_grid[# left - 1,bottom] > 0)
                     sub_grid[# --left,bottom] = .5   
             }
             draw_box_shadows(left,top,right,bottom)
@@ -191,9 +192,9 @@ for(var i = 0;i <= cells + 1;i++)
             bottom = top
             left = cells - ii - 1
             right = left
-            while(sub_grid[# left, top - 1] > 0)
+            while(top - 1 > 0 and sub_grid[# left, top - 1] > 0)
                 sub_grid[# left, --top] = .5
-            while(sub_grid[# left, bottom + 1] > 0)
+            while(bottom + 1< cells * 2 and sub_grid[# left, bottom + 1] > 0)
                 sub_grid[# left, ++bottom] = .5
             if cells >= top and cells <= bottom
             {
@@ -201,7 +202,7 @@ for(var i = 0;i <= cells + 1;i++)
             }
             else if cells < top
             {
-                 while(sub_grid[# left - 1,top] > 0)
+                 while(left - 1 > 0 and sub_grid[# left - 1,top] > 0)
                     sub_grid[# --left,top] = .5   
             }
             draw_box_shadows(left,top,right,bottom)
@@ -215,10 +216,10 @@ for(var i = 0;i <= cells + 1;i++)
             left = cells + ii + 1
             right = left
             //left
-            while(sub_grid[# left, top - 1] > 0)
+            while(top - 1 > 0 and sub_grid[# left, top - 1] > 0)
                 sub_grid[# left, --top] = .5
             //right
-            while(sub_grid[# left, bottom + 1] > 0)
+            while(bottom + 1< cells * 2 and sub_grid[# left, bottom + 1] > 0)
                 sub_grid[# left, ++bottom] = .5
             //clear grid behind wall
             if cells >= floor(top) and cells <= ceil(bottom)
@@ -227,7 +228,7 @@ for(var i = 0;i <= cells + 1;i++)
             }
             else if cells > bottom
             {
-                 while(sub_grid[# right + 1,bottom] > 0)
+                 while(right + 1< cells * 2 and sub_grid[# right + 1,bottom] > 0)
                     sub_grid[# ++right,bottom] = .5   
             }
             draw_box_shadows(left,top,right,bottom)
@@ -241,9 +242,9 @@ for(var i = 0;i <= cells + 1;i++)
             bottom = top
             left = cells + ii + 1
             right = left
-            while(sub_grid[# left, top - 1] > 0)
+            while(top - 1 > 0 and sub_grid[# left, top - 1] > 0)
                 sub_grid[# left, --top] = .5
-            while(sub_grid[# left, bottom + 1] > 0)
+            while(bottom + 1< cells * 2 and sub_grid[# left, bottom + 1] > 0)
                 sub_grid[# left, ++bottom] = .5
             if cells >= top and cells <= bottom
             {
@@ -251,12 +252,13 @@ for(var i = 0;i <= cells + 1;i++)
             }
             else if cells < top
             {
-                 while(sub_grid[# right + 1,top] > 0)
+                 while(right + 1< cells * 2 and sub_grid[# right + 1,top] > 0)
                     sub_grid[# ++right,top] = .5   
             }
             draw_box_shadows(left,top,right,bottom)
         }//*/
     }
+}
 ds_grid_destroy(sub_grid)
 surface_reset_target()
 if surface_exists(global.darkness)
