@@ -3,8 +3,8 @@
   <caption></caption>
   <width>3264</width>
   <height>2368</height>
-  <vsnap>32</vsnap>
-  <hsnap>32</hsnap>
+  <vsnap>64</vsnap>
+  <hsnap>64</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -357,17 +357,17 @@
     <instance objName="wall" x="1728" y="960" name="inst_38F9DB1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1728" y="1024" name="inst_725A36EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="player" x="1408" y="512" name="inst_5290442A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="darkoverlay" x="704" y="0" name="inst_673D92B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="pyscho" x="2176" y="384" name="inst_A981800B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="43"/>
-    <instance objName="pyscho" x="2144" y="496" name="inst_4B74CDEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="72"/>
-    <instance objName="pyscho" x="1856" y="384" name="inst_C2482139" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-218"/>
-    <instance objName="pyscho" x="1856" y="768" name="inst_F90B6AB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-163"/>
-    <instance objName="pyscho" x="2176" y="784" name="inst_01F7AF48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-18"/>
-    <instance objName="pyscho" x="1840" y="480" name="inst_682FDC18" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-198"/>
-    <instance objName="pyscho" x="2048" y="416" name="inst_37498112" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="79"/>
+    <instance objName="darkoverlay" x="704" y="0" name="inst_673D92B1" locked="0" code="image_speed = 0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="psycho" x="2176" y="384" name="inst_A981800B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="43"/>
+    <instance objName="psycho" x="2144" y="496" name="inst_4B74CDEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="72"/>
+    <instance objName="psycho" x="1856" y="384" name="inst_C2482139" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-218"/>
+    <instance objName="psycho" x="1856" y="768" name="inst_F90B6AB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-163"/>
+    <instance objName="psycho" x="2176" y="784" name="inst_01F7AF48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-18"/>
+    <instance objName="psycho" x="1840" y="480" name="inst_682FDC18" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-198"/>
+    <instance objName="psycho" x="2048" y="416" name="inst_37498112" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="79"/>
     <instance objName="doll" x="752" y="1936" name="inst_693EE1D5" locked="0" code="image_angle -= 45&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="pyscho" x="992" y="1504" name="inst_2B016ACD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="99"/>
-    <instance objName="pyscho" x="896" y="1504" name="inst_2978C488" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="72"/>
+    <instance objName="psycho" x="992" y="1504" name="inst_2B016ACD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="99"/>
+    <instance objName="psycho" x="896" y="1504" name="inst_2978C488" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="72"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

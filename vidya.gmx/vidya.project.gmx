@@ -36,20 +36,24 @@
     <sprite>sprites\spr_bigleftyshield</sprite>
     <sprite>sprites\spr_rustshield</sprite>
     <sprite>sprites\spr_ninjasword</sprite>
-    <sprite>sprites\spr_magicshot</sprite>
-    <sprite>sprites\spr_shuriken</sprite>
-    <sprite>sprites\spr_bloodshot</sprite>
-    <sprite>sprites\spr_fireshot</sprite>
-    <sprite>sprites\spr_fireshot2</sprite>
-    <sprite>sprites\spr_fireshot3</sprite>
-    <sprite>sprites\spr_arrow</sprite>
-    <sprite>sprites\spr_necroshot</sprite>
     <sprite>sprites\spr_wizardhoming</sprite>
-    <sprite>sprites\spr_wizardshot</sprite>
     <sprite>sprites\spr_summon</sprite>
     <sprite>sprites\spr_acid</sprite>
+    <sprites name="projectiles">
+      <sprite>sprites\spr_magicshot</sprite>
+      <sprite>sprites\spr_denizenshot</sprite>
+      <sprite>sprites\spr_wizardshot</sprite>
+      <sprite>sprites\spr_fireshot</sprite>
+      <sprite>sprites\spr_fireshot2</sprite>
+      <sprite>sprites\spr_fireshot3</sprite>
+      <sprite>sprites\spr_bloodshot</sprite>
+      <sprite>sprites\spr_necroshot</sprite>
+      <sprite>sprites\spr_arrow</sprite>
+      <sprite>sprites\spr_shuriken</sprite>
+    </sprites>
     <sprites name="particles">
       <sprite>sprites\spr_particle</sprite>
+      <sprite>sprites\spr_whiteparticle</sprite>
       <sprite>sprites\spr_fireparticle</sprite>
       <sprite>sprites\spr_moss</sprite>
       <sprite>sprites\spr_necroparticle</sprite>
@@ -64,6 +68,7 @@
       <sprite>sprites\spr_overgrown</sprite>
       <sprite>sprites\spr_zombie</sprite>
       <sprite>sprites\spr_psycho</sprite>
+      <sprite>sprites\spr_denizen</sprite>
       <sprite>sprites\spr_doll</sprite>
       <sprite>sprites\spr_badger</sprite>
       <sprite>sprites\spr_frenziedzombie</sprite>
@@ -79,18 +84,20 @@
       <sprite>sprites\spr_serpent</sprite>
       <sprite>sprites\spr_serpentminion</sprite>
     </sprites>
-    <sprite>sprites\spr_hole</sprite>
+    <sprites name="onetimes">
+      <sprite>sprites\spr_jacket</sprite>
+      <sprite>sprites\spr_projectilewall</sprite>
+      <sprite>sprites\spr_snare</sprite>
+      <sprite>sprites\spr_darkoverlay</sprite>
+      <sprite>sprites\spr_lake</sprite>
+      <sprite>sprites\spr_bridge</sprite>
+      <sprite>sprites\spr_hole</sprite>
+    </sprites>
     <sprite>sprites\spr_hook</sprite>
     <sprite>sprites\spr_heal</sprite>
     <sprite>sprites\spr_minotaurwep</sprite>
     <sprite>sprites\spr_minotaur</sprite>
     <sprite>sprites\spr_egg</sprite>
-    <sprites name="onetimes">
-      <sprite>sprites\spr_projectilewall</sprite>
-      <sprite>sprites\spr_darkoverlay</sprite>
-      <sprite>sprites\spr_lake</sprite>
-      <sprite>sprites\spr_bridge</sprite>
-    </sprites>
     <sprite>sprites\spr_bar</sprite>
     <sprite>sprites\spr_inventoryitems</sprite>
     <sprite>sprites\spr_bossbar</sprite>
@@ -125,7 +132,6 @@
     <object>objects\leftyshield</object>
     <object>objects\wall</object>
     <object>objects\invis</object>
-    <object>objects\serpentwall</object>
     <object>objects\tempwall</object>
     <object>objects\bars</object>
     <objects name="projectiles">
@@ -137,9 +143,11 @@
       <object>objects\fireshot4</object>
       <object>objects\fireshot5</object>
       <object>objects\bloodshot</object>
+      <object>objects\snareshot</object>
       <object>objects\hook</object>
       <object>objects\arrow</object>
       <object>objects\magicshot</object>
+      <object>objects\denizenshot</object>
       <object>objects\shuriken</object>
       <object>objects\wizardhoming</object>
       <object>objects\wizardshot</object>
@@ -172,11 +180,17 @@
         <object>objects\ninjasword1</object>
         <object>objects\ninjasword2</object>
       </objects>
+      <objects name="denizen">
+        <object>objects\denizen</object>
+        <object>objects\denizenjacket</object>
+        <object>objects\denizensnare</object>
+      </objects>
       <object>objects\overgrown</object>
       <object>objects\overgrown2</object>
       <object>objects\zombie</object>
       <object>objects\frenziedzombie</object>
-      <object>objects\pyscho</object>
+      <object>objects\psycho</object>
+      <object>objects\psycho2</object>
       <object>objects\badger</object>
       <object>objects\skeleton</object>
       <object>objects\skeleton2</object>
@@ -197,6 +211,8 @@
       <object>objects\necroparticle3</object>
       <object>objects\wizardparticle</object>
       <object>objects\particle</object>
+      <object>objects\whiteparticle</object>
+      <object>objects\whitespread</object>
       <object>objects\fireparticle</object>
     </objects>
     <objects name="onetimes">
@@ -206,6 +222,7 @@
       <object>objects\minotaurwep</object>
       <object>objects\minotaur</object>
       <object>objects\healthdrop</object>
+      <object>objects\serpentwall</object>
     </objects>
     <object>objects\lighting</object>
     <object>objects\seedturret</object>
@@ -220,6 +237,7 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\init_rom</room>
+    <room>rooms\BOSS_THREE</room>
     <room>rooms\LEVEL_ONE</room>
     <room>rooms\LEVEL_TWO</room>
     <room>rooms\BOSS_ONE</room>

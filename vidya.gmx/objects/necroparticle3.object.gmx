@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>if instance_exists(necro) {move_towards_point(necro.x, necro.y, 4)}
+image_speed = 0.5
 </string>
           </argument>
         </arguments>
