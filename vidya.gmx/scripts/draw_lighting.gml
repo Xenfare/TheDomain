@@ -52,7 +52,7 @@ for(var i = 0;i < cells - 1;i++)
     for(var ii = 0;ii < cells - 1;ii++)
     { 
         //up - left
-        if sub_grid[# cells - i,cells - ii - 1] = 1
+        if sub_grid[# cells - i,cells - ii - 1]// = 1
         {
             sub_grid[# cells - i,cells - ii - 1] = .5
             top = cells - ii - 1
@@ -84,7 +84,7 @@ for(var i = 0;i < cells - 1;i++)
             draw_box_shadows(left,top,right,bottom)
         }
         //up - right
-        if sub_grid[# cells + i + 1,cells - ii - 1] = 1
+        if sub_grid[# cells + i + 1,cells - ii - 1]// = 1
         {
             sub_grid[# cells + i + 1,cells - ii - 1] = .5
             top = cells - ii - 1
@@ -116,7 +116,7 @@ for(var i = 0;i < cells - 1;i++)
             draw_box_shadows(left,top,right,bottom)
         }
         //bottom - left
-        if sub_grid[# cells - i,cells + ii + 1] = 1
+        if sub_grid[# cells - i,cells + ii + 1]// = 1
         {
             sub_grid[# cells - i,cells + ii + 1] = .5
             top = cells + ii + 1
@@ -148,7 +148,7 @@ for(var i = 0;i < cells - 1;i++)
             draw_box_shadows(left,top,right,bottom)
         }//
         //bottom - right
-        if sub_grid[# cells + i,cells + ii + 1] = 1
+        if sub_grid[# cells + i,cells + ii + 1]// = 1
         {
             sub_grid[# cells + i,cells + ii + 1] = .5
             top = cells + ii + 1
@@ -179,7 +179,7 @@ for(var i = 0;i < cells - 1;i++)
             draw_box_shadows(left,top,right,bottom)
         }
         //left - top
-        if sub_grid[# cells - ii - 1,cells - i] = 1
+        if sub_grid[# cells - ii - 1,cells - i]// = 1
         {
             sub_grid[# cells - ii - 1,cells - i] = .5
             top = cells - i
@@ -210,7 +210,7 @@ for(var i = 0;i < cells - 1;i++)
             draw_box_shadows(left,top,right,bottom)
         }
         //left - bottom
-        if sub_grid[# cells - ii - 1,cells + i] = 1
+        if sub_grid[# cells - ii - 1,cells + i]// = 1
         {
             sub_grid[# cells - ii - 1,cells + i] = .5
             top = cells + i
@@ -238,7 +238,7 @@ for(var i = 0;i < cells - 1;i++)
             draw_box_shadows(left,top,right,bottom)
         }
         //right - top
-        if sub_grid[# cells + ii + 1,cells - i] = 1
+        if sub_grid[# cells + ii + 1,cells - i]// = 1
         {
             sub_grid[# cells + ii + 1,cells - i] = .5
             top = cells - i
@@ -270,7 +270,7 @@ for(var i = 0;i < cells - 1;i++)
         }
         
         //right - bottom
-        if sub_grid[# cells + ii + 1,cells + i] = 1
+        if sub_grid[# cells + ii + 1,cells + i]// = 1
         {
             sub_grid[# cells + ii + 1,cells + i] = .5
             top = cells + i
