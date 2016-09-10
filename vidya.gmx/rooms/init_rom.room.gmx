@@ -11,7 +11,10 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>global.darkness = noone
-room_goto_next()</code>
+room_goto_next()
+/*ini_open('savedata.ini');
+ini_read_real(data, deaths, 0);
+ini_close();</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

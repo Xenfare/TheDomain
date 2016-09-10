@@ -201,7 +201,7 @@ if distance_to_object(player) &lt; 600 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(player) &lt; 100) aggro = true
+            <string>if (distance_to_object(player) &lt; 70) aggro = true
 
 if hp &lt;= 0 {instance_destroy()}
 </string>

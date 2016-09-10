@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-2</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>enemyparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -149,6 +149,8 @@ alarm[1] = 5
             <string>image_angle = direction
 if distance_to_object(player) &lt; 300 {mp_potential_step(player.x, player.y, 3, false)}
 if hp &lt;= 0 {instance_destroy()}
+//if hp &lt;= 0 {with instance_create(x, y, corpse) sprite_index = other.sprite_index; instance_destroy()}
+
 </string>
           </argument>
         </arguments>

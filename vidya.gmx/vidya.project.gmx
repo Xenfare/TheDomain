@@ -3,7 +3,25 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="1" name="datafiles"/>
+  <datafiles number="2" name="datafiles">
+    <datafile>
+      <name>savedata.ini</name>
+      <exists>-1</exists>
+      <size>3</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>savedata.ini</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\slash</sound>
@@ -27,6 +45,8 @@
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_rustsword</sprite>
     <sprite>sprites\spr_sword</sprite>
+    <sprite>sprites\spr_newsword</sprite>
+    <sprite>sprites\spr_swordmask</sprite>
     <sprite>sprites\spr_spear</sprite>
     <sprite>sprites\spr_pole</sprite>
     <sprite>sprites\spr_leftysword</sprite>
@@ -101,6 +121,7 @@
     <sprite>sprites\spr_bar</sprite>
     <sprite>sprites\spr_inventoryitems</sprite>
     <sprite>sprites\spr_bossbar</sprite>
+    <sprite>sprites\spr_spawnpoint</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg1</background>
@@ -123,7 +144,9 @@
   </scripts>
   <objects name="objects">
     <object>objects\player</object>
+    <object>objects\spawnpoint</object>
     <object>objects\sword</object>
+    <object>objects\sword2</object>
     <object>objects\spear</object>
     <object>objects\leftysword</object>
     <object>objects\mace</object>
@@ -223,21 +246,24 @@
       <object>objects\minotaur</object>
       <object>objects\healthdrop</object>
       <object>objects\serpentwall</object>
+      <object>objects\seedturret</object>
     </objects>
     <object>objects\lighting</object>
-    <object>objects\seedturret</object>
     <object>objects\nextroom</object>
     <object>objects\projectilewall</object>
     <object>objects\bridge</object>
     <object>objects\lake</object>
     <object>objects\darkoverlay</object>
+    <object>objects\roomchanger</object>
+    <object>objects\corpse</object>
+    <object>objects\YOUDIED</object>
+    <object>objects\enemyparent</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\TLchase</timeline>
   </timelines>
   <rooms name="rooms">
     <room>rooms\init_rom</room>
-    <room>rooms\BOSS_THREE</room>
     <room>rooms\LEVEL_ONE</room>
     <room>rooms\LEVEL_TWO</room>
     <room>rooms\BOSS_ONE</room>
@@ -246,7 +272,9 @@
     <room>rooms\BOSS_TWO</room>
     <room>rooms\LEVEL_FIVE</room>
     <room>rooms\LEVEL_SIX</room>
+    <room>rooms\BOSS_THREE</room>
     <room>rooms\TEST</room>
+    <room>rooms\SPAWN_ROOM</room>
   </rooms>
   <constants number="3">
     <constant name="CELL_SIZE">64</constant>

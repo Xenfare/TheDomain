@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-2</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>enemyparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -124,7 +124,9 @@ shotdir = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = direction
+            <string>if instance_exists(player) {
+
+image_angle = direction
 
 if distance_to_object(player) &lt; 300 &amp;&amp; player.sprinting = true &amp;&amp; aggro = false 
 {
@@ -154,6 +156,8 @@ alarm[1] = 20;
 if aggro = true {mp_potential_step(player.x, player.y, run, false);}
 
 if hp &lt;= 0 {instance_destroy()}
+
+}
 </string>
           </argument>
         </arguments>

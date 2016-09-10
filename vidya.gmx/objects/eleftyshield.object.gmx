@@ -110,7 +110,7 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if leftyshielddir = 5 &amp;&amp; other.image_index = 0 
+            <string>if leftyshielddir = 5 &amp;&amp; other.damaging = true
 {
 audio_play_sound(clang, 10, false); 
 
@@ -129,6 +129,27 @@ owner.alarm[4] = -1
 owner.alarm[5] = -1
 owner.enemysword.leftysworddir = 350
 }
+/*
+if leftyshielddir = 5 &amp;&amp; other.image_index = 0 
+{
+audio_play_sound(clang, 10, false); 
+
+if owner.hp &gt;300
+{owner.phase = 9; owner.alarm[9] = 90}
+else
+{owner.phase = 6; owner.alarm[6] = 150}
+
+other.alarm[0] = 1;
+other.alarm[2] = 1;
+
+owner.alarm[1] = -1
+owner.alarm[2] = -1
+owner.alarm[3] = -1
+owner.alarm[4] = -1
+owner.alarm[5] = -1
+owner.enemysword.leftysworddir = 350
+}
+*/
 </string>
           </argument>
         </arguments>

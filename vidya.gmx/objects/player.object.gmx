@@ -121,7 +121,7 @@ if !instance_exists(inventory)
         <arguments>
           <argument>
             <kind>10</kind>
-            <object>sword</object>
+            <object>sword2</object>
           </argument>
           <argument>
             <kind>0</kind>
@@ -260,10 +260,14 @@ else if view_yview + view_hview &gt; room_height - b
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if (keyboard_check_direct(ord('W'))) &amp;&amp; (place_free(x, y-3)) {y-=3}
-//if (keyboard_check_direct(ord('S'))) &amp;&amp; (place_free(x, y+3)) {y+=3}
-//if (keyboard_check_direct(ord('A'))) &amp;&amp; (place_free(x-3, y)) {x-=3}
-//if (keyboard_check_direct(ord('D'))) &amp;&amp; (place_free(x+3, y))  {x+=3}
+            <string>//D E M O 
+if keyboard_check(ord('P')) &amp;&amp; keyboard_check(ord('L')) &amp;&amp; keyboard_check(ord('S')) {room_goto(BOSS_TWO)}
+
+//death code
+
+if hp &lt;= 0 {instance_deactivate_object(enemyparent) ;instance_destroy();/* ini_open('savedata.ini'); ini_read_real(data, deaths, +1); ini_close();*/ instance_create(x, y, YOUDIED); with sword2 instance_destroy(); with shield instance_destroy();}
+
+//hp code
 
 if prevhp &gt; hp &amp;&amp; inv = false {prevhp -= 1}
 if prevhp &lt; hp {prevhp = hp}
@@ -313,12 +317,26 @@ if stamina &gt; maxstamina {stamina = maxstamina}
 
 image_angle = point_direction(x, y, mouse_x, mouse_y)
 
-if hp &lt;= 0 {room_restart()}
-
 if inv = 1 {image_index = 1} else image_index = 0
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="roomchanger">
+      <action>
+        <libid>1</libid>
+        <id>222</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_next_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="4" ename="bridge">
@@ -1498,7 +1516,7 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (weapon != spear) {weapon = spear; with sword instance_destroy(); instance_create(x, y, spear)}
+            <string>//if (weapon != spear) {weapon = spear; with sword instance_destroy(); instance_create(x, y, spear)}
 
 </string>
           </argument>
@@ -1522,8 +1540,8 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(sword)) {weapon = leftysword; with sword instance_destroy(); instance_create(x, y, leftysword)}
-if (instance_exists(shield)) {with shield instance_destroy(); instance_create(x, y, leftyshield)}
+            <string>//if (instance_exists(sword)) {weapon = leftysword; with sword instance_destroy(); instance_create(x, y, leftysword)}
+//if (instance_exists(shield)) {with shield instance_destroy(); instance_create(x, y, leftyshield)}
 </string>
           </argument>
         </arguments>
@@ -1546,7 +1564,7 @@ if (instance_exists(shield)) {with shield instance_destroy(); instance_create(x,
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if weapon != mace {weapon = mace; with sword instance_destroy(); instance_create(x, y, mace)}
+            <string>//if weapon != sword2 {with sword instance_destroy(); instance_create(x, y, sword2)}
 </string>
           </argument>
         </arguments>
@@ -1569,7 +1587,7 @@ if (instance_exists(shield)) {with shield instance_destroy(); instance_create(x,
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if weapon != sword {weapon = sword; with mace instance_destroy(); instance_create(x, y, sword)}
+            <string>//if weapon != sword {weapon = sword; with sword2 instance_destroy(); instance_create(x, y, sword)}
 </string>
           </argument>
         </arguments>
@@ -1643,22 +1661,6 @@ draw_sprite(spr_bar, 0, 963, 9)
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="84">
-      <action>
-        <libid>1</libid>
-        <id>222</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_next_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>

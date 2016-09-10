@@ -108,6 +108,7 @@ sworddir = 0
           <argument>
             <kind>1</kind>
             <string>ready = true
+ready2 = false
 sworddir = 0
 </string>
           </argument>

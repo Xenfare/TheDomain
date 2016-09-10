@@ -133,7 +133,6 @@ image_index += 1;
 vibrate += 1;
 aggro = true;
 
-
 for (var i = 0; i&lt;19; i++)
 {with instance_create(x, y, denizenshot) direction = i*19;}
 

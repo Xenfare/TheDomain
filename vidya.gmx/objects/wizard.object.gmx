@@ -26,9 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>phase = 1
-alarm[1] = 160
 inv = false
 hp = 380
+aggro = false
 </string>
           </argument>
         </arguments>
@@ -55,6 +55,11 @@ hp = 380
 alarm[1] = 160
 x = random_range(player.x -400, player.x + 400)
 y = random_range(player.y - 400, player.y + 400)
+//for ( ; !place_free(x, y); 
+//x = random_range(player.x -400, player.x + 400);
+//y = random_range(player.y - 400, player.y + 400)
+//)
+
 </string>
           </argument>
         </arguments>
@@ -123,7 +128,12 @@ y = random_range(player.y - 400, player.y + 400)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = point_direction(x, y, player.x, player.y)
+            <string>if distance_to_object(player) &lt; 300 &amp;&amp; aggro = false {aggro = true; alarm[1] = 160}
+
+
+if aggro = true
+{
+image_angle = point_direction(x, y, player.x, player.y)
 if hp &lt; 1 {instance_destroy()}
 if x &lt; 0 {x += 100}
 if x &gt; room_width {x -= 100}
@@ -142,7 +152,7 @@ if phase = 2{
 speed = 0
 if alarm[2] = 119 {repeat(3) instance_create(random_range (x-350,x+350), random_range (y-350,y+350), wizardhoming)}
 }
-
+}
 </string>
           </argument>
         </arguments>
@@ -151,23 +161,41 @@ if alarm[2] = 119 {repeat(3) instance_create(random_range (x-350,x+350), random_
     <event eventtype="4" ename="sword">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>alarm[0] = 8
-if global.sworddir != 0 &amp;&amp; inv = false {repeat (round(1*global.damage/8)) instance_create(x, y, blood); hp -= global.damage; inv = true}
-</string>
+            <kind>9</kind>
+            <script>damagedscript</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>

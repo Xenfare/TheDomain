@@ -296,7 +296,7 @@
     <instance objName="invis" x="1536" y="0" name="inst_9CEAB8BB" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="invis" x="1600" y="64" name="inst_079461C1" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="invis" x="1664" y="192" name="inst_3F09767E" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="invis" x="1408" y="0" name="inst_82C7F502" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="invis" x="1408" y="0" name="inst_82C7F502" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="invis" x="1216" y="0" name="inst_B44BE181" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="invis" x="1216" y="0" name="inst_E35E340C" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="896" y="448" name="inst_EA5EB33F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -307,6 +307,7 @@
     <instance objName="wall" x="1152" y="832" name="inst_0815C115" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="896" y="832" name="inst_D7D55AC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="832" y="768" name="inst_BF6290BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="roomchanger" x="-64" y="64" name="inst_F2351C0A" locked="0" code="r = LEVEL_FOUR&#xA;" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg1" x="1152" y="1920" w="64" h="64" xo="0" yo="0" id="10000060" name="inst_C08FBFBC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

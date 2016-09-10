@@ -3,8 +3,8 @@
   <caption></caption>
   <width>3264</width>
   <height>2368</height>
-  <vsnap>64</vsnap>
-  <hsnap>64</hsnap>
+  <vsnap>32</vsnap>
+  <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -169,7 +169,7 @@
     <instance objName="wall" x="3008" y="1728" name="inst_6B243EDB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="3008" y="1856" name="inst_4183D11F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="3008" y="1792" name="inst_CCE18429" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="player" x="704" y="2176" name="inst_C58D03F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="player" x="672" y="2208" name="inst_C58D03F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="640" y="1984" name="inst_58D4630C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="640" y="2048" name="inst_5B2E69C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="576" y="1984" name="inst_DF5CF352" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -568,9 +568,11 @@
     <instance objName="wall" x="1024" y="2304" name="inst_AD614121" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tempwall" x="1536" y="2240" name="inst_62FFAEE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tempwall" x="1600" y="2240" name="inst_3B1F5368" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="tempwall" x="1536" y="2368" name="inst_C55B68CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="tempwall" x="1600" y="2368" name="inst_05CDF898" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="0" y="0" name="inst_11098032" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="roomchanger" x="1536" y="2368" name="inst_FB05968E" locked="0" code="r = LEVEL_TWO" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="spawnpoint" x="672" y="2208" name="inst_117494FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="wall" x="1472" y="2368" name="inst_641813E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="wall" x="1664" y="2368" name="inst_E52E7673" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg1" x="64" y="64" w="64" h="64" xo="0" yo="0" id="10000001" name="inst_6667FFB2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

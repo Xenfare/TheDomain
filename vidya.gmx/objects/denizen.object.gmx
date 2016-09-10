@@ -27,13 +27,16 @@
             <kind>1</kind>
             <string>image_speed = 0
 inv = false
-maxhp = 400
-hp = 400
-prevhp = 400
+maxhp = 150
+hp = 150
+prevhp = 150
 alarm[1] = 550
 randdir = 0
 vibrate = 0
 nextphase = 1
+laserdir = 0
+laserlen = 0
+
 
 enemyarms = instance_create(x, y, denizenjacket)
 enemyarms.owner = id
@@ -93,6 +96,48 @@ y = player.y + lengthdir_y(350, randdir);
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if player.hp = player.maxhp
+
+{
+alarm[1] = 550
+enemyarms.image_index = 0
+speed = 0
+enemyarms.image_index = 0
+image_alpha = 1
+x = player.x + lengthdir_x(350, randdir);
+y = player.y + lengthdir_y(350, randdir);
+repeat (15) instance_create(x + random_range(-20, 20), y + random_range(-20, 20), whitespread)
+}
+
+else
+
+{
+alarm[3] = 180
+speed = 0
+enemyarms.image_index = 0
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="3">
       <action>
         <libid>1</libid>
@@ -110,12 +155,28 @@ y = player.y + lengthdir_y(350, randdir);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[1] = 550
+            <string>if hp &lt; maxhp 
+
+{
+alarm[1] = 550
 speed = 0
 enemyarms.image_index = 0
 image_alpha = 1
 x = player.x + lengthdir_x(350, randdir);
 y = player.y + lengthdir_y(350, randdir);
+}
+
+else
+
+{
+alarm[4] = 400
+speed = 0
+enemyarms.image_index = 0
+image_alpha = 1
+x = player.x + lengthdir_x(350, randdir);
+y = player.y + lengthdir_y(350, randdir);
+}
+
 </string>
           </argument>
         </arguments>
@@ -163,9 +224,26 @@ enemyarms.image_index = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[2] = 500
+            <string>if hp &lt; maxhp 
+
+{
+with denizensnare instance_destroy()
+enemyarms.image_index = 2
+alarm[4] = 400
+speed = 0
+enemyarms.image_index = 0
+image_alpha = 1
+x = player.x + lengthdir_x(350, randdir);
+y = player.y + lengthdir_y(350, randdir);
+}
+
+else
+
+{
+alarm[2] = 500
 enemyarms.image_index = 2
 with denizensnare instance_destroy()
+}
 </string>
           </argument>
         </arguments>
@@ -258,7 +336,7 @@ if alarm[1] &lt; 200 &amp;&amp; alarm[1] mod 5 = 0
 if alarm[2] &gt; 0
 {
 
-if alarm[2] &gt; 450 {image_index = 1; vibrate = 2}
+if alarm[2] &gt; 450 {image_index = 2; vibrate = 2}
 
 image_angle += 20
 
@@ -273,7 +351,8 @@ image_angle += 20
         
     if alarm[2] mod 70 = 0
     {
-    for (var i = 0; i &lt; 360; i += 36;){with (instance_create(x,y,denizenshot)) direction = i;}
+    for (var i = 0; i&lt;10; i++;)
+    {with instance_create(x, y, denizenshot) direction = i*36;}
     repeat (15) instance_create(x + random_range(-20, 20), y + random_range(-20, 20), whitespread)
     x = player.x + lengthdir_x(500, player.image_angle - 180)
     y = player.y + lengthdir_y(500, player.image_angle - 180)
@@ -305,13 +384,54 @@ if alarm[3] = 1 &amp;&amp; instance_exists(psycho2) {alarm[3] = 50}
 }
 
 
+if alarm[4] &gt; 0 {
+
+image_angle = point_direction(x,y, player.x, player.y) 
+vibrate = 2
+
+if alarm[4] &gt; 350
+{
+image_alpha -= 0.02
+}
+
+if alarm[4] = 350
+
+    {
+    image_index = 2
+    laserlen = 0
+    laserdir = random_range(-90, 90) 
+    x = 2304 + B
+    y = 2304 + B
+    player.x = 2304 + B
+    player.y = 2654 + B
+    }
+
+    if alarm[4] &lt; 349
+    {
+    laserlen += 6
+    if image_alpha &lt; 1 {image_alpha += 0.1}
+    image_angle = laserdir - 90
+    if collision_line(x+ lengthdir_x(laserlen, laserdir), y+ lengthdir_y(laserlen, laserdir), x- lengthdir_x(laserlen * -1, laserdir -180), y- lengthdir_y(laserlen * -1, laserdir -180), player, true, true)
+    {player.hp -= 2; repeat(4) instance_create(player.x, player.y, blood); player.inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; player.alarm[0] = 12}
+    }
+    
+    if alarm[4] mod 50 = 0 
+    {
+    {for (var i = 0; i&lt;20; i++;)
+    {with instance_create(x, y, denizenshot) direction = i*18;}} 
+    }
+    
+}
 
 if alarm[9] &gt; 0 
 {
+alarm[1] = 0
+alarm[2] = 0
+alarm[3] = 0
+alarm[4] = 0
 if alarm[9] = 99 {for (var i = 0; i &lt; 360; i += 24;){with (instance_create(player.x + lengthdir_x(500,i), player.y + lengthdir_y(500, i),snareshot)) direction = i - 180;}}
 if !instance_exists(denizensnare) {alarm[9] = 50}
 }
-
 </string>
           </argument>
         </arguments>
@@ -334,12 +454,13 @@ if !instance_exists(denizensnare) {alarm[9] = 50}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if alarm[2] &gt; 0 &amp;&amp; other.image_index = 0 
+            <string>if alarm[2] &gt; 0 or alarm[4] &gt; 0 &amp;&amp; other.image_index = 0
 
 {
 audio_play_sound(clang, 10, false); 
 other.alarm[0] = 1;
 other.alarm[2] = 1;
+repeat (8) instance_create(x, y, whitespread);
 } 
 
 else
@@ -405,7 +526,13 @@ draw_sprite(spr_bossbar, 0, 4, 727)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self()
+            <string>if alarm[4] &gt; 0 and image_alpha &gt;= 1
+{
+draw_line_width_color(x+ lengthdir_x(laserlen, laserdir), y+ lengthdir_y(laserlen, laserdir), x- lengthdir_x(laserlen * -1, laserdir -180), y- lengthdir_y(laserlen * -1, laserdir -180), 20, c_white, c_white);
+laserdir += 1.5
+}
+
+draw_self()
 draw_sprite_ext(spr_denizen, image_index, x+(random_range(-vibrate,vibrate)), y+(random_range(-vibrate,vibrate)), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 </string>
           </argument>

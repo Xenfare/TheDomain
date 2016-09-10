@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>enemyparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -75,8 +75,12 @@ image_speed = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[1] = 80
+            <string>if instance_exists(player) {
+
+alarm[1] = 80
 if distance_to_object(player) &lt; 600 {instance_create(x, y, magicshot); audio_play_sound(choose(fire, fire2), 10, false)}
+
+}
 </string>
           </argument>
         </arguments>
