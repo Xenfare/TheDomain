@@ -184,7 +184,7 @@
             draw_vertex(side_x1 - x_offset + side_oxx1,side_y1 - y_offset + side_oyy1)
             draw_primitive_end()
         }*/
-        draw_set_alpha(.5)
+        //draw_set_alpha(.5)
         draw_primitive_begin(pr_trianglefan)
         draw_vertex(side_x1 - x_offset+lengthdir_x(999999,dir1),side_y1 - y_offset+lengthdir_y(999999,dir1))
         draw_vertex(side_x1 - x_offset/* + side_ox1*/,side_y1 - y_offset/* + side_oy1*/)
@@ -199,8 +199,8 @@
         //draw_vertex(true_x - x_offset+lengthdir_x(999999,dir),true_y - y_offset+lengthdir_y(999999,dir))
         
         draw_primitive_end()
-        draw_set_alpha(1)
-        draw_text_color(true_x - x_offset,true_y - y_offset,section,c_red,c_red,c_red,c_red,1)
+        //draw_set_alpha(1)
+        //draw_text_color(true_x - x_offset,true_y - y_offset,section,c_red,c_red,c_red,c_red,1)
         
         /*if true_bbox_left < x - e_view_range
             true_bbox_left = x - e_view_range
