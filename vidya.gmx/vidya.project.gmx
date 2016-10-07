@@ -61,6 +61,7 @@
     <sprite>sprites\spr_acid</sprite>
     <sprites name="projectiles">
       <sprite>sprites\spr_magicshot</sprite>
+      <sprite>sprites\spr_druidshot</sprite>
       <sprite>sprites\spr_denizenshot</sprite>
       <sprite>sprites\spr_wizardshot</sprite>
       <sprite>sprites\spr_fireshot</sprite>
@@ -73,6 +74,7 @@
     </sprites>
     <sprites name="particles">
       <sprite>sprites\spr_particle</sprite>
+      <sprite>sprites\spr_druidparticle</sprite>
       <sprite>sprites\spr_whiteparticle</sprite>
       <sprite>sprites\spr_fireparticle</sprite>
       <sprite>sprites\spr_moss</sprite>
@@ -99,6 +101,8 @@
       <sprite>sprites\spr_lefty</sprite>
       <sprite>sprites\spr_shopkeep</sprite>
       <sprite>sprites\spr_magician</sprite>
+      <sprite>sprites\spr_druid</sprite>
+      <sprite>sprites\spr_druidgolem</sprite>
       <sprite>sprites\spr_necro</sprite>
       <sprite>sprites\spr_fisherman</sprite>
       <sprite>sprites\spr_serpent</sprite>
@@ -208,6 +212,10 @@
         <object>objects\denizenjacket</object>
         <object>objects\denizensnare</object>
       </objects>
+      <objects name="druid">
+        <object>objects\druid</object>
+        <object>objects\druidshot</object>
+      </objects>
       <object>objects\overgrown</object>
       <object>objects\overgrown2</object>
       <object>objects\zombie</object>
@@ -234,6 +242,7 @@
       <object>objects\necroparticle3</object>
       <object>objects\wizardparticle</object>
       <object>objects\particle</object>
+      <object>objects\druidparticle</object>
       <object>objects\whiteparticle</object>
       <object>objects\whitespread</object>
       <object>objects\fireparticle</object>
@@ -264,7 +273,7 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\init_rom</room>
-    <room>rooms\LIGHTING_TEST</room>
+    <room>rooms\TEST</room>
     <room>rooms\LEVEL_ONE</room>
     <room>rooms\LEVEL_TWO</room>
     <room>rooms\BOSS_ONE</room>
@@ -274,8 +283,8 @@
     <room>rooms\LEVEL_FIVE</room>
     <room>rooms\LEVEL_SIX</room>
     <room>rooms\BOSS_THREE</room>
-    <room>rooms\TEST</room>
     <room>rooms\SPAWN_ROOM</room>
+    <room>rooms\LIGHTING_TEST</room>
   </rooms>
   <constants number="3">
     <constant name="CELL_SIZE">64</constant>
