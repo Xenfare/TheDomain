@@ -212,7 +212,7 @@ alarm[4] = 100
           <argument>
             <kind>1</kind>
             <string>phase = 3
-alarm[3] = 300
+alarm[3] = 150
 </string>
           </argument>
         </arguments>
@@ -236,7 +236,7 @@ alarm[3] = 300
           <argument>
             <kind>1</kind>
             <string>phase = 2
-alarm[2] = 150
+alarm[2] = 75
 </string>
           </argument>
         </arguments>
@@ -301,7 +301,7 @@ enemysword.image_index = 1
 if distance_to_object(player)
         {
         direction += 1
-    mp_potential_step(player.x, player.y, -1, false)
+        mp_potential_step(player.x, player.y, -1, false)
         }
 
 enemysword.leftysworddir = 0
@@ -312,8 +312,8 @@ image_angle = direction
 // PHASE 2
 if phase = 2
 {
-if alarm[2] = 120 {spindir = choose(10, -10); spd = 0}
-if alarm[2] &gt; 120
+if alarm[2] = 55 {spindir = choose(10, -10); spd = 0}
+if alarm[2] &gt; 55
 {enemysword.leftysworddir += 0.5} else
 {enemysword.leftysworddir = 0
 image_angle -= spindir}
@@ -324,7 +324,7 @@ if phase = 3
 {
 enemysword.leftysworddir = 0
 image_angle -= spindir * 1.2
-spd += 0.02
+spd += 0.05
 if distance_to_object(player) &gt; 30 {mp_potential_step(player.x, player.y, spd, false)} else {spd = 0}
 if alarm[3] &lt; 20 &amp;&amp; hp &gt; 300 {damaging = false; if spindir &gt; 0 {spindir -= 0.25} else {spindir += 0.25}}
 }
@@ -379,6 +379,8 @@ if alarm[9] = 90
 else
 {alarm[1] = 50;
 image_index = 2}
+
+show_debug_message(enemyshield.leftyshielddir)
 </string>
           </argument>
         </arguments>
@@ -413,41 +415,50 @@ image_index = 2}
     <event eventtype="4" ename="sword">
       <action>
         <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>9</kind>
-            <script>damagedscript</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
+            <kind>1</kind>
+            <string>var shieldcol = 0
+with(other){shieldcol = place_meeting(x,y,eleftyshield)}
+
+if enemyshield.leftyshielddir = 5 &amp;&amp; shieldcol != 0
+
+{
+audio_play_sound(clang, 10, false); 
+
+if hp &gt;300
+{phase = 9; alarm[9] = 90}
+else
+{phase = 6; alarm[6] = 150}
+
+other.alarm[0] = 1;
+other.alarm[2] = 1;
+
+alarm[1] = -1
+alarm[2] = -1
+alarm[3] = -1
+alarm[4] = -1
+alarm[5] = -1
+enemysword.leftysworddir = 350
+}
+
+else
+
+{
+script_execute(damagedscript)
+}
+</string>
           </argument>
         </arguments>
       </action>
