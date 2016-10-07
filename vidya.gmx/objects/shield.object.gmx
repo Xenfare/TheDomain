@@ -79,12 +79,12 @@ shielddir = 0
             <kind>1</kind>
             <string>if instance_exists(player)
 {
-image_angle = point_direction(x, y, mouse_x, mouse_y) - (shielddir * 16)
+image_angle = player.image_angle - (shielddir * 16)
 x = player.x
 y = player.y
 
-if mouse_check_button(mb_right) &amp;&amp; sword.image_index = 1 {shielddir += 1}
-if mouse_check_button_released(mb_right) {shielddir = 0}
+if (mouse_check_button(mb_right) or gamepad_button_check(0,gp_shoulderrb)) &amp;&amp; sword.image_index = 1 {shielddir += 1}
+if (mouse_check_button_released(mb_right) or gamepad_button_check_released(0,gp_shoulderrb))  {shielddir = 0}
 if shielddir &gt; 5 shielddir = 5
 }
 else

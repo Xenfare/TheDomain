@@ -67,6 +67,11 @@ maxhp = 100
 spd = 3
 sprinting = false
 
+mouse_xprevious = mouse_x
+mouse_yprevious = mouse_y
+controller_active = false
+
+
 //LIGHTING
 view_range = 800
 lights = surface_create(view_range * 2,view_range * 2)
@@ -301,6 +306,18 @@ if keyboard_check(ord('W')) &amp;&amp; place_free(x,y-spd) {
         dir = -1;
     }
 }
+if dir != -1 controller_active = false
+var gp_h = gamepad_axis_value(0,gp_axislh)
+var gp_v = gamepad_axis_value(0,gp_axislv)
+gamepad_set_axis_deadzone(0,.2)
+if gp_h != 0 or gp_v != 0
+{
+    dir = point_direction(0,0,gp_h,gp_v)
+    if !place_free(x+lengthdir_x(spd,dir),y+lengthdir_y(spd,dir))
+        dir = -1
+    controller_active = true
+}
+
 
 if (dir != -1) {
  x += lengthdir_x(spd, dir);
@@ -309,14 +326,25 @@ if (dir != -1) {
 
 //stamina code
 
-if (x != xprevious or y != yprevious) and keyboard_check(vk_shift) &amp;&amp; exhausted = false {spd = 5; stamina -= 0.2; sprinting = true} else {spd = 3; if stamina &lt; maxstamina {stamina+=0.8}; sprinting = false}
+if (x != xprevious or y != yprevious) and (keyboard_check(vk_shift) or gamepad_button_check(0,gp_face2)) &amp;&amp; exhausted = false {spd = 5; stamina -= 0.2; sprinting = true} else {spd = 3; if stamina &lt; maxstamina {stamina+=0.8}; sprinting = false}
 if stamina &lt;= 0 {exhausted = true}
 if exhausted = true{stamina-= 0.7}
 if exhausted = true &amp;&amp; stamina &gt;= maxstamina {exhausted = false}
 if stamina &gt; maxstamina {stamina = maxstamina}
-
-image_angle = point_direction(x, y, mouse_x, mouse_y)
-
+if mouse_xprevious != device_mouse_x_to_gui(0) or mouse_yprevious != device_mouse_y_to_gui(0) or controller_active = false
+{
+    image_angle = point_direction(x, y, mouse_x, mouse_y)
+    controller_active = false
+}
+mouse_xprevious = device_mouse_x_to_gui(0)
+mouse_yprevious = device_mouse_y_to_gui(0)
+var gp_h = gamepad_axis_value(0,gp_axisrh)
+var gp_v = gamepad_axis_value(0,gp_axisrv)
+if gp_h != 0 or gp_v != 0
+{
+    image_angle = point_direction(0,0,gp_h,gp_v)
+    controller_active = true
+}
 if inv = 1 {image_index = 1} else image_index = 0
 </string>
           </argument>
