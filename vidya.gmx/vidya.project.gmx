@@ -103,6 +103,8 @@
       <sprite>sprites\spr_magician</sprite>
       <sprite>sprites\spr_druid</sprite>
       <sprite>sprites\spr_druidgolem</sprite>
+      <sprite>sprites\spr_thorns</sprite>
+      <sprite>sprites\spr_druidgolemmask</sprite>
       <sprite>sprites\spr_necro</sprite>
       <sprite>sprites\spr_fisherman</sprite>
       <sprite>sprites\spr_serpent</sprite>
@@ -174,6 +176,7 @@
       <object>objects\hook</object>
       <object>objects\arrow</object>
       <object>objects\magicshot</object>
+      <object>objects\druidmagicshot</object>
       <object>objects\denizenshot</object>
       <object>objects\shuriken</object>
       <object>objects\wizardhoming</object>
@@ -216,6 +219,11 @@
         <object>objects\druid</object>
         <object>objects\druidshot</object>
       </objects>
+      <objects name="druidgolem">
+        <object>objects\druidgolem</object>
+        <object>objects\druidgolemmask</object>
+        <object>objects\druidgolemthorns</object>
+      </objects>
       <object>objects\overgrown</object>
       <object>objects\overgrown2</object>
       <object>objects\zombie</object>
@@ -243,6 +251,7 @@
       <object>objects\wizardparticle</object>
       <object>objects\particle</object>
       <object>objects\druidparticle</object>
+      <object>objects\druidparticle2</object>
       <object>objects\whiteparticle</object>
       <object>objects\whitespread</object>
       <object>objects\fireparticle</object>
@@ -273,7 +282,7 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\init_rom</room>
-    <room>rooms\TEST</room>
+    <room>rooms\TEST2</room>
     <room>rooms\LEVEL_ONE</room>
     <room>rooms\LEVEL_TWO</room>
     <room>rooms\BOSS_ONE</room>
@@ -285,11 +294,13 @@
     <room>rooms\BOSS_THREE</room>
     <room>rooms\SPAWN_ROOM</room>
     <room>rooms\LIGHTING_TEST</room>
+    <room>rooms\TEST</room>
   </rooms>
-  <constants number="3">
+  <constants number="4">
     <constant name="CELL_SIZE">64</constant>
     <constant name="BUFFER_CELLS">30</constant>
     <constant name="B">BUFFER_CELLS * CELL_SIZE</constant>
+    <constant name="BLOCKED">global.shielddir = 5 &amp;&amp; shieldcol != 0</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

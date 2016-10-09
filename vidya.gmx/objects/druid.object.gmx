@@ -27,14 +27,14 @@
             <kind>1</kind>
             <string>aggro = 0
 inv = false
-hp = 18000
+hp = 180
 
 alarm[1] = 80
 alarm[2] = 200
 image_speed = 0
 
-
-shotdir = (random(360))
+shot = 0
+shotdir = random(360)
 shotdist = 40
 enemyshot = instance_create(x, y, druidshot)
 enemyshot.owner = id
@@ -111,7 +111,7 @@ alarm[2] = 200
             <string>if instance_exists(player) {
 
 alarm[1] = 80
-if distance_to_object(player) &lt; 600 {instance_create(x, y, magicshot); audio_play_sound(choose(fire, fire2), 10, false)}
+if distance_to_object(player) &lt; 600 {instance_create(x, y, druidmagicshot); audio_play_sound(choose(fire, fire2), 10, false)}
 
 }
 </string>
@@ -162,6 +162,7 @@ if distance_to_object(player) &lt; 600 {instance_create(x, y, magicshot); audio_
             <string>if (distance_to_object(player) &lt; 600) aggro = true
 
 if shotdir &gt;= 360 {shotdir -= 360}
+if shotdir &lt;= 0 {shotdir += 360}
 image_angle = point_direction(x, y, player.x, player.y)
 if hp &lt;= 0 {instance_destroy()}
 
@@ -172,7 +173,8 @@ if inv = true {}
 
 if phase = 1
 {
-shotdir += 3
+if shot = 0 {shotdir += 3}
+if shot = 1 {shotdir -= 3}
 if shotdist &gt; 40 {shotdist -=1}
 if shotdist &lt; 40 {shotdist +=1}
 enemyshot.x = x + lengthdir_x(shotdist, shotdir)
@@ -181,9 +183,10 @@ enemyshot.y = y + lengthdir_y(shotdist, shotdir)
 
 if phase = 2
 {
-shotdir += 4
-if shotdist &gt; 90 {shotdist -=1}
-if shotdist &lt; 90 {shotdist +=1}
+if shot = 0 {shotdir += 6}
+if shot = 1 {shotdir -= 6}
+if shotdist &gt; 120 {shotdist -=1}
+if shotdist &lt; 120 {shotdist +=1}
 enemyshot.x = x + lengthdir_x(shotdist, shotdir)
 enemyshot.y = y + lengthdir_y(shotdist, shotdir)
 }
@@ -212,7 +215,7 @@ enemyshot.y = y + lengthdir_y(shotdist, shotdir)
             <string>var shieldcol = 0
 with(other){shieldcol = place_meeting(x,y,other.enemyshot)}
 
-if shieldcol != 0 &amp;&amp; abs(angle_difference(image_angle, shotdir)) &lt; 90
+if phase = 1 &amp;&amp; shieldcol != 0 &amp;&amp; abs(angle_difference(image_angle, shotdir)) &lt; 90
 
 {
 audio_play_sound(clang, 10, false); 
