@@ -102,7 +102,7 @@ image_angle += spin
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="necro">
+    <event eventtype="4" ename="enemyparent">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -119,8 +119,8 @@ image_angle += spin
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x+= 50
-y+= 50
+            <string>x += lengthdir_x(10, point_direction(x, y, necro.x, necro.y) - 180)
+y += lengthdir_y(10, point_direction(x, y, necro.x, necro.y) - 180)
 </string>
           </argument>
         </arguments>

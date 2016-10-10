@@ -292,8 +292,6 @@
     <instance objName="wall" x="1152" y="1088" name="inst_B22797C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1216" y="1088" name="inst_4115301A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="druidgolem" x="1024" y="896" name="inst_CE5A9716" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ninja" x="192" y="1088" name="inst_9E3F0E3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="rust" x="192" y="704" name="inst_0E48F971" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

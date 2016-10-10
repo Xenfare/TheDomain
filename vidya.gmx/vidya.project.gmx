@@ -106,6 +106,7 @@
       <sprite>sprites\spr_thorns</sprite>
       <sprite>sprites\spr_druidgolemmask</sprite>
       <sprite>sprites\spr_necro</sprite>
+      <sprite>sprites\spr_bonemaster</sprite>
       <sprite>sprites\spr_fisherman</sprite>
       <sprite>sprites\spr_serpent</sprite>
       <sprite>sprites\spr_serpentminion</sprite>
@@ -172,6 +173,7 @@
       <object>objects\fireshot4</object>
       <object>objects\fireshot5</object>
       <object>objects\bloodshot</object>
+      <object>objects\bloodshot2</object>
       <object>objects\snareshot</object>
       <object>objects\hook</object>
       <object>objects\arrow</object>
@@ -201,6 +203,10 @@
         <object>objects\rust</object>
         <object>objects\rustsword</object>
       </objects>
+      <objects name="frenzyzombie">
+        <object>objects\frenziedzombie</object>
+        <object>objects\deadfrenzy</object>
+      </objects>
       <objects name="fisherman">
         <object>objects\fisherman</object>
         <object>objects\pole</object>
@@ -227,7 +233,6 @@
       <object>objects\overgrown</object>
       <object>objects\overgrown2</object>
       <object>objects\zombie</object>
-      <object>objects\frenziedzombie</object>
       <object>objects\psycho</object>
       <object>objects\psycho2</object>
       <object>objects\badger</object>
@@ -237,6 +242,7 @@
       <object>objects\doll</object>
       <object>objects\archer</object>
       <object>objects\wizard</object>
+      <object>objects\bonemaster</object>
       <object>objects\necro</object>
       <object>objects\wizardspec</object>
     </objects>
@@ -282,7 +288,7 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\init_rom</room>
-    <room>rooms\TEST2</room>
+    <room>rooms\TEST</room>
     <room>rooms\LEVEL_ONE</room>
     <room>rooms\LEVEL_TWO</room>
     <room>rooms\BOSS_ONE</room>
@@ -292,9 +298,9 @@
     <room>rooms\LEVEL_FIVE</room>
     <room>rooms\LEVEL_SIX</room>
     <room>rooms\BOSS_THREE</room>
+    <room>rooms\TEST2</room>
     <room>rooms\SPAWN_ROOM</room>
     <room>rooms\LIGHTING_TEST</room>
-    <room>rooms\TEST</room>
   </rooms>
   <constants number="4">
     <constant name="CELL_SIZE">64</constant>

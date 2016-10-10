@@ -110,7 +110,7 @@ else
           <argument>
             <kind>1</kind>
             <string>if global.shielddir = 5 &amp;&amp; damaging = true {audio_play_sound(clang, 10, false); 
-owner.alarm[5] = 100; 
+owner.alarm[5] = 60; 
 owner.alarm[1] = 0;
 owner.alarm[2] = 0;
 owner.alarm[3] = 0;
