@@ -26,8 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>alarm[0] = 65
-direction = random(360)
-speed = 2
 image_alpha = 0
 spin = 1
 </string>

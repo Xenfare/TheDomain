@@ -153,7 +153,7 @@ spindir = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[4] = 200
+            <string>alarm[4] = 100
 angle1 = 0
 angle2 = 0
 </string>

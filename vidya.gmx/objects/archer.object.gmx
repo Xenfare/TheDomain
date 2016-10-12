@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>aggro = 0
 inv = false
-hp = 120
+hp = 180
 alarm[1] = 120
 image_speed = 0
 </string>
@@ -132,11 +132,6 @@ if hp &lt;= 0 {instance_destroy()}
 if alarm[1] &lt; 21 {image_speed = 0.3}
 if alarm[1] = 20 {if distance_to_object(player) &lt; 800 {instance_create(x, y, arrow)}}
 if alarm[1] = 10 {if distance_to_object(player) &lt; 800 {instance_create(x, y, arrow)}}
-
-if aggro = 1{
-if distance_to_object(player) &gt; 700 {mp_potential_step(player.x, player.y, 1, false)} else if (distance_to_object(player)) &lt; 700 {speed = 0} 
-if inv = true {}
-}
 </string>
           </argument>
         </arguments>

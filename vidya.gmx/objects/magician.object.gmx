@@ -130,11 +130,6 @@ if distance_to_object(player) &lt; 600 {instance_create(x, y, magicshot); audio_
 
 image_angle = point_direction(x, y, player.x, player.y)
 if hp &lt;= 0 {instance_destroy()}
-
-if aggro = 1{
-if distance_to_object(player) &gt; 700 {mp_potential_step(player.x, player.y, 1, false)} else if (distance_to_object(player)) &lt; 700 {speed = 0} 
-if inv = true {}
-}
 </string>
           </argument>
         </arguments>

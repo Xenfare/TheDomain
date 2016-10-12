@@ -58,6 +58,7 @@
     <sprite>sprites\spr_ninjasword</sprite>
     <sprite>sprites\spr_wizardhoming</sprite>
     <sprite>sprites\spr_summon</sprite>
+    <sprite>sprites\spr_orb</sprite>
     <sprite>sprites\spr_acid</sprite>
     <sprites name="projectiles">
       <sprite>sprites\spr_magicshot</sprite>
@@ -118,6 +119,7 @@
       <sprite>sprites\spr_darkoverlay</sprite>
       <sprite>sprites\spr_lake</sprite>
       <sprite>sprites\spr_bridge</sprite>
+      <sprite>sprites\spr_bridge2</sprite>
       <sprite>sprites\spr_hole</sprite>
     </sprites>
     <sprite>sprites\spr_hook</sprite>
@@ -162,11 +164,14 @@
     <object>objects\leftyshield</object>
     <object>objects\wall</object>
     <object>objects\invis</object>
+    <object>objects\water</object>
     <object>objects\tempwall</object>
     <object>objects\bars</object>
     <objects name="projectiles">
       <object>objects\seed</object>
+      <object>objects\seed2</object>
       <object>objects\serpentegg</object>
+      <object>objects\serpentegg2</object>
       <object>objects\fireshot</object>
       <object>objects\fireshot2</object>
       <object>objects\fireshot3</object>
@@ -196,6 +201,7 @@
       </objects>
       <objects name="riverserpent">
         <object>objects\serpentminion</object>
+        <object>objects\serpentminion2</object>
         <object>objects\riverserpent1</object>
         <object>objects\riverserpent2</object>
       </objects>
@@ -269,13 +275,16 @@
       <object>objects\minotaurwep</object>
       <object>objects\minotaur</object>
       <object>objects\healthdrop</object>
+      <object>objects\orbswitch</object>
       <object>objects\serpentwall</object>
       <object>objects\seedturret</object>
+      <object>objects\serpentspawner</object>
+      <object>objects\bridge</object>
+      <object>objects\bridge2</object>
     </objects>
     <object>objects\lighting</object>
     <object>objects\nextroom</object>
     <object>objects\projectilewall</object>
-    <object>objects\bridge</object>
     <object>objects\lake</object>
     <object>objects\darkoverlay</object>
     <object>objects\roomchanger</object>
@@ -288,19 +297,19 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\init_rom</room>
-    <room>rooms\TEST</room>
     <room>rooms\LEVEL_ONE</room>
     <room>rooms\LEVEL_TWO</room>
     <room>rooms\BOSS_ONE</room>
     <room>rooms\LEVEL_THREE</room>
     <room>rooms\LEVEL_FOUR</room>
+    <room>rooms\LEVEL_SEVEN</room>
     <room>rooms\BOSS_TWO</room>
-    <room>rooms\LEVEL_FIVE</room>
-    <room>rooms\LEVEL_SIX</room>
+    <room>rooms\LEVEL_EIGHT</room>
+    <room>rooms\LEVEL_NINE</room>
     <room>rooms\BOSS_THREE</room>
-    <room>rooms\TEST2</room>
     <room>rooms\SPAWN_ROOM</room>
     <room>rooms\LIGHTING_TEST</room>
+    <room>rooms\TEST2</room>
   </rooms>
   <constants number="4">
     <constant name="CELL_SIZE">64</constant>

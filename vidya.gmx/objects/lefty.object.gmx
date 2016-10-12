@@ -379,8 +379,6 @@ if alarm[9] = 90
 else
 {alarm[1] = 50;
 image_index = 2}
-
-show_debug_message(enemyshield.leftyshielddir)
 </string>
           </argument>
         </arguments>

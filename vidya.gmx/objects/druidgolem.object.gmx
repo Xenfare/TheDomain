@@ -110,9 +110,9 @@ if phase = 1
 thornlen = 0
 if distance_to_object(player) &lt; 300 
     {
-    if angle_difference(direction, point_direction(x, y, player.x, player.y)) &lt; -5 {direction += 1.2; speed = 0; show_debug_message("right")} else
-    if angle_difference(direction, point_direction(x, y, player.x, player.y)) &gt; 5 {direction -= 1.2; speed = 0; show_debug_message("left")} else
-    if distance_to_object (player) &gt; 15 {mp_potential_step(player.x, player.y, 1, false); show_debug_message("forward")}
+    if angle_difference(direction, point_direction(x, y, player.x, player.y)) &lt; -5 {direction += 1.2; speed = 0} else
+    if angle_difference(direction, point_direction(x, y, player.x, player.y)) &gt; 5 {direction -= 1.2; speed = 0} else
+    if distance_to_object (player) &gt; 15 {mp_potential_step(player.x, player.y, 1, false)}
     }
 if distance_to_object(player) &lt;= 15 {phase = 2}   
 
