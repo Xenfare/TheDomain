@@ -192,6 +192,11 @@ for(var i = 0;i < cells - 1;i++)
                 while(bottom + 1< cells * 2 and sub_grid[# right,bottom + 1] > 0)
                     sub_grid[# right,++bottom] = .5   
             }
+            if left = right
+            {
+                while(top - 1 >= 0 and sub_grid[# left, top - 1] > 0)
+                    sub_grid[# left, --top] = .5
+            }
             section = "br"
             draw_box_shadows(left,top,right,bottom)
             

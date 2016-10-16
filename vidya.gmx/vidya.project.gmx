@@ -299,11 +299,11 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\init_rom</room>
+    <room>rooms\LEVEL_FOUR</room>
     <room>rooms\LEVEL_ONE</room>
     <room>rooms\LEVEL_TWO</room>
     <room>rooms\BOSS_ONE</room>
     <room>rooms\LEVEL_THREE</room>
-    <room>rooms\LEVEL_FOUR</room>
     <room>rooms\LEVEL_FIVE</room>
     <room>rooms\LEVEL_SEVEN</room>
     <room>rooms\BOSS_TWO</room>
@@ -314,11 +314,12 @@
     <room>rooms\LIGHTING_TEST</room>
     <room>rooms\TEST2</room>
   </rooms>
-  <constants number="4">
+  <constants number="5">
     <constant name="CELL_SIZE">64</constant>
     <constant name="BUFFER_CELLS">30</constant>
     <constant name="B">BUFFER_CELLS * CELL_SIZE</constant>
     <constant name="BLOCKED">global.shielddir = 5 &amp;&amp; shieldcol != 0</constant>
+    <constant name="player_seen">(point_distance(x,y,player.x,player.y) &lt; aggro_range &amp;&amp; !collision_line(x,y,player.x,player.y,wall,false,false))</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
