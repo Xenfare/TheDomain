@@ -36,8 +36,8 @@ global.wall_grid = ds_grid_create(room_width/CELL_SIZE + BUFFER_CELLS * 2,room_h
 
 with(all)
 {
-    x+= BUFFER_CELLS * CELL_SIZE
-    y+= BUFFER_CELLS * CELL_SIZE
+    x += BUFFER_CELLS * CELL_SIZE
+    y += BUFFER_CELLS * CELL_SIZE
 }
 room_width += BUFFER_CELLS * CELL_SIZE * 2
 room_height += BUFFER_CELLS * CELL_SIZE * 2
