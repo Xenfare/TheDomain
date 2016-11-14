@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>aggro = 0
+            <string>aggro = false
 inv = false
 hp = 120
+aggro_range = 800
 alarm[1] = 120
 image_speed = 0
 </string>
@@ -78,7 +79,7 @@ image_speed = 0
             <string>image_speed = 0
 image_index = 0
 alarm[1] = 120
-if distance_to_object(player) &lt; 800 {instance_create(x, y, arrow)}
+if aggro = true {instance_create(x, y, arrow)}
 </string>
           </argument>
         </arguments>
@@ -124,14 +125,19 @@ if distance_to_object(player) &lt; 800 {instance_create(x, y, arrow)}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(player) &lt; 500) aggro = true
+            <string>if player_seen {aggro = true} else {aggro = false}
 
 image_angle = point_direction(x, y, player.x, player.y)
 if hp &lt;= 0 {instance_destroy()}
 
+if aggro = true
+{
+
 if alarm[1] &lt; 21 {image_speed = 0.3}
-if alarm[1] = 20 {if distance_to_object(player) &lt; 800 {instance_create(x, y, arrow)}}
-if alarm[1] = 10 {if distance_to_object(player) &lt; 800 {instance_create(x, y, arrow)}}
+if alarm[1] = 20 {instance_create(x, y, arrow)}
+if alarm[1] = 10 {instance_create(x, y, arrow)}
+
+}
 </string>
           </argument>
         </arguments>

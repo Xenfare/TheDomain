@@ -30,6 +30,7 @@ hp = 180
 inv = false
 vibrate = 1
 move = true
+aggro_range = 600
 </string>
           </argument>
         </arguments>
@@ -101,7 +102,7 @@ move = true
             <kind>1</kind>
             <string>if move = true {direction += 10}
 image_angle = direction
-if distance_to_object(player) &lt; 300 {spawn --}; if spawn &lt; 0 {spawn = 50};
+if distance_to_object(player) &lt; aggro_range &amp;&amp; player_seen = true {spawn --}; if spawn &lt; 0 {spawn = 50};
 
 if spawn = 0
 {

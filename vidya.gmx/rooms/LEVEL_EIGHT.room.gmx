@@ -420,6 +420,9 @@
     <instance objName="psycho" x="768" y="2064" name="inst_31107477" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-112"/>
     <instance objName="psycho" x="1040" y="2032" name="inst_9859702C" locked="0" code="image_index = 2&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="-14"/>
     <instance objName="spawnpoint" x="1504" y="2304" name="inst_69DC9FB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="psycho" x="1568" y="1344" name="inst_F9070C57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-100"/>
+    <instance objName="psycho" x="1440" y="1376" name="inst_CBD7FA85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-78"/>
+    <instance objName="psycho" x="1792" y="1776" name="inst_35D6B21B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="70"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

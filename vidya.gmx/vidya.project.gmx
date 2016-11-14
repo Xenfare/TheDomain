@@ -62,6 +62,7 @@
     <sprite>sprites\spr_acid</sprite>
     <sprites name="projectiles">
       <sprite>sprites\spr_magicshot</sprite>
+      <sprite>sprites\spr_ghostsprite</sprite>
       <sprite>sprites\spr_druidshot</sprite>
       <sprite>sprites\spr_denizenshot</sprite>
       <sprite>sprites\spr_wizardshot</sprite>
@@ -91,6 +92,7 @@
       <sprite>sprites\spr_overgrown</sprite>
       <sprite>sprites\spr_zombie</sprite>
       <sprite>sprites\spr_psycho</sprite>
+      <sprite>sprites\spr_ghost</sprite>
       <sprite>sprites\spr_denizen</sprite>
       <sprite>sprites\spr_doll</sprite>
       <sprite>sprites\spr_badger</sprite>
@@ -186,6 +188,7 @@
       <object>objects\magicshot</object>
       <object>objects\druidmagicshot</object>
       <object>objects\denizenshot</object>
+      <object>objects\ghostshot</object>
       <object>objects\shuriken</object>
       <object>objects\wizardhoming</object>
       <object>objects\wizardshot</object>
@@ -245,18 +248,21 @@
       <object>objects\badger</object>
       <object>objects\skeleton</object>
       <object>objects\skeleton2</object>
+      <object>objects\ghost</object>
+      <object>objects\ghost2</object>
       <object>objects\hedgebeast</object>
       <object>objects\magician</object>
       <object>objects\doll</object>
       <object>objects\archer</object>
-      <object>objects\wizard</object>
       <object>objects\bonemaster</object>
       <object>objects\necro</object>
+      <object>objects\wizard</object>
       <object>objects\wizardspec</object>
     </objects>
     <objects name="particles">
       <object>objects\blood</object>
       <object>objects\moss</object>
+      <object>objects\ghostparticle</object>
       <object>objects\boneparticle</object>
       <object>objects\spark</object>
       <object>objects\necroparticle</object>
@@ -278,9 +284,12 @@
       <object>objects\minotaur</object>
       <object>objects\healthdrop</object>
       <object>objects\orbswitch</object>
+      <object>objects\orbswitch2</object>
       <object>objects\serpentwall</object>
       <object>objects\seedturret</object>
       <object>objects\serpentspawner</object>
+      <object>objects\ghostspawner</object>
+      <object>objects\ghost2spawner</object>
       <object>objects\bridge</object>
       <object>objects\bridge2</object>
     </objects>
@@ -299,20 +308,20 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\init_rom</room>
-    <room>rooms\LEVEL_FOUR</room>
     <room>rooms\LEVEL_ONE</room>
     <room>rooms\LEVEL_TWO</room>
     <room>rooms\BOSS_ONE</room>
     <room>rooms\LEVEL_THREE</room>
+    <room>rooms\LEVEL_FOUR</room>
     <room>rooms\LEVEL_FIVE</room>
     <room>rooms\LEVEL_SEVEN</room>
     <room>rooms\BOSS_TWO</room>
     <room>rooms\LEVEL_EIGHT</room>
     <room>rooms\LEVEL_NINE</room>
+    <room>rooms\TEST2</room>
     <room>rooms\BOSS_THREE</room>
     <room>rooms\SPAWN_ROOM</room>
     <room>rooms\LIGHTING_TEST</room>
-    <room>rooms\TEST2</room>
   </rooms>
   <constants number="5">
     <constant name="CELL_SIZE">64</constant>

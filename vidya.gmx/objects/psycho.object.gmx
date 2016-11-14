@@ -33,6 +33,9 @@ inv = false
 hp = 140
 run = 0
 shotdir = 0
+aggro_range = 600
+visibility = 0
+image_index = (choose(0,2,4,6))
 </string>
           </argument>
         </arguments>
@@ -128,7 +131,15 @@ shotdir = 0
 
 image_angle = direction
 
-if distance_to_object(player) &lt; 300 &amp;&amp; player.sprinting = true &amp;&amp; aggro = false 
+if aggro = false 
+{
+visibility = (distance_to_object(player) * -1) / 100 + 1
+image_alpha = visibility
+}
+else
+{visibility = 1; image_alpha = visibility}
+
+if player_seen = true &amp;&amp; player.sprinting = true &amp;&amp; aggro = false 
 {
 image_index += 1;
 vibrate += 1;
@@ -205,6 +216,39 @@ if hp &lt;= 0 {instance_destroy()}
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if aggro = false 
+{
+image_index += 1;
+vibrate += 1;
+aggro = true;
+
+for (var i = 0; i&lt;19; i++)
+{with instance_create(x, y, bloodshot) direction = i*18;}
+
+alarm[1] = 20;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -223,7 +267,7 @@ if hp &lt;= 0 {instance_destroy()}
           <argument>
             <kind>1</kind>
             <string>draw_self()
-draw_sprite_ext(spr_psycho, image_index, x+(random_range(-vibrate,vibrate)), y+(random_range(-vibrate,vibrate)), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+draw_sprite_ext(spr_psycho, image_index, x+(random_range(-vibrate,vibrate)), y+(random_range(-vibrate,vibrate)), image_xscale, image_yscale, image_angle, image_blend, visibility);
 </string>
           </argument>
         </arguments>

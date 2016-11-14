@@ -30,6 +30,7 @@ inv = false
 hp = 180
 alarm[1] = 80
 image_speed = 0
+aggro_range = 600
 
 enemyhook = instance_create(x, y, hook)
 enemyhook.owner = id
@@ -130,7 +131,7 @@ if distance_to_object(player) &lt; 600 &amp;&amp; distance_to_object(player) &gt
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(player) &lt; 600) aggro = true
+            <string>if player_seen = true {aggro = true}
 
 image_angle = point_direction(x, y, player.x, player.y)
 if hp &lt; 1 {instance_destroy()}

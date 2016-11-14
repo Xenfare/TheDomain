@@ -29,6 +29,7 @@
 inv = false
 hp = 380
 aggro = false
+aggro_range = 300
 </string>
           </argument>
         </arguments>
@@ -128,7 +129,7 @@ y = random_range(player.y - 400, player.y + 400)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if distance_to_object(player) &lt; 300 &amp;&amp; aggro = false {aggro = true; alarm[1] = 160}
+            <string>if player_seen &amp;&amp; aggro = false {aggro = true; alarm[1] = 160}
 
 
 if aggro = true
