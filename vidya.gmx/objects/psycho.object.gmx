@@ -129,6 +129,20 @@ image_index = (choose(0,2,4,6))
             <kind>1</kind>
             <string>if instance_exists(player) {
 
+///aggro
+if aggro = false &amp;&amp; point_distance(x,y,player.x,player.y) &lt;= sprite_width
+{
+image_index += 1;
+vibrate += 1;
+aggro = true;
+
+for (var i = 0; i&lt;19; i++)
+{with instance_create(x, y, bloodshot) direction = i*18;}
+
+alarm[1] = 20;
+}
+
+
 image_angle = direction
 
 if aggro = false 
