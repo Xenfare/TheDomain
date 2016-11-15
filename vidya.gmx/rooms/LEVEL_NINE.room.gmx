@@ -508,17 +508,17 @@
     <instance objName="psycho" x="1904" y="112" name="inst_1D711387" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="psycho" x="1952" y="232" name="inst_BB001225" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-47"/>
     <instance objName="psycho" x="1888" y="344" name="inst_7606914B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-212"/>
-    <instance objName="psycho" x="1952" y="440" name="inst_BF33C7DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="21"/>
-    <instance objName="psycho" x="1960" y="616" name="inst_33DC886D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="psycho" x="1888" y="528" name="inst_52EB3D64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-159"/>
-    <instance objName="psycho" x="1888" y="688" name="inst_E46FE53B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-148"/>
-    <instance objName="psycho" x="1952" y="784" name="inst_A5395E1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-32"/>
-    <instance objName="psycho" x="1944" y="848" name="inst_F6677952" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="13"/>
-    <instance objName="psycho" x="1944" y="904" name="inst_A3FD02C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-158"/>
-    <instance objName="psycho" x="1888" y="1064" name="inst_B7CA0786" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-217"/>
-    <instance objName="psycho" x="1952" y="968" name="inst_65B52647" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-28"/>
-    <instance objName="psycho" x="1952" y="1160" name="inst_384F5D66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-22"/>
-    <instance objName="psycho" x="1888" y="1248" name="inst_E05BF956" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-145"/>
+    <instance objName="psycho" x="1952" y="456" name="inst_BF33C7DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="21"/>
+    <instance objName="psycho" x="1960" y="648" name="inst_33DC886D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="psycho" x="1888" y="560" name="inst_52EB3D64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-159"/>
+    <instance objName="psycho" x="1888" y="744" name="inst_E46FE53B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-148"/>
+    <instance objName="psycho" x="1952" y="840" name="inst_A5395E1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-32"/>
+    <instance objName="psycho" x="1944" y="904" name="inst_F6677952" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-4"/>
+    <instance objName="psycho" x="1944" y="960" name="inst_A3FD02C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-158"/>
+    <instance objName="psycho" x="1888" y="1128" name="inst_B7CA0786" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-217"/>
+    <instance objName="psycho" x="1952" y="1024" name="inst_65B52647" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-28"/>
+    <instance objName="psycho" x="1952" y="1224" name="inst_384F5D66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-22"/>
+    <instance objName="psycho" x="1880" y="1312" name="inst_E05BF956" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-145"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

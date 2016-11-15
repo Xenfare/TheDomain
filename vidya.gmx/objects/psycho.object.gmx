@@ -130,7 +130,7 @@ image_index = (choose(0,2,4,6))
             <string>if instance_exists(player) {
 
 ///aggro
-if aggro = false &amp;&amp; point_distance(x,y,player.x,player.y) &lt;= sprite_width
+if aggro = false &amp;&amp; point_distance(x,y,player.x,player.y) &lt;= 48
 {
 image_index += 1;
 vibrate += 1;

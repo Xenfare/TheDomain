@@ -310,7 +310,6 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\init_rom</room>
-    <room>rooms\LEVEL_NINE</room>
     <room>rooms\LEVEL_ONE</room>
     <room>rooms\LEVEL_TWO</room>
     <room>rooms\BOSS_ONE</room>
@@ -320,6 +319,7 @@
     <room>rooms\LEVEL_SEVEN</room>
     <room>rooms\BOSS_TWO</room>
     <room>rooms\LEVEL_EIGHT</room>
+    <room>rooms\LEVEL_NINE</room>
     <room>rooms\BOSS_THREE</room>
     <room>rooms\SPAWN_ROOM</room>
     <room>rooms\LIGHTING_TEST</room>
