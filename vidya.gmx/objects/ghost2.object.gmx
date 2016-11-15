@@ -69,7 +69,6 @@ player.pothp += 2
 }
 
 repeat(12) instance_create(x + random_range(-32, 32), y + random_range(-32, 32), ghostparticle)
-show_debug_message("I'm dead XP")
 </string>
           </argument>
         </arguments>
@@ -150,7 +149,39 @@ if x &lt; 0 {instance_destroy()}
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="ghost2">
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
     <event eventtype="4" ename="ghost">
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="4" ename="ghostshot">
       <action>
         <libid>1</libid>
         <id>203</id>

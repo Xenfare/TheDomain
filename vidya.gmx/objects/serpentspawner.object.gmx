@@ -75,6 +75,8 @@ alarm[0] = 60
           <argument>
             <kind>1</kind>
             <string>if distance_to_object(player) &lt; 300 &amp;&amp; aggro = false {aggro = true; alarm[0] = 40}
+if x != xprevious {x = xprevious}
+if y != yprevious {y = yprevious}
 </string>
           </argument>
         </arguments>

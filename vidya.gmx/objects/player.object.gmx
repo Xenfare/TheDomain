@@ -70,12 +70,14 @@ sprinting = false
 mouse_xprevious = mouse_x
 mouse_yprevious = mouse_y
 controller_active = false
+
 /*if debug_mode
 {
 view_hview *= 4
 view_wview *= 4
 }
 */
+
 
 //LIGHTING
 view_range = 800
@@ -275,7 +277,7 @@ if keyboard_check(ord('P')) &amp;&amp; keyboard_check(ord('L')) &amp;&amp; keybo
 
 //death code
 
-//if hp &lt;= 0 {instance_deactivate_object(enemyparent) ;instance_destroy();/* ini_open('savedata.ini'); ini_read_real(data, deaths, +1); ini_close();*/ instance_create(x, y, YOUDIED); with sword2 instance_destroy(); with shield instance_destroy();}
+if hp &lt;= 0 {instance_deactivate_object(enemyparent) ;instance_destroy();/* ini_open('savedata.ini'); ini_read_real(data, deaths, +1); ini_close();*/ instance_create(x, y, YOUDIED); with sword2 instance_destroy(); with shield instance_destroy();}
 
 //hp code
 
