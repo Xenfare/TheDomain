@@ -311,6 +311,7 @@
     <object>objects\YOUDIED</object>
     <object>objects\enemyparent</object>
     <object>objects\trapwall</object>
+    <object>objects\enemy_chunk</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\TLchase</timeline>
