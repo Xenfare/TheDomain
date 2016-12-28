@@ -125,6 +125,8 @@
       <sprite>sprites\spr_bridge</sprite>
       <sprite>sprites\spr_bridge2</sprite>
       <sprite>sprites\spr_hole</sprite>
+      <sprite>sprites\spr_killarm</sprite>
+      <sprite>sprites\spr_killarmbox</sprite>
     </sprites>
     <sprite>sprites\spr_hook</sprite>
     <sprite>sprites\spr_heal</sprite>
@@ -158,20 +160,22 @@
   <objects name="objects">
     <object>objects\player</object>
     <object>objects\spawnpoint</object>
-    <object>objects\sword</object>
     <object>objects\sword2</object>
-    <object>objects\spear</object>
-    <object>objects\leftysword</object>
-    <object>objects\mace</object>
     <object>objects\shield</object>
     <object>objects\inventory</object>
-    <object>objects\leftyshield</object>
     <object>objects\wall</object>
     <object>objects\invis</object>
     <object>objects\chest</object>
     <object>objects\water</object>
     <object>objects\tempwall</object>
     <object>objects\bars</object>
+    <objects name="OOC">
+      <object>objects\leftysword</object>
+      <object>objects\spear</object>
+      <object>objects\leftyshield</object>
+      <object>objects\mace</object>
+      <object>objects\sword</object>
+    </objects>
     <objects name="projectiles">
       <object>objects\seed</object>
       <object>objects\seed2</object>
@@ -294,6 +298,8 @@
       <object>objects\ghost2spawner</object>
       <object>objects\bridge</object>
       <object>objects\bridge2</object>
+      <object>objects\spiketrap</object>
+      <object>objects\spikes</object>
     </objects>
     <object>objects\lighting</object>
     <object>objects\nextroom</object>
@@ -304,6 +310,7 @@
     <object>objects\corpse</object>
     <object>objects\YOUDIED</object>
     <object>objects\enemyparent</object>
+    <object>objects\trapwall</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\TLchase</timeline>

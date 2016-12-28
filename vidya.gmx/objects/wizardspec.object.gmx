@@ -191,30 +191,6 @@ if alarm[2] = 119 {repeat(3) instance_create(random_range (x-350,x+350), random_
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="wall">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>x = player.x+(random_range(-300, 300))
-y = player.y+(random_range(-300, 300))
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="sword">
       <action>
         <libid>1</libid>
@@ -253,6 +229,30 @@ y = player.y+(random_range(-300, 300))
           <argument>
             <kind>0</kind>
             <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="wall">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>x = player.x+(random_range(-300, 300))
+y = player.y+(random_range(-300, 300))
+</string>
           </argument>
         </arguments>
       </action>

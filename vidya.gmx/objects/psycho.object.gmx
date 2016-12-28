@@ -58,7 +58,7 @@ image_index = (choose(0,2,4,6))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.pothp += 5
+            <string>player.pothp += 1
 </string>
           </argument>
         </arguments>

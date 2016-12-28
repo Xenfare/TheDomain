@@ -3,8 +3,8 @@
   <caption></caption>
   <width>3264</width>
   <height>2368</height>
-  <vsnap>8</vsnap>
-  <hsnap>8</hsnap>
+  <vsnap>64</vsnap>
+  <hsnap>64</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -57,7 +57,7 @@
     <instance objName="wall" x="1600" y="2240" name="inst_04DAC232" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1344" y="2176" name="inst_6812C79A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1344" y="2240" name="inst_4B56F510" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="player" x="1504" y="2304" name="inst_C8FCFD8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="player" x="1152" y="512" name="inst_C8FCFD8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1344" y="2112" name="inst_09CDE1A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1280" y="2112" name="inst_58596A4F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1216" y="2112" name="inst_5C77F630" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -389,7 +389,7 @@
     <instance objName="wall" x="1856" y="448" name="inst_C2F1C136" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1856" y="512" name="inst_C59F17DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="2624" y="448" name="inst_B69C9214" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="darkoverlay" x="1472" y="1792" name="inst_FD5641A6" locked="0" code="image_speed = 0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="darkoverlay" x="1472" y="1696" name="inst_FD5641A6" locked="0" code="image_speed = 0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1728" y="256" name="inst_F3C83615" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1728" y="320" name="inst_CCA61562" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1728" y="384" name="inst_786ABDA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -437,6 +437,23 @@
     <instance objName="psycho" x="1032" y="1184" name="inst_F3EC2D99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-181"/>
     <instance objName="psycho" x="744" y="1648" name="inst_74CC8B4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-250"/>
     <instance objName="chest" x="2560" y="2056" name="inst_F18E3E1D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-180"/>
+    <instance objName="trapwall" x="2432" y="1440" name="inst_0BC86E6C" locked="0" code="" scaleX="1" scaleY="12" colour="4294967295" rotation="0"/>
+    <instance objName="spiketrap" x="3136" y="1760" name="inst_E87ECC93" locked="0" code="direction = 180&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="spiketrap" x="3136" y="1632" name="inst_74F6291C" locked="0" code="direction = 180&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="spiketrap" x="3136" y="1696" name="inst_3E7351BC" locked="0" code="direction = 180&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="spiketrap" x="3136" y="1568" name="inst_50D01DE9" locked="0" code="direction = 180&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="spiketrap" x="3136" y="1824" name="inst_A76BE040" locked="0" code="direction = 180&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="spiketrap" x="3136" y="1888" name="inst_F71CD3B2" locked="0" code="direction = 180&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="spiketrap" x="3136" y="2016" name="inst_12D6D5DB" locked="0" code="direction = 180&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="spiketrap" x="3136" y="1952" name="inst_090CA42B" locked="0" code="direction = 180&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="spiketrap" x="3136" y="2080" name="inst_00AE9C94" locked="0" code="direction = 180&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="trapwall" x="608" y="832" name="inst_DF4F01CC" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="spiketrap" x="736" y="-64" name="inst_734C4D1D" locked="0" code="direction = 270&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="spiketrap" x="800" y="-64" name="inst_C174F6AF" locked="0" code="direction = 270&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="spiketrap" x="864" y="-64" name="inst_8853FD42" locked="0" code="direction = 270&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="spiketrap" x="928" y="-64" name="inst_17E1016F" locked="0" code="direction = 270&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="spiketrap" x="1056" y="-64" name="inst_1A7ABEF2" locked="0" code="direction = 270&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="spiketrap" x="992" y="-64" name="inst_D5FB1090" locked="0" code="direction = 270&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
