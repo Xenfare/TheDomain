@@ -361,6 +361,7 @@ view_wview = window_get_width()
 view_hview = window_get_height()
 view_wport = view_wview
 view_hport = view_hview
+surface_resize(application_surface, view_wport, view_hport); 
 }
 </string>
           </argument>
