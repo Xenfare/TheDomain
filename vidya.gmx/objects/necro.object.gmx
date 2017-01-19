@@ -471,10 +471,10 @@ for(var i = 0; i &lt; shotnum; i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text_color(5, 690, "Druid Necromancer", c_white, c_white, c_white, c_white, 1)
-draw_healthbar(5, 728, 900, 758, prevhp / maxhp * 100, c_black, c_yellow, c_yellow, 0, true, true)
-draw_healthbar(5, 728, 900, 758, hp / maxhp * 100, c_black, c_red, c_red, 0, false, true)
-draw_sprite(spr_bossbar, 0, 4, 727)
+            <string>draw_text_color(5, view_hport - 78, "Druid Necromancer", c_white, c_white, c_white, c_white, 1)
+draw_healthbar(5, view_hport - 40, 1024 - 124, view_hport - 10, prevhp / maxhp * 100, c_black, c_yellow, c_yellow, 0, true, true)
+draw_healthbar(5, view_hport - 40, 1024 - 124, view_hport - 10, hp / maxhp * 100, c_black, c_red, c_red, 0, false, true)
+draw_sprite(spr_bossbar, 0, 4, view_hport - 41)
 </string>
           </argument>
         </arguments>

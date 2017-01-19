@@ -231,7 +231,7 @@ if !instance_exists(inventory)
 view_xview = x - view_wview/2
 view_yview = y - view_hview/2
 
-//camera
+/*camera
 var b =  BUFFER_CELLS * CELL_SIZE
 if view_xview &lt; b
 { 
@@ -2103,38 +2103,6 @@ draw_sprite(spr_bar, 0, view_wport - 61, 9)
 </string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="89">
-      <action>
-        <libid>1</libid>
-        <id>221</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_previous_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-    </event>
-    <event eventtype="10" enumb="84">
-      <action>
-        <libid>1</libid>
-        <id>222</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_next_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>
