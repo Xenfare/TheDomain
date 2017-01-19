@@ -2069,10 +2069,10 @@ surface_free(global.darkness)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_healthbar(view_wport - 30, 10, view_wport - 10, view_hport - 10, prevhp / maxhp * 100, c_black, c_yellow, c_yellow, 3, true, true)
-draw_healthbar(view_wport - 30, 10, view_wport - 10, view_hport - 10, hp / maxhp * 100, c_black, c_red, c_red, 3, false, true)
-if exhausted = false {draw_healthbar(view_wport - 60, 10, view_wport - 40, view_hport - 10, stamina / maxstamina * 100, c_black, c_green, c_green, 3, true, true)}
-else {draw_healthbar(view_wport - 60, 10, view_wport - 40, view_hport - 10, stamina / maxstamina * 100, c_black, c_yellow, c_yellow, 3, true, true)}
+            <string>draw_healthbar(view_wport - 30, 10, view_wport - 10, 768 - 10, prevhp / maxhp * 100, c_black, c_yellow, c_yellow, 3, true, true)
+draw_healthbar(view_wport - 30, 10, view_wport - 10, 768 - 10, hp / maxhp * 100, c_black, c_red, c_red, 3, false, true)
+if exhausted = false {draw_healthbar(view_wport - 60, 10, view_wport - 40, 768 - 10, stamina / maxstamina * 100, c_black, c_green, c_green, 3, true, true)}
+else {draw_healthbar(view_wport - 60, 10, view_wport - 40, 768 - 10, stamina / maxstamina * 100, c_black, c_yellow, c_yellow, 3, true, true)}
 draw_sprite(spr_bar, 0, view_wport - 31, 9)
 draw_sprite(spr_bar, 0, view_wport - 61, 9)
 </string>
