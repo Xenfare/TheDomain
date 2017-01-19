@@ -8,6 +8,59 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if instance_exists(player)
+{
+    var p = instance_place(x, y, player);
+    if p != noone
+    {
+    var dir = point_direction(x, y, p.x, p.y);
+    if !place_meeting(x + lengthdir_x(sprite_width * .5 + p.sprite_width * .5,dir), y + lengthdir_y(sprite_width * .5 + p.sprite_width * .5,dir), wall) 
+    {
+        x = x + lengthdir_x(sprite_width + p.sprite_width,dir)
+        y = y + lengthdir_y(sprite_width + p.sprite_width,dir)
+    }
+    else
+    {
+        dir = floor(dir)
+        var dir2 = dir
+        do
+        {
+            dir2 += 30
+            dir2 = dir2 mod 360
+        }
+        until(!place_meeting(x + lengthdir_x(sprite_width * .5 + p.sprite_width * .5,dir2), y + lengthdir_y(sprite_width * .5 + p.sprite_width * .5,dir2), wall) and dir2 != dir)
+        if dir != dir2
+        {
+            x = x + lengthdir_x(sprite_width + p.sprite_width,dir)
+            y = y + lengthdir_y(sprite_width + p.sprite_width,dir)       
+        }
+        else
+            instance_destroy()
+    }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="1" enumb="0">
       <action>
         <libid>1</libid>

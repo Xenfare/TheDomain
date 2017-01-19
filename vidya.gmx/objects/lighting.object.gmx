@@ -120,8 +120,12 @@ surface_reset_target()
           <argument>
             <kind>1</kind>
             <string>if !surface_exists(global.darkness)
+{
     global.darkness = surface_create(view_wview,view_hview)
-draw_surface(global.darkness,view_xview,view_yview)
+    with(player)
+        draw_lighting()
+}
+draw_surface(global.darkness,floor(view_xview),floor(view_yview))
 </string>
           </argument>
         </arguments>

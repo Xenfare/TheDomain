@@ -78,7 +78,6 @@ view_wview *= 4
 }
 */
 
-
 //LIGHTING
 view_range = 800
 lights = surface_create(view_range * 2,view_range * 2)
@@ -353,6 +352,16 @@ if gp_h != 0 or gp_v != 0
     controller_active = true
 }
 if inv = 1 {image_index = 1} else image_index = 0
+
+// fullscreen
+if view_wview != window_get_width() or view_hview != window_get_height()
+{
+surface_free(global.darkness)
+view_wview = window_get_width()
+view_hview = window_get_height()
+view_wport = view_wview
+view_hport = view_hview
+}
 </string>
           </argument>
         </arguments>
@@ -1972,6 +1981,34 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>view_wview = window_get_width()
+view_hview = window_get_height()
+view_wport = view_wview
+view_hport = view_hview
+surface_free(global.darkness)
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="72">
       <action>
         <libid>1</libid>
@@ -2037,6 +2074,31 @@ if exhausted = false {draw_healthbar(964, 10, 984, 758, stamina / maxstamina * 1
 else {draw_healthbar(964, 10, 984, 758, stamina / maxstamina * 100, c_black, c_yellow, c_yellow, 3, true, true)}
 draw_sprite(spr_bar, 0, 993, 9)
 draw_sprite(spr_bar, 0, 963, 9)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="112">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>window_set_fullscreen(!window_get_fullscreen())
+
+
 </string>
           </argument>
         </arguments>
