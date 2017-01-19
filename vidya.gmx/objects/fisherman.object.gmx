@@ -61,6 +61,7 @@ enemypole.owner = id
             <kind>1</kind>
             <string>with (enemyhook) {instance_destroy();}
 with (enemypole) {instance_destroy();}
+event_inherited()
 player.pothp += 7
 </string>
           </argument>

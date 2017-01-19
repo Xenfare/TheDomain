@@ -39,15 +39,21 @@
     <sound>sound\spellcharge2</sound>
   </sounds>
   <sprites name="sprites">
+    <sprite>sprites\spr_debris</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_loot</sprite>
     <sprite>sprites\spr_invis</sprite>
     <sprite>sprites\spr_bars</sprite>
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_rustsword</sprite>
+    <sprite>sprites\spr_staff</sprite>
     <sprite>sprites\spr_sword</sprite>
     <sprite>sprites\spr_newsword</sprite>
     <sprite>sprites\spr_swordmask</sprite>
+    <sprite>sprites\spr_newmace</sprite>
+    <sprite>sprites\spr_macemask</sprite>
+    <sprite>sprites\spr_newspear</sprite>
+    <sprite>sprites\spr_spearmask</sprite>
     <sprite>sprites\spr_spear</sprite>
     <sprite>sprites\spr_pole</sprite>
     <sprite>sprites\spr_leftysword</sprite>
@@ -115,6 +121,7 @@
       <sprite>sprites\spr_fisherman</sprite>
       <sprite>sprites\spr_serpent</sprite>
       <sprite>sprites\spr_serpentminion</sprite>
+      <sprite>sprites\spr_nightmare</sprite>
     </sprites>
     <sprites name="onetimes">
       <sprite>sprites\spr_jacket</sprite>
@@ -156,11 +163,14 @@
     <script>scripts\draw_lighting.gml</script>
     <script>scripts\draw_box_shadows.gml</script>
     <script>scripts\inventoryscript.gml</script>
+    <script>scripts\debrisscript.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\player</object>
     <object>objects\spawnpoint</object>
     <object>objects\sword2</object>
+    <object>objects\spear2</object>
+    <object>objects\mace2</object>
     <object>objects\shield</object>
     <object>objects\inventory</object>
     <object>objects\wall</object>
@@ -198,6 +208,7 @@
       <object>objects\shuriken</object>
       <object>objects\wizardhoming</object>
       <object>objects\wizardshot</object>
+      <object>objects\wizardtp</object>
       <object>objects\necroshot</object>
       <object>objects\necroshot2</object>
       <object>objects\necroshot3</object>
@@ -208,6 +219,10 @@
         <object>objects\eleftysword</object>
         <object>objects\eleftyshield</object>
         <object>objects\leftyheal</object>
+      </objects>
+      <objects name="necro">
+        <object>objects\necro</object>
+        <object>objects\necrostaff</object>
       </objects>
       <objects name="riverserpent">
         <object>objects\serpentminion</object>
@@ -256,12 +271,12 @@
       <object>objects\skeleton2</object>
       <object>objects\ghost</object>
       <object>objects\ghost2</object>
+      <object>objects\ghost3</object>
       <object>objects\hedgebeast</object>
       <object>objects\magician</object>
       <object>objects\doll</object>
       <object>objects\archer</object>
       <object>objects\bonemaster</object>
-      <object>objects\necro</object>
       <object>objects\wizard</object>
       <object>objects\wizardspec</object>
     </objects>
@@ -296,6 +311,7 @@
       <object>objects\serpentspawner</object>
       <object>objects\ghostspawner</object>
       <object>objects\ghost2spawner</object>
+      <object>objects\ghost3spawner</object>
       <object>objects\bridge</object>
       <object>objects\bridge2</object>
       <object>objects\spiketrap</object>
@@ -308,6 +324,7 @@
     <object>objects\darkoverlay</object>
     <object>objects\roomchanger</object>
     <object>objects\corpse</object>
+    <object>objects\debris</object>
     <object>objects\YOUDIED</object>
     <object>objects\enemyparent</object>
     <object>objects\trapwall</object>
@@ -328,8 +345,10 @@
     <room>rooms\BOSS_TWO</room>
     <room>rooms\LEVEL_EIGHT</room>
     <room>rooms\LEVEL_NINE</room>
+    <room>rooms\LEVEL_TEN</room>
     <room>rooms\BOSS_THREE</room>
     <room>rooms\SPAWN_ROOM</room>
+    <room>rooms\BOSS_SCRAP</room>
     <room>rooms\LIGHTING_TEST</room>
   </rooms>
   <constants number="5">

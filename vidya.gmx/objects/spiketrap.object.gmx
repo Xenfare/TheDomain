@@ -3,7 +3,7 @@
   <spriteName>spr_killarm</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>-5</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -27,10 +27,34 @@
             <kind>1</kind>
             <string>originx = x
 originy = y
-phase = 1
-alarm[0] = 90
+phase = 10
+alarm[2] = 20
 killbox = instance_create(x, y, spikes)
 killbox.owner = id
+trigger = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>phase = 2
 </string>
           </argument>
         </arguments>
@@ -115,7 +139,10 @@ if phase = 3
 if phase = 4
 {speed = -2}
 
-if x = originx &amp;&amp; y = originy {phase = 1; alarm[0] = 90}
+if phase = 10
+{speed = 0}
+
+if x = originx &amp;&amp; y = originy &amp;&amp; trigger = true {phase = 1; alarm[0] = 90}
 </string>
           </argument>
         </arguments>
@@ -139,6 +166,11 @@ if x = originx &amp;&amp; y = originy {phase = 1; alarm[0] = 90}
           <argument>
             <kind>1</kind>
             <string>if phase = 2 {phase = 3; alarm[1] = 25}
+trigger = true
+//xdist = originx - x
+//ydist = originy - y
+//if xdist &lt; 0 {xdist = xdist * -1}
+//if ydist &lt; 0 {ydist = ydist * -1}
 </string>
           </argument>
         </arguments>

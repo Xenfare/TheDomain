@@ -3,7 +3,7 @@
   <spriteName>spr_magician</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>enemyparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -53,7 +53,8 @@ aggro_range = 600
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.pothp += 5
+            <string>event_inherited()
+player.pothp += 5
 </string>
           </argument>
         </arguments>

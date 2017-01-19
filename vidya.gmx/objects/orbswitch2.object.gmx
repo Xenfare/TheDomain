@@ -8,6 +8,30 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_index = 1
+image_speed = 0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="sword">
       <action>
         <libid>1</libid>
@@ -25,8 +49,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ds_list_find_index(sword2.hitlist, id) = -1 &amp;&amp; other.damaging = true
-{
+            <string>if ds_list_find_index(player.weapon.hitlist, id) = -1 &amp;&amp; other.damaging = true
+{   
+    if image_index = 4 {image_index +=2} else image_index += 1
     var radius = CELL_SIZE * 10.5
     var l = x - radius
     var r = x + radius
@@ -68,7 +93,7 @@
         }
     }
     with(wall) global.wall_grid[# x/CELL_SIZE,y/CELL_SIZE] = 1
-     ds_list_add(sword2.hitlist, id); audio_play_sound(clang, 10, false); other.alarm[0] = 1; other.alarm[2] = 1
+     ds_list_add(player.weapon.hitlist, id); audio_play_sound(clang, 10, false); other.alarm[0] = 1; other.alarm[2] = 1
 }
 
 </string>

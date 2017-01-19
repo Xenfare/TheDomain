@@ -57,7 +57,8 @@ enemysword.owner = id
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.pothp += 15
+            <string>event_inherited()
+player.pothp += 15
 </string>
           </argument>
         </arguments>

@@ -61,7 +61,11 @@ enemyshield.owner = id
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.pothp += 100
+            <string>with spawnwall1 instance_destroy()
+with spawnwall2 instance_destroy()
+with spawnwall3 instance_destroy()
+event_inherited()
+player.pothp += 100
 </string>
           </argument>
         </arguments>
@@ -282,7 +286,13 @@ alarm[2] = 75
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if distance_to_object(player) &lt; 250 {aggro = true}
+            <string>if distance_to_object(player) &lt; 250 &amp;&amp; aggro = false 
+{
+aggro = true;
+spawnwall1 = instance_create(1088, 192, wall);
+spawnwall2 = instance_create(1088, 256, wall);
+spawnwall3 = instance_create(1088, 320, wall)
+}
 
 if aggro = true
 {
@@ -297,6 +307,7 @@ if enemyshield.leftyshielddir != 0 and phase != 1 {enemyshield.leftyshielddir = 
 // PHASE 1
 if phase = 1
 {
+speed = 0
 enemysword.image_index = 1
 if distance_to_object(player)
         {
@@ -362,8 +373,9 @@ if alarm[6] = 100 {enemyheal = instance_create(x, y, leftyheal); enemyheal.owner
 //PHASE 9
 if phase = 9
 {
-direction = point_direction(x, y, player.x, player.y)
-image_angle = direction
+speed = 1
+direction = point_direction(player.x, player.y, x, y)
+image_angle = point_direction(x, y, player.x, player.y)
 if alarm[9] = 90
     {
     alarm[1] = -1

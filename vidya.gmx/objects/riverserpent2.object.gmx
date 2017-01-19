@@ -3,7 +3,7 @@
   <spriteName>spr_serpent</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>2</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>enemyparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -65,7 +65,8 @@ walls = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.pothp += 100
+            <string>event_inherited()
+player.pothp += 100
 </string>
           </argument>
         </arguments>

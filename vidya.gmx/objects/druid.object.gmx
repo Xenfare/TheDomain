@@ -63,6 +63,7 @@ aggro_range = 600
           <argument>
             <kind>1</kind>
             <string>player.pothp += 10
+event_inherited()
 </string>
           </argument>
         </arguments>

@@ -52,7 +52,8 @@ hp = 380
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.pothp += 30
+            <string>event_inherited()
+player.pothp += 30
 </string>
           </argument>
         </arguments>

@@ -33,7 +33,7 @@
     surface_reset_target()
     image_angle = other.image_angle
     direction = image_angle - 90
-    speed = 1
+    speed = 4
 }
 with(instance_create(x+lengthdir_x(sprite_width * .25,image_angle+90),y+lengthdir_y(sprite_width * .25,image_angle+90),enemy_chunk))
 {
@@ -43,7 +43,7 @@ with(instance_create(x+lengthdir_x(sprite_width * .25,image_angle+90),y+lengthdi
     surface_reset_target()
     image_angle = other.image_angle
     direction = image_angle + 90
-    speed = 1
+    speed = 4
 }
 
 </string>

@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>phase = 1
+            <string>enemysword = instance_create(x, y, necrostaff)
+enemysword.owner = id
+phase = 1
 alarm[1] = 160
 inv = false
 maxhp = 1550
@@ -84,7 +86,9 @@ dist = 200
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.pothp += 100
+            <string>event_inherited()
+with enemysword instance_destroy()
+player.pothp += 100
 </string>
           </argument>
         </arguments>
@@ -109,6 +113,7 @@ dist = 200
             <kind>1</kind>
             <string>phase = 1
 alarm[1] = 160
+image_index = 1
 </string>
           </argument>
         </arguments>
@@ -241,6 +246,8 @@ if x &gt; room_width {x -= 100}
 if y &lt; 0{y += 100}
 if y &gt; room_height {y -= 100}
 
+if hp &lt; 550 &amp;&amp; image_index = 0 {image_index = 1}
+
 if prevhp &gt; hp &amp;&amp; inv = false {prevhp -= maxhp / 300}
 if prevhp &lt; hp {prevhp = hp}
 
@@ -290,6 +297,7 @@ if alarm[3] mod 10 = 0 &amp;&amp; alarm[3] &lt; 111 &amp;&amp; alarm[3] &gt; 59 
 
 // PHASE 4
 if phase = 4 {
+image_index = 2
 if alarm[4] = 79 {audio_play_sound(spellcharge2, 10, false)}
 instance_create(x + random_range(-80, 80), y + random_range(-80, 80), necroparticle3)
 if alarm[4] = 60{

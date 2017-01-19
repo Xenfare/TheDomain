@@ -55,7 +55,7 @@
             <kind>1</kind>
             <string>randomize()
 var dir;
-weapon = sword
+weapon = sword2
 exhausted = false
 inv = false
 pothp = 0
@@ -391,7 +391,8 @@ if inv = 1 {image_index = 1} else image_index = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if other.owner.phase &lt;= 2 {x += other.x - other.xprevious; y += other.y - other.yprevious; show_debug_message("ay")}
+            <string>if other.owner.phase &lt;= 2 {x += (other.owner.x - other.owner.xprevious); y += (other.owner.y - other.owner.yprevious); hp -= 5; repeat(8) instance_create(x, y, blood);}
+if other.owner.phase &lt;= 2 &amp;&amp; place_meeting(x, y, trapwall) {hp -= 100; repeat(25) instance_create(x, y, blood);}
 </string>
           </argument>
         </arguments>
@@ -522,6 +523,78 @@ if inv = 1 {image_index = 1} else image_index = 0
           <argument>
             <kind>1</kind>
             <string>{hp -= 15; repeat(8) instance_create(x, y, blood); inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; alarm[0] = 12}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="ghost3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hp -= 3
+repeat (2) instance_create(random_range(x-32, x+32), random_range(y-32, y+32), ghostparticle)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="ghost2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hp -= 1
+repeat (2) instance_create(random_range(x-32, x+32), random_range(y-32, y+32), ghostparticle)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="ghost">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hp -= 1
+repeat (2) instance_create(random_range(x-32, x+32), random_range(y-32, y+32), ghostparticle)
 </string>
           </argument>
         </arguments>
@@ -1601,7 +1674,7 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>{hp -= 16; repeat(8) instance_create(x, y, blood); inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; alarm[0] = 12}
+            <string>{hp -= 5; repeat(8) instance_create(x, y, blood); inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; alarm[0] = 12}
 </string>
           </argument>
         </arguments>
@@ -1847,8 +1920,7 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if (instance_exists(sword)) {weapon = leftysword; with sword instance_destroy(); instance_create(x, y, leftysword)}
-//if (instance_exists(shield)) {with shield instance_destroy(); instance_create(x, y, leftyshield)}
+            <string>if weapon != spear2 {with weapon instance_destroy(); weapon = spear2; instance_create(x, y, weapon)}
 </string>
           </argument>
         </arguments>
@@ -1871,7 +1943,7 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if weapon != sword2 {with sword instance_destroy(); instance_create(x, y, sword2)}
+            <string>if weapon != mace2 {with weapon instance_destroy(); weapon = mace2; instance_create(x, y, weapon)}
 </string>
           </argument>
         </arguments>
@@ -1894,7 +1966,7 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if weapon != sword {weapon = sword; with sword2 instance_destroy(); instance_create(x, y, sword)}
+            <string>if weapon != sword2 {with weapon instance_destroy(); weapon = sword2; instance_create(x, y, weapon)}
 </string>
           </argument>
         </arguments>
@@ -1968,6 +2040,22 @@ draw_sprite(spr_bar, 0, 963, 9)
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="89">
+      <action>
+        <libid>1</libid>
+        <id>221</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_previous_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="10" enumb="84">
