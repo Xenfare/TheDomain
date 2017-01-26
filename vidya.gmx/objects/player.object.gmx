@@ -55,7 +55,11 @@
             <kind>1</kind>
             <string>randomize()
 var dir;
+
+demo = false
+
 weapon = sword2
+guard = shield
 exhausted = false
 inv = false
 pothp = 0
@@ -66,6 +70,7 @@ maxstamina = 35
 maxhp = 100
 spd = 3
 sprinting = false
+healstat = 1
 
 mouse_xprevious = mouse_x
 mouse_yprevious = mouse_y
@@ -276,14 +281,14 @@ if keyboard_check(ord('P')) &amp;&amp; keyboard_check(ord('L')) &amp;&amp; keybo
 
 //death code
 
-if hp &lt;= 0 {instance_deactivate_object(enemyparent) ;instance_destroy();/* ini_open('savedata.ini'); ini_read_real(data, deaths, +1); ini_close();*/ instance_create(x, y, YOUDIED); with sword2 instance_destroy(); with shield instance_destroy();}
+if hp &lt;= 0 {instance_deactivate_object(enemyparent); instance_destroy();/* ini_open('savedata.ini'); ini_read_real(data, deaths, +1); ini_close();*/ instance_create(x, y, YOUDIED); with sword2 instance_destroy(); with shield instance_destroy();}
 
 //hp code
 
 if prevhp &gt; hp &amp;&amp; inv = false {prevhp -= 1}
 if prevhp &lt; hp {prevhp = hp}
 if hp &gt; maxhp {hp = maxhp}
-if pothp &gt; 0 {pothp -=1; hp +=1}
+if pothp &gt; 0 {pothp -=1; hp += healstat}
 
 //movement code
 
@@ -1889,6 +1894,52 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         </arguments>
       </action>
     </event>
+    <event eventtype="5" enumb="54">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if guard != magicshield {with guard instance_destroy(); guard = magicshield; instance_create(x, y, guard);}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="53">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if guard != thirstshield {with guard instance_destroy(); guard = thirstshield; instance_create(x, y, guard)}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="5" enumb="52">
       <action>
         <libid>1</libid>
@@ -1906,8 +1957,7 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if (weapon != spear) {weapon = spear; with sword instance_destroy(); instance_create(x, y, spear)}
-
+            <string>if guard != shield {with guard instance_destroy(); guard = shield; instance_create(x, y, guard)}
 </string>
           </argument>
         </arguments>
@@ -2100,6 +2150,75 @@ draw_sprite(spr_bar, 0, view_wport - 61, 9)
             <string>window_set_fullscreen(!window_get_fullscreen())
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="89">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if demo = false {room_goto_previous()}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="84">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if demo = false {room_goto_next()}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if demo = false {room_restart()}
 </string>
           </argument>
         </arguments>

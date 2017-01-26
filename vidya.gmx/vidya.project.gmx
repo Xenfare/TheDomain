@@ -59,6 +59,9 @@
     <sprite>sprites\spr_leftysword</sprite>
     <sprite>sprites\spr_mace</sprite>
     <sprite>sprites\spr_shield</sprite>
+    <sprite>sprites\spr_thirstshield</sprite>
+    <sprite>sprites\spr_magicshield</sprite>
+    <sprite>sprites\spr_forcefield</sprite>
     <sprite>sprites\spr_leftyshield</sprite>
     <sprite>sprites\spr_bigleftyshield</sprite>
     <sprite>sprites\spr_rustshield</sprite>
@@ -122,6 +125,7 @@
       <sprite>sprites\spr_serpent</sprite>
       <sprite>sprites\spr_serpentminion</sprite>
       <sprite>sprites\spr_nightmare</sprite>
+      <sprite>sprites\spr_nightmareeyes</sprite>
     </sprites>
     <sprites name="onetimes">
       <sprite>sprites\spr_jacket</sprite>
@@ -172,6 +176,9 @@
     <object>objects\spear2</object>
     <object>objects\mace2</object>
     <object>objects\shield</object>
+    <object>objects\magicshield</object>
+    <object>objects\forcefield</object>
+    <object>objects\thirstshield</object>
     <object>objects\inventory</object>
     <object>objects\wall</object>
     <object>objects\invis</object>
@@ -261,6 +268,10 @@
         <object>objects\druidgolemmask</object>
         <object>objects\druidgolemthorns</object>
       </objects>
+      <objects name="nightmare">
+        <object>objects\nightmare</object>
+        <object>objects\nightmareeyes</object>
+      </objects>
       <object>objects\overgrown</object>
       <object>objects\overgrown2</object>
       <object>objects\zombie</object>
@@ -335,6 +346,7 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\init_rom</room>
+    <room>rooms\BOSS_THREE</room>
     <room>rooms\LEVEL_ONE</room>
     <room>rooms\LEVEL_TWO</room>
     <room>rooms\BOSS_ONE</room>
@@ -346,7 +358,6 @@
     <room>rooms\LEVEL_EIGHT</room>
     <room>rooms\LEVEL_NINE</room>
     <room>rooms\LEVEL_TEN</room>
-    <room>rooms\BOSS_THREE</room>
     <room>rooms\SPAWN_ROOM</room>
     <room>rooms\BOSS_SCRAP</room>
     <room>rooms\LIGHTING_TEST</room>
