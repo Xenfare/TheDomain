@@ -340,6 +340,7 @@
     <object>objects\enemyparent</object>
     <object>objects\trapwall</object>
     <object>objects\enemy_chunk</object>
+    <object>objects\controller</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\TLchase</timeline>
