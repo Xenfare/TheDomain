@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-999999</depth>
+  <depth>-99999999</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -33,46 +33,6 @@ bg_surf = noone
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if keyboard_check_pressed(vk_escape)
-{
-if paused
-{
-    if surface_exists(bg_surf)
-        surface_free(bg_surf)
-    instance_activate_all()
-}
-else
-{
-    if surface_exists(bg_surf)
-        surface_resize(bg_surf,view_wport,view_hport) 
-    bg_surf = surface_create(view_wport,view_hport)
-    surface_copy(bg_surf,0,0,application_surface)
-    instance_deactivate_all(true)
-}
-paused = (!paused)
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="75">
       <action>
         <libid>1</libid>
@@ -90,9 +50,43 @@ paused = (!paused)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if surface_exists(bg_surf)
+            <string>if surface_exists(bg_surf)
+{
+draw_set_blend_mode_ext(bm_one,bm_zero)
+
+        
     draw_surface(bg_surf,0,0)
+    draw_set_blend_mode(bm_normal)
+}
+if keyboard_check_pressed(vk_escape)
+{
+    if paused
+    {
+        if surface_exists(bg_surf)
+            surface_free(bg_surf)
+        instance_activate_all()
+        application_surface_enable(true)
+    }
+    else
+    {
+        if surface_exists(bg_surf)
+            surface_resize(bg_surf,view_wport,view_hport) 
+        bg_surf = surface_create(surface_get_width(application_surface),surface_get_height(application_surface))
+        surface_set_target(bg_surf)
+        draw_clear(c_black)
+        draw_set_blend_mode_ext(bm_one,bm_zero)
+        draw_surface(application_surface,0,0)
+        draw_set_blend_mode(bm_normal)
+        //surface_copy(bg_surf,0,0,application_surface)        
+        with(player)
+            event_perform(ev_draw,ev_gui)
+        instance_deactivate_all(true)
+        application_surface_enable(false)
+        surface_reset_target()
+        
+    }
+    paused = (!paused)
+}
     
 </string>
           </argument>
