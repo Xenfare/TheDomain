@@ -28,6 +28,9 @@
             <string>paused = false
 bg_surf = noone
 
+cur_sword = 0
+cur_shield = 0
+
 </string>
           </argument>
         </arguments>
@@ -57,6 +60,39 @@ draw_set_blend_mode_ext(bm_one,bm_zero)
         
     draw_surface(bg_surf,0,0)
     draw_set_blend_mode(bm_normal)
+    
+    var cx = view_wport * .5
+var cy = view_hport * .5
+var ui_w = 300
+var ui_h = 150
+var xx = cx - ui_w * .5
+var yy = cy - ui_h * .5
+draw_roundrect(xx,yy,xx + ui_w,yy + ui_h,false)
+
+var ui_side = sprite_get_width(spr_inventoryitems)
+var padding = 20
+//sword
+draw_roundrect_color(xx + padding,yy + padding, xx + padding + ui_side-1,yy + padding + ui_side-1,c_white,c_white,false)
+
+//draw sword sprite indicator
+
+//draw_sprite(spr_inventoryitems,cur_sword,xx + padding,yy + padding)
+
+//draw buttons
+draw_set_color(c_gray)
+draw_primitive_begin(pr_trianglelist)
+// Left Sword
+draw_vertex(xx + padding - 3,yy + padding)
+draw_vertex(xx + padding - 3,yy + ui_side + padding)
+draw_vertex(xx + padding - 13,yy + ui_side * .5 + padding)
+
+// Right Sword
+draw_vertex(xx + ui_side + padding + 3,yy + padding)
+draw_vertex(xx + ui_side + padding + 3,yy + ui_side + padding)
+draw_vertex(xx + ui_side + padding + 16,yy + ui_side * .5 + padding)
+draw_primitive_end()
+draw_set_color(c_black)
+
 }
 if keyboard_check_pressed(vk_escape)
 {
@@ -87,6 +123,7 @@ if keyboard_check_pressed(vk_escape)
     }
     paused = (!paused)
 }
+
     
 </string>
           </argument>
