@@ -38,7 +38,7 @@ var dir;
 
 demo = false
 
-dead = false
+alive = true
 weapon = sword2
 guard = shield
 exhausted = false
@@ -164,7 +164,10 @@ if keyboard_check(ord('P')) &amp;&amp; keyboard_check(ord('L')) &amp;&amp; keybo
 
 //death code
 
-if hp &lt;= 0 &amp;&amp; dead = false {image_alpha = 0; weapon.image_alpha = 0; guard.image_alpha = 0; /* ini_open('savedata.ini'); ini_read_real(data, deaths, +1); ini_close();*/ instance_create(x, y, YOUDIED); dead = true}
+if hp &lt;= 0 &amp;&amp; dead = false {/* ini_open('savedata.ini'); ini_read_real(data, deaths, +1); ini_close();*/ instance_create(x, y, YOUDIED); dead = true}
+image_alpha = alive
+weapon.image_alpha = alive
+guard.image_alpha = alive
 
 //hp code
 
@@ -174,7 +177,7 @@ if hp &gt; maxhp {hp = maxhp}
 if pothp &gt; 0 {pothp -=1; hp += healstat}
 
 //movement code
-if dead = false
+if alive = true
 
 {
 
@@ -734,29 +737,6 @@ if (inv = 0) &amp;&amp; other.image_index = 0 &amp;&amp; other.hit = false &amp;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="druidshot">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if other.owner.phase = 2 {hp -= 2; repeat(8) instance_create(x, y, blood); inv = true; alarm[0] = 12}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="denizensnare">
       <action>
         <libid>1</libid>
@@ -1055,6 +1035,29 @@ if global.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 if (inv = 0) &amp;&amp; other.image_index = 0 &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0 
 {hp -= 20; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; alarm[0] = 12;}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="druidshot">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if other.owner.phase = 2 {hp -= 2; repeat(8) instance_create(x, y, blood); inv = true; alarm[0] = 12}
 </string>
           </argument>
         </arguments>
@@ -1965,7 +1968,8 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>view_wview = window_get_width()
+            <string>alive = true
+view_wview = window_get_width()
 view_hview = window_get_height()
 view_wport = view_wview
 view_hport = view_hview
@@ -2074,6 +2078,75 @@ draw_sprite(spr_bar, 0, view_wport - 61, 9)
             <string>window_set_fullscreen(!window_get_fullscreen())
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="89">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if demo = false {room_goto_previous()}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="84">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if demo = false {room_goto_next()}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if demo = false {room_restart()}
 </string>
           </argument>
         </arguments>
