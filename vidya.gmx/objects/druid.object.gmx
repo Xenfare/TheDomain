@@ -219,7 +219,7 @@ audio_play_sound(clang, 10, false);
 repeat (8) instance_create(enemyshot.x, enemyshot.y, druidparticle)
 
 other.alarm[0] = 1;
-other.alarm[2] = 1;
+other.alarm[1] = 1;
 
 }
 
