@@ -80,6 +80,8 @@
       <sprite>sprites\spr_fireshot2</sprite>
       <sprite>sprites\spr_fireshot3</sprite>
       <sprite>sprites\spr_bloodshot</sprite>
+      <sprite>sprites\spr_multishot</sprite>
+      <sprite>sprites\spr_evileye</sprite>
       <sprite>sprites\spr_necroshot</sprite>
       <sprite>sprites\spr_arrow</sprite>
       <sprite>sprites\spr_shuriken</sprite>
@@ -205,6 +207,7 @@
       <object>objects\fireshot5</object>
       <object>objects\bloodshot</object>
       <object>objects\bloodshot2</object>
+      <object>objects\bloodshot3</object>
       <object>objects\snareshot</object>
       <object>objects\hook</object>
       <object>objects\arrow</object>
@@ -219,6 +222,8 @@
       <object>objects\necroshot</object>
       <object>objects\necroshot2</object>
       <object>objects\necroshot3</object>
+      <object>objects\nightmareshot1</object>
+      <object>objects\evileye</object>
     </objects>
     <objects name="enemies">
       <objects name="lefty">
