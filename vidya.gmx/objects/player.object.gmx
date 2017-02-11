@@ -36,6 +36,7 @@ instance_create(x,y,sword2)
 randomize()
 var dir;
 
+room_set_persistent(room, true)
 demo = false
 
 alive = true
@@ -164,7 +165,7 @@ if keyboard_check(ord('P')) &amp;&amp; keyboard_check(ord('L')) &amp;&amp; keybo
 
 //death code
 
-if hp &lt;= 0 &amp;&amp; dead = false {/* ini_open('savedata.ini'); ini_read_real(data, deaths, +1); ini_close();*/ instance_create(x, y, YOUDIED); dead = true}
+if hp &lt;= 0 &amp;&amp; alive = true {/* ini_open('savedata.ini'); ini_read_real(data, deaths, +1); ini_close();*/ instance_create(x, y, YOUDIED); alive = false}
 image_alpha = alive
 weapon.image_alpha = alive
 guard.image_alpha = alive
@@ -228,9 +229,9 @@ if (dir != -1) {
 
 //stamina code
 
-if (x != xprevious or y != yprevious) and (keyboard_check(vk_shift) or gamepad_button_check(0,gp_shoulderl)) &amp;&amp; exhausted = false {spd = 5; stamina -= 0.2; sprinting = true} else {spd = 3; if stamina &lt; maxstamina {stamina+=0.8}; sprinting = false}
+if (x != xprevious or y != yprevious) and (keyboard_check(vk_shift) or gamepad_button_check(0,gp_shoulderl)) &amp;&amp; exhausted = false {spd = 5; stamina -= 0.2; sprinting = true} else {spd = 3; if stamina &lt; maxstamina {stamina+=0.5}; sprinting = false}
 if stamina &lt;= 0 {exhausted = true}
-if exhausted = true{stamina-= 0.7}
+if exhausted = true{stamina-= 0.4}
 if exhausted = true &amp;&amp; stamina &gt;= maxstamina {exhausted = false}
 if stamina &gt; maxstamina {stamina = maxstamina}
 if mouse_xprevious != device_mouse_x_to_gui(0) or mouse_yprevious != device_mouse_y_to_gui(0) or controller_active = false
@@ -266,6 +267,30 @@ view_wport = view_wview
 view_hport = view_hview
 surface_resize(application_surface, view_wport, view_hport); 
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="spikes2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if other.owner.phase &lt;= 2 {x += (other.owner.x - other.owner.xprevious); y += (other.owner.y - other.owner.yprevious); hp -= 5; repeat(8) instance_create(x, y, blood);}
+if other.owner.phase &lt;= 2 &amp;&amp; place_meeting(x, y, trapwall) {hp -= 100; repeat(25) instance_create(x, y, blood);}
 </string>
           </argument>
         </arguments>
@@ -1968,7 +1993,7 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alive = true
+            <string>if alive = false {alive = true; hp = maxhp; if instance_exists(spawnpoint) {x = spawnpoint.x - B; y = spawnpoint.y - B;}}
 view_wview = window_get_width()
 view_hview = window_get_height()
 view_wport = view_wview

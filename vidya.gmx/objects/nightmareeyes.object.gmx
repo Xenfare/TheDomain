@@ -48,9 +48,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = owner.x
-y = owner.y
-image_index = owner.image_index
+            <string>if instance_exists(owner)
+{
+x = owner.x;
+y = owner.y;
+image_index = owner.image_index;
+}
+else
+instance_destroy()
 </string>
           </argument>
         </arguments>

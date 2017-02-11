@@ -55,7 +55,7 @@ momentum = true
           <argument>
             <kind>1</kind>
             <string>event_inherited()
-player.hp += 6
+player.pothp += 6
 </string>
           </argument>
         </arguments>

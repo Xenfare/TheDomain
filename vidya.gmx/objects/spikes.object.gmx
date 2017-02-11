@@ -47,10 +47,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>direction = owner.direction
-image_angle = direction
-x = owner.x + (lengthdir_x(288, direction))
-y = owner.y + (lengthdir_y(288, direction))
+            <string>if instance_exists (owner)
+{
+direction = owner.direction;
+image_angle = direction;
+x = owner.x + (lengthdir_x(288, direction));
+y = owner.y + (lengthdir_y(288, direction));
+}
+else
+instance_destroy()
 </string>
           </argument>
         </arguments>

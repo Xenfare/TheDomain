@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = 768 + B
-y = 320 + B
-popdir = 1
+            <string>popdir = 1
 prevpopdir = 0
 popnum = 0
 phase = 1
+randomarm = 0
+arms = noone
+armside = choose(0,1)
 inv = false
 image_index = 0
 image_speed = 0
@@ -65,7 +66,10 @@ nmeyes.owner = id
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>phase = 1
+            <string>ds_list_destroy(arms)
+with killarmL instance_destroy()
+arms = noone
+phase = 1
 popnum = 0
 popdir = 1
 move = 100
@@ -73,6 +77,7 @@ moved = true
 x = 768 + B
 y = 320 + B
 alarm[1] = 100
+if armside = 0 {armside = 1} else armside = 0
 </string>
           </argument>
         </arguments>
@@ -170,15 +175,38 @@ else if popdir = 4 {x += 16; move -= 16}
 if phase = 1
 {
 if alarm[1] mod 60 = 0 &amp;&amp; !instance_exists(nightmareshot1) {with instance_create(x, y, nightmareshot1) direction = (nightmare.popdir * -90) + random_range(-20, 20)}
-if popnum &gt; 6 {phase = 2; alarm[2] = 100; alarm[1] = 0}
+if popnum &gt; 6 {phase = 2; alarm[2] = 300; alarm[1] = 0}
 }
 
 if phase = 2
 {
+
+if armside = 0
+{
+if !ds_exists(arms, ds_type_list) 
+{
+randomarm = irandom_range(0, 11);
+arms = ds_list_create();
+for (var i = 0; i &lt; 12; i++;){if i != randomarm ds_list_add(arms, instance_create(1472+B, 416 + (64*i) +B, killarmL));}
+}
+}
+
+if armside = 1
+{
+if !ds_exists(arms, ds_type_list) 
+{
+randomarm = irandom_range(0, 11);
+arms = ds_list_create();
+for (var i = 0; i &lt; 12; i++;){if i != randomarm ds_list_add(arms, instance_create(64+B, 416 + (64*i) +B, killarmR));}
+}
+
+}
 popdir = 0;
 x = 400;
 y = 400;
 }
+
+
 </string>
           </argument>
         </arguments>

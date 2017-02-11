@@ -28,7 +28,6 @@
             <string>globalvar shielddir;
 shielddir = 0
 healstat = 0
-charged = true
 image_speed = 0
 anim = 0
 </string>
@@ -59,29 +58,6 @@ anim = 0
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>charged = true
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -104,12 +80,11 @@ anim = 0
 {
 x = player.x
 y = player.y
-image_angle = player.image_angle - anim
+image_angle = player.image_angle - (anim * 2)
 
-if (mouse_check_button(mb_right) or gamepad_button_check(0,gp_shoulderlb)) &amp;&amp; sword.image_index = 1 &amp;&amp; charged = true {charged = false; ff = instance_create(x, y, forcefield); alarm[1] = 90}
-if (mouse_check_button_released(mb_right) or gamepad_button_check_released(0,gp_shoulderlb)) or sword.image_index != 1  {shielddir = 0}
+if (mouse_check_button(mb_right) or gamepad_button_check(0,gp_shoulderlb)) &amp;&amp; sword.image_index = 1 &amp;&amp; player.stamina &gt; 0 &amp;&amp; player.exhausted = false &amp;&amp; !instance_exists(forcefield) {ff = instance_create(x, y, forcefield);}
+if (mouse_check_button_released(mb_right) or gamepad_button_check_released(0,gp_shoulderlb)) or sword.image_index != 1  {shielddir = 0; with forcefield instance_destroy()}
 if instance_exists(forcefield) {anim += 1} else {anim = 0}
-if charged = true {image_index = 0} else {image_index = 1}
 if anim &gt; 10 {anim = 10}
 }
 

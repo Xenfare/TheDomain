@@ -139,6 +139,7 @@
       <sprite>sprites\spr_bridge2</sprite>
       <sprite>sprites\spr_hole</sprite>
       <sprite>sprites\spr_killarm</sprite>
+      <sprite>sprites\spr_killarm2</sprite>
       <sprite>sprites\spr_killarmbox</sprite>
     </sprites>
     <sprite>sprites\spr_hook</sprite>
@@ -331,7 +332,10 @@
       <object>objects\bridge</object>
       <object>objects\bridge2</object>
       <object>objects\spiketrap</object>
+      <object>objects\killarmL</object>
+      <object>objects\killarmR</object>
       <object>objects\spikes</object>
+      <object>objects\spikes2</object>
     </objects>
     <object>objects\lighting</object>
     <object>objects\nextroom</object>
@@ -341,10 +345,10 @@
     <object>objects\roomchanger</object>
     <object>objects\corpse</object>
     <object>objects\debris</object>
-    <object>objects\YOUDIED</object>
     <object>objects\enemyparent</object>
     <object>objects\trapwall</object>
     <object>objects\enemy_chunk</object>
+    <object>objects\YOUDIED</object>
     <object>objects\controller</object>
   </objects>
   <timelines name="timelines">
