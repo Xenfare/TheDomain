@@ -3,8 +3,8 @@
   <caption></caption>
   <width>3264</width>
   <height>2368</height>
-  <vsnap>32</vsnap>
-  <hsnap>32</hsnap>
+  <vsnap>64</vsnap>
+  <hsnap>64</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>-1</persistent>
@@ -547,7 +547,7 @@
     <instance objName="wall" x="2944" y="704" name="inst_BC82E28A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="overgrown" x="2816" y="368" name="inst_0E51CC4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="overgrown" x="2704" y="560" name="inst_47C7EF57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="wizard" x="1536" y="1600" name="inst_34F3CCD1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="wizard" x="1536" y="1600" name="inst_34F3CCD1" locked="0" code="with instance_create(1472, 2048, tempwall) owner = other&#xA;with instance_create(1536, 2048, tempwall) owner = other&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="projectilewall" x="1984" y="1536" name="inst_621129F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="projectilewall" x="1984" y="1600" name="inst_CEA9DAB8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="projectilewall" x="1472" y="2048" name="inst_0B3A7E90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

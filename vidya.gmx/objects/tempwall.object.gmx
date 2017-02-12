@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !instance_exists(wizardspec) {instance_destroy()}
+            <string>if !instance_exists(owner) {instance_destroy()}
 </string>
           </argument>
         </arguments>

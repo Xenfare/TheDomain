@@ -55,7 +55,7 @@ cur_shield = 0
             <kind>1</kind>
             <string>if instance_exists(spawnpoint)
 {
-if !instance_exists(player) {instance_create(spawnpoint.x, spawnpoint.y, player); show_debug_message("ayyy")}
+if !instance_exists(player) {instance_create(spawnpoint.x, spawnpoint.y, player)}
 }
 
 </string>
