@@ -100,6 +100,7 @@ base_distance = point_distance(sprite_get_xoffset(spr_staff2),sprite_get_yoffset
 with enemysword instance_destroy()
 player.pothp += 100
 controller.progress[3] = 1
+player.interference = false;
 </string>
           </argument>
         </arguments>
@@ -362,7 +363,7 @@ if hp &lt; 755 &amp;&amp; image_index = 0 {image_index = 1}
 if prevhp &gt; hp &amp;&amp; inv = false {prevhp -= maxhp / 300}
 if prevhp &lt; hp {prevhp = hp}
 
-if distance_to_object(player) &lt; 300 &amp;&amp; aggro = false {aggro = true; with instance_create(256+B, 704+B, tempwall) owner = other; with instance_create (256+B, 768+B, tempwall) owner = other; phase = 1; alarm[1] = 160}
+if distance_to_object(player) &lt; 300 &amp;&amp; aggro = false {aggro = true; player.interference = true; with instance_create(256+B, 704+B, tempwall) owner = other; with instance_create (256+B, 768+B, tempwall) owner = other; phase = 1; alarm[1] = 160}
 
 if instance_exists(enemysword)
 {
@@ -414,7 +415,7 @@ if alarm[3] mod 20 - 10 = 0 &amp;&amp; alarm[3] &lt; 111 &amp;&amp; alarm[3] &gt
 else
 {
 speed = 0
-if alarm[3] mod 10 = 0 &amp;&amp; alarm[3] &lt; 111 &amp;&amp; alarm[3] &gt; 59 {instance_create(xchain, ychain, necroshot2); audio_play_sound(spell, 10, false); repeat(6)instance_create(xchain, ychain, necroparticle2);}
+if alarm[3] mod 10 = 0 &amp;&amp; alarm[3] &lt; 111 &amp;&amp; alarm[3] &gt; 59 &amp;&amp; alarm[3] &gt; 15 {instance_create(xchain, ychain, necroshot2); audio_play_sound(spell, 10, false); repeat(6)instance_create(xchain, ychain, necroparticle2);}
 }
 }
 

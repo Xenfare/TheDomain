@@ -2015,7 +2015,7 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if alive = false {alive = true; ds_list_clear(defeated); hp = maxhp; stamina = maxstamina; mana = 0; alarm[7] = 2}
+            <string>if alive = false {alive = true; interference = false; ds_list_clear(defeated); hp = maxhp; stamina = maxstamina; mana = 0; alarm[7] = 2}
 view_wview = window_get_width()
 view_hview = window_get_height()
 view_wport = view_wview

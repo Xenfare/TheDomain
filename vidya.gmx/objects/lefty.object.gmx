@@ -71,6 +71,7 @@ if controller.progress[2] = 1 {instance_deactivate_object(self)}
             <string>event_inherited()
 player.pothp += 100
 controller.progress[2] = 1
+player.interference = false;
 </string>
           </argument>
         </arguments>
@@ -339,6 +340,7 @@ alarm[7] = 90
             <string>if distance_to_object(player) &lt; 250 &amp;&amp; aggro = false 
 {
 aggro = true;
+player.interference = true;
 with instance_create(1088 + B, 192 + B, tempwall) owner = other
 with instance_create(1088 + B, 256 + B, tempwall) owner = other
 with instance_create(1088 + B, 320 + B, tempwall) owner = other
