@@ -82,7 +82,7 @@
 {
     surf = surface_create(other.sprite_width,other.sprite_height * .5)
     surface_set_target(surf)
-    draw_sprite_ext(other.sprite_index,other.image_index,other.sprite_xoffset,other.sprite_yoffset-other.sprite_height*.5,1,1,0,c_gray,1)
+    draw_sprite_ext(other.sprite_index,other.image_index,other.sprite_xoffset,other.sprite_yoffset-other.sprite_height*.5,other.image_xscale,other.image_yscale,0,c_gray,1)
     surface_reset_target()
     image_angle = other.image_angle
     direction = image_angle - 90
@@ -92,7 +92,7 @@ with(instance_create(x+lengthdir_x(sprite_width * .25,image_angle+90),y+lengthdi
 {
     surf = surface_create(other.sprite_width,other.sprite_height * .5)
     surface_set_target(surf)
-    draw_sprite_ext(other.sprite_index,other.image_index,other.sprite_xoffset,other.sprite_yoffset,1,1,0,c_gray,1)
+    draw_sprite_ext(other.sprite_index,other.image_index,other.sprite_xoffset,other.sprite_yoffset,other.image_xscale,other.image_yscale,0,c_gray,1)
     surface_reset_target()
     image_angle = other.image_angle
     direction = image_angle + 90

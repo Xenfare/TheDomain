@@ -32,6 +32,7 @@ enemysword2.owner = id
 alarm[6] = 10
 inv = 0
 hp = 200
+aggro_range = 200
 chargex = player.x
 chargey = player.y
 swordorient = 1
@@ -62,7 +63,7 @@ spindir = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.pothp += 10
+            <string>player.pothp += 25
 event_inherited()
 </string>
           </argument>
@@ -254,7 +255,7 @@ chargey = player.y
 
 if aggro = false {direction = point_direction(x, y, player.x, player.y)}
 
-if distance_to_object(player) &lt; 200 &amp;&amp; aggro = false {aggro = true; alarm[1] = 120}
+if player_seen = true &amp;&amp; aggro = false {aggro = true; alarm[1] = 120}
 
 if aggro = true {
 
@@ -281,7 +282,7 @@ image_angle = direction
 swordorient = 1
 if angle1 != 45 angle1 -= 5
 if angle2 != -45 angle2 += 5
-if angle1 = 45 &amp;&amp; angle2 = -45 {mp_potential_step(chargex, chargey, 5, false); enemysword1.damaging = true; enemysword2.damaging = true; swordorient = 1; if distance_to_object(player) &lt; 15 {alarm[2] = 0; alarm[3] = 40;}}
+if angle1 = 45 &amp;&amp; angle2 = -45 {mp_potential_step(chargex, chargey, 5, false); enemysword1.damaging = true; enemysword2.damaging = true; swordorient = 1; if distance_to_object(player) &lt; 12 {alarm[2] = 0; alarm[3] = 40;}}
 
 if x = chargex &amp;&amp; y = chargey {alarm[2] = 0; alarm[3] = 40;}
 }

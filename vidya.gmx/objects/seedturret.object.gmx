@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>enemyparent</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alpha = 0
+            <string>if controller.progress[1] = 1 {instance_destroy()}
+alpha = 0
 aggro = false
 spawn = 24
 </string>
@@ -258,18 +259,28 @@ if spawn &gt; 0 alarm[0] = random_range(150, 250)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if player.x &lt; 1792 + B &amp;&amp; player.x &gt; 896 + B &amp;&amp; player.y &lt; 2176 + B &amp;&amp; player.y &gt; 1472 + B &amp;&amp; aggro = false 
+            <string>if instance_exists(player)
+{
+
+if distance_to_object(player) &lt; 320 &amp;&amp; aggro = false 
 {
 aggro = true;
+with instance_create(1792 + B, 1792 + B, tempwall) owner = other;
+with instance_create(1792 + B, 1856 + B, tempwall) owner = other;
+with instance_create(1792 + B, 1920 + B, tempwall) owner = other;
 alarm[0] = random_range(100, 200);
 alarm[1] = random_range(100, 200);
 alarm[2] = random_range(100, 200);
 alarm[3] = random_range(100, 200);
 }
+}
+
 if aggro = true &amp;&amp; alarm[0] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[0] = random_range(170 + B, 350 + B)}
 if aggro = true &amp;&amp; alarm[1] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[1] = random_range(170 + B, 350 + B)}
 if aggro = true &amp;&amp; alarm[2] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[2] = random_range(170 + B, 350 + B)}
 if aggro = true &amp;&amp; alarm[3] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[3] = random_range(170 + B, 350 + B)}
+
+if spawn &lt;= 0 &amp;&amp; !instance_exists(overgrown2) &amp;&amp; !instance_exists(seed) &amp;&amp; !instance_exists(summon) {controller.progress[1] = 1; instance_destroy()}
 </string>
           </argument>
         </arguments>

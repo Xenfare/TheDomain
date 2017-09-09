@@ -39,17 +39,26 @@
     <sound>sound\spellcharge2</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_debris</sprite>
+    <sprites name="oldsprites">
+      <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_overgrown</sprite>
+      <sprite>sprites\spr_skeleton</sprite>
+      <sprite>sprites\spr_necro</sprite>
+      <sprite>sprites\spr_magician</sprite>
+      <sprite>sprites\spr_rust</sprite>
+      <sprite>sprites\spr_swordmask</sprite>
+      <sprite>sprites\spr_newsword</sprite>
+      <sprite>sprites\spr_sword</sprite>
+      <sprite>sprites\spr_rustsword</sprite>
+      <sprite>sprites\spr_staff</sprite>
+      <sprite>sprites\spr_acid</sprite>
+      <sprite>sprites\spr_debris</sprite>
+    </sprites>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_helpmetosee</sprite>
     <sprite>sprites\spr_loot</sprite>
     <sprite>sprites\spr_invis</sprite>
-    <sprite>sprites\spr_bars</sprite>
-    <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_rustsword</sprite>
-    <sprite>sprites\spr_staff</sprite>
-    <sprite>sprites\spr_sword</sprite>
-    <sprite>sprites\spr_newsword</sprite>
-    <sprite>sprites\spr_swordmask</sprite>
+    <sprite>sprites\spr_tempwall</sprite>
     <sprite>sprites\spr_newmace</sprite>
     <sprite>sprites\spr_macemask</sprite>
     <sprite>sprites\spr_newspear</sprite>
@@ -62,16 +71,18 @@
     <sprite>sprites\spr_thirstshield</sprite>
     <sprite>sprites\spr_magicshield</sprite>
     <sprite>sprites\spr_forcefield</sprite>
+    <sprite>sprites\spr_necroshield</sprite>
     <sprite>sprites\spr_leftyshield</sprite>
     <sprite>sprites\spr_bigleftyshield</sprite>
     <sprite>sprites\spr_rustshield</sprite>
     <sprite>sprites\spr_ninjasword</sprite>
     <sprite>sprites\spr_wizardhoming</sprite>
     <sprite>sprites\spr_summon</sprite>
+    <sprite>sprites\spr_portal</sprite>
     <sprite>sprites\spr_orb</sprite>
-    <sprite>sprites\spr_acid</sprite>
     <sprites name="projectiles">
       <sprite>sprites\spr_magicshot</sprite>
+      <sprite>sprites\spr_holyshot</sprite>
       <sprite>sprites\spr_ghostsprite</sprite>
       <sprite>sprites\spr_druidshot</sprite>
       <sprite>sprites\spr_denizenshot</sprite>
@@ -81,6 +92,7 @@
       <sprite>sprites\spr_fireshot3</sprite>
       <sprite>sprites\spr_bloodshot</sprite>
       <sprite>sprites\spr_multishot</sprite>
+      <sprite>sprites\spr_multishot2</sprite>
       <sprite>sprites\spr_evileye</sprite>
       <sprite>sprites\spr_necroshot</sprite>
       <sprite>sprites\spr_arrow</sprite>
@@ -88,10 +100,12 @@
     </sprites>
     <sprites name="particles">
       <sprite>sprites\spr_particle</sprite>
+      <sprite>sprites\spr_holyparticle</sprite>
       <sprite>sprites\spr_druidparticle</sprite>
       <sprite>sprites\spr_whiteparticle</sprite>
       <sprite>sprites\spr_fireparticle</sprite>
       <sprite>sprites\spr_moss</sprite>
+      <sprite>sprites\spr_nightmareparticle</sprite>
       <sprite>sprites\spr_necroparticle</sprite>
       <sprite>sprites\spr_wizardparticle</sprite>
       <sprite>sprites\spr_boneparticle</sprite>
@@ -100,8 +114,6 @@
       <sprite>sprites\spr_spark</sprite>
     </sprites>
     <sprites name="enemies">
-      <sprite>sprites\spr_skeleton</sprite>
-      <sprite>sprites\spr_overgrown</sprite>
       <sprite>sprites\spr_zombie</sprite>
       <sprite>sprites\spr_psycho</sprite>
       <sprite>sprites\spr_ghost</sprite>
@@ -111,18 +123,15 @@
       <sprite>sprites\spr_frenziedzombie</sprite>
       <sprite>sprites\spr_archer</sprite>
       <sprite>sprites\spr_wizard</sprite>
-      <sprite>sprites\spr_rust</sprite>
       <sprite>sprites\spr_ninja</sprite>
       <sprite>sprites\spr_lefty</sprite>
       <sprite>sprites\spr_shopkeep</sprite>
-      <sprite>sprites\spr_magician</sprite>
       <sprite>sprites\spr_druid</sprite>
       <sprite>sprites\spr_druidgolem</sprite>
       <sprite>sprites\spr_grossenemy</sprite>
       <sprite>sprites\spr_grosssword</sprite>
       <sprite>sprites\spr_thorns</sprite>
       <sprite>sprites\spr_druidgolemmask</sprite>
-      <sprite>sprites\spr_necro</sprite>
       <sprite>sprites\spr_hedgebeast</sprite>
       <sprite>sprites\spr_bonemaster</sprite>
       <sprite>sprites\spr_fisherman</sprite>
@@ -153,6 +162,54 @@
     <sprite>sprites\spr_inventoryitems</sprite>
     <sprite>sprites\spr_bossbar</sprite>
     <sprite>sprites\spr_spawnpoint</sprite>
+    <sprite>sprites\spr_staircase</sprite>
+    <sprite>sprites\spr_dark</sprite>
+    <sprites name="NEW">
+      <sprites name="player">
+        <sprite>sprites\spr_player2</sprite>
+        <sprite>sprites\spr_sword2</sprite>
+        <sprite>sprites\spr_swordmask2</sprite>
+        <sprite>sprites\spr_shield2</sprite>
+      </sprites>
+      <sprites name="overgrown">
+        <sprite>sprites\spr_overgrown2</sprite>
+        <sprite>sprites\spr_zombiearmr</sprite>
+        <sprite>sprites\spr_zombiearml</sprite>
+      </sprites>
+      <sprites name="necromancer">
+        <sprite>sprites\spr_necro2</sprite>
+        <sprite>sprites\spr_staff2</sprite>
+        <sprite>sprites\spr_staffgib</sprite>
+      </sprites>
+      <sprites name="wizard">
+        <sprite>sprites\spr_wizard2</sprite>
+        <sprite>sprites\spr_wizardarmr</sprite>
+        <sprite>sprites\spr_wizardarml</sprite>
+      </sprites>
+      <sprites name="rustknight">
+        <sprite>sprites\spr_rustknight2</sprite>
+        <sprite>sprites\spr_rustvisor</sprite>
+        <sprite>sprites\spr_rustsword2</sprite>
+        <sprite>sprites\spr_rustdebris</sprite>
+      </sprites>
+      <sprites name="lefty">
+        <sprite>sprites\spr_oldleftysword</sprite>
+        <sprite>sprites\spr_oldleftyshield</sprite>
+        <sprite>sprites\spr_oldlefty1</sprite>
+        <sprite>sprites\spr_oldlefty2</sprite>
+        <sprite>sprites\spr_leftyhelm1</sprite>
+        <sprite>sprites\spr_leftyhelm2</sprite>
+      </sprites>
+      <sprites name="magician">
+        <sprite>sprites\spr_magician2</sprite>
+        <sprite>sprites\spr_magicianarm</sprite>
+        <sprite>sprites\spr_book</sprite>
+      </sprites>
+      <sprites name="skeleton">
+        <sprite>sprites\spr_skeleton2</sprite>
+        <sprite>sprites\spr_skeletonjaw</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg1</background>
@@ -160,6 +217,7 @@
     <background>background\bgbedlam</background>
     <background>background\background1</background>
     <background>background\bgrass</background>
+    <background>background\bg_dungeon</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\serpentpath</path>
@@ -199,8 +257,6 @@
       <object>objects\sword</object>
     </objects>
     <objects name="projectiles">
-      <object>objects\seed</object>
-      <object>objects\seed2</object>
       <object>objects\serpentegg</object>
       <object>objects\serpentegg2</object>
       <object>objects\fireshot</object>
@@ -221,11 +277,14 @@
       <object>objects\shuriken</object>
       <object>objects\wizardhoming</object>
       <object>objects\wizardshot</object>
+      <object>objects\holyshot</object>
       <object>objects\wizardtp</object>
       <object>objects\necroshot</object>
       <object>objects\necroshot2</object>
       <object>objects\necroshot3</object>
       <object>objects\nightmareshot1</object>
+      <object>objects\nightmareshot2</object>
+      <object>objects\nightmareshot3</object>
       <object>objects\evileye</object>
       <object>objects\druidshot</object>
     </objects>
@@ -239,6 +298,10 @@
       <objects name="necro">
         <object>objects\necro</object>
         <object>objects\necrostaff</object>
+        <object>objects\seed</object>
+        <object>objects\seed2</object>
+        <object>objects\portalseed</object>
+        <object>objects\skeleportal</object>
       </objects>
       <objects name="riverserpent">
         <object>objects\serpentminion</object>
@@ -282,10 +345,12 @@
       </objects>
       <objects name="gross">
         <object>objects\grossenemy</object>
+        <object>objects\grossenemy2</object>
         <object>objects\grosssword</object>
       </objects>
       <object>objects\overgrown</object>
       <object>objects\overgrown2</object>
+      <object>objects\overgrowntest</object>
       <object>objects\zombie</object>
       <object>objects\psycho</object>
       <object>objects\psycho2</object>
@@ -314,15 +379,18 @@
       <object>objects\necroparticle3</object>
       <object>objects\wizardparticle</object>
       <object>objects\particle</object>
+      <object>objects\holyparticle</object>
       <object>objects\druidparticle</object>
       <object>objects\druidparticle2</object>
       <object>objects\whiteparticle</object>
       <object>objects\whitespread</object>
       <object>objects\fireparticle</object>
+      <object>objects\nightmareparticle</object>
     </objects>
     <objects name="onetimes">
       <object>objects\summon</object>
       <object>objects\summon2</object>
+      <object>objects\summon3</object>
       <object>objects\acid</object>
       <object>objects\minotaurwep</object>
       <object>objects\minotaur</object>
@@ -342,6 +410,7 @@
       <object>objects\killarmR</object>
       <object>objects\spikes</object>
       <object>objects\spikes2</object>
+      <object>objects\darkhallway</object>
     </objects>
     <object>objects\lighting</object>
     <object>objects\nextroom</object>
@@ -349,7 +418,6 @@
     <object>objects\lake</object>
     <object>objects\darkoverlay</object>
     <object>objects\roomchanger</object>
-    <object>objects\corpse</object>
     <object>objects\debris</object>
     <object>objects\enemyparent</object>
     <object>objects\trapwall</object>
@@ -363,7 +431,6 @@
   <rooms name="rooms">
     <room>rooms\init_rom</room>
     <rooms name="DUNGEON">
-      <room>rooms\BOSS_THREE</room>
       <room>rooms\LEVEL_ONE</room>
       <room>rooms\LEVEL_TWO</room>
       <room>rooms\BOSS_ONE</room>
@@ -372,19 +439,21 @@
     <rooms name="FOREST">
       <room>rooms\LEVEL_FOUR</room>
       <room>rooms\LEVEL_FIVE</room>
-      <room>rooms\BOSS_TWO</room>
       <room>rooms\LEVEL_SEVEN</room>
+      <room>rooms\BOSS_TWO</room>
     </rooms>
     <rooms name="ASYLUM">
       <room>rooms\LEVEL_EIGHT</room>
       <room>rooms\LEVEL_NINE</room>
       <room>rooms\LEVEL_TEN</room>
+      <room>rooms\BOSS_THREE</room>
     </rooms>
     <room>rooms\SPAWN_ROOM</room>
-    <room>rooms\BOSS_SCRAP</room>
     <room>rooms\LIGHTING_TEST</room>
+    <room>rooms\BOSS_SCRAP</room>
   </rooms>
-  <constants number="5">
+  <constants number="6">
+    <constant name="print">show_debug_message</constant>
     <constant name="CELL_SIZE">64</constant>
     <constant name="BUFFER_CELLS">30</constant>
     <constant name="B">BUFFER_CELLS * CELL_SIZE</constant>

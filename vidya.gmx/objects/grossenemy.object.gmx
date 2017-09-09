@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>enemyparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -29,7 +29,7 @@
 inv = false
 hp = 160
 image_speed = 0
-aggro_range = 600
+aggro_range = 300
 
 enemysword1 = instance_create(x, y, grosssword)
 enemysword1.owner = id
@@ -113,8 +113,33 @@ player.pothp += 15
           <argument>
             <kind>1</kind>
             <string>image_angle += 6
-if distance_to_object(player) &lt; 300 &amp;&amp; distance_to_object(player) &gt; 22 {mp_potential_step(player.x, player.y, 2, false)}
+if player_seen = true {aggro = 1}
 if hp &lt;= 0 {instance_destroy()}
+if aggro = true &amp;&amp; distance_to_object(player) &gt; 30 {mp_potential_step(player.x, player.y, 2, false)}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="spikes">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if other.owner.phase &lt;= 2 {x += (other.owner.x - other.owner.xprevious); y += (other.owner.y - other.owner.yprevious); repeat(8) instance_create(x, y, blood);}
+if other.owner.phase &lt;= 2 &amp;&amp; place_meeting(x, y, trapwall) {hp -= 100; repeat(25) instance_create(x, y, blood);}
 </string>
           </argument>
         </arguments>

@@ -116,9 +116,16 @@ speed = 6
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index = 0 {image_speed = 0.5}
+            <string>if instance_exists(necro)
+{
+if image_index = 0 {image_speed = 0.5}
 if image_index = 9 {image_speed = -0.5}
-direction += 2
+direction += necro.spinspd
+}
+
+else
+
+{instance_destroy()}
 </string>
           </argument>
         </arguments>

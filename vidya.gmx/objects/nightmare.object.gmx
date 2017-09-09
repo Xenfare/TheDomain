@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>popdir = 1
-prevpopdir = 0
+prevpopdir = 1
 popnum = 0
 phase = 1
 randomarm = 0
@@ -36,6 +36,7 @@ armside = choose(0,1)
 inv = false
 image_index = 0
 image_speed = 0
+ready = true
 move = 100
 moved = true
 alarm[1] = 100
@@ -45,6 +46,62 @@ prevhp = hp
 
 nmeyes = instance_create(x, y, nightmareeyes)
 nmeyes.owner = id
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>direction = 0
+image_angle = 0
+speed = 0
+phase = 1
+popnum = 0
+popdir = irandom_range(1, 4)
+prevpopdir = popdir
+move = 100
+moved = false
+alarm[1] = 100
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with grossenemy2 {runaway = true; solid = false}
+{phase = 2; alarm[2] = 300; alarm[1] = 0; popnum = 0}
 </string>
           </argument>
         </arguments>
@@ -67,19 +124,51 @@ nmeyes.owner = id
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ds_list_destroy(arms)
+            <string>if player.hp &lt;= 40
+{
+ds_list_destroy(arms)
 with killarmL instance_destroy()
+with killarmR instance_destroy()
 arms = noone
-phase = 1
+phase = 3
 popnum = 0
-popdir = 1
-prevpopdir = 1
+popdir = irandom_range(1, 4)
+prevpopdir = popdir
 move = 100
-moved = true
-x = 768 + B
-y = 320 + B
+moved = false
+alarm[3] = 950
+if armside = 0 {armside = 1} else armside = 0
+}
+
+else
+
+phase = choose(1,4)
+
+if phase = 1
+{
+ds_list_destroy(arms)
+with killarmL instance_destroy()
+with killarmR instance_destroy()
+arms = noone
+popnum = 0
+popdir = irandom_range(1, 4)
+prevpopdir = popdir
+move = 100
+moved = false
 alarm[1] = 100
 if armside = 0 {armside = 1} else armside = 0
+}
+
+if phase = 4
+{
+ds_list_destroy(arms)
+with killarmL instance_destroy()
+with killarmR instance_destroy()
+arms = noone
+popnum = 0
+if armside = 0 {armside = 1} else armside = 0
+alarm[4] = 500
+}
 </string>
           </argument>
         </arguments>
@@ -102,10 +191,12 @@ if armside = 0 {armside = 1} else armside = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>popdir = irandom_range(1, 4)
+            <string>ready = false
+popdir = irandom_range(1, 4)
+if instance_number(nightmareshot1) &lt; shotnum {ready = true}
 if popdir  = prevpopdir {popdir++}
-prevpopdir = popdir
 if popdir &gt;= 5 popdir = 1
+prevpopdir = popdir
 popnum++
 moved = false
 move = 100
@@ -158,7 +249,6 @@ alarm[1] = 100
             <string>image_index = popdir
 if prevhp &gt; hp &amp;&amp; inv = false {prevhp -= maxhp / 300}
 if prevhp &lt; hp {prevhp = hp}
-if hp &lt; maxhp / 2 {shotnum = 2}
 
 if popdir = 1 &amp;&amp; moved = false {x = 768 + B; y = 320 + B; moved = true}
 if popdir = 2 &amp;&amp; moved = false {x = 1152 + B; y = 768 + B moved = true}
@@ -177,8 +267,11 @@ else if popdir = 4 {x += 16; move -= 16}
 
 if phase = 1
 {
-if alarm[1] mod 60 = 0 &amp;&amp; instance_number(nightmareshot1) &lt; shotnum {with instance_create(x, y, nightmareshot1) direction = (nightmare.popdir * -90) + random_range(-20, 20)}
-if popnum &gt; 5 {phase = 2; alarm[2] = 300; alarm[1] = 0}
+shotnum = 1
+if hp &lt; maxhp / 3 * 2 {shotnum = 2}
+if alarm[1] mod 60 = 0 &amp;&amp; ready = true &amp;&amp; popnum &gt; 0 {with instance_create(x, y, nightmareshot1) direction = (nightmare.popdir * -90) + random_range(-20, 20)}
+//if alarm[1] mod 60 = 0 &amp;&amp; hp &lt; maxhp / 3 &amp;&amp; popnum = 0 {/*with instance_create(x, y, nightmareshot2) direction = (nightmare.popdir * -90) + random_range(-20, 20)*/}
+if popnum &gt; 6 {phase = 2; alarm[2] = 300; alarm[1] = 0; popnum = 0}
 }
 
 if phase = 2
@@ -207,9 +300,66 @@ for (var i = 0; i &lt; 12; i++;){if i != randomarm ds_list_add(arms, instance_cr
 popdir = 0;
 x = 400;
 y = 400;
+
 }
 
+/*
+if phase = 3
+{
+if alarm[3] = 310 {repeat(3) with instance_create(x, y, nightmareshot2) direction = (nightmare.popdir * -90) + random_range(-60, 60)}
+if alarm[3] = 240 {popdir = 0; x = 200; y = 200; if instance_exists (grossenemy2) or instance_exists (nightmareshot2) {alarm[3] = 241} else {alarm[3] = 30}}
+}
+*/
 
+if phase = 3
+{
+if alarm[3] = 910 {repeat(3) with instance_create(x, y, nightmareshot2) direction = (nightmare.popdir * -90) + random_range(-60, 60)}
+if alarm[3] = 840 {popdir = 0; x = 200; y = 200}
+if alarm[3] mod 100 = 0 
+    {
+    if (!instance_exists(nightmareshot2) &amp;&amp; !instance_exists(summon3) &amp;&amp; !instance_exists(grossenemy2)) {alarm[3] = 20}
+    popdir = irandom_range(1, 4)
+    if popdir  = prevpopdir {popdir++}
+    prevpopdir = popdir
+    if popdir &gt;= 5 popdir = 1
+    moved = false
+    move = 100
+    }
+}
+
+if phase = 4
+{
+
+if alarm[4] = 499 
+{
+popdir = irandom_range(1, 4)
+if popdir  = prevpopdir {popdir++}
+prevpopdir = popdir
+if popdir &gt;= 5 popdir = 1
+moved = false
+move = 100
+direction = random(360)
+}
+
+else if move &lt;= 0 
+
+{
+speed = 5
+image_index = 5
+image_angle = point_direction(x,y,player.x,player.y)
+
+if alarm[4] mod 70 = 0 
+    {
+    var i;
+    for (i = -3; i &lt; 3; i++)
+    {with instance_create(x, y, bloodshot) direction = nightmare.image_angle + i*5;}
+    }
+
+if alarm[4] &lt; 60 {direction = point_direction(player.x, player.y, x, y); image_angle = direction; if distance_to_object(player) &gt; 600 alarm[4] = 1 else alarm[4] = 40}
+else 
+if place_meeting(x,y,wall) or place_meeting(x,y,player) {direction += 180 + random_range(-60, 60)}
+}
+}
 </string>
           </argument>
         </arguments>

@@ -179,7 +179,6 @@
     <instance objName="wall" x="1216" y="832" name="inst_0D9A37FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="zombie" x="1600" y="3584" name="inst_D6EA3AD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-22"/>
     <instance objName="zombie" x="1280" y="3520" name="inst_AB47B6A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="106"/>
-    <instance objName="player" x="768" y="4288" name="inst_0AA7FB0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="zombie" x="1600" y="4160" name="inst_8CC107D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="17"/>
     <instance objName="fisherman" x="1504" y="1536" name="inst_72F20874" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-114"/>
     <instance objName="rust" x="1344" y="1504" name="inst_DA1AB372" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
@@ -311,6 +310,7 @@
     <instance objName="wall" x="896" y="4096" name="inst_695AF2CB" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="320" y="4096" name="inst_D673F00E" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="roomchanger" x="768" y="4128" name="inst_AC9517F6" locked="0" code="dest_r = BOSS_ONE&#xA;dest_x = 768&#xA;dest_y = 1568&#xA;" scaleX="2" scaleY="0.75" colour="4294967295" rotation="0"/>
+    <instance objName="spawnpoint" x="576" y="4288" name="inst_EA755FA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg1" x="1152" y="1920" w="64" h="64" xo="0" yo="0" id="10000060" name="inst_C08FBFBC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

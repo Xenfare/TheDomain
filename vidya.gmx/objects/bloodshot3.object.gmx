@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>direction = point_direction(x, y, player.x, player.y)
 image_angle = direction
-speed = 10
+speed = 12
 </string>
           </argument>
         </arguments>

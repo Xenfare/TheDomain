@@ -51,8 +51,7 @@ room_set_persistent(room, false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_restart()
-instance_destroy()
+            <string>room_goto(player.checkroom)
 </string>
           </argument>
         </arguments>

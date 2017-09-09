@@ -54,6 +54,7 @@ eye.owner = id
           <argument>
             <kind>1</kind>
             <string>repeat (8) instance_create(x, y, blood)
+if ds_list_find_index(player.weapon.hitlist, id) != -1 {player.pothp += 9}
 </string>
           </argument>
         </arguments>
@@ -123,8 +124,9 @@ instance_create(x,y,bloodshot3)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if hp &lt;= 0 {nightmare.hp -= 100; instance_destroy()}
+            <string>if hp &lt;= 0 {instance_destroy()}
 if nightmare.phase != 1 {instance_destroy()}
+instance_create(x,y,nightmareparticle)
 </string>
           </argument>
         </arguments>

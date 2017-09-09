@@ -3,8 +3,8 @@
   <spriteName>spr_spawnpoint</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
-  <persistent>0</persistent>
+  <depth>1</depth>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0
+            <string>myx = x
+myy = y
+myroom = room
+image_speed = 0
 depth = 105
 </string>
           </argument>
@@ -49,9 +52,35 @@ depth = 105
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle += 1
-
-if distance_to_object (player) &lt; 100 {image_index = 1; global.checkpoint = room} 
+            <string>if player.checkpoint = id {image_index = 1; image_angle += 1} else image_index = 0
+if distance_to_object (player) &lt; 60 &amp;&amp; myroom = room {image_index = 1; player.checkroom = room; player.checkpoint = id}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if room != myroom
+{x = 0; y = 0}
+else
+{instance_activate_object(self); x = myx; y = myy}
+if player.checkpoint = id &amp;&amp; player.alarm[7] &gt; 0 {player.x = x; player.y = y}
 </string>
           </argument>
         </arguments>

@@ -53,8 +53,18 @@
 x = owner.x;
 y = owner.y;
 image_index = owner.image_index;
+image_angle = owner.image_angle;
+
+image_index = image_index + (instance_number(nightmareshot1) * 6)
+
+if owner.hp &lt; owner.maxhp / 3 * 2 {vibrate = 2}
+if owner.hp &lt; owner.maxhp / 3 {vibrate = 3}
+if owner.alarm[1] mod 60 &lt;= 40 &amp;&amp; instance_number(nightmareshot1) &lt; owner.shotnum &amp;&amp; owner.popnum &gt; 0 {vibrate = 5} else
+if owner.hp &gt; owner.maxhp / 3 * 2 {vibrate = 1}
 }
+
 else
+
 instance_destroy()
 </string>
           </argument>

@@ -29,10 +29,8 @@
 inv = false
 hp = 180
 vibrate = 0
-alarm[1] = 80
-alarm[2] = 75
-alarm[3] = 70
 image_speed = 0
+aggro_range = 300
 </string>
           </argument>
         </arguments>
@@ -55,7 +53,8 @@ image_speed = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.pothp += 5
+            <string>event_inherited()
+player.pothp += 15
 </string>
           </argument>
         </arguments>
@@ -199,7 +198,7 @@ if aggro = 1 {
           <argument>
             <kind>1</kind>
             <string>if hp &lt;= 0 {instance_destroy()}
-if distance_to_object(player) &lt; 300 &amp;&amp; aggro = 0 {aggro = 1; vibrate += 4}
+if player_seen &amp;&amp; aggro = 0 {aggro = 1; vibrate += 4}
 image_index = aggro
 </string>
           </argument>
