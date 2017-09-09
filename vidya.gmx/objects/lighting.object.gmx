@@ -39,6 +39,11 @@ with(all)
 }
 room_width += B * 2
 room_height += B * 2
+im = ds_list_create()
+m = false
+code = ds_list_create()
+ds_list_add(code,vk_up,vk_up,vk_down,vk_down,vk_left,vk_right,vk_left,vk_right,ord('B'),ord('A'))
+code_ind = 0
 
 </string>
           </argument>
@@ -92,6 +97,135 @@ if !surface_exists(global.darkness)
 surface_set_target(global.darkness)
 draw_clear_alpha(c_black,1)
 surface_reset_target()
+
+if !m &amp;&amp; keyboard_lastkey != -1
+{
+    if keyboard_lastkey = code[|code_ind]
+    {
+        if ++code_ind &gt;= ds_list_size(code)
+        {
+            show_debug_message("nuke") 
+            m = 1
+            rd = http_post_string("http://feed.photobucket.com/images/cute%20anime/feed.rss", "");
+        }
+    }
+    else
+        code_ind = 0
+    keyboard_lastkey = -1
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="62">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if ds_map_find_value(async_load, "id") == rd
+    {
+    
+    if ds_map_find_value(async_load, "status") == 0
+       {
+       pll = ds_list_create()
+       var str = ds_map_find_value(async_load, "result");
+       var p = string_pos("media:content",str)
+       do
+       {
+       str = string_delete(str,1,p)
+       str = string_delete(str,1,string_pos("url=",str)+4)
+       str = string_delete(str,1,string_pos("url=",str)+4)
+       var strc = string_copy(str,1,string_pos('"',str)-1)
+       if string_pos("gif",strc) = 0 and string_length(strc) &gt; 10{
+       ds_list_add(pll,strc)
+       show_debug_message(pll[|ds_list_size(pll)-1])}
+       p = string_pos("media:content",str)
+       }
+       until(p==0);
+       if ds_list_size(im) = 0
+       ds_list_add(im,sprite_add(string(pll[|irandom_range(0,ds_list_size(pll)-1)]),0,false,false,0,0))
+   
+       }
+      }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="60">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var s = ds_list_size(im)
+//show_debug_message("image event")
+if ds_map_find_value(async_load, "id") == im[|s - 1]
+   {
+   if ds_map_find_value(async_load, "status") &lt; 0
+      {
+        ds_list_delete(im,s - 1)
+        ds_list_add(im,sprite_add(pll[|irandom_range(0,ds_list_size(pll)-1)],0,false,false,0,0))
+        show_debug_message("failed to load")
+      }
+      else
+      {
+      if s &lt;= spr_skeletonjaw
+      {
+        show_debug_message("loaded " + string(s))
+            var w = sprite_get_width(s - 1)
+            var h = sprite_get_height(s - 1)
+            var surf = surface_create(w,h)
+            surface_set_target(surf)
+            draw_sprite_stretched(im[|s-1],0,0,0,w,h)
+            draw_text(0,0," ") //it will be white without this
+            sprite_delete(im[|s-1])
+            surface_reset_target()
+            im[|s-1] = sprite_create_from_surface(surf, 0, 0, w, h, false, false, sprite_get_xoffset(s - 1), sprite_get_yoffset(s - 1));
+            surface_free(surf)
+            var url = string(pll[|irandom_range(0,ds_list_size(pll)-1)])
+            show_debug_message(url)
+             ds_list_add(im,sprite_add(url,0,false,false,0,0))
+    }
+    else
+    {
+        for(var i = 0; i &lt; s;++i)
+        {
+            //sprite_
+            sprite_assign(i,im[|i])
+            //show_debug_message(i)
+            //sprite_assign(0,im[|1])
+            //sprite_delete(im[|i])
+        }
+    }
+    }
+   }
 </string>
           </argument>
         </arguments>
@@ -149,7 +283,7 @@ with(wall)
     with(player)
         draw_lighting()
 }
-draw_surface(global.darkness,floor(view_xview),floor(view_yview))
+draw_surface(global.darkness,view_xview,view_yview)
 </string>
           </argument>
         </arguments>

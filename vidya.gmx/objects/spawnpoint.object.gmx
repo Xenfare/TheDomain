@@ -81,6 +81,33 @@ if distance_to_object (player) &lt; 60 &amp;&amp; myroom = room {image_index = 1
 else
 {instance_activate_object(self); x = myx; y = myy}
 if player.checkpoint = id &amp;&amp; player.alarm[7] &gt; 0 {player.x = x; player.y = y}
+
+//move colliding enemy homies 
+var inst = collision_circle(x,y,CELL_SIZE * .5,enemyparent,false,true);
+while(instance_exists(inst))
+{
+    var dir = point_direction(x,y,inst.x,inst.y)
+    var spawn_radius = CELL_SIZE * 1.1
+    var spawn_moved = false
+    do
+    {
+        for(var spawn_angle = dir; spawn_angle &lt; dir + 360; spawn_angle += 5)
+        {
+            with(inst)
+                if place_free(other.x + lengthdir_x(spawn_radius,spawn_angle),other.y + lengthdir_y(spawn_radius,spawn_angle))
+                {
+                    spawn_moved = true
+                    x = other.x + lengthdir_x(spawn_radius,spawn_angle)
+                    y = other.y + lengthdir_y(spawn_radius,spawn_angle)
+                    spawn_angle = 999
+                }
+        }
+        spawn_radius += CELL_SIZE * .5
+    }
+    until(spawn_moved)  
+    inst = collision_circle(x,y,CELL_SIZE * .5,enemyparent,false,true)
+}
+
 </string>
           </argument>
         </arguments>
