@@ -25,14 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index = choose(0,1)
+            <string>event_inherited();
+direction = image_angle
+image_index = choose(0,1)
 image_speed = 0
 alarm[1] = 5
+grab = 0
 inv = false
 hp = 100
 armr = choose(0,1)
 arml = choose(0,1)
-armdir = 0
+armdir = 3
+twitch = 1
+twitchspd = .5
 image_xscale = 0.24
 image_yscale = 0.24
 </string>
@@ -105,7 +110,7 @@ alarm[2] = 10
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x + random_range(-20, 20), y + random_range(-20, 20), moss)
+            <string>if distance_to_object(player) &lt; 800 {instance_create(x + random_range(-20, 20), y + random_range(-20, 20), moss)}
 alarm[1] = 5
 </string>
           </argument>
@@ -152,11 +157,14 @@ alarm[1] = 5
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = direction
-if distance_to_object(player) &lt; 300 {mp_potential_step(player.x, player.y, 3, false)}
+            <string>event_inherited();
+twitch += twitchspd
+if twitch &gt; 0 {twitchspd -= 0.05}
+if twitch &lt; 0 {twitchspd += 0.05}
+image_angle = direction;
+if distance_to_object(player) &lt; 300 &amp;&amp; kb = 0 {mp_potential_step(player.x, player.y, 3, false)}
 if hp &lt;= 0 {instance_destroy()}
-//if hp &lt;= 0 {with instance_create(x, y, corpse) sprite_index = other.sprite_index; instance_destroy()}
-
+if grab &gt; 0 &amp;&amp; distance_to_object (player) &gt; 2 {grab -= 4; fric = 1}
 </string>
           </argument>
         </arguments>
@@ -204,6 +212,31 @@ if hp &lt;= 0 {instance_destroy()}
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if grab &lt; 20 {grab +=4}
+if grab = 20 {player.x = player.xprevious; player.y = player.yprevious}
+fric = 100
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -221,9 +254,8 @@ if hp &lt;= 0 {instance_destroy()}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*draw_sprite_ext(spr_zombiearmr, armr, x, y, 0.5, 0.5, image_angle + armdir, c_white, 1)
-draw_sprite_ext(spr_zombiearml, arml, x, y, 0.5, 0.5, image_angle + armdir*-1, c_white, 1)
-*/
+            <string>draw_sprite_ext(spr_zombiearmr, armr, x, y, 0.5, 0.5, image_angle + armdir + twitch + grab, c_white, 1)
+draw_sprite_ext(spr_zombiearml, arml, x, y, 0.5, 0.5, image_angle + armdir*-1 - twitch - grab, c_white, 1)
 draw_self()
 </string>
           </argument>

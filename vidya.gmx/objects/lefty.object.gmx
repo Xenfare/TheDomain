@@ -39,6 +39,7 @@ aggro = false
 healed = false
 image_xscale = 0.25
 image_yscale = 0.25
+event_inherited();
 
 enemysword = instance_create(x, y, eleftysword)
 enemysword.owner = id
@@ -69,7 +70,7 @@ if controller.progress[2] = 1 {instance_deactivate_object(self)}
           <argument>
             <kind>1</kind>
             <string>event_inherited()
-player.pothp += 100
+player.pothp += 150
 controller.progress[2] = 1
 player.interference = false;
 </string>
@@ -273,6 +274,7 @@ alarm[3] = 150
 {
 phase = 2
 alarm[2] = 75
+enemysword.alarm[1] = 10
 speed = 0
 }
 
@@ -284,6 +286,7 @@ if phase = 2
 {
 phase = 2
 alarm[2] = 75
+enemysword.alarm[1] = 10
 speed = 0
 }
 
@@ -348,8 +351,10 @@ with instance_create(1088 + B, 320 + B, tempwall) owner = other
 
 if aggro = true
 {
+event_inherited();
 
 if hp &lt; 1 {instance_destroy()}
+if hp &gt; maxhp {hp = maxhp}
 if inv = true {image_index = 1} else {image_index = 0}
 if prevhp &gt; hp &amp;&amp; inv = false {prevhp -= maxhp / 300}
 if prevhp &lt; hp {prevhp = hp}
@@ -505,7 +510,7 @@ with instance_create(x, y, debris) {sprite_index = spr_leftyhelm2; image_angle =
             <string>var shieldcol = 0
 with(other){shieldcol = place_meeting(x,y,eleftyshield)}
 
-if enemyshield.leftyshielddir = 5 &amp;&amp; shieldcol != 0 &amp;&amp; ds_list_find_index(player.weapon.hitlist, id) = -1
+if enemyshield.leftyshielddir = 5 &amp;&amp; ds_list_find_index(player.weapon.hitlist, id) = -1
 
 {
 audio_play_sound(clang, 10, false); 
@@ -515,8 +520,8 @@ if sprite_index = spr_oldlefty1
 else
 {phase = 6; alarm[6] = 150}
 
-other.alarm[0] = 1;
-other.alarm[1] = 1;
+player.weapon.alarm[0] = 1;
+player.weapon.alarm[1] = 1;
 
 alarm[1] = -1
 alarm[2] = -1

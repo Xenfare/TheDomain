@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>phase = 1
+            <string>event_inherited();
+phase = 1
 inv = false
 hp = 380
 aggro = false
@@ -82,13 +83,23 @@ controller.progress[0] = 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>repeat (15) instance_create(x + random_range(-20, 20), y + random_range(-20, 20), wizardparticle) 
+            <string>with tp if distance_to_object(player) &lt;= 100
+{
+owner.alarm[2] = 4
+}
+
+else
+
+with owner
+{
+repeat (15) instance_create(x + random_range(-20, 20), y + random_range(-20, 20), wizardparticle) 
 phase = 1
 alarm[1] = 160
 x = tp.x
 y = tp.y
 with tp direction = random_range(0, 360)
 armdir = 40
+}
 </string>
           </argument>
         </arguments>
@@ -178,6 +189,7 @@ armdir = 80
 
 if aggro = true
 {
+event_inherited();
 image_angle = point_direction(x, y, player.x, player.y)
 if hp &lt; 1 {instance_destroy(); with tp instance_destroy()}
 

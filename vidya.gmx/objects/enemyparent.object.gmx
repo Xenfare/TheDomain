@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(player)
+            <string>kb = 0
+kbdir = 0
+fric = 1
+/*
+if instance_exists(player)
 {
     var p = instance_place(x, y, player);
     if p != noone
@@ -99,6 +103,40 @@ with(instance_create(x+lengthdir_x(sprite_width * .25,image_angle+90),y+lengthdi
     speed = 4
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if kb &gt; 0
+{
+{
+var i;
+for (i = 0; place_meeting(x+lengthdir_x((kb / fric + 1) - i, kbdir), y+lengthdir_y((kb / fric + 1) - i, kbdir), worldwall); i += 1)
+   {
+   }
+}
+kb -= 1;
+x += lengthdir_x((kb / fric) - i, kbdir);
+y += lengthdir_y((kb / fric) - i, kbdir);
+}
 </string>
           </argument>
         </arguments>
@@ -178,6 +216,29 @@ do
 }
 until(!place_meeting(x,y,other) or (other_wall and me_wall))
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="deathinvis">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hp-=100
 </string>
           </argument>
         </arguments>

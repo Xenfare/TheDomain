@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>4</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>spr_magicshot</maskName>
@@ -74,7 +74,7 @@ fade = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>repeat(speed/2) with instance_create(x, y, blood) {owner = other.id; direction = owner.direction - 180 + random_range(-40, 40)}
+            <string>repeat(speed/2) with instance_create(x, y, blood) {direction = other.direction - 180 + random_range(-40, 40)}
 if fade = true {image_alpha -= 0.01}
 if image_alpha &lt;= 0 {instance_destroy()}
 </string>
@@ -168,8 +168,7 @@ if image_alpha &lt;= 0 {instance_destroy()}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var offset = image_angle - direction
-
+            <string>var offset = image_angle - direction;
 </string>
           </argument>
         </arguments>

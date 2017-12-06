@@ -122,6 +122,12 @@ if swing &gt; 40 {sd *= -1}
 if swing &lt; -40 {sd *= -1}
 }
 
+if owner.phase = 7
+{
+if swing &gt; -30
+swing -= 3
+}
+
 }
 </string>
           </argument>

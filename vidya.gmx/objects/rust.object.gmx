@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>direction = image_angle
+            <string>event_inherited()
+direction = image_angle
 rustspeed = 0
 inv = false
 hp = 300
@@ -35,6 +36,7 @@ image_speed = 0
 aggro = false
 image_xscale = 0.25
 image_yscale = 0.25
+fric = 2
 
 enemysword = instance_create(x, y, rustsword)
 enemysword.owner = id
@@ -107,25 +109,33 @@ player.pothp += 15
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = direction
+            <string>event_inherited();
+image_angle = direction
 
 if hp &lt; 1 {
     instance_destroy()
 }
 
-if distance_to_object(player) &lt; 60 {
+if distance_to_object(player) &lt; 35 {
+    if aggro != true {aggro = true}
     if enemysword.alarm[1] &lt; 1 {direction = point_direction(x, y, player.x, player.y)}
-    rustspeed = 0
+    enemysword.swinging = true
+        
 } else if distance_to_object(player) &gt; 450 {
     rustspeed = 1
     if enemysword.alarm[1] &lt; 1 &amp;&amp; aggro = true {mp_potential_step(player.x, player.y, rustspeed, false)}
+    enemysword.swinging = false
+    
 } else if distance_to_object(player) &gt; 150 &amp;&amp; enemysword.alarm[1] &lt; 1{
     if enemysword.alarm[1] &lt; 1 &amp;&amp; aggro = true {mp_potential_step(player.x, player.y, rustspeed, false)}
-    enemysword.image_index = 1; if enemysword.swing &gt; 0 enemysword.swing = 0; enemysword.swingdir = 0
+    if enemysword.swing &gt; 0 enemysword.swing = 0; enemysword.swingdir = -1
+    enemysword.swinging = true
+    
 } else if distance_to_object(player) &lt; 200{
     aggro = true
     rustspeed = 3
     if enemysword.alarm[1] &lt; 1 {mp_potential_step(player.x, player.y, rustspeed, false)}
+    enemysword.swinging = true
 }
 
 if hp &lt;= 150 &amp;&amp; hurt = 0 {image_index = 1; hurt = 1; with instance_create(x,y,debris) {direction = other.image_angle + random_range(-80, 80);sprite_index = spr_rustvisor; image_xscale = 0.25; image_yscale = 0.25;}}

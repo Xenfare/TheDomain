@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>inv = false
+            <string>event_inherited();
+inv = false
 hp = 100
 image_speed = 0
 direction = random(360)

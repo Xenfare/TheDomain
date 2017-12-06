@@ -26,9 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>move_towards_point(player.x, player.y, 5)
-
-view_range = 100
-lights = surface_create(view_range * 2,view_range * 2)
 </string>
           </argument>
         </arguments>
@@ -53,46 +50,6 @@ lights = surface_create(view_range * 2,view_range * 2)
             <kind>1</kind>
             <string>repeat (8) instance_create(x, y, particle)
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>draw_lighting_old</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
@@ -176,7 +133,7 @@ lights = surface_create(view_range * 2,view_range * 2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.shielddir = 5 {audio_play_sound(clang2, 10, false); instance_destroy()}
+            <string>if global.shielddir = 5 {audio_play_sound(clang2, 10, false); instance_destroy(); player.kbdir = point_direction(x, y, other.x, other.y); player.kb = 3;}
 </string>
           </argument>
         </arguments>
@@ -196,48 +153,6 @@ lights = surface_create(view_range * 2,view_range * 2)
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
-      </action>
-    </event>
-    <event eventtype="8" enumb="72">
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>draw_lighting</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-        </arguments>
       </action>
     </event>
   </events>

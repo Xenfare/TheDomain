@@ -28,7 +28,33 @@
             <string>tilt = 0
 tiltdir = 0
 hooked = 0
+if instance_exists(player)
+{
 move_towards_point(player.x, player.y, 10)
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if hooked = true {with player if place_meeting(x,y,deathinvis) {hp-=100;}}
 </string>
           </argument>
         </arguments>
@@ -51,13 +77,16 @@ move_towards_point(player.x, player.y, 10)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = direction + 33 + tiltdir 
+            <string>if instance_exists(player) 
+{
+image_angle = direction + 33 + tiltdir 
 if tilt = 1 {tiltdir += 5}
 if tilt = 0 {tiltdir -= 5}
 if tiltdir &gt; 20 {tilt = 0}
 if tiltdir &lt; 10  {tilt = 1}
-if hooked = 1 {player.x = x; player.y = y}
+if hooked = 1 {player.x = x; player.y = y; player.spd = 0}
 if hooked = 1 &amp;&amp; distance_to_object(owner) &lt; 100 {instance_destroy()}
+}
 </string>
           </argument>
         </arguments>

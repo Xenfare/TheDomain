@@ -26,11 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0
+aggro = false
 inv = false
 hp = 10
 vibrate = 0
 warmblood = false
 jaw = 0
+direction = image_angle
 image_xscale = 0.25
 image_yscale = 0.25
 </string>
@@ -63,6 +65,8 @@ image_yscale = 0.25
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -79,7 +83,7 @@ image_yscale = 0.25
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>repeat (15) instance_create(x + random_range(-20, 20), y + random_range(-20, 20), boneparticle)
+            <string>alarm[1] = 40
 </string>
           </argument>
         </arguments>
@@ -103,7 +107,31 @@ image_yscale = 0.25
           <argument>
             <kind>1</kind>
             <string>image_angle = direction
-if distance_to_object(player) &lt; 300 {mp_potential_step(player.x, player.y, 6, false); vibrate = 3; jaw = 1}
+if distance_to_object(player) &lt; 300 &amp;&amp; aggro = false
+{aggro = true; alarm[1] = 40}
+
+if aggro = true
+
+{
+mp_potential_step(player.x, player.y, 6, false); vibrate = 3; jaw = 1
+/*if alarm[1] mod 40 = 0 {speed = 11; direction = point_direction(x, y, player.x, player.y); image_angle = direction; vibrate = 5}
+
+if speed &gt; 0
+{
+{
+var i;
+for (i = 0; place_meeting(x+lengthdir_x(speed + 1 - i, direction), y+lengthdir_y(speed + 1 - i, direction), wall); i += 1)
+   {
+   }
+}
+speed -= i;
+}
+
+if speed &gt; 0 {speed -= 0.3}
+
+*/
+}
+
 if hp &lt; 1 {instance_destroy()}
 </string>
           </argument>
@@ -183,6 +211,7 @@ until(!place_meeting(x,y,other) or (other_wall and me_wall))
           <argument>
             <kind>1</kind>
             <string>ds_list_add(player.defeated, id)
+repeat (15) with instance_create(x + random_range(-20, 20), y + random_range(-20, 20), boneparticle) {direction = point_direction(other.x, other.y, x, y) - 180 + random_range(-40, 40)}
 </string>
           </argument>
         </arguments>
