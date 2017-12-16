@@ -43,6 +43,151 @@ draw_set_color(c_white)
 draw_circle(e_view_range * CELL_SIZE,e_view_range * CELL_SIZE,view_range,0)
 draw_set_color(c_black)
 draw_set_blend_mode(bm_subtract)
+
+var maxh = ds_grid_width(sub_grid) - 1
+debug_str = ""
+for(var ii = 0; ii <= maxh; ++ii)
+for(var i = 1; i < maxh * .5; ++i)
+{
+    //check up area
+    if sub_grid[# ii, cells - i]
+    {
+        debug_str = "up"
+        var bottom = cells - i;
+        var top = bottom;
+        var left = ii, right = ii;
+        while(--left >= 0 and sub_grid[# left, bottom]){}
+        if (left < 0 or sub_grid[# left, bottom] != .5) ++left
+        while(++right <= maxh and sub_grid[# right, bottom]){}
+        if (right > maxh or sub_grid[# right, bottom] != .5) --right
+        if (right < cells)
+        {
+            while(--top >= 0 and sub_grid[# right, top]){}
+            if (top < 0 or sub_grid[# right, top] != .5) ++top
+            var old_bottom = bottom
+            while(++bottom <= maxh and sub_grid[# right, bottom]){}
+            if (bottom > maxh or sub_grid[# right, bottom] != .5) --bottom
+            if (bottom < cells) bottom = old_bottom
+        }
+        else if (left > cells)
+        {
+            while(--top >= 0 and sub_grid[# left, top]){}
+            if (top < 0 or sub_grid[# left, top] != .5) ++top
+            var old_bottom = bottom
+            while(++bottom <= maxh and sub_grid[# left, bottom]){}
+            if (bottom > maxh or sub_grid[# left, bottom] != .5) --bottom
+            if (bottom < cells) bottom = old_bottom
+        }
+        else
+            top = 0
+        ds_grid_set_region(sub_grid,left,top,right,bottom,.5)
+        draw_box_shadows(left,top,right,bottom)
+    }//
+    //check down area
+    if sub_grid[# ii, cells + i]
+    {
+    debug_str = "down"
+        var top = cells + i;
+        var bottom = top;
+        var left = ii, right = ii;
+        while(--left >= 0 and sub_grid[# left, top]){}
+        if (left < 0 or sub_grid[# left, top] != .5) ++left
+        while(++right <= maxh and sub_grid[# right, top]){}
+        if (right > maxh or sub_grid[# right, top] != .5) --right
+        if (right < cells)
+        {
+            while(++bottom <= maxh and sub_grid[# right, bottom]){}
+            if (bottom > maxh or sub_grid[# right, bottom] != .5) --bottom
+            var old_top = top
+            while(--top >= 0 and sub_grid[# right, top]){}
+            if (top < 0 or sub_grid[# right, top] != .5) ++top
+            if (top > cells) top = old_top
+        }
+        else if (left > cells)
+        {
+            while(++bottom <= maxh and sub_grid[# left, bottom]){}
+            if (bottom > maxh or sub_grid[# left, bottom] != .5) --bottom
+            var old_top = top
+            while(--top >= 0 and sub_grid[# left, top]){}
+            if (top < 0 or sub_grid[# left, top] != .5) ++top
+            if (top > cells) top = old_top
+        }
+        else
+            bottom = maxh
+        ds_grid_set_region(sub_grid,left,top,right,bottom,.5)
+        draw_box_shadows(left,top,right,bottom)
+    }//
+    //check left area
+    if sub_grid[# cells - i, ii]
+    {
+        debug_str = "left"
+        var right = cells - i;
+        var left = right;
+        var top = ii, bottom = ii;
+        while(--top >= 0 and sub_grid[# right, top] > 0){}
+        if (top < 0 or sub_grid[# right, top] != .5) ++top
+        while(++bottom <= maxh and sub_grid[# right, bottom] > 0){}
+        if (bottom > maxh or sub_grid[# right, bottom] != .5) --bottom
+        if (top > cells)
+        {
+            while(--left >= 0 and sub_grid[# left, top]){}
+            if (left < 0 or sub_grid[# left, top] != .5) ++left
+            var old_right = right
+            while(++right <= maxh and sub_grid[# right, top]){}
+            if (right > maxh or sub_grid[# right, top] != .5) --right
+            if (right < cells) right = old_right
+        }
+        else if (bottom < cells)
+        {
+            while(--left >= 0 and sub_grid[# left, bottom]){}
+            if (left < 0 or sub_grid[# left, bottom] != .5) ++left
+            var old_right = right
+            while(++right <= maxh and sub_grid[# right, bottom]){}
+            if (right > maxh or sub_grid[# right, bottom] != .5) --right
+            if (right < cells) right = old_right
+        }
+        else
+            left = 0        
+        ds_grid_set_region(sub_grid,left,top,right,bottom,.5)
+        draw_box_shadows(left,top,right,bottom)
+    }//
+    //check right area
+    if sub_grid[# cells + i, ii]
+    {
+        debug_str = "right"
+        var left = cells + i;
+        var right = left
+        var top = ii, bottom = ii;
+        while(--top >= 0 and sub_grid[# left, top] > 0){}
+        if (top < 0 or sub_grid[# left, top] != .5) ++top
+        while(++bottom <= maxh and sub_grid[# left, bottom] > 0){}
+        if (bottom > maxh or sub_grid[# left, bottom] != .5) --bottom
+        if (top > cells)
+        {
+            while(++right <= maxh and sub_grid[# right, top]){}
+            if (right > maxh or sub_grid[# right, top] != .5) --right
+            var old_left = left
+            while(--left >= 0 and sub_grid[# left, top]){}
+            if (left < 0 or sub_grid[# left, top] != .5) ++left
+            if (left > cells) left = old_left
+        }
+        else if (bottom < cells)
+        {
+            while(++right <= maxh and sub_grid[# right, bottom]){}
+            if (right > maxh or sub_grid[# right, bottom] != .5) --right
+            var old_left = left
+            while(--left >= 0 and sub_grid[# left, bottom]){}
+            if (left < 0 or sub_grid[# left, bottom] != .5) ++left
+            if (left > cells) left = old_left
+        }
+        else
+            right = maxh  
+        ds_grid_set_region(sub_grid,left,top,right,bottom,.5)
+        draw_box_shadows(left,top,right,bottom)
+    }
+}//*/
+
+/*
 var top = 0
 var bottom = 0
 var right = 0
@@ -61,8 +206,8 @@ for(var i = 0;i < cells - 1;i++)
             left = cells - i
             right = left
             //left
-            while(left - 1 > 0 and sub_grid[# left - 1,top] > 0)
-                sub_grid[# --left,top] = .5
+            while(left - 1 > 0 and sub_grid[# left - 1,top] > 0)  
+                sub_grid[# --left,top] *= .5
             //right
             while(right + 1< cells * 2 and sub_grid[# right + 1,top] > 0)
                 sub_grid[# ++right,top] = .5
@@ -82,6 +227,7 @@ for(var i = 0;i < cells - 1;i++)
                 while(top - 1 > 0 and sub_grid[# left,top - 1] > 0)
                     sub_grid[# left,--top] = .5   
             }
+            
             section = "ul"
             draw_box_shadows(left,top,right,bottom)
         }
@@ -325,9 +471,9 @@ for(var i = 0;i < cells - 1;i++)
             }
             section = "rb"
             draw_box_shadows(left,top,right,bottom)
-        }//*/
+        }//
     }
-}
+}//*/
 ds_grid_destroy(sub_grid)
 surface_reset_target()
 if surface_exists(global.darkness)
