@@ -211,6 +211,8 @@ else if view_yview + view_hview &gt; room_height - b
 {
     view_yview = - view_hview + room_height - b
 }
+*/
+//if toggle = 1 {with(enemyparent){if (object_index != lighting) visible = point_distance(x,y,other.x,other.y) &lt; other.view_range;}}
 </string>
           </argument>
         </arguments>
@@ -2366,6 +2368,29 @@ draw_sprite_ext(sprite_index, image_index, x+(random_range(-vibrate,vibrate)), y
         </arguments>
       </action>
     </event>
+    <event eventtype="10" enumb="90">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>toggle *= -1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="10" enumb="52">
       <action>
         <libid>1</libid>
@@ -2429,7 +2454,7 @@ draw_sprite_ext(sprite_index, image_index, x+(random_range(-vibrate,vibrate)), y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>weapon = mace2
+            <string>weapon = flail
 </string>
           </argument>
         </arguments>

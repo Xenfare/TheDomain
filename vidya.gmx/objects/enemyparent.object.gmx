@@ -137,6 +137,8 @@ kb -= 1;
 x += lengthdir_x((kb / fric) - i, kbdir);
 y += lengthdir_y((kb / fric) - i, kbdir);
 }
+
+if kb &lt; 0 {kb = 0}
 </string>
           </argument>
         </arguments>

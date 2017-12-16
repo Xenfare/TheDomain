@@ -30,6 +30,8 @@ ready2 = false
 ready3 = false
 damaging = false
 kbvalue = 10
+kbx = x
+kby = y
 image_xscale = 0.5
 image_yscale = 0.5
 image_index = 1
@@ -159,6 +161,9 @@ if (mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_sho
 if (mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready2 = true &amp;&amp; global.shielddir = 0 &amp;&amp; player.alive = true {global.damage = 80; alarm[0] = 0; image_index = 6; sworddir = 0; ready2 = false; alarm[1] = 35; damaging = true; ds_list_clear(hitlist);}
 
 image_angle = player.image_angle + sworddir
+
+kbx = x
+kby = y
 
 }
 

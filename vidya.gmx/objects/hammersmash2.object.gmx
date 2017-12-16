@@ -30,6 +30,8 @@ damage = 150;
 audio_play_sound(choose(smash, smash2), 0, 0);
 image_xscale = 0.75
 image_yscale = 0.75
+kbx = x
+kby = y
 </string>
           </argument>
         </arguments>

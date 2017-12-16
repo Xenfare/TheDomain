@@ -62,7 +62,14 @@ enemysword.owner = id
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited()
+            <string>with instance_create(x, y, debris) 
+{
+direction = image_angle - 90;
+sprite_index = spr_rustdebris;
+image_xscale = 0.42
+image_yscale = 0.42
+}
+event_inherited()
 player.pothp += 15
 </string>
           </argument>

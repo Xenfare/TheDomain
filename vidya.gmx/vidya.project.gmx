@@ -91,6 +91,9 @@
     <sprite>sprites\spr_hammersmashmask</sprite>
     <sprite>sprites\spr_hammersmash2</sprite>
     <sprite>sprites\spr_hammersmashmask2</sprite>
+    <sprite>sprites\spr_flailhand</sprite>
+    <sprite>sprites\spr_flailhead</sprite>
+    <sprite>sprites\spr_flailchain</sprite>
     <sprite>sprites\spr_newspear2</sprite>
     <sprite>sprites\spr_spearmask</sprite>
     <sprite>sprites\spr_spear</sprite>
@@ -153,6 +156,7 @@
       <sprite>sprites\spr_doll</sprite>
       <sprite>sprites\spr_badger</sprite>
       <sprite>sprites\spr_frenziedzombie</sprite>
+      <sprite>sprites\spr_swallower</sprite>
       <sprite>sprites\spr_archer</sprite>
       <sprite>sprites\spr_wizard</sprite>
       <sprite>sprites\spr_kelpie</sprite>
@@ -278,16 +282,6 @@
     <object>objects\player</object>
     <object>objects\weaponparent</object>
     <object>objects\spawnpoint</object>
-    <object>objects\sword2</object>
-    <object>objects\hammer</object>
-    <object>objects\hammersmash</object>
-    <object>objects\hammersmash2</object>
-    <object>objects\rapier</object>
-    <object>objects\mace2</object>
-    <object>objects\shield</object>
-    <object>objects\magicshield</object>
-    <object>objects\forcefield</object>
-    <object>objects\thirstshield</object>
     <object>objects\worldwall</object>
     <object>objects\wall</object>
     <object>objects\invis</object>
@@ -296,6 +290,19 @@
     <object>objects\water</object>
     <object>objects\tempwall</object>
     <object>objects\bars</object>
+    <objects name="weapons">
+      <object>objects\sword2</object>
+      <object>objects\hammer</object>
+      <object>objects\hammersmash</object>
+      <object>objects\hammersmash2</object>
+      <object>objects\flail</object>
+      <object>objects\rapier</object>
+      <object>objects\mace2</object>
+      <object>objects\shield</object>
+      <object>objects\forcefield</object>
+      <object>objects\magicshield</object>
+      <object>objects\thirstshield</object>
+    </objects>
     <objects name="OOC">
       <object>objects\leftysword</object>
       <object>objects\spear</object>
@@ -403,6 +410,9 @@
         <object>objects\immortal</object>
         <object>objects\immortalchunk</object>
       </objects>
+      <objects name="swallower">
+        <object>objects\swallower</object>
+      </objects>
       <object>objects\overgrown</object>
       <object>objects\overgrown2</object>
       <object>objects\overgrowntest</object>
@@ -471,6 +481,7 @@
       <object>objects\spikes2</object>
       <object>objects\darkhallway</object>
       <object>objects\lake</object>
+      <object>objects\spawndoor</object>
     </objects>
     <object>objects\lighting</object>
     <object>objects\nextroom</object>
@@ -490,10 +501,11 @@
   <rooms name="rooms">
     <room>rooms\init_rom</room>
     <rooms name="DUNGEON">
+      <room>rooms\RE_BOSS_ONE</room>
       <room>rooms\LEVEL_ONE</room>
-      <room>rooms\BOSS_ONE</room>
       <room>rooms\LEVEL_TWO</room>
       <room>rooms\SECRET_ONE</room>
+      <room>rooms\BOSS_ONE</room>
     </rooms>
     <room>rooms\LEVEL_THREE</room>
     <rooms name="FOREST">

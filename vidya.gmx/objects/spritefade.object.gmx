@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0
+fadevalue = 0.1
 </string>
           </argument>
         </arguments>
@@ -48,8 +49,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_alpha -= 0.1
-if image_alpha = 1 {instance_destroy()}
+            <string>image_alpha -= fadevalue
+if image_alpha &lt;= 0 {instance_destroy()}
 </string>
           </argument>
         </arguments>

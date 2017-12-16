@@ -10,9 +10,9 @@ ds_list_find_index(player.weapon.hitlist, id) = -1
 hp -= global.damage;
 
 kb = player.weapon.kbvalue;
-kbdir = point_direction(other.x, other.y, x, y)
+kbdir = point_direction(other.kbx, other.kby, x, y)
 ds_list_add(player.weapon.hitlist, id);
-
+if player.weapon.object_index = flail {ds_list_add(player.weapon.hitlist, player.weapon.swing); player.weapon.charge -= 15}
 }
 }
 

@@ -32,7 +32,7 @@ hp = 180
 image_speed = 0
 image_xscale = 0.25
 image_yscale = 0.25
-alarm[1] = 80
+alarm[1] = 85
 image_speed = 0
 aggro_range = 600
 bookspd = .3
@@ -88,7 +88,7 @@ player.pothp += 5
             <string>if instance_exists(player) 
 {
 armdir = 25
-alarm[1] = 80
+alarm[1] = 85
 bookspd = 0.3
 if aggro = true {instance_create(x + lengthdir_x(30, point_direction(x, y, player.x, player.y)), y + lengthdir_y(30, point_direction(x, y, player.x, player.y)), magicshot); audio_play_sound(choose(fire, fire2), 10, false)}
 }
