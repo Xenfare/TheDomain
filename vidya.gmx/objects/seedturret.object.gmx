@@ -264,7 +264,7 @@ if spawn &gt; 0 alarm[0] = random_range(150, 250)
 
 if distance_to_object(player) &lt; 320 &amp;&amp; aggro = false 
 {
-aggro = true;
+aggro = true; player.interference = true;
 with instance_create(1792 + B, 1792 + B, tempwall) owner = other;
 with instance_create(1792 + B, 1856 + B, tempwall) owner = other;
 with instance_create(1792 + B, 1920 + B, tempwall) owner = other;
@@ -280,7 +280,7 @@ if aggro = true &amp;&amp; alarm[1] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[1] = r
 if aggro = true &amp;&amp; alarm[2] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[2] = random_range(170 + B, 350 + B)}
 if aggro = true &amp;&amp; alarm[3] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[3] = random_range(170 + B, 350 + B)}
 
-if spawn &lt;= 0 &amp;&amp; !instance_exists(overgrown2) &amp;&amp; !instance_exists(seed) &amp;&amp; !instance_exists(summon) {controller.progress[1] = 1; instance_destroy()}
+if spawn &lt;= 0 &amp;&amp; !instance_exists(overgrown2) &amp;&amp; !instance_exists(seed) &amp;&amp; !instance_exists(summon) {controller.progress[1] = 1; instance_destroy(); player.interference = false}
 </string>
           </argument>
         </arguments>

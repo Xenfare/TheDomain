@@ -114,6 +114,7 @@
     <sprite>sprites\spr_orb</sprite>
     <sprites name="projectiles">
       <sprite>sprites\spr_magicshot</sprite>
+      <sprite>sprites\spr_dagger</sprite>
       <sprite>sprites\spr_holyshot</sprite>
       <sprite>sprites\spr_ghostsprite</sprite>
       <sprite>sprites\spr_druidshot</sprite>
@@ -157,6 +158,13 @@
       <sprite>sprites\spr_badger</sprite>
       <sprite>sprites\spr_frenziedzombie</sprite>
       <sprite>sprites\spr_swallower</sprite>
+      <sprite>sprites\spr_swallower2</sprite>
+      <sprite>sprites\spr_swallowspear</sprite>
+      <sprite>sprites\spr_swallowerjaw</sprite>
+      <sprite>sprites\spr_swallowerwep</sprite>
+      <sprite>sprites\spr_swallowerwepmask</sprite>
+      <sprite>sprites\spr_swallowersword</sprite>
+      <sprite>sprites\spr_swallowerscream</sprite>
       <sprite>sprites\spr_archer</sprite>
       <sprite>sprites\spr_wizard</sprite>
       <sprite>sprites\spr_kelpie</sprite>
@@ -412,6 +420,11 @@
       </objects>
       <objects name="swallower">
         <object>objects\swallower</object>
+        <object>objects\swallowerjaw</object>
+        <object>objects\swallowerspear</object>
+        <object>objects\swallowersword</object>
+        <object>objects\swallowerwep</object>
+        <object>objects\dagger</object>
       </objects>
       <object>objects\overgrown</object>
       <object>objects\overgrown2</object>
