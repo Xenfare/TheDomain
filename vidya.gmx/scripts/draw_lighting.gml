@@ -44,7 +44,7 @@ draw_circle(e_view_range * CELL_SIZE,e_view_range * CELL_SIZE,view_range,0)
 draw_set_color(c_black)
 draw_set_blend_mode(bm_subtract)
 
-var maxh = ds_grid_width(sub_grid) - 1
+/*var maxh = ds_grid_width(sub_grid) - 1
 debug_str = ""
 for(var ii = 0; ii <= maxh; ++ii)
 for(var i = 1; i < maxh * .5; ++i)
@@ -187,7 +187,7 @@ for(var i = 1; i < maxh * .5; ++i)
     }
 }//*/
 
-/*
+
 var top = 0
 var bottom = 0
 var right = 0

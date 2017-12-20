@@ -426,13 +426,34 @@ else
 {
 if speed &gt; 0
 {
-{
+/*{
 var i;
 for (i = 1; place_meeting(x+lengthdir_x(speed + 1 - i, direction), y+lengthdir_y(speed + 1 - i, direction), wall); i += 1)
    {
    }
+}*/
+if place_meeting(x+lengthdir_x(speed, direction), y+lengthdir_y(speed, direction), wall)
+{
+    var i = 0;
+    var xmov = lengthdir_x(1,direction)
+    var ymov = lengthdir_y(1,direction) 
+    while(i &lt; speed)
+    {
+        if !place_meeting(x + xmov, y, wall)
+            x += xmov;
+        else
+            x -= xmov * speed;
+        if !place_meeting(x - xmov, y + ymov, wall)
+            y += ymov;
+        else
+            y -= ymov * speed;
+        ++i;
+        xprevious = x
+        yprevious = y
+        show_debug_message("Testing");
+    }
 }
-speed -= i;
+--speed //-= i;
 }
 }
 if speed &lt; 1 &amp;&amp; alarm[4] &gt; 40 &amp;&amp; alarm[4] &lt; 50 {alarm[4] = 20}
