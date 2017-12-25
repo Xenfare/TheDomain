@@ -11,9 +11,9 @@ if surface_exists(lights)
 else
     lights = surface_create(e_view_range * CELL_SIZE * 2, e_view_range * CELL_SIZE * 2)
 
-sub_grid = ds_grid_create(e_view_range * 2 + 4,e_view_range * 2 + 4)
-var x_grid_offset = 0
-var y_grid_offset = 0
+//sub_grid = ds_grid_create(e_view_range * 2 + 4,e_view_range * 2 + 4)
+//var x_grid_offset = 0
+//var y_grid_offset = 0
 /*if floor((x - e_view_range * CELL_SIZE) / CELL_SIZE) - 2 < 0
 {
     x_grid_offset =abs(floor((x - e_view_range * CELL_SIZE) / CELL_SIZE) - 2)
@@ -32,9 +32,9 @@ if floor((y - e_view_range * CELL_SIZE) / CELL_SIZE) - 2 < 0
 }*/
 //show_debug_message(string(y/CELL_SIZE - e_view_range) + " " + string(e_view_range) + " " + string(round(view_range)))
 
-ds_grid_set_grid_region(sub_grid,global.wall_grid,floor(x / CELL_SIZE) - e_view_range - 2,floor(y / CELL_SIZE) - e_view_range - 2,round((x + e_view_range * CELL_SIZE) / CELL_SIZE) + 2,round((y + e_view_range * CELL_SIZE) / CELL_SIZE) + 2,x_grid_offset,y_grid_offset)
+//ds_grid_set_grid_region(sub_grid,global.wall_grid,floor(x / CELL_SIZE) - e_view_range - 2,floor(y / CELL_SIZE) - e_view_range - 2,round((x + e_view_range * CELL_SIZE) / CELL_SIZE) + 2,round((y + e_view_range * CELL_SIZE) / CELL_SIZE) + 2,x_grid_offset,y_grid_offset)
 
-var cells = e_view_range + 2
+//var cells = e_view_range + 2
 
 surface_set_target(lights)
 draw_clear_alpha(c_black,0)
@@ -186,7 +186,7 @@ for(var i = 1; i < maxh * .5; ++i)
         draw_box_shadows(left,top,right,bottom)
     }
 }//*/
-
+/*
 
 var top = 0
 var bottom = 0
@@ -474,7 +474,20 @@ for(var i = 0;i < cells - 1;i++)
         }//
     }
 }//*/
-ds_grid_destroy(sub_grid)
+
+var xx = floor(x / CELL_SIZE)
+var yy = floor(y / CELL_SIZE)
+for(var i = 0; i < ds_list_size(global.light_objects); i += 4)
+{
+    var left = global.light_objects[|i]
+    var top = global.light_objects[|i + 1]
+    var right = global.light_objects[|i + 2]
+    var bottom = global.light_objects[|i + 3]
+    if rectangle_in_circle(left,top,right,bottom,xx,yy,e_view_range + 2) 
+        draw_box_shadows(left,top,right,bottom)
+}
+
+//ds_grid_destroy(sub_grid)
 surface_reset_target()
 if surface_exists(global.darkness)
 {

@@ -31,6 +31,7 @@ if surface_exists(global.darkness)
     surface_free(global.darkness)
 global.darkness = surface_create(view_wview,view_hview)
 global.cell_size = CELL_SIZE
+global.light_objects = ds_list_create();
 
 with(all)
 {
@@ -144,6 +145,7 @@ with(wall)
 {
     global.wall_grid[# x/CELL_SIZE,y/CELL_SIZE] = 1
 }
+GenerateLightWalls()
 </string>
           </argument>
         </arguments>

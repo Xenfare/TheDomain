@@ -1,9 +1,14 @@
         var wall_lining_size = 24 
         var e_view_range = ceil(view_range/global.cell_size) * global.cell_size
-        var true_bbox_left  = floor(x-e_view_range) + (argument0-2) * global.cell_size - (x-e_view_range)%global.cell_size + wall_lining_size
+        /*var true_bbox_left  = floor(x-e_view_range) + (argument0-2) * global.cell_size - (x-e_view_range)%global.cell_size + wall_lining_size
         var true_bbox_right = floor(x-e_view_range) + (argument2-1) * global.cell_size - (x-e_view_range)%global.cell_size - wall_lining_size
         var true_bbox_top = floor(y-e_view_range) + (argument1-2) * global.cell_size - (y-e_view_range)%global.cell_size + wall_lining_size
         var true_bbox_bottom = floor(y-e_view_range) + (argument3-1) * global.cell_size - (y-e_view_range)%global.cell_size - wall_lining_size
+        //*/
+        var true_bbox_left = argument0 * global.cell_size + wall_lining_size
+        var true_bbox_right = (argument2 + 1)* global.cell_size - wall_lining_size
+        var true_bbox_top = argument1 * global.cell_size + wall_lining_size
+        var true_bbox_bottom = (argument3 + 1)* global.cell_size - wall_lining_size
         var pos = 0;     
         var true_x = (true_bbox_right + true_bbox_left)/2
         var true_y = (true_bbox_top + true_bbox_bottom)/2
@@ -186,7 +191,7 @@
         }*/
         if debug_mode draw_set_alpha(.5)
         draw_primitive_begin(pr_trianglefan)
-        draw_vertex(side_x1 - x_offset+lengthdir_x(999999,dir1),side_y1 - y_offset+lengthdir_y(999999,dir1))
+        draw_vertex(side_x1 - x_offset+lengthdir_x(999,dir1),side_y1 - y_offset+lengthdir_y(999,dir1))
         draw_vertex(side_x1 - x_offset/* + side_ox1*/,side_y1 - y_offset/* + side_oy1*/)
         if pos > 4
         {
@@ -195,12 +200,12 @@
             //draw_vertex(side_x2 - x_offset - side_oxx2,side_y2 - y_offset + side_oyy2)
         } 
         draw_vertex(side_x2 - x_offset/* + side_ox2*/,side_y2 - y_offset/* + side_oy2*/)
-        draw_vertex(side_x2 - x_offset+lengthdir_x(999999,dir2),side_y2 - y_offset+lengthdir_y(999999,dir2))
+        draw_vertex(side_x2 - x_offset+lengthdir_x(999,dir2),side_y2 - y_offset+lengthdir_y(999,dir2))
         //draw_vertex(true_x - x_offset+lengthdir_x(999999,dir),true_y - y_offset+lengthdir_y(999999,dir))
         
         draw_primitive_end()
-        if debug_mode {draw_set_alpha(1)
-        draw_text(side_x1,side_y1,debug_str)}
+        if debug_mode draw_set_alpha(1)
+        //draw_text(side_x1,side_y1,debug_str)}
 /*        if debug_mode{
         draw_set_alpha(1)
         draw_text_color(true_x - x_offset,true_y - y_offset,section,c_red,c_red,c_red,c_red,1)
