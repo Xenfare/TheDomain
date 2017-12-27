@@ -292,6 +292,7 @@
     <script>scripts\inventoryscript.gml</script>
     <script>scripts\debrisscript.gml</script>
     <script>scripts\interrupt.gml</script>
+    <script>scripts\GenerateLightWalls.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\player</object>
