@@ -59,7 +59,7 @@ pguard = guard
 if controller.class = 1
 {
 weapon = instance_create(x, y, rapier)
-guard = instance_create(x, y, thirstshield)
+guard = instance_create(x, y, shield)
 
 pweapon = weapon
 pguard = guard

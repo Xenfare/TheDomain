@@ -103,7 +103,6 @@
       <sprite>sprites\spr_rapier</sprite>
       <sprite>sprites\spr_rapier2</sprite>
       <sprite>sprites\spr_rapiermask</sprite>
-      <sprite>sprites\spr_newrapier</sprite>
       <sprite>sprites\spr_hammer</sprite>
       <sprite>sprites\spr_hammermask</sprite>
       <sprite>sprites\spr_hammersmash</sprite>
@@ -228,6 +227,9 @@
         <sprite>sprites\spr_swordmask2</sprite>
         <sprite>sprites\spr_swordmasktest</sprite>
         <sprite>sprites\spr_shield2</sprite>
+        <sprite>sprites\spr_newrapier</sprite>
+        <sprite>sprites\spr_newrapiermask</sprite>
+        <sprite>sprites\spr_newrapier2</sprite>
       </sprites>
       <sprites name="overgrown">
         <sprite>sprites\spr_overgrown2</sprite>
