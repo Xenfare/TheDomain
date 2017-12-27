@@ -110,12 +110,14 @@ image_angle = owner.image_angle + leftyshielddir * 16;
 x = owner.x
 y = owner.y
 
-if owner.phase = 1 {
-leftyshielddir += 1;
+if owner.phase = 1 
+{
+leftyshielddir += 0.4;
 if leftyshielddir &gt; 5 leftyshielddir = 5
 }
 
 } else 
+
 {
 instance_destroy()
 }

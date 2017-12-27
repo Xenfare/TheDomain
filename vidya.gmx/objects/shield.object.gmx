@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>globalvar shielddir;
 shielddir = 0
-healstat = 0
+player.healstat = 1
+player.fric = 1
 image_speed = 0
 image_xscale = .5
 image_yscale = .5

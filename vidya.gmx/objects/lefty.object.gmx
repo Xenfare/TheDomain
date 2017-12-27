@@ -426,7 +426,7 @@ image_index = 2
 if phase = 6
 {
 healed = true
-if alarm[6] = 149 {for (var i = 0; i &lt; 360; i += 12;){with (instance_create(x,y,holyshot)) direction = i}}
+if alarm[6] = 149 {for (var i = -4; i &lt; 5; i += 1;){with (instance_create(x,y,holyshot)) direction = image_angle + 8 * i}}
 enemyshield.image_index = 2
 if alarm[6] &gt; 100 {direction = point_direction(player.x, player.y, x, y); speed = 4; image_angle = direction}
 else
@@ -513,15 +513,16 @@ with(other){shieldcol = place_meeting(x,y,eleftyshield)}
 if enemyshield.leftyshielddir = 5 &amp;&amp; ds_list_find_index(player.weapon.hitlist, id) = -1
 
 {
-audio_play_sound(clang, 10, false); 
+audio_play_sound(clang2, 10, false); 
 
 if sprite_index = spr_oldlefty1
 {phase = 9; alarm[9] = 90}
 else
 {phase = 6; alarm[6] = 150}
 
-player.weapon.alarm[0] = 1;
-player.weapon.alarm[1] = 1;
+with player script_execute(interrupt)
+player.kbdir = point_direction(x, y, player.x, player.y)
+player.kb = 20
 
 alarm[1] = -1
 alarm[2] = -1

@@ -47,11 +47,32 @@ comfymode = -1
 
 alive = true
 
-weapon = sword2
-guard = shield
+if controller.class = 2
+{
+weapon = instance_create(x, y, sword2)
+guard = instance_create(x, y, shield)
 
-pweapon = sword2
-pguard = shield
+pweapon = weapon
+pguard = guard
+}
+
+if controller.class = 1
+{
+weapon = instance_create(x, y, rapier)
+guard = instance_create(x, y, thirstshield)
+
+pweapon = weapon
+pguard = guard
+}
+
+if controller.class = 3
+{
+weapon = instance_create(x, y, hammer)
+guard = instance_create(x, y, kbshield)
+
+pweapon = weapon
+pguard = guard
+}
 
 exhausted = false
 inv = false
@@ -63,6 +84,7 @@ maxstamina = 35
 maxhp = 100
 spd = 0
 sprinting = false
+fric = 1
 healstat = 1
 mana = 0
 kb = 0
@@ -71,9 +93,6 @@ vibrate = 0
 checkroom = LEVEL_ONE
 checkpoint = noone
 error = "nothing"
-
-instance_create(x,y,weapon)
-instance_create(x,y,guard)
 
 mouse_xprevious = mouse_x
 mouse_yprevious = mouse_y
@@ -179,22 +198,76 @@ if !instance_exists(inventory)
             <string>//init
 view_xview = x - view_wview/2
 view_yview = y - view_hview/2
+/*
+if kb &lt; 0 {kb = 0}
+
+if kb &gt; 0
+{
+if place_meeting(x+lengthdir_x(kb, kbdir), y+lengthdir_y(kb, kbdir), worldwall)
+{
+    var i = 0;
+    var xmov = lengthdir_x(1,kbdir)
+    var ymov = lengthdir_y(1,kbdir) 
+    while(i &lt; kb)
+    {
+        if !place_meeting(x + xmov, y, worldwall) &amp;&amp; !place_meeting(x + xmov, y, enemyparent)
+            x += xmov;
+        else
+            x -= xmov * kb;
+        if !place_meeting(x - xmov, y + ymov, worldwall)
+            y += ymov;
+        else
+            y -= ymov * kb;
+        ++i;
+        xprevious = x
+        yprevious = y
+    }
+    
+}
+else
+{
+x += lengthdir_x(kb, kbdir);
+y += lengthdir_y(kb, kbdir);
+}
+--kb
+}
+*/
 
 if kb &lt; 0 {kb = 0}
 
 if kb &gt; 0
 {
+
+{
 {
 var i;
-for (i = 0; place_meeting(x+lengthdir_x(kb + 1 - i, kbdir), y+lengthdir_y(kb + 1 - i, kbdir), worldwall); i += 1)
+for (i = 0; place_meeting(x+lengthdir_x(kb + 1 - i, kbdir), y, worldwall); i += 1)
    {
    }
 }
-kb -= 1;
-x += lengthdir_x((kb - i) * alive, kbdir);
-y += lengthdir_y((kb - i) * alive, kbdir);
+x += lengthdir_x(((kb - i) / fric) * alive, kbdir);
+show_debug_message(i)
 }
 
+{
+{
+var o;
+for (o = 0; place_meeting(x, y+lengthdir_y(kb + 1 - o, kbdir), worldwall); o += 1)
+   {
+   }
+}
+kb -= 1
+if i &gt; 0 {i-=1}
+if o &gt; 0 {i-=1}
+y += lengthdir_y(((kb - o) / fric) * alive, kbdir);
+show_debug_message(o)
+}
+
+}
+
+
+/*place_meeting(x+lengthdir_x(kb + 1 - i, kbdir), y, worldwall)*/ 
+/*place_meeting(x, y+lengthdir_y(kb + 1 - o, kbdir), worldwall)*/
 /*camera
 var b =  BUFFER_CELLS * CELL_SIZE
 if view_xview &lt; b
@@ -243,11 +316,9 @@ if keyboard_check(ord('A')) &amp;&amp; keyboard_check(ord('G')) &amp;&amp; keybo
 if keyboard_check_pressed(ord('O')) {display *= -1}
 if keyboard_check_pressed(ord('P')) {comfymode *= -1}
 
-
-//inventory code
-if weapon != pweapon {instance_create(x, y, weapon); instance_destroy(pweapon); pweapon = weapon}
-if guard != pguard {instance_create(x, y, guard); instance_destroy(pweapon); pweapon = weapon}
-
+//equipment code
+if weapon != pweapon {instance_destroy(pweapon); pweapon = weapon}
+if guard != pguard {instance_destroy(pguard); pguard = guard}
 
 //death code
 
@@ -867,7 +938,7 @@ var shieldcol = 0
 if global.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 if (inv = 0) &amp;&amp; shieldcol = 0
-{hp -= 6; repeat(8) instance_create(x, y, blood); script_execute(interrupt); kb = 6; kbdir = point_direction(other.x, other.y, x, y)}
+{hp -= 8; repeat(8) instance_create(x, y, blood); script_execute(interrupt); kb = 6; kbdir = point_direction(other.x, other.y, x, y)}
 </string>
           </argument>
         </arguments>
@@ -909,7 +980,7 @@ var shieldcol = 0
 if global.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 if (inv = 0) &amp;&amp; shieldcol = 0 &amp;&amp; other.owner.damaging = true
-{hp -= 30; kbdir = point_direction(other.owner.x, other.owner.y, x, y); kb = 15; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); script_execute(interrupt); other.owner.damaging = false}
+{hp -= 20; kbdir = point_direction(other.owner.x, other.owner.y, x, y); kb = 15; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); script_execute(interrupt); other.owner.damaging = false}
 </string>
           </argument>
         </arguments>
@@ -1024,7 +1095,7 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if other.speed &gt; 4 {hp -= 18; kbdir = point_direction(other.x, other.y, x, y); kb = 18; repeat(8) instance_create(x, y, blood)}
+            <string>if other.speed &gt; 4 &amp;&amp; other.damaging = true {hp -= 18; other.damaging = false; kbdir = point_direction(other.x, other.y, x, y); kb = 18; repeat(8) instance_create(x, y, blood)}
 </string>
           </argument>
         </arguments>
@@ -1653,7 +1724,7 @@ if (other.owner.spindir &gt; 3 or other.owner.spindir &lt; -3) &amp;&amp; (inv =
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>{hp -= 12; repeat(8) instance_create(x, y, blood); inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; alarm[0] = 12}
+            <string>{hp -= 20; repeat(8) instance_create(x, y, blood); script_execute(interrupt); kb = 8; kbdir = point_direction(other.x, other.y, x, y)}
 </string>
           </argument>
         </arguments>
@@ -1898,7 +1969,7 @@ if (other.owner.spindir &gt; 3 or other.owner.spindir &lt; -3) &amp;&amp; (inv =
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>{hp -= 14; repeat(8) instance_create(x, y, blood); script_execute(interrupt); kbdir = point_direction(other.x, other.y, x, y); kb = 6;}
+            <string>{hp -= 14; repeat(8) instance_create(x, y, blood); script_execute(interrupt); kbdir = point_direction(other.x, other.y, x, y); kb = 8;}
 </string>
           </argument>
         </arguments>
@@ -2338,7 +2409,8 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if alive = false {alive = true; image_alpha = 1; interference = false; ds_list_clear(defeated); hp = maxhp; stamina = maxstamina; mana = 0; alarm[7] = 2}
+            <string>controller.blackout = -1;
+if alive = false {alive = true; image_alpha = 1; interference = false; ds_list_clear(defeated); hp = maxhp; stamina = maxstamina; mana = 0; alarm[7] = 2}
 view_wview = window_get_width()
 view_hview = window_get_height()
 view_wport = view_wview
@@ -2429,10 +2501,10 @@ if alarm[8] &gt; 1 {draw_text_color(150, view_hport - 150, error, c_white, c_whi
 if display = 1 {draw_text_colour(10, 10, "
 Use WASD to move. 
 #Press Shift to sprint. Sprinting requires stamina. 
-#LMB to attack. Attack again at the right time for a second higher damage attack. 
+#LMB to attack. Different weapons have different unique mechanics and moves.
 #RMB to block. 
-#Killing enemies will restore health. 
-#Killing enemies at full health will fill your blood meter.
+#Killing enemies will restore health and fill your blood meter.
+#You will receive bonus blood while at full health.
 #Press R while at full blood to place a checkpoint.
 #Press F1 to toggle fullscreen.
 #Press O to toggle these messages.
@@ -2487,121 +2559,6 @@ draw_sprite_ext(sprite_index, image_index, x+(random_range(-vibrate,vibrate)), y
             <string>window_set_fullscreen(!window_get_fullscreen())
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="90">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>toggle *= -1
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="52">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>weapon = hammer
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="51">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>weapon = rapier
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="50">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>weapon = flail
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="49">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>weapon = sword2
 </string>
           </argument>
         </arguments>
