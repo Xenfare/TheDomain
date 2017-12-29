@@ -527,12 +527,9 @@
     <object>objects\enemy_chunk</object>
     <object>objects\YOUDIED</object>
     <object>objects\selector</object>
-<<<<<<< HEAD
-=======
     <object>objects\blackout2</object>
     <object>objects\torch</object>
     <object>objects\door</object>
->>>>>>> dbfce8c368a5ae78adbbd8111b76db5c2700d41c
   </objects>
   <timelines name="timelines">
     <timeline>timelines\TLchase</timeline>
