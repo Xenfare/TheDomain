@@ -191,7 +191,7 @@
         }*/
         if debug_mode draw_set_alpha(.5)
         draw_primitive_begin(pr_trianglefan)
-        draw_vertex(side_x1 - x_offset+lengthdir_x(999999,dir1),side_y1 - y_offset+lengthdir_y(999999,dir1))
+        draw_vertex(side_x1 - x_offset+lengthdir_x(999,dir1),side_y1 - y_offset+lengthdir_y(999,dir1))
         draw_vertex(side_x1 - x_offset/* + side_ox1*/,side_y1 - y_offset/* + side_oy1*/)
         if pos > 4
         {
@@ -200,7 +200,7 @@
             //draw_vertex(side_x2 - x_offset - side_oxx2,side_y2 - y_offset + side_oyy2)
         } 
         draw_vertex(side_x2 - x_offset/* + side_ox2*/,side_y2 - y_offset/* + side_oy2*/)
-        draw_vertex(side_x2 - x_offset+lengthdir_x(999999,dir2),side_y2 - y_offset+lengthdir_y(999999,dir2))
+        draw_vertex(side_x2 - x_offset+lengthdir_x(999,dir2),side_y2 - y_offset+lengthdir_y(999,dir2))
         //draw_vertex(true_x - x_offset+lengthdir_x(999999,dir),true_y - y_offset+lengthdir_y(999999,dir))
         
         draw_primitive_end()
