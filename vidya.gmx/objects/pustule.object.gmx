@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>maxhp = 140
 hp = 140
-prevhp = 140
+prevhp = 120
 swell = 0
 size = 0
 vibrate = 0
@@ -172,8 +172,6 @@ if swell = 1 {size += ((maxhp - hp) / 400) + 0.01}
 
 image_xscale = size + (maxhp - hp) / 250
 image_yscale = size + (maxhp - hp) / 250
-
-hp += 0.2
 
 image_angle = point_direction(owner.x, owner.y, x, y)
 

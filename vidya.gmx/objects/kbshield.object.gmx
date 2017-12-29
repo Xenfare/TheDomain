@@ -32,6 +32,7 @@ player.fric = 2
 image_speed = 0
 image_xscale = .5
 image_yscale = .5
+liftspd = 0
 </string>
           </argument>
         </arguments>
@@ -59,8 +60,9 @@ image_yscale = .5
 image_angle = player.image_angle - (shielddir * 16)
 x = player.x
 y = player.y
-if (mouse_check_button(mb_right) or gamepad_button_check(0,gp_shoulderlb)) &amp;&amp; sword.image_index = 1 &amp;&amp;  player.alive = true {shielddir += 1}
-if (mouse_check_button_released(mb_right) or gamepad_button_check_released(0,gp_shoulderlb)) or sword.image_index != 1 {shielddir = 0}
+if (mouse_check_button(mb_right) or gamepad_button_check(0,gp_shoulderlb)) &amp;&amp; sword.image_index = 1 &amp;&amp;  player.alive = true {liftspd+= 0.05; shielddir += liftspd}
+if (mouse_check_button_released(mb_right) or gamepad_button_check_released(0,gp_shoulderlb)) or sword.image_index != 1 {shielddir = 0; liftspd = 0}
+if shielddir = 0 {liftspd = 0}
 if player.alive = false {shielddir = 0}
 if shielddir &gt; 5 shielddir = 5
 }

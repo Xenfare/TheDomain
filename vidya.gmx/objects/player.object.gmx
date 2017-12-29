@@ -59,7 +59,7 @@ pguard = guard
 if controller.class = 1
 {
 weapon = instance_create(x, y, rapier)
-guard = instance_create(x, y, shield)
+guard = instance_create(x, y, thirstshield)
 
 pweapon = weapon
 pguard = guard
@@ -93,6 +93,7 @@ vibrate = 0
 checkroom = LEVEL_ONE
 checkpoint = noone
 error = "nothing"
+aa = 0
 
 mouse_xprevious = mouse_x
 mouse_yprevious = mouse_y
@@ -2458,7 +2459,9 @@ interference = false
           <argument>
             <kind>1</kind>
             <string>if !comfymode
+{
     draw_lighting()
+}
 lighting.visible = !comfymode
 </string>
           </argument>
@@ -2559,6 +2562,60 @@ draw_sprite_ext(sprite_index, image_index, x+(random_range(-vibrate,vibrate)), y
             <string>window_set_fullscreen(!window_get_fullscreen())
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="40">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if aa = 2 {aa -= 2} else
+if aa = 4 {aa -= 2} else
+if aa = 8 {aa -= 4}
+
+display_reset(aa, false)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="38">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if aa = 0 {aa += 2} else
+if aa = 2 {aa += 2} else
+if aa = 4 {aa += 4}
+
+display_reset(aa, false)
 </string>
           </argument>
         </arguments>

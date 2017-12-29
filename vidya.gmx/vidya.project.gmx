@@ -158,6 +158,7 @@
     </sprites>
     <sprites name="enemies">
       <sprite>sprites\spr_zombie</sprite>
+      <sprite>sprites\spr_roach</sprite>
       <sprite>sprites\spr_psycho</sprite>
       <sprite>sprites\spr_ghost</sprite>
       <sprite>sprites\spr_denizen</sprite>
@@ -329,6 +330,7 @@
       <object>objects\leftyshield</object>
       <object>objects\mace</object>
       <object>objects\sword</object>
+      <object>objects\blackout2</object>
       <object>objects\inventory</object>
     </objects>
     <objects name="projectiles">
@@ -443,6 +445,7 @@
       <object>objects\overgrown</object>
       <object>objects\overgrown2</object>
       <object>objects\overgrowntest</object>
+      <object>objects\roach</object>
       <object>objects\zombie</object>
       <object>objects\psycho</object>
       <object>objects\psycho2</object>
@@ -521,7 +524,6 @@
     <object>objects\enemy_chunk</object>
     <object>objects\YOUDIED</object>
     <object>objects\selector</object>
-    <object>objects\blackout2</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\TLchase</timeline>
@@ -530,8 +532,8 @@
     <room>rooms\init_rom</room>
     <rooms name="DUNGEON">
       <room>rooms\DEMOROOM</room>
-      <room>rooms\LEVEL_ONE</room>
       <room>rooms\LEVEL_TWO</room>
+      <room>rooms\LEVEL_ONE</room>
       <room>rooms\BOSS_ONE</room>
       <room>rooms\SECRET_ONE</room>
     </rooms>
@@ -549,9 +551,9 @@
       <room>rooms\BOSS_THREE</room>
     </rooms>
     <room>rooms\SPAWN_ROOM</room>
+    <room>rooms\LIGHTING_TEST</room>
     <room>rooms\BOSS_SCRAP</room>
     <room>rooms\BOSS_SCRAP2</room>
-    <room>rooms\LIGHTING_TEST</room>
   </rooms>
   <constants number="6">
     <constant name="print">show_debug_message</constant>
