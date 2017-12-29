@@ -77,6 +77,7 @@
       <sprite>sprites\spr_inventoryitems</sprite>
     </sprites>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_helpmetosee</sprite>
     <sprite>sprites\spr_deathwall</sprite>
     <sprite>sprites\spr_loot</sprite>
@@ -271,6 +272,8 @@
         <sprite>sprites\spr_skeletonjaw</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\spr_torch</sprite>
+    <sprite>sprites\spr_torchfire</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg1</background>
@@ -524,6 +527,12 @@
     <object>objects\enemy_chunk</object>
     <object>objects\YOUDIED</object>
     <object>objects\selector</object>
+<<<<<<< HEAD
+=======
+    <object>objects\blackout2</object>
+    <object>objects\torch</object>
+    <object>objects\door</object>
+>>>>>>> dbfce8c368a5ae78adbbd8111b76db5c2700d41c
   </objects>
   <timelines name="timelines">
     <timeline>timelines\TLchase</timeline>
