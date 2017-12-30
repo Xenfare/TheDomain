@@ -527,7 +527,6 @@
     <object>objects\enemy_chunk</object>
     <object>objects\YOUDIED</object>
     <object>objects\selector</object>
-    <object>objects\blackout2</object>
     <object>objects\torch</object>
     <object>objects\door</object>
   </objects>
@@ -538,8 +537,8 @@
     <room>rooms\init_rom</room>
     <rooms name="DUNGEON">
       <room>rooms\DEMOROOM</room>
-      <room>rooms\LEVEL_TWO</room>
       <room>rooms\LEVEL_ONE</room>
+      <room>rooms\LEVEL_TWO</room>
       <room>rooms\BOSS_ONE</room>
       <room>rooms\SECRET_ONE</room>
     </rooms>
