@@ -153,6 +153,7 @@
       <sprite>sprites\spr_wizardparticle</sprite>
       <sprite>sprites\spr_boneparticle</sprite>
       <sprite>sprites\spr_blood</sprite>
+      <sprite>sprites\spr_spit</sprite>
       <sprite>sprites\spr_immortalparticle</sprite>
       <sprite>sprites\spr_healthpickup</sprite>
       <sprite>sprites\spr_spark</sprite>
@@ -229,7 +230,11 @@
         <sprite>sprites\spr_swordmask2</sprite>
         <sprite>sprites\spr_swordmasktest</sprite>
         <sprite>sprites\spr_shield2</sprite>
+        <sprite>sprites\spr_kbshield</sprite>
+        <sprite>sprites\spr_thirstshield2</sprite>
+        <sprite>sprites\spr_buckler</sprite>
         <sprite>sprites\spr_newrapier</sprite>
+        <sprite>sprites\spr_newcrit</sprite>
         <sprite>sprites\spr_newrapiermask</sprite>
         <sprite>sprites\spr_newrapier2</sprite>
       </sprites>
@@ -537,9 +542,9 @@
     <room>rooms\init_rom</room>
     <rooms name="DUNGEON">
       <room>rooms\DEMOROOM</room>
+      <room>rooms\BOSS_ONE</room>
       <room>rooms\LEVEL_ONE</room>
       <room>rooms\LEVEL_TWO</room>
-      <room>rooms\BOSS_ONE</room>
       <room>rooms\SECRET_ONE</room>
     </rooms>
     <room>rooms\LEVEL_THREE</room>

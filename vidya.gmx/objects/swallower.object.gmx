@@ -547,6 +547,7 @@ player.xprevious = x + lengthdir_x(20, image_angle)
 player.yprevious = y + lengthdir_y(20, image_angle)
 player.kbdir = image_angle
 player.kb = 26
+repeat(16) with instance_create(x + lengthdir_x(50, image_angle), y + lengthdir_y(50, image_angle), blood) {sprite_index = spr_spit; direction = other.image_angle + random_range(-40, 40)}
 }
 
 if alarm[9] &gt; 30 &amp;&amp; alarm[9] &lt; 70 {wepdir += 1}
