@@ -306,6 +306,7 @@
     <script>scripts\debrisscript.gml</script>
     <script>scripts\interrupt.gml</script>
     <script>scripts\GenerateLightWalls.gml</script>
+    <script>scripts\RemoveWall.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\player</object>
@@ -549,6 +550,7 @@
       <room>rooms\LEVEL_TWO</room>
       <room>rooms\SECRET_ONE</room>
       <room>rooms\BOSS_ONE</room>
+      <room>rooms\LIGHTING_TEST</room>
     </rooms>
     <room>rooms\LEVEL_THREE</room>
     <rooms name="FOREST">
@@ -564,7 +566,6 @@
       <room>rooms\BOSS_THREE</room>
     </rooms>
     <room>rooms\SPAWN_ROOM</room>
-    <room>rooms\LIGHTING_TEST</room>
     <room>rooms\BOSS_SCRAP</room>
     <room>rooms\BOSS_SCRAP2</room>
   </rooms>

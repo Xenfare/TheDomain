@@ -144,33 +144,34 @@ if kb &lt; 0 {kb = 0}
 
 if kb &gt; 0
 {
-if place_meeting(x+lengthdir_x(kb, kbdir), y+lengthdir_y(kb, kbdir), worldwall)
-{
-    var i = 0;
-    var xmov = lengthdir_x(1,kbdir)
-    var ymov = lengthdir_y(1,kbdir) 
-    while(i &lt; kb)
-    {
-        if !place_meeting(x + xmov, y, worldwall) &amp;&amp; !place_meeting(x + xmov, y, enemyparent)
-            x += xmov;
-        else
-            x -= xmov * kb;
-        if !place_meeting(x - xmov, y + ymov, worldwall)
-            y += ymov;
-        else
-            y -= ymov * kb;
-        ++i;
-        xprevious = x
-        yprevious = y
-    }
     
-}
-else
-{
-x += lengthdir_x((kb / fric), kbdir);
-y += lengthdir_y((kb / fric), kbdir);
-}
---kb
+    //if place_meeting(x+lengthdir_x(kb, kbdir), y+lengthdir_y(kb, kbdir), worldwall)
+    //{
+        var i = 0;
+        var xmov = lengthdir_x(1,kbdir)
+        var ymov = lengthdir_y(1,kbdir) 
+        while(i &lt; kb)
+        {
+            if !place_meeting(x + xmov, y, worldwall) &amp;&amp; !place_meeting(x + xmov, y, enemyparent)
+                x += xmov;
+            else
+                x -= xmov * kb;
+            if !place_meeting(x - xmov, y + ymov, worldwall)
+                y += ymov;
+            else
+                y -= ymov * kb;
+            ++i;
+            xprevious = x
+            yprevious = y
+        }
+        
+    /*}
+    else
+    {
+    x += lengthdir_x((kb / fric), kbdir);
+    y += lengthdir_y((kb / fric), kbdir);
+    }*/
+    --kb
 }
 </string>
           </argument>

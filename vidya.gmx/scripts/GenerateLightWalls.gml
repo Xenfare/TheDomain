@@ -1,6 +1,7 @@
-var maxh = ds_grid_width(global.wall_grid)
-var size_cuttoff = maxh * maxh
-var g = ds_grid_create(maxh,maxh)
+var maxh = ds_grid_height(global.wall_grid)
+var maxw = ds_grid_width(global.wall_grid)
+var size_cuttoff = maxw * maxh
+var g = ds_grid_create(maxw,maxh)
 ds_grid_copy(g, global.wall_grid)
 
 ds_list_clear(global.light_objects)
@@ -8,7 +9,7 @@ ds_list_clear(global.light_objects)
 var left, right, top, bottom;
 var ind = 1;
 for(var ii = 0; ii < maxh; ++ii)
-for(var i = 0; i < maxh; ++i)
+for(var i = 0; i < maxw; ++i)
 {
     if g[# i, ii] = 1
     {
@@ -17,7 +18,7 @@ for(var i = 0; i < maxh; ++i)
         right = left;
         top = ii;
         bottom = top;
-        for(var xx = i + 1; xx < maxh; ++xx)
+        for(var xx = i + 1; xx < maxw; ++xx)
             if !g[# xx, top]
             {
                 right = xx - 1;
@@ -46,7 +47,7 @@ for(var i = 0; i < maxh; ++i)
                    last_start = xxx;
             if early_exit
             {
-                if last_start != -1 && last_start - right > 1 || (last_start < maxh - 1 && g[# last_start + 1, yy])
+                if last_start != -1 && last_start - right > 1 || (last_start < maxw - 1 && g[# last_start + 1, yy])
                     ds_list_add(global.light_objects,last_start,bottom,right,yy);
                 break;
             }
