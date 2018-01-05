@@ -29,6 +29,8 @@
 shielddir = 0
 player.healstat = 1
 player.fric = 2
+name = "Dome Shield"
+loadout = 3
 image_speed = 0
 image_xscale = .5
 image_yscale = .5
@@ -57,7 +59,7 @@ liftspd = 0
             <kind>1</kind>
             <string>if instance_exists(player)
 {
-image_angle = player.image_angle - (shielddir * 16)
+image_angle = player.image_angle - (shielddir * 18)
 x = player.x
 y = player.y
 if (mouse_check_button(mb_right) or gamepad_button_check(0,gp_shoulderlb)) &amp;&amp; sword.image_index = 1 &amp;&amp;  player.alive = true {liftspd+= 0.05; shielddir += liftspd}

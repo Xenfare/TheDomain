@@ -30,9 +30,11 @@ damaging = true
 kbvalue = 0
 chainx = lengthdir_x(32, 90 + player.image_angle)
 chainy = lengthdir_y(32, 90 + player.image_angle)
+loadout = 2
 kbx = player.x
 kby = player.y
 spd = 0
+name = "Mangling Flail"
 image_index = 1
 image_speed = 0
 globalvar sworddir;

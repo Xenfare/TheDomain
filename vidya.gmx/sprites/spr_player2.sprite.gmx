@@ -18,8 +18,9 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>232</width>
-  <height>235</height>
+  <height>234</height>
   <frames>
     <frame index="0">images\spr_player2_0.png</frame>
+    <frame index="1">images\spr_player2_1.png</frame>
   </frames>
 </sprite>

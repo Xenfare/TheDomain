@@ -28,7 +28,7 @@
             <string>event_inherited();
 aggro = 0
 inv = false
-hp = 180
+hp = 160
 image_speed = 0
 image_xscale = 0.25
 image_yscale = 0.25

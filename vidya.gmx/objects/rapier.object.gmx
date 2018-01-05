@@ -32,6 +32,8 @@ damaging = false
 kbvalue = 7
 kbx = x
 kby = y
+name = "Foreign Rapier"
+loadout = 3
 image_index = 1
 image_speed = 0
 globalvar sworddir;

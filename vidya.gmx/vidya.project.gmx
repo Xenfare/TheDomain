@@ -225,6 +225,8 @@
     <sprite>sprites\spr_blackout</sprite>
     <sprites name="NEW">
       <sprites name="player">
+        <sprite>sprites\spr_loadout</sprite>
+        <sprite>sprites\spr_loadout2</sprite>
         <sprite>sprites\spr_player2</sprite>
         <sprite>sprites\spr_sword2</sprite>
         <sprite>sprites\spr_swordmask2</sprite>
@@ -314,10 +316,10 @@
     <object>objects\wall</object>
     <object>objects\invis</object>
     <object>objects\deathinvis</object>
-    <object>objects\chest</object>
     <object>objects\water</object>
     <object>objects\tempwall</object>
     <object>objects\bars</object>
+    <object>objects\chest</object>
     <objects name="weapons">
       <object>objects\sword2</object>
       <object>objects\hammer</object>
@@ -327,6 +329,7 @@
       <object>objects\rapier</object>
       <object>objects\mace2</object>
       <object>objects\shield</object>
+      <object>objects\buckler</object>
       <object>objects\kbshield</object>
       <object>objects\thirstshield</object>
       <object>objects\forcefield</object>
@@ -542,10 +545,10 @@
     <room>rooms\init_rom</room>
     <rooms name="DUNGEON">
       <room>rooms\DEMOROOM</room>
-      <room>rooms\BOSS_ONE</room>
       <room>rooms\LEVEL_ONE</room>
       <room>rooms\LEVEL_TWO</room>
       <room>rooms\SECRET_ONE</room>
+      <room>rooms\BOSS_ONE</room>
     </rooms>
     <room>rooms\LEVEL_THREE</room>
     <rooms name="FOREST">

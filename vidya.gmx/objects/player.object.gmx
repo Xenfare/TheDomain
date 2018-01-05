@@ -49,8 +49,8 @@ alive = true
 
 if controller.class = 2
 {
-weapon = instance_create(x, y, sword2)
-guard = instance_create(x, y, shield)
+weapon = sword2
+guard = buckler
 
 pweapon = weapon
 pguard = guard
@@ -58,8 +58,8 @@ pguard = guard
 
 if controller.class = 1
 {
-weapon = instance_create(x, y, rapier)
-guard = instance_create(x, y, thirstshield)
+weapon = rapier
+guard = thirstshield
 
 pweapon = weapon
 pguard = guard
@@ -67,14 +67,23 @@ pguard = guard
 
 if controller.class = 3
 {
-weapon = instance_create(x, y, hammer)
-guard = instance_create(x, y, kbshield)
+weapon = hammer
+guard = kbshield
 
 pweapon = weapon
 pguard = guard
 }
 
+weaponstock = ds_list_create()
+ds_list_add(weaponstock, weapon)
+guardstock = ds_list_create()
+ds_list_add(guardstock, guard)
+
+instance_create(x, y, weapon)
+instance_create(x, y, guard)
+
 exhausted = false
+still = 0
 inv = false
 pothp = 0
 prevhp = 100
@@ -247,7 +256,7 @@ for (i = 0; place_meeting(x+lengthdir_x(kb + 1 - i, kbdir), y, worldwall); i += 
    }
 }
 x += lengthdir_x(((kb - i) / fric) * alive, kbdir);
-show_debug_message(i)
+
 }
 
 {
@@ -261,7 +270,7 @@ kb -= 1
 if i &gt; 0 {i-=1}
 if o &gt; 0 {i-=1}
 y += lengthdir_y(((kb - o) / fric) * alive, kbdir);
-show_debug_message(o)
+
 }
 
 }
@@ -318,15 +327,28 @@ if keyboard_check_pressed(ord('O')) {display *= -1}
 if keyboard_check_pressed(ord('P')) {comfymode *= -1}
 
 //equipment code
-if weapon != pweapon {instance_destroy(pweapon); pweapon = weapon}
-if guard != pguard {instance_destroy(pguard); pguard = guard}
+if weapon != pweapon {instance_destroy(pweapon); pweapon = weapon; instance_create(x, y, weapon)}
+if guard != pguard {instance_destroy(pguard); pguard = guard; instance_create(x, y, guard)}
+
+if keyboard_check_released(ord('E')) 
+{
+if ds_list_find_index(weaponstock, weapon) + 2 &gt; ds_list_size(weaponstock) {weapon = ds_list_find_value(weaponstock, 0)} else
+weapon = ds_list_find_value(weaponstock, ds_list_find_index(weaponstock, weapon) + 1)
+}
+
+if keyboard_check_released(ord('Q')) 
+{
+if ds_list_find_index(guardstock, guard) + 2 &gt; ds_list_size(guardstock) {guard = ds_list_find_value(guardstock, 0)} else
+guard = ds_list_find_value(guardstock, ds_list_find_index(guardstock, guard) + 1)
+}
+
 
 //death code
 
 if hp &lt;= 0 &amp;&amp; alive = true {pothp = 0; mana = 0;/* ini_open('savedata.ini'); ini_read_real(data, deaths, +1); ini_close();*/ instance_create(x, y, YOUDIED); alive = false}
 if alive = false {image_alpha = 0}
-weapon.image_alpha = image_alpha
-guard.image_alpha = image_alpha
+with weapon {image_alpha = player.image_alpha}
+with guard {image_alpha = player.image_alpha}
 
 //hp code
 
@@ -2508,10 +2530,15 @@ Use WASD to move.
 #RMB to block. 
 #Killing enemies will restore health and fill your blood meter.
 #You will receive bonus blood while at full health.
+#Throughout levels you will find chests that contain different weapons and shields.
+#Press E to swap weapons, and Q to swap shields.
 #Press R while at full blood to place a checkpoint.
 #Press F1 to toggle fullscreen.
 #Press O to toggle these messages.
 ", c_white, c_white, c_white, c_white, 1)}
+
+draw_sprite(spr_loadout, weapon.loadout, 0, view_hport)
+draw_sprite(spr_loadout2, guard.loadout, 0, view_hport - 64)
 </string>
           </argument>
         </arguments>
