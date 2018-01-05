@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>if room = LEVEL_FOUR {image_index = 2}
 image_speed = 0
-if !place_free(x, y+65) or !place_free(x, y-1) {image_index += 1}
+if !place_meeting(x, y-1, worldwall) or !place_meeting(x, y-1, worldwall) {image_index += 1}
 </string>
           </argument>
         </arguments>

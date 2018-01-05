@@ -546,8 +546,8 @@
     <room>rooms\init_rom</room>
     <rooms name="DUNGEON">
       <room>rooms\DEMOROOM</room>
-      <room>rooms\LEVEL_ONE</room>
       <room>rooms\LEVEL_TWO</room>
+      <room>rooms\LEVEL_ONE</room>
       <room>rooms\SECRET_ONE</room>
       <room>rooms\BOSS_ONE</room>
       <room>rooms\LIGHTING_TEST</room>
