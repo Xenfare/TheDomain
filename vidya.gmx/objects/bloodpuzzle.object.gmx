@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>state = 0
+            <string>state = 4
 
 y1 = 1408
 
@@ -36,12 +36,62 @@ y3 = 1920
 y4 = 1664
 
 y5 = 1152
-
-if place_meeting(720, y1, player) = true &amp;&amp; state = 0 {state = 1}
+/*if place_meeting(720, y1, player) = true &amp;&amp; state = 0 {state = 1}
 if place_meeting(720, y2, player) = true &amp;&amp; state = 1 {state = 2}
 if place_meeting(720, y3, player) = true &amp;&amp; state = 2 {state = 3}
 if place_meeting(720, y4, player) = true &amp;&amp; state = 3 {state = 4}
 if place_meeting(720, y5, player) = true &amp;&amp; state = 4 {state = 5}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if collision_point(720 + B, y1 + B, player,false,false) &amp;&amp; state = 0 {state = 1}
+if collision_point(720 + B, y2 + B, player,false,false) &amp;&amp; state = 1 {state = 2}
+if collision_point(720 + B, y3 + B, player,false,false)  
+{
+    if state = 2 
+        state = 3;
+    else if state &lt; 2 
+        state = 0
+}
+if collision_point(720 + B, y4 + B, player,false,false) 
+{
+    if state = 3 
+        state = 4;
+    else if state &lt; 3 
+        state = 0
+}
+if collision_point(720 + B, y5 + B, player,false,false) 
+{
+    if state = 4 
+    {
+        RemoveWall(destroywall1)
+        RemoveWall(destroywall2)
+        GenerateLightWalls()
+        state = 5;
+    }
+    else if state &lt; 4 
+        state = 0
+}
+
 </string>
           </argument>
         </arguments>
@@ -64,11 +114,11 @@ if place_meeting(720, y5, player) = true &amp;&amp; state = 4 {state = 5}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(spr_bloodpuzzle, 0, 704 + B, y1 + B)
-draw_sprite(spr_bloodpuzzle, 1, 704 + B, y2 + B)
-draw_sprite(spr_bloodpuzzle, 2, 704 + B, y3 + B)
-draw_sprite(spr_bloodpuzzle, 3, 704 + B, y4 + B)
-draw_sprite(spr_bloodpuzzle, 4, 704 + B, y5 + B)
+            <string>draw_sprite(spr_bloodpuzzle, 0 + 5 * (state &gt; 0), 704 + B, y1 + B)
+draw_sprite(spr_bloodpuzzle, 1 + 5 * (state &gt; 1), 704 + B, y2 + B)
+draw_sprite(spr_bloodpuzzle, 2 + 5 * (state &gt; 2), 704 + B, y3 + B)
+draw_sprite(spr_bloodpuzzle, 3 + 5 * (state &gt; 3), 704 + B, y4 + B)
+draw_sprite(spr_bloodpuzzle, 4 + 5 * (state &gt; 4), 704 + B, y5 + B)
 </string>
           </argument>
         </arguments>
