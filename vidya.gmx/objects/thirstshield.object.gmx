@@ -30,6 +30,7 @@ shielddir = 0
 player.healstat = 1.5
 player.fric = 1
 name = "Foreign Shield"
+desc = "Small foreign shield of a strange make. #Though it offers the wielder little protection, more blood is collected from kills while wielding it."
 loadout = 2
 image_speed = 0
 image_xscale = .5

@@ -32,6 +32,7 @@ damaging = false
 kbvalue = 10
 loadout = 0
 name = "Trusty Sword"
+desc = "Ordinary, trustworthy blade. #Attack with precise timing after the first swing to preform a second, higher damaging attack."
 kbx = x
 kby = y
 image_xscale = 0.5

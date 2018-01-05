@@ -30,6 +30,7 @@ shielddir = 0
 player.healstat = 1
 player.fric = 1
 name = "Trusty Targe"
+desc = "Ordinary, trustworthy shield. #Grants no particular boons or detriments."
 loadout = 1
 image_speed = 0
 image_xscale = .5

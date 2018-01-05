@@ -30,6 +30,7 @@ shielddir = 0
 player.healstat = 1
 player.fric = 2
 name = "Dome Shield"
+desc = "Heavy iron shield with a dome shape. #The wielder's footing is more stable, but its weight makes it more difficult to lift into blocking position."
 loadout = 3
 image_speed = 0
 image_xscale = .5

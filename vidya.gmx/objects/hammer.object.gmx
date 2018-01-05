@@ -34,6 +34,7 @@ damaging = true
 attacked = false
 kbvalue = 12
 name = "Crash-Hammer"
+desc = "An ancient, runic weapon with incredible weight. #Hold the attack button to charge a swing, and release to attack. Hold the button longer for a devestating higher damage attack."
 loadout = 1
 vibrate = 0
 image_index = 1

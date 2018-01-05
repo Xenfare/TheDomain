@@ -2538,7 +2538,9 @@ Use WASD to move.
 ", c_white, c_white, c_white, c_white, 1)}
 
 draw_sprite(spr_loadout, weapon.loadout, 0, view_hport)
+if point_in_rectangle(window_mouse_get_x(), window_mouse_get_y(), 0, view_hport - 64, 64, view_hport) {draw_text_colour(window_mouse_get_x(), window_mouse_get_y(), weapon.desc, c_white, c_white, c_white, c_white, 1)}
 draw_sprite(spr_loadout2, guard.loadout, 0, view_hport - 64)
+if point_in_rectangle(window_mouse_get_x(), window_mouse_get_y(), 0, view_hport - 128, 64, view_hport - 64) {draw_text_colour(window_mouse_get_x(), window_mouse_get_y(), guard.desc, c_white, c_white, c_white, c_white, 1)}
 </string>
           </argument>
         </arguments>
