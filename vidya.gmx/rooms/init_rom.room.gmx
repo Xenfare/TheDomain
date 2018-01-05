@@ -11,6 +11,7 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>global.darkness = noone
+global.fog = noone
 audio_master_gain(0.1)
 room_goto_next()
 /*ini_open('savedata.ini');

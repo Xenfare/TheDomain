@@ -29,7 +29,10 @@
 
 if surface_exists(global.darkness)
     surface_free(global.darkness)
+if surface_exists(global.fog)
+    surface_free(global.fog)
 global.darkness = surface_create(view_wview,view_hview)
+global.fog = surface_create(view_wview,view_hview)
 global.cell_size = CELL_SIZE
 global.light_objects = ds_list_create();
 
@@ -173,8 +176,17 @@ GenerateLightWalls()
     global.darkness = surface_create(view_wview,view_hview)
     with(player)
         draw_lighting()
+    global.fog = surface_create(view_wview,view_hview)
 }
+surface_set_target(global.fog)
+draw_clear(c_black)
+with(torch){event_user(0)}
+surface_reset_target()
+draw_set_alpha(.7)
+draw_surface(global.fog,view_xview,view_yview)
+draw_set_alpha(1)
 draw_surface(global.darkness,view_xview,view_yview)
+
 </string>
           </argument>
         </arguments>

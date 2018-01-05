@@ -3,7 +3,7 @@
   <spriteName>spr_torch</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-101</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -31,6 +31,43 @@
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !shader_is_compiled(shader_torch)
+    show_debug_message("SHADER NOT COMPILED")
+var lx = x + lengthdir_x(25,image_angle) - view_xview
+var ly = y + lengthdir_y(25,image_angle) - view_yview
+var radius = 64 * 5 + random(10)
+draw_set_blend_mode_ext(bm_src_alpha,bm_zero)
+shader_set(shader_torch)
+shader_params = shader_get_uniform(shader_torch, "center");
+shader_set_uniform_f(shader_params, lx,ly);
+shader_params = shader_get_uniform(shader_torch, "radius");
+shader_set_uniform_f(shader_params, radius);
+draw_circle(lx,ly,radius,false)
+shader_reset()
+draw_set_blend_mode(bm_normal)
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -49,12 +86,11 @@
           <argument>
             <kind>1</kind>
             <string>draw_self()
-range = random(4)
 var lx = x + lengthdir_x(25,image_angle)
 var ly = y + lengthdir_y(25,image_angle)
 draw_sprite(spr_torchfire,range,lx,ly)
-range += 10
-range *= 4
+
+/*
 if point_in_rectangle(x,y,view_xview - range, view_yview + range, view_xview + view_wview + range, view_yview + view_hview + range ) and surface_exists(global.darkness) 
 {
     surface_set_target(global.darkness)
