@@ -176,8 +176,9 @@ GenerateLightWalls()
     global.darkness = surface_create(view_wview,view_hview)
     with(player)
         draw_lighting()
-    global.fog = surface_create(view_wview,view_hview)
 }
+if !surface_exists(global.fog)
+    global.fog = surface_create(view_wview,view_hview)
 surface_set_target(global.fog)
 draw_clear(c_black)
 //with(torch){event_user(0)}

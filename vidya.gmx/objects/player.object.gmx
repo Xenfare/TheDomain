@@ -2621,7 +2621,7 @@ draw_sprite_ext(sprite_index, image_index, x+(random_range(-vibrate,vibrate)), y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*if aa = 2 {aa -= 2} else
+            <string>if aa = 2 {aa -= 2} else
 if aa = 4 {aa -= 2} else
 if aa = 8 {aa -= 4}
 
@@ -2648,7 +2648,7 @@ display_reset(aa, false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*if aa = 0 {aa += 2} else
+            <string>if aa = 0 {aa += 2} else
 if aa = 2 {aa += 2} else
 if aa = 4 {aa += 4}
 
