@@ -2597,6 +2597,7 @@ draw_sprite_ext(sprite_index, image_index, x+(random_range(-vibrate,vibrate)), y
           <argument>
             <kind>1</kind>
             <string>window_set_fullscreen(!window_get_fullscreen())
+surface_resize(application_surface,window_get_width(),window_get_height())
 
 
 </string>
@@ -2651,8 +2652,12 @@ display_reset(aa, false)
             <string>if aa = 0 {aa += 2} else
 if aa = 2 {aa += 2} else
 if aa = 4 {aa += 4}
-
+var w = window_get_width()
+var h = window_get_height()
 display_reset(aa, false)
+window_set_size( w, h );
+surface_resize(application_surface,w,h)
+
 </string>
           </argument>
         </arguments>
