@@ -194,6 +194,9 @@ if blackoutvar = 1.6 {blackoutvar = 1.5; blackout = -1; room_goto(destination)}
 if blackout = -1 {blackoutvar -= 0.02}
 if blackoutvar = 0 {blackout = 0}
 draw_sprite_ext(spr_blackout, 0, 0, 0, 1, 1, 0, c_white, blackoutvar)
+
+show_debug_message(blackout)
+show_debug_message(blackoutvar)
 </string>
           </argument>
         </arguments>

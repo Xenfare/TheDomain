@@ -95,7 +95,7 @@ spd = 0
 sprinting = false
 fric = 1
 healstat = 1
-mana = 0
+mana = 50
 kb = 0
 kbdir = 0
 vibrate = 0
@@ -2432,7 +2432,7 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>controller.blackout = -1;
+            <string>//if controller.blackout != 0 {controller.blackout = -1;}
 if alive = false {alive = true; image_alpha = 1; interference = false; ds_list_clear(defeated); hp = maxhp; stamina = maxstamina; mana = 0; alarm[7] = 2}
 view_wview = window_get_width()
 view_hview = window_get_height()
@@ -2532,6 +2532,7 @@ Use WASD to move.
 #You will receive bonus blood while at full health.
 #Throughout levels you will find chests that contain different weapons and shields.
 #Press E to swap weapons, and Q to swap shields.
+#Place the mouse over the gear icons at the bottom left for a detailed explanation of the item.
 #Press R while at full blood to place a checkpoint.
 #Press F1 to toggle fullscreen.
 #Press O to toggle these messages.
@@ -2620,7 +2621,7 @@ draw_sprite_ext(sprite_index, image_index, x+(random_range(-vibrate,vibrate)), y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if aa = 2 {aa -= 2} else
+            <string>/*if aa = 2 {aa -= 2} else
 if aa = 4 {aa -= 2} else
 if aa = 8 {aa -= 4}
 
@@ -2647,7 +2648,7 @@ display_reset(aa, false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if aa = 0 {aa += 2} else
+            <string>/*if aa = 0 {aa += 2} else
 if aa = 2 {aa += 2} else
 if aa = 4 {aa += 4}
 

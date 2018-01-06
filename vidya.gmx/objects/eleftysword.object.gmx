@@ -56,9 +56,11 @@ image_yscale = 0.5
             <string>with instance_create(x, y, debris) 
 {
 direction = other.image_angle + 90
-sprite_index = spr_debris
-image_index = 1
-mask_index = spr_debris
+sprite_index = spr_leftydebris
+image_xscale = 0.5
+image_yscale = 0.5
+image_index = 0
+mask_index = spr_magicshot
 }
 </string>
           </argument>

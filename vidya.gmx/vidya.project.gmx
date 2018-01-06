@@ -105,6 +105,7 @@
       <sprite>sprites\spr_rapier2</sprite>
       <sprite>sprites\spr_rapiermask</sprite>
       <sprite>sprites\spr_hammer</sprite>
+      <sprite>sprites\spr_hammer2</sprite>
       <sprite>sprites\spr_hammermask</sprite>
       <sprite>sprites\spr_hammersmash</sprite>
       <sprite>sprites\spr_hammersmashmask</sprite>
@@ -268,6 +269,7 @@
         <sprite>sprites\spr_oldlefty2</sprite>
         <sprite>sprites\spr_leftyhelm1</sprite>
         <sprite>sprites\spr_leftyhelm2</sprite>
+        <sprite>sprites\spr_leftydebris</sprite>
       </sprites>
       <sprites name="magician">
         <sprite>sprites\spr_magician2</sprite>

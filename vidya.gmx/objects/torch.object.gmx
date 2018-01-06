@@ -62,7 +62,6 @@ shader_set_uniform_f(shader_params, radius);
 draw_circle(lx,ly,radius,false)
 shader_reset()
 draw_set_blend_mode(bm_normal)
-
 </string>
           </argument>
         </arguments>
