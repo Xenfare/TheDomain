@@ -197,8 +197,8 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = chainx
-y = chainy
+            <string>x = player.x
+y = player.y
 </string>
           </argument>
         </arguments>
