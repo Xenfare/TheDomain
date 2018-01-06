@@ -2509,17 +2509,17 @@ lighting.visible = !comfymode
             <kind>1</kind>
             <string>if hp &gt; 0
 {
-draw_healthbar(view_wport - 30, 10, view_wport - 10, 768 - 10, prevhp / maxhp * 100, c_black, c_yellow, c_yellow, 3, true, true)
-draw_healthbar(view_wport - 30, 10, view_wport - 10, 768 - 10, hp / maxhp * 100, c_black, c_red, c_red, 3, false, true)
-draw_healthbar(view_wport - 38, 10, view_wport - 32, 768 - 10, mana / 50 * 100, c_black, c_maroon, c_maroon, 3, true, true)
+draw_healthbar(10, 10, 30, 758, prevhp / maxhp * 100, c_black, c_yellow, c_yellow, 3, true, true)
+draw_healthbar(10, 10, 30, 758, hp / maxhp * 100, c_black, c_red, c_red, 3, false, true)
+draw_healthbar(31, 10, 45, 758, mana / 50 * 100, c_black, c_maroon, c_maroon, 3, true, true)
 
 
-if exhausted = false {draw_healthbar(view_wport - 60, 10, view_wport - 40, 768 - 10, stamina / maxstamina * 100, c_black, c_green, c_green, 3, true, true)}
+if exhausted = false {draw_healthbar(66, 10, 46, 758, stamina / maxstamina * 100, c_black, c_green, c_green, 3, true, true)}
 else {draw_healthbar(view_wport - 60, 10, view_wport - 40, 768 - 10, stamina / maxstamina * 100, c_black, c_yellow, c_yellow, 3, true, true)}
-draw_sprite(spr_bar, 0, view_wport - 61, 9)
+draw_sprite(spr_bar, 0, 9, 9)
 }
 
-{draw_text_color(10, view_hport - 30, fps, c_white, c_white, c_white, c_white, 1)}
+{draw_text_color(10, view_hport - view_hport, fps, c_white, c_white, c_white, c_white, 1)}
 
 if alarm[8] &gt; 1 {draw_text_color(150, view_hport - 150, error, c_white, c_white, c_white, c_white, 1)}
 
@@ -2534,19 +2534,18 @@ Use WASD to move.
 #Press E to swap weapons, and Q to swap shields.
 #Place the mouse over the gear icons at the bottom left for a detailed explanation of the item.
 #Press R while at full blood to place a checkpoint.
-#Press F1 to toggle fullscreen.
 #Press O to toggle these messages.
 ", c_white, c_white, c_white, c_white, 1)}
 
 if instance_exists(weapon)
 {
-draw_sprite(spr_loadout, weapon.loadout, 0, view_hport)
+draw_sprite(spr_loadout, weapon.loadout, 64, 0)
 if point_in_rectangle(window_mouse_get_x(), window_mouse_get_y(), 0, view_hport - 64, 64, view_hport) {draw_text_colour(window_mouse_get_x() + 10, window_mouse_get_y(), weapon.desc, c_white, c_white, c_white, c_white, 1)}
 }
 
 if instance_exists(guard)
 {
-draw_sprite(spr_loadout2, guard.loadout, 0, view_hport - 64)
+draw_sprite(spr_loadout2, guard.loadout, 64, 64)
 if point_in_rectangle(window_mouse_get_x(), window_mouse_get_y(), 0, view_hport - 128, 64, view_hport - 64) {draw_text_colour(window_mouse_get_x() + 10, window_mouse_get_y(), guard.desc, c_white, c_white, c_white, c_white, 1)}
 }
 </string>
@@ -2596,10 +2595,9 @@ draw_sprite_ext(sprite_index, image_index, x+(random_range(-vibrate,vibrate)), y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>window_set_fullscreen(!window_get_fullscreen())
+            <string>/*
+window_set_fullscreen(!window_get_fullscreen())
 surface_resize(application_surface,window_get_width(),window_get_height())
-
-
 </string>
           </argument>
         </arguments>
@@ -2622,7 +2620,8 @@ surface_resize(application_surface,window_get_width(),window_get_height())
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if aa = 2 {aa -= 2} else
+            <string>/*
+if aa = 2 {aa -= 2} else
 if aa = 4 {aa -= 2} else
 if aa = 8 {aa -= 4}
 
@@ -2649,7 +2648,8 @@ display_reset(aa, false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if aa = 0 {aa += 2} else
+            <string>/*
+if aa = 0 {aa += 2} else
 if aa = 2 {aa += 2} else
 if aa = 4 {aa += 4}
 var w = window_get_width()
