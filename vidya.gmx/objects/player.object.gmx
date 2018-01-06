@@ -2539,14 +2539,14 @@ Use WASD to move.
 
 if instance_exists(weapon)
 {
-draw_sprite(spr_loadout, weapon.loadout, 64, 0)
-if point_in_rectangle(window_mouse_get_x(), window_mouse_get_y(), 0, view_hport - 64, 64, view_hport) {draw_text_colour(window_mouse_get_x() + 10, window_mouse_get_y(), weapon.desc, c_white, c_white, c_white, c_white, 1)}
+draw_sprite(spr_loadout, weapon.loadout, view_wport - 64, 0)
+if point_in_rectangle(window_mouse_get_x(), window_mouse_get_y(), view_wport - 64, 0, view_wport, 64) {draw_text_colour(window_mouse_get_x() - 900, window_mouse_get_y(), weapon.desc, c_white, c_white, c_white, c_white, 1)}
 }
 
 if instance_exists(guard)
 {
-draw_sprite(spr_loadout2, guard.loadout, 64, 64)
-if point_in_rectangle(window_mouse_get_x(), window_mouse_get_y(), 0, view_hport - 128, 64, view_hport - 64) {draw_text_colour(window_mouse_get_x() + 10, window_mouse_get_y(), guard.desc, c_white, c_white, c_white, c_white, 1)}
+draw_sprite(spr_loadout2, guard.loadout, view_wport - 64, 64)
+if point_in_rectangle(window_mouse_get_x(), window_mouse_get_y(), view_wport - 64, 65, view_wport, 128) {draw_text_colour(window_mouse_get_x() - 900, window_mouse_get_y(), guard.desc, c_white, c_white, c_white, c_white, 1)}
 }
 </string>
           </argument>

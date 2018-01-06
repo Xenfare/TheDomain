@@ -666,10 +666,10 @@ if alarm[9] &lt; 30 {if wepdir &gt; -25 {wepdir -= 5}; vibrate -= 0.3; if vibrat
             <kind>1</kind>
             <string>if aggro = true 
 {
-draw_text_color(5, view_hport - 78, "Sword Swallower", c_white, c_white, c_white, c_white, 1)
-draw_healthbar(5, view_hport - 40, 1024 - 124, view_hport - 10, prevhp / maxhp * 100, c_black, c_yellow, c_yellow, 0, true, true)
-draw_healthbar(5, view_hport - 40, 1024 - 124, view_hport - 10, hp / maxhp * 100, c_black, c_red, c_red, 0, false, true)
-draw_sprite(spr_bossbar, 0, 4, view_hport - 41)
+draw_text_color(85, view_hport - 78, "Sword Swallower", c_white, c_white, c_white, c_white, 1)
+draw_healthbar(85, view_hport - 40, 1024 - 44, view_hport - 10, prevhp / maxhp * 100, c_black, c_yellow, c_yellow, 0, true, true)
+draw_healthbar(85, view_hport - 40, 1024 - 44, view_hport - 10, hp / maxhp * 100, c_black, c_red, c_red, 0, false, true)
+draw_sprite(spr_bossbar, 0, 84, view_hport - 41)
 }
 </string>
           </argument>
