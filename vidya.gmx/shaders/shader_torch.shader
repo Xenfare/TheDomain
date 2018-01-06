@@ -16,12 +16,15 @@ void main()
 //######################_==_YOYO_SHADER_MARKER_==_######################@~
 
 
+
+
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 varying vec2 frag_position;
 uniform float radius;  //radius of circle
 void main()
 {
-    float _fade = pow(length(frag_position) / radius, 1.0);
+    float shader_circles = 5.0;
+    float _fade = ceil((length(frag_position) / radius) * shader_circles) / shader_circles;
     gl_FragColor = vec4((v_vColour * texture2D( gm_BaseTexture, v_vTexcoord)).xyz, _fade);
 }
