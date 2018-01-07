@@ -211,10 +211,10 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if owner.phase = 2 &amp;&amp; damaging = true &amp;&amp; global.shielddir = 5 {audio_play_sound(clang, 10, false); alarm[0] = 8; if owner.spindir = -10 {owner.spindir = 10} else {owner.spindir = -10}}
-if owner.phase = 3 &amp;&amp; damaging = true &amp;&amp; global.shielddir = 5 {audio_play_sound(clang, 10, false); alarm[0] = 8; if owner.spindir = -10 {owner.spindir = 10} else {owner.spindir = -10}}
-if owner.phase = 4 &amp;&amp; damaging = true &amp;&amp; global.shielddir = 5 {audio_play_sound(clang, 10, false); alarm[0] = 8}
-if owner.phase = 9 &amp;&amp; damaging = true &amp;&amp; global.shielddir = 5 {damaging = false; audio_play_sound(clang, 10, false); owner.alarm[9] = 91}
+            <string>if owner.phase = 2 &amp;&amp; damaging = true &amp;&amp; global.shielddir = 5 {player.kbdir = point_direction(x, y, other.x, other.y); player.kb += 5; audio_play_sound(clang, 10, false); alarm[0] = 8; if owner.spindir = -10 {owner.spindir = 10} else {owner.spindir = -10}}
+if owner.phase = 3 &amp;&amp; damaging = true &amp;&amp; global.shielddir = 5 {player.kbdir = point_direction(x, y, other.x, other.y); player.kb += 5; audio_play_sound(clang, 10, false); alarm[0] = 8; if owner.spindir = -10 {owner.spindir = 10} else {owner.spindir = -10}}
+if owner.phase = 4 &amp;&amp; damaging = true &amp;&amp; global.shielddir = 5 {player.kbdir = point_direction(x, y, other.x, other.y); player.kb += 8; audio_play_sound(clang, 10, false); alarm[0] = 8}
+if owner.phase = 9 &amp;&amp; damaging = true &amp;&amp; global.shielddir = 5 {player.kbdir = point_direction(x, y, other.x, other.y); player.kb += 8; damaging = false; audio_play_sound(clang, 10, false); owner.alarm[9] = 91}
 </string>
           </argument>
         </arguments>

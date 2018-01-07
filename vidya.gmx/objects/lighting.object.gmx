@@ -187,7 +187,7 @@ if !shader_is_compiled(shader_torch)
     show_debug_message("SHADER NOT COMPILED")
 var lx = player.x - view_xview
 var ly = player.y - view_yview
-var radius = 94 * 5 + sin(2 * pi * (current_time % 1000) / 1000)
+var radius = 104 * 5 + sin(3 * pi * (current_time % 1000) / 1000)
 draw_set_blend_mode_ext(bm_src_alpha,bm_zero)
 shader_set(shader_torch)
 shader_params = shader_get_uniform(shader_torch, "center");
@@ -199,7 +199,7 @@ shader_reset()
 draw_set_blend_mode(bm_normal)
 
 surface_reset_target()
-draw_set_alpha(.6)
+draw_set_alpha(.35)
 draw_surface(global.fog,view_xview,view_yview)
 draw_set_alpha(1)
 draw_surface(global.darkness,view_xview,view_yview)

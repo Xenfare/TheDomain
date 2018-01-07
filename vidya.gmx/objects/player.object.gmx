@@ -95,7 +95,7 @@ spd = 0
 sprinting = false
 fric = 1
 healstat = 1
-mana = 50
+mana = 0
 kb = 0
 kbdir = 0
 vibrate = 0
@@ -205,7 +205,35 @@ if !instance_exists(inventory)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//init
+            <string>if kb &lt; 0 kb = 0
+else if kb &gt; 0
+{
+        var i = 0;
+        var xmov = lengthdir_x(1,kbdir)
+        var ymov = lengthdir_y(1,kbdir) 
+        var effective_kb = kb / fric
+        while(i &lt; effective_kb)
+        {
+            if !place_meeting(x + xmov, y, worldwall)
+                x += xmov;
+            else
+                x -= xmov;
+            if !place_meeting(x - xmov, y + ymov, worldwall)
+                y += ymov;
+            else
+                y -= ymov;
+            ++i;
+        }
+    --kb
+}
+
+
+view_xview = x - view_wview/2
+view_yview = y - view_hview/2
+
+
+
+/*//init
 view_xview = x - view_wview/2
 view_yview = y - view_hview/2
 /*
@@ -242,7 +270,7 @@ y += lengthdir_y(kb, kbdir);
 --kb
 }
 */
-
+/*
 if kb &lt; 0 {kb = 0}
 
 if kb &gt; 0
@@ -275,6 +303,9 @@ y += lengthdir_y(((kb - o) / fric) * alive, kbdir);
 
 }
 
+view_xview = x - view_wview/2
+view_yview = y - view_hview/2
+
 
 /*place_meeting(x+lengthdir_x(kb + 1 - i, kbdir), y, worldwall)*/ 
 /*place_meeting(x, y+lengthdir_y(kb + 1 - o, kbdir), worldwall)*/
@@ -297,6 +328,8 @@ else if view_yview + view_hview &gt; room_height - b
     view_yview = - view_hview + room_height - b
 }
 */
+
+
 //if toggle = 1 {with(enemyparent){if (object_index != lighting) visible = point_distance(x,y,other.x,other.y) &lt; other.view_range;}}
 </string>
           </argument>
@@ -1807,7 +1840,7 @@ if (other.owner.spindir &gt; 3 or other.owner.spindir &lt; -3) &amp;&amp; (inv =
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>{hp -= 28; repeat(8) instance_create(x, y, blood); script_execute(interrupt);  kb = 3; kbdir = point_direction(other.x, other.y, x, y)}
+            <string>{hp -= 20; repeat(8) instance_create(x, y, blood); script_execute(interrupt);  kb = 3; kbdir = point_direction(other.x, other.y, x, y)}
 </string>
           </argument>
         </arguments>
@@ -2530,10 +2563,10 @@ Use WASD to move.
 #RMB to block. 
 #Killing enemies will restore health and fill your blood meter.
 #You will receive bonus blood while at full health.
+#Press R while at full blood to place a checkpoint.
 #Throughout levels you will find chests that contain different weapons and shields.
 #Press E to swap weapons, and Q to swap shields.
-#Place the mouse over the gear icons at the bottom left for a detailed explanation of the item.
-#Press R while at full blood to place a checkpoint.
+#Place the mouse over the gear icons at the top right for a detailed explanation of the item.
 #Press O to toggle these messages.
 ", c_white, c_white, c_white, c_white, 1)}
 
