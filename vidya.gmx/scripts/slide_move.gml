@@ -3,7 +3,7 @@ var s = abs(spd)
 if s > 0
 {
 var dir = direction;
-if spd > 0
+if spd < 0
 dir += 180
         var i = 0;
         var xmov = lengthdir_x(1,dir)
@@ -23,3 +23,5 @@ dir += 180
             yprevious = y
         }
 }
+if spd > 0 {spd --}
+if spd < 0 {spd ++}

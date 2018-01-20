@@ -205,49 +205,7 @@ if spd = 0 &amp;&amp; enemysword.image_index = 0 {alarm[1] = round(random_range(
 spin++
 if spin = 40 {instance_create(x, y, wizardshot); spin = round(random_range(-160, -40)); alarm [2] = 10}
 
-if spd &gt; 0
-
-{
-        var i = 0;
-        var xmov = lengthdir_x(1,direction)
-        var ymov = lengthdir_y(1,direction) 
-        while(i &lt; spd)
-        {
-            if !place_meeting(x + xmov, y, worldwall) &amp;&amp; !place_meeting(x + xmov, y, enemyparent)
-                x += xmov;
-            else
-                x -= xmov * spd;
-            if !place_meeting(x - xmov, y + ymov, worldwall)
-                y += ymov;
-            else
-                y -= ymov * spd;
-            i++;
-            xprevious = x
-            yprevious = y
-        }
-}
-
-if spd &lt; 0 
-
-{
-        var i = 0;
-        var xmov = lengthdir_x(-1,direction)
-        var ymov = lengthdir_y(-1,direction) 
-        while(i &gt; spd)
-        {
-            if !place_meeting(x + xmov, y, worldwall) &amp;&amp; !place_meeting(x - xmov, y, enemyparent)
-                x += xmov;
-            else
-                x -= xmov * spd;
-            if !place_meeting(x - xmov, y + ymov, worldwall)
-                y += ymov;
-            else
-                y -= ymov * spd;
-            i--;
-            xprevious = x
-            yprevious = y
-        }
-}
+script_execute(slide_move)
 
 }
 
