@@ -205,8 +205,7 @@ if spd = 0 &amp;&amp; enemysword.image_index = 0 {alarm[1] = round(random_range(
 spin++
 if spin = 40 {instance_create(x, y, wizardshot); spin = round(random_range(-160, -40)); alarm [2] = 10}
 
-script_execute(slide_move)
-
+slide_move()
 }
 
 
