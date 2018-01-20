@@ -175,6 +175,9 @@
       <sprite>sprites\spr_swallowerwepmask</sprite>
       <sprite>sprites\spr_swallowersword</sprite>
       <sprite>sprites\spr_swallowerscream</sprite>
+      <sprite>sprites\spr_fishman</sprite>
+      <sprite>sprites\spr_fishsword</sprite>
+      <sprite>sprites\spr_fishswordmask</sprite>
       <sprite>sprites\spr_archer</sprite>
       <sprite>sprites\spr_wizard</sprite>
       <sprite>sprites\spr_kelpie</sprite>
@@ -391,6 +394,10 @@
       <object>objects\immortalshot</object>
     </objects>
     <objects name="enemies">
+      <objects name="rust">
+        <object>objects\rust</object>
+        <object>objects\rustsword</object>
+      </objects>
       <objects name="lefty">
         <object>objects\lefty</object>
         <object>objects\eleftysword</object>
@@ -398,23 +405,21 @@
         <object>objects\leftyheal</object>
         <object>objects\spritefade</object>
       </objects>
-      <objects name="necro">
-        <object>objects\necro</object>
-        <object>objects\necrostaff</object>
-        <object>objects\seed</object>
-        <object>objects\seed2</object>
-        <object>objects\portalseed</object>
-        <object>objects\skeleportal</object>
+      <objects name="swallower">
+        <object>objects\swallower</object>
+        <object>objects\swallowerjaw</object>
+        <object>objects\pustule</object>
+        <object>objects\swallowergrowth</object>
+        <object>objects\swallowerspear</object>
+        <object>objects\swallowersword</object>
+        <object>objects\swallowerwep</object>
+        <object>objects\dagger</object>
       </objects>
       <objects name="riverserpent">
         <object>objects\serpentminion</object>
         <object>objects\serpentminion2</object>
         <object>objects\riverserpent1</object>
         <object>objects\riverserpent2</object>
-      </objects>
-      <objects name="rust">
-        <object>objects\rust</object>
-        <object>objects\rustsword</object>
       </objects>
       <objects name="frenzyzombie">
         <object>objects\frenziedzombie</object>
@@ -455,15 +460,17 @@
         <object>objects\immortal</object>
         <object>objects\immortalchunk</object>
       </objects>
-      <objects name="swallower">
-        <object>objects\swallower</object>
-        <object>objects\swallowerjaw</object>
-        <object>objects\pustule</object>
-        <object>objects\swallowergrowth</object>
-        <object>objects\swallowerspear</object>
-        <object>objects\swallowersword</object>
-        <object>objects\swallowerwep</object>
-        <object>objects\dagger</object>
+      <objects name="necro">
+        <object>objects\necro</object>
+        <object>objects\necrostaff</object>
+        <object>objects\seed</object>
+        <object>objects\seed2</object>
+        <object>objects\portalseed</object>
+        <object>objects\skeleportal</object>
+      </objects>
+      <objects name="fishman">
+        <object>objects\fishman</object>
+        <object>objects\fishsword</object>
       </objects>
       <object>objects\overgrown</object>
       <object>objects\overgrown2</object>
@@ -555,12 +562,13 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\init_rom</room>
+    <room>rooms\DEMOROOM</room>
+    <room>rooms\LIGHTING_TEST</room>
     <rooms name="DUNGEON">
-      <room>rooms\DEMOROOM</room>
       <room>rooms\LEVEL_ONE</room>
       <room>rooms\LEVEL_TWO</room>
-      <room>rooms\BOSS_ONE</room>
       <room>rooms\SECRET_ONE</room>
+      <room>rooms\BOSS_ONE</room>
     </rooms>
     <rooms name="DOCKS">
       <room>rooms\LEVEL_THREE</room>
@@ -580,7 +588,8 @@
     <room>rooms\SPAWN_ROOM</room>
     <room>rooms\BOSS_SCRAP</room>
     <room>rooms\BOSS_SCRAP2</room>
-    <room>rooms\LIGHTING_TEST</room>
+    <room>rooms\LEVEL_THREESCRAP</room>
+    <room>rooms\TUTCAVE</room>
   </rooms>
   <constants number="6">
     <constant name="print">show_debug_message</constant>

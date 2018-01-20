@@ -28,6 +28,7 @@
             <string>//image_blend = c_black
 image_speed = 0
 breakable = false
+if room = TUTCAVE {image_index = 5}
 if room = LEVEL_FOUR or room = LEVEL_FIVE or room = BOSS_TWO or room = LEVEL_SEVEN {image_index = 1}
 if room = LEVEL_EIGHT or room = LEVEL_NINE or room = LEVEL_TEN or room = BOSS_THREE {image_index = 3}
 </string>
