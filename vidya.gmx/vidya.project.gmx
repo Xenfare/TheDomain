@@ -125,6 +125,7 @@
       <sprite>sprites\spr_druidshot</sprite>
       <sprite>sprites\spr_denizenshot</sprite>
       <sprite>sprites\spr_wizardshot</sprite>
+      <sprite>sprites\spr_squidshot</sprite>
       <sprite>sprites\spr_wizardhoming</sprite>
       <sprite>sprites\spr_fireshot</sprite>
       <sprite>sprites\spr_fireshot2</sprite>
@@ -144,6 +145,7 @@
       <sprite>sprites\spr_particle</sprite>
       <sprite>sprites\spr_holyparticle</sprite>
       <sprite>sprites\spr_druidparticle</sprite>
+      <sprite>sprites\spr_squidparticle</sprite>
       <sprite>sprites\spr_whiteparticle</sprite>
       <sprite>sprites\spr_fireparticle</sprite>
       <sprite>sprites\spr_moss</sprite>
@@ -381,6 +383,7 @@
       <object>objects\shuriken</object>
       <object>objects\wizardhoming</object>
       <object>objects\wizardshot</object>
+      <object>objects\squidshot</object>
       <object>objects\holyshot</object>
       <object>objects\wizardtp</object>
       <object>objects\necroshot</object>
@@ -511,6 +514,7 @@
       <object>objects\holyparticle</object>
       <object>objects\druidparticle</object>
       <object>objects\druidparticle2</object>
+      <object>objects\squidparticle</object>
       <object>objects\whiteparticle</object>
       <object>objects\whitespread</object>
       <object>objects\fireparticle</object>

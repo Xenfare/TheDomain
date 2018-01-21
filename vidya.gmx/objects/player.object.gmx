@@ -1814,6 +1814,43 @@ if (inv = 0) &amp;&amp; other.image_index = 1 &amp;&amp; other.alarm[1] &lt; 1 &
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="squidshot">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>{hp -= 15; repeat(8) instance_create(x, y, blood); script_execute(interrupt); kb = 9; kbdir = point_direction(other.x, other.y, x, y)}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>other</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
     <event eventtype="4" ename="wizardshot">
       <action>
         <libid>1</libid>
