@@ -168,18 +168,23 @@
       <sprite>sprites\spr_doll</sprite>
       <sprite>sprites\spr_badger</sprite>
       <sprite>sprites\spr_frenziedzombie</sprite>
-      <sprite>sprites\spr_swallower</sprite>
-      <sprite>sprites\spr_swallower2</sprite>
-      <sprite>sprites\spr_pustule</sprite>
-      <sprite>sprites\spr_swallowspear</sprite>
-      <sprite>sprites\spr_swallowerjaw</sprite>
-      <sprite>sprites\spr_swallowerwep</sprite>
-      <sprite>sprites\spr_swallowerwepmask</sprite>
-      <sprite>sprites\spr_swallowersword</sprite>
-      <sprite>sprites\spr_swallowerscream</sprite>
-      <sprite>sprites\spr_fishman</sprite>
-      <sprite>sprites\spr_fishsword</sprite>
-      <sprite>sprites\spr_fishswordmask</sprite>
+      <sprites name="swallower">
+        <sprite>sprites\spr_swallower</sprite>
+        <sprite>sprites\spr_swallower2</sprite>
+        <sprite>sprites\spr_pustule</sprite>
+        <sprite>sprites\spr_swallowspear</sprite>
+        <sprite>sprites\spr_swallowerjaw</sprite>
+        <sprite>sprites\spr_swallowerwep</sprite>
+        <sprite>sprites\spr_swallowerwepmask</sprite>
+        <sprite>sprites\spr_swallowersword</sprite>
+        <sprite>sprites\spr_swallowerscream</sprite>
+      </sprites>
+      <sprites name="fishman">
+        <sprite>sprites\spr_fishman</sprite>
+        <sprite>sprites\spr_fishmantentacle</sprite>
+        <sprite>sprites\spr_fishsword</sprite>
+        <sprite>sprites\spr_fishswordmask</sprite>
+      </sprites>
       <sprite>sprites\spr_archer</sprite>
       <sprite>sprites\spr_wizard</sprite>
       <sprite>sprites\spr_kelpie</sprite>

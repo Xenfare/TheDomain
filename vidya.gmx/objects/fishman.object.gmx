@@ -35,6 +35,8 @@ dash = false
 phase = 0
 spin = 0
 spd = 0
+leftv = 0
+rightv = 0
 
 enemysword = instance_create(x, y, fishsword)
 enemysword.owner = id
@@ -112,6 +114,8 @@ else
 {
 dash = true
 spd = 12
+leftv = 0
+rightv = 0
 }
 </string>
           </argument>
@@ -173,9 +177,9 @@ if phase = 0
 
 if dash = false 
 {
-if angle_difference(direction, point_direction(x, y, player.x, player.y)) &lt; -5 &amp;&amp; !collision_line(x, y, player.x, player.y, worldwall, false, false) {direction += 2; spd = 2; if angle_difference(direction, point_direction(x, y, player.x, player.y)) &lt; -10 {spd = 0}} else
-if angle_difference(direction, point_direction(x, y, player.x, player.y)) &gt; 5 &amp;&amp; !collision_line(x, y, player.x, player.y, worldwall, false, false) {direction -= 2; spd = 2;  if angle_difference(direction, point_direction(x, y, player.x, player.y)) &gt; 10 {spd = 0}} else
-if distance_to_object (player) &gt; 15 {spd = 2} else {alarm[1] = 0; dash = true; spd = 10}
+if angle_difference(direction, point_direction(x, y, player.x, player.y)) &lt; -5 &amp;&amp; !collision_line(x, y, player.x, player.y, worldwall, false, false) {rightv = 2; leftv = 0; direction += 2; spd = 2; if angle_difference(direction, point_direction(x, y, player.x, player.y)) &lt; -10 {spd = 0}} else
+if angle_difference(direction, point_direction(x, y, player.x, player.y)) &gt; 5 &amp;&amp; !collision_line(x, y, player.x, player.y, worldwall, false, false) {leftv = 2; rightv = 0; direction -= 2; spd = 2;  if angle_difference(direction, point_direction(x, y, player.x, player.y)) &gt; 10 {spd = 0}} else
+if distance_to_object (player) &gt; 15 {spd = 2; leftv = 0; rightv = 0} else {alarm[1] = 0; dash = true; spd = 10}
 }
 
 if dash = true 
@@ -211,8 +215,6 @@ slide_move()
 
 
 if hp &lt;= 0 {instance_destroy()}
-
-show_debug_message(enemysword.swingdir)
 </string>
           </argument>
         </arguments>
@@ -301,7 +303,8 @@ show_debug_message(enemysword.swingdir)
           <argument>
             <kind>1</kind>
             <string>draw_self()
-draw_sprite_ext(sprite_index, 1, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+draw_sprite_ext(spr_fishmantentacle, 0, x + (random_range(-leftv, leftv)), y + (random_range(-leftv, leftv)), image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+draw_sprite_ext(spr_fishmantentacle, 0, x + (random_range(-rightv, rightv)), y + (random_range(-rightv, rightv)), image_xscale, -image_yscale, image_angle, image_blend, image_alpha)
 
 
 if aggro = false
@@ -322,7 +325,9 @@ else
 if alarm[2] &gt; 0
 draw_sprite_ext(sprite_index, 3, x + (random_range(-1, 1)), y + (random_range(-1, 1)), image_xscale, image_yscale, point_direction(x, y, player.x, player.y), image_blend, image_alpha)
 else
+{
 draw_sprite_ext(sprite_index, 2, x, y, image_xscale, image_yscale, point_direction(x, y, player.x, player.y), image_blend, image_alpha)
+}
 </string>
           </argument>
         </arguments>
