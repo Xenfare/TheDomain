@@ -123,6 +123,8 @@
     <instance objName="wall" x="1152" y="704" name="inst_DBB2D918" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1152" y="576" name="inst_B6ABB72E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1152" y="640" name="inst_8B108CA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="chest" x="64" y="768" name="inst_B79AC357" locked="0" code="loot = wapstick&#xA;loottype = 0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="player" x="192" y="768" name="inst_B9221B8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_dungeon" x="512" y="1024" w="64" h="64" xo="64" yo="0" id="10014972" name="inst_7B5B497C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
