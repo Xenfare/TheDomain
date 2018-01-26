@@ -300,6 +300,7 @@
       </sprites>
       <sprite>sprites\spr_loot2</sprite>
     </sprites>
+    <sprite>sprites\spr_testportrait</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg1</background>
@@ -327,10 +328,28 @@
     <script>scripts\GenerateLightWalls.gml</script>
     <script>scripts\RemoveWall.gml</script>
     <script>scripts\slide_move.gml</script>
+    <script>scripts\do_nothing.gml</script>
+    <scripts name="dialog">
+      <script>scripts\dialog_add_choice.gml</script>
+      <script>scripts\dialog_add_evaluation.gml</script>
+      <script>scripts\dialog_add_label.gml</script>
+      <script>scripts\dialog_add_script.gml</script>
+      <script>scripts\dialog_add_text.gml</script>
+      <script>scripts\dialog_create.gml</script>
+      <script>scripts\dialog_destroy.gml</script>
+      <script>scripts\dialog_draw.gml</script>
+      <script>scripts\dialog_restart.gml</script>
+      <script>scripts\dialog_goto_label.gml</script>
+      <script>scripts\dialog_add_goto_label.gml</script>
+      <script>scripts\dialog_update_size.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader_torch.shader</shader>
   </shaders>
+  <fonts name="fonts">
+    <font>fonts\Arial</font>
+  </fonts>
   <objects name="objects">
     <object>objects\player</object>
     <object>objects\controller</object>
@@ -570,6 +589,7 @@
     <object>objects\selector</object>
     <object>objects\torch</object>
     <object>objects\door</object>
+    <object>objects\dialogtestman</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\TLchase</timeline>
@@ -577,6 +597,7 @@
   <rooms name="rooms">
     <room>rooms\init_rom</room>
     <room>rooms\DEMOROOM</room>
+    <room>rooms\LIGHTING_TEST</room>
     <rooms name="DUNGEON">
       <room>rooms\LEVEL_ONE</room>
       <room>rooms\LEVEL_TWO</room>
@@ -598,7 +619,6 @@
       <room>rooms\LEVEL_TEN</room>
       <room>rooms\BOSS_THREE</room>
     </rooms>
-    <room>rooms\LIGHTING_TEST</room>
     <room>rooms\SPAWN_ROOM</room>
     <room>rooms\BOSS_SCRAP</room>
     <room>rooms\BOSS_SCRAP2</room>
