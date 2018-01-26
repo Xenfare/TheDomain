@@ -620,7 +620,7 @@
     <instance objName="wall" x="3072" y="704" name="inst_753AD06A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="3136" y="704" name="inst_59F2DF42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="3136" y="896" name="inst_08CE8DBA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="chest" x="3072" y="832" name="inst_CA758AC4" locked="0" code="loot = sword2&#xA;loottype = 0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="chest" x="3072" y="832" name="inst_CA758AC4" locked="0" code="loot = sword2&#xA;loottype = 0" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="skeleton" x="1408" y="1024" name="inst_E03725A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1344" y="2368" name="inst_613584CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1344" y="2432" name="inst_B61CAE54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -649,6 +649,7 @@
     <instance objName="wall" x="1792" y="2080" name="inst_60396BF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1856" y="2080" name="inst_6174DCDF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1920" y="2080" name="inst_EE949675" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="chest" x="704" y="1920" name="inst_EF1A653B" locked="0" code="loot = wapstick&#xA;loottype = 0&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
   </instances>
   <tiles>
     <tile bgName="bg_dungeon" x="704" y="1920" w="64" h="64" xo="64" yo="64" id="10012916" name="inst_F55C180A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

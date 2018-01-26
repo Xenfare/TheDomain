@@ -199,6 +199,7 @@ if hp &lt; 1 {instance_destroy(); with tp instance_destroy()}
 if phase = 1
 {
 if alarm[1] &gt; 80 {instance_create(x + lengthdir_x(45, point_direction(x, y, player.x, player.y)), y + lengthdir_y(45, point_direction(x, y, player.x, player.y)), wizardparticle); armdir += .4} else {armdir -= .2}
+
 if alarm[1] = 120 {armdir -= 10; instance_create(x + lengthdir_x(45, point_direction(x, y, player.x, player.y)), y + lengthdir_y(45, point_direction(x, y, player.x, player.y)), wizardshot); audio_play_sound(spell, 10, false)}
 if alarm[1] = 100 {armdir -= 12; instance_create(x + lengthdir_x(45, point_direction(x, y, player.x, player.y)), y + lengthdir_y(45, point_direction(x, y, player.x, player.y)), wizardshot); audio_play_sound(spell, 10, false)}
 if alarm[1] = 80 {armdir -= 14; instance_create(x + lengthdir_x(45, point_direction(x, y, player.x, player.y)), y + lengthdir_y(45, point_direction(x, y, player.x, player.y)), wizardshot); audio_play_sound(spell, 10, false)}

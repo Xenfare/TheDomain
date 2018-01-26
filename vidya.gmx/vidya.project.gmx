@@ -94,6 +94,8 @@
     <sprite>sprites\spr_orb</sprite>
     <sprite>sprites\spr_demoselect</sprite>
     <sprites name="weapons">
+      <sprite>sprites\spr_wapstick</sprite>
+      <sprite>sprites\spr_wapmask</sprite>
       <sprite>sprites\spr_mace</sprite>
       <sprite>sprites\spr_newmace</sprite>
       <sprite>sprites\spr_macemask</sprite>
@@ -350,6 +352,7 @@
       <object>objects\flail</object>
       <object>objects\flailhand</object>
       <object>objects\rapier</object>
+      <object>objects\wapstick</object>
       <object>objects\mace2</object>
       <object>objects\shield</object>
       <object>objects\buckler</object>
@@ -368,6 +371,7 @@
       <object>objects\inventory</object>
     </objects>
     <objects name="projectiles">
+      <object>objects\projectileone</object>
       <object>objects\serpentegg</object>
       <object>objects\serpentegg2</object>
       <object>objects\fireshot</object>
@@ -573,7 +577,6 @@
   <rooms name="rooms">
     <room>rooms\init_rom</room>
     <room>rooms\DEMOROOM</room>
-    <room>rooms\LIGHTING_TEST</room>
     <rooms name="DUNGEON">
       <room>rooms\LEVEL_ONE</room>
       <room>rooms\LEVEL_TWO</room>
@@ -595,6 +598,7 @@
       <room>rooms\LEVEL_TEN</room>
       <room>rooms\BOSS_THREE</room>
     </rooms>
+    <room>rooms\LIGHTING_TEST</room>
     <room>rooms\SPAWN_ROOM</room>
     <room>rooms\BOSS_SCRAP</room>
     <room>rooms\BOSS_SCRAP2</room>
