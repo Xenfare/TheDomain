@@ -156,6 +156,7 @@
       <sprite>sprites\spr_wizardparticle</sprite>
       <sprite>sprites\spr_boneparticle</sprite>
       <sprite>sprites\spr_blood</sprite>
+      <sprite>sprites\spr_smoke</sprite>
       <sprite>sprites\spr_spit</sprite>
       <sprite>sprites\spr_immortalparticle</sprite>
       <sprite>sprites\spr_healthpickup</sprite>
@@ -185,6 +186,8 @@
         <sprite>sprites\spr_fishman</sprite>
         <sprite>sprites\spr_fishmantentacle</sprite>
         <sprite>sprites\spr_fishsword</sprite>
+        <sprite>sprites\spr_fishcannon</sprite>
+        <sprite>sprites\spr_fishpistol</sprite>
         <sprite>sprites\spr_fishswordmask</sprite>
       </sprites>
       <sprite>sprites\spr_archer</sprite>
@@ -399,6 +402,8 @@
       <object>objects\fireshot4</object>
       <object>objects\fireshot5</object>
       <object>objects\bloodshot</object>
+      <object>objects\cannonball</object>
+      <object>objects\bullet</object>
       <object>objects\bloodshot2</object>
       <object>objects\bloodshot3</object>
       <object>objects\snareshot</object>
@@ -412,6 +417,7 @@
       <object>objects\wizardhoming</object>
       <object>objects\wizardshot</object>
       <object>objects\squidshot</object>
+      <object>objects\minisquidshot</object>
       <object>objects\holyshot</object>
       <object>objects\wizardtp</object>
       <object>objects\necroshot</object>
@@ -502,7 +508,10 @@
       </objects>
       <objects name="fishman">
         <object>objects\fishman</object>
+        <object>objects\fishmancannon</object>
         <object>objects\fishsword</object>
+        <object>objects\fishcannon</object>
+        <object>objects\fishpistol</object>
       </objects>
       <object>objects\overgrown</object>
       <object>objects\overgrown2</object>
@@ -529,6 +538,7 @@
     </objects>
     <objects name="particles">
       <object>objects\blood</object>
+      <object>objects\smoke</object>
       <object>objects\immortalparticle</object>
       <object>objects\moss</object>
       <object>objects\ghostparticle</object>
