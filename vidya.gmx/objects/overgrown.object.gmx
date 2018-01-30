@@ -163,7 +163,8 @@ alarm[1] = 5
 twitch += twitchspd
 if twitch &gt; 0 {twitchspd -= 0.05}
 if twitch &lt; 0 {twitchspd += 0.05}
-image_angle = direction;
+
+speed = 0
 if distance_to_object(player) &lt; 300 &amp;&amp; kb = 0 
 {
     if collision_line(x,y,player.x,player.y,worldwall,false,true)
@@ -176,9 +177,12 @@ if distance_to_object(player) &lt; 300 &amp;&amp; kb = 0
     else
     {
         path_end()
-        mp_potential_step(player.x, player.y, 3, false)
+        speed = 3
+        direction = point_direction(x,y,player.x,player.y)
+        //mp_potential_step(player.x, player.y, 3, false)
     }
 }
+image_angle = direction;
 if hp &lt;= 0 {instance_destroy()}
 if grab &gt; 0 &amp;&amp; distance_to_object (player) &gt; 2 {grab -= 4; fric = 1}
 </string>
