@@ -102,7 +102,7 @@ with(instance_create(x+lengthdir_x(sprite_width * .25,image_angle+90),y+lengthdi
     direction = image_angle + 90
     speed = 4
 }
-
+event_perform(ev_other,ev_room_end)
 </string>
           </argument>
         </arguments>

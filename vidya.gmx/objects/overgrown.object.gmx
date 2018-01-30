@@ -40,6 +40,7 @@ twitch = 1
 twitchspd = .5
 image_xscale = 0.24
 image_yscale = 0.24
+path = path_add()
 </string>
           </argument>
         </arguments>
@@ -64,6 +65,7 @@ image_yscale = 0.24
             <kind>1</kind>
             <string>event_inherited()
 player.pothp += 5
+
 </string>
           </argument>
         </arguments>
@@ -162,7 +164,19 @@ twitch += twitchspd
 if twitch &gt; 0 {twitchspd -= 0.05}
 if twitch &lt; 0 {twitchspd += 0.05}
 image_angle = direction;
-if distance_to_object(player) &lt; 300 &amp;&amp; kb = 0 {mp_potential_step(player.x, player.y, 3, false)}
+if distance_to_object(player) &lt; 300 &amp;&amp; kb = 0 
+{
+    if collision_line(x,y,player.x,player.y,worldwall,false,true)
+    {
+        mp_grid_path(global.pathfindgrid,path,x,y,player.x,player.y,false)
+        path_start(path, 3, path_action_stop, false);
+    }
+    else
+    {
+        path_end()
+        mp_potential_step(player.x, player.y, 3, false)
+    }
+}
 if hp &lt;= 0 {instance_destroy()}
 if grab &gt; 0 &amp;&amp; distance_to_object (player) &gt; 2 {grab -= 4; fric = 1}
 </string>
@@ -232,6 +246,29 @@ if grab &gt; 0 &amp;&amp; distance_to_object (player) &gt; 2 {grab -= 4; fric = 
             <string>if grab &lt; 20 {grab +=4}
 if grab = 20 {player.x = player.xprevious; player.y = player.yprevious}
 fric = 100
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>path_delete(path)
 </string>
           </argument>
         </arguments>
