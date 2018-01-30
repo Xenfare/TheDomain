@@ -170,6 +170,8 @@ if distance_to_object(player) &lt; 300 &amp;&amp; kb = 0
     {
         mp_grid_path(global.pathfindgrid,path,x,y,player.x,player.y,false)
         path_start(path, 3, path_action_stop, false);
+        if collision_circle(x + hspeed,y + vspeed,bbox_right - bbox_left - 2,enemyparent,false,true)
+            path_end()
     }
     else
     {
