@@ -28,7 +28,7 @@
             <string>event_inherited()
 direction = image_angle
 inv = false
-hp = 230
+hp = 170
 image_speed = 0
 aggro = false
 strafe_dir = 1
@@ -39,10 +39,10 @@ alarm[4] = random_range(strafe_min_cooldown,strafe_max_cooldown)
 bubbling = false
 bubbling_cooldown = room_speed
 bubbling_duration = room_speed * .5
-bubble_shot_cooldown = room_speed * .05
+bubble_shot_cooldown = room_speed * 5
 
-pistol = instance_create(x,y, fishpistol)
-pistol.owner = id
+//pistol = instance_create(x,y, fishpistol)
+//pistol.owner = id
 
 cannon = instance_create(x, y, fishcannon)
 cannon.owner = id
@@ -70,6 +70,7 @@ cannon.owner = id
             <kind>1</kind>
             <string>event_inherited()
 player.pothp += 15
+with(cannon) instance_destroy()
 </string>
           </argument>
         </arguments>
@@ -222,26 +223,35 @@ if p_dist &gt; 600
  aggro = false
 else if p_dist &lt; 300 || aggro
 {
-    speed = 3
+    speed = 1.5
     aggro = true
     var player_dir_diff = angle_difference(image_angle,point_direction(x,y,player.x,player.y))
     if abs(player_dir_diff) &gt; 5
         image_angle -= sign(player_dir_diff) * 4
     else
         image_angle -= player_dir_diff
-    direction = image_angle + strafe_dir * 45
+    direction = image_angle + strafe_dir * (65 + 45 * (p_dist &lt; 60))
     //try to shoot
-    if abs(player_dir_diff) &lt; 7{
-    with(pistol){event_user(0)}
-    with(cannon){event_user(0)}
-    if (distance_to_object(player) &lt; 80 &amp;&amp; alarm[1] = -1) &amp;&amp; !bubbling
+    if abs(player_dir_diff) &lt; 7
     {
-            bubbling = true
-            alarm[2] = bubbling_duration
-            alarm[3] = bubble_shot_cooldown
-        kb += 25; kbdir = image_angle + 180
-    }}
+        if p_dist &lt; 60
+            with(cannon){event_user(1)}
+        else
+            with(cannon){event_user(0)}
+        
+        
+        /*with(pistol){event_user(0)}
+        if (distance_to_object(player) &lt; 30 &amp;&amp; alarm[1] = -1) &amp;&amp; !bubbling
+        {
+                bubbling = true
+                alarm[2] = bubbling_duration
+                alarm[3] = bubble_shot_cooldown
+            kb += 25; kbdir = image_angle + 180
+        }*/
+    }
 }
+
+if hp &lt;= 0 {instance_destroy()}
 </string>
           </argument>
         </arguments>

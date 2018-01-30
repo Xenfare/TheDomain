@@ -28,8 +28,100 @@
             <string>owner = noone
 image_speed = 0
 image_index = 0
+damaging = false
 
 cannonball_cooldown = room_speed * 5;
+winding_up = false
+windup_time = room_speed
+swing_cooldown = room_speed * 6
+swing_windup = room_speed * .75
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//start swing
+image_speed = .5
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//swingcooldown
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///cannon windup
+winding_up = false
+
+//update position
+x = owner.x;
+y = owner.y;
+image_angle = owner.image_angle;
+owner.kb += 15
+owner.kbdir = owner.image_angle + 180
+image_speed = .5
+image_index = 1
+
+//create projectile
+with(instance_create(x + lengthdir_x(37,image_angle - 45),y + lengthdir_y(37,image_angle - 45),cannonball))
+{
+    direction = other.image_angle
+}
 </string>
           </argument>
         </arguments>
@@ -83,6 +175,59 @@ cannonball_cooldown = room_speed * 5;
 }
 else
     instance_destroy()
+    
+damaging = (sprite_index = spr_fishcannonswing)
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="shield">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if damaging = true &amp;&amp; global.shielddir = 5 {damaging = false; audio_play_sound(clang, 10, false); player.kb =30; player.kbdir = point_direction(x, y, player.x, player.y)}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if alarm[1] &gt; 0 || alarm[2] &gt; 0 || image_index != 0
+    return 0;
+alarm[2] = swing_cooldown
+alarm[3] = swing_windup
+sprite_index = spr_fishcannonswing
 </string>
           </argument>
         </arguments>
@@ -108,24 +253,12 @@ else
             <string>///basic ability fire cannonball
 
 //handle cooldown
-if alarm[0] &gt; 0
+if alarm[0] &gt; 0 || sprite_index == spr_fishcannonswing
     return 0;
 alarm[0] = cannonball_cooldown
+alarm[1] = windup_time
+winding_up = true;
 
-//update position
-x = owner.x;
-y = owner.y;
-image_angle = owner.image_angle;
-owner.kb += 15
-owner.kbdir = owner.image_angle + 180
-image_speed = .5
-image_index = 1
-
-//create projectile
-with(instance_create(x + lengthdir_x(37,image_angle - 45),y + lengthdir_y(37,image_angle - 45),cannonball))
-{
-    direction = other.image_angle
-}
 
 </string>
           </argument>
@@ -151,6 +284,36 @@ with(instance_create(x + lengthdir_x(37,image_angle - 45),y + lengthdir_y(37,ima
             <kind>1</kind>
             <string>///stop animating after fireing
 image_speed = 0
+sprite_index = spr_fishcannon
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self()
+if winding_up
+{
+    var leng = point_distance(108,108,82,128)
+    var dir = point_direction(108,108,82,128)
+    instance_create(x + lengthdir_x(leng,image_angle + dir),y + lengthdir_y(leng,image_angle + dir),spark)
+}
 </string>
           </argument>
         </arguments>

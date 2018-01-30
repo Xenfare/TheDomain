@@ -186,6 +186,7 @@
         <sprite>sprites\spr_fishman</sprite>
         <sprite>sprites\spr_fishmantentacle</sprite>
         <sprite>sprites\spr_fishsword</sprite>
+        <sprite>sprites\spr_fishcannonswing</sprite>
         <sprite>sprites\spr_fishcannon</sprite>
         <sprite>sprites\spr_fishpistol</sprite>
         <sprite>sprites\spr_fishswordmask</sprite>
