@@ -311,6 +311,9 @@
       <sprite>sprites\spr_loot2</sprite>
     </sprites>
     <sprite>sprites\spr_testportrait</sprite>
+    <sprite>sprites\spr_spiderweb</sprite>
+    <sprite>sprites\spr_spinningblade</sprite>
+    <sprite>sprites\spr_spinningbladeblade</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg1</background>
@@ -522,6 +525,7 @@
         <object>objects\fishpistol</object>
       </objects>
       <object>objects\overgrown</object>
+      <object>objects\spiderweb</object>
       <object>objects\overgrown2</object>
       <object>objects\overgrowntest</object>
       <object>objects\roach</object>
@@ -608,6 +612,9 @@
     <object>objects\torch</object>
     <object>objects\door</object>
     <object>objects\dialogtestman</object>
+    <object>objects\tut_spinningblade</object>
+    <object>objects\tut_spinningbladeblade</object>
+    <object>objects\tut_particleshooter</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\TLchase</timeline>
@@ -641,6 +648,7 @@
     <room>rooms\BOSS_SCRAP2</room>
     <room>rooms\LEVEL_THREESCRAP</room>
     <room>rooms\TUTCAVE</room>
+    <room>rooms\TUTORIAL</room>
   </rooms>
   <constants number="6">
     <constant name="print">show_debug_message</constant>

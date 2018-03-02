@@ -28,6 +28,7 @@
             <string>kb = 0
 kbdir = 0
 fric = 1
+inv = 0;
 /*
 if instance_exists(player)
 {
