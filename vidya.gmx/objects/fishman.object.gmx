@@ -30,6 +30,7 @@ direction = image_angle
 inv = false
 hp = 230
 image_speed = 0
+aggro_range = 300
 aggro = false
 dash = false
 phase = 0
@@ -165,7 +166,7 @@ rightv = 0
             <string>event_inherited();
 
 
-if distance_to_object(player) &lt; 300 &amp;&amp; aggro = false {aggro = true; alarm[1] = 110}
+if aggro = false &amp;&amp; player_seen = true {aggro = true; alarm[1] = 110}
 
 
 if aggro = true

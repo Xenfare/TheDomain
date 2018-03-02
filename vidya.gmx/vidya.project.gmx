@@ -302,6 +302,12 @@
         <sprite>sprites\spr_skeleton2</sprite>
         <sprite>sprites\spr_skeletonjaw</sprite>
       </sprites>
+      <sprites name="immortal">
+        <sprite>sprites\spr_immortal2</sprite>
+        <sprite>sprites\spr_immortalarmr</sprite>
+        <sprite>sprites\spr_immortalarmdead</sprite>
+        <sprite>sprites\spr_twinkle</sprite>
+      </sprites>
       <sprite>sprites\spr_loot2</sprite>
     </sprites>
     <sprite>sprites\spr_testportrait</sprite>
@@ -408,7 +414,6 @@
       <object>objects\bloodshot2</object>
       <object>objects\bloodshot3</object>
       <object>objects\snareshot</object>
-      <object>objects\hook</object>
       <object>objects\arrow</object>
       <object>objects\magicshot</object>
       <object>objects\druidmagicshot</object>
@@ -464,10 +469,6 @@
         <object>objects\frenziedzombie</object>
         <object>objects\deadfrenzy</object>
       </objects>
-      <objects name="fisherman">
-        <object>objects\fisherman</object>
-        <object>objects\pole</object>
-      </objects>
       <objects name="ninja">
         <object>objects\ninja</object>
         <object>objects\ninjasword1</object>
@@ -498,6 +499,7 @@
       <objects name="immortal">
         <object>objects\immortal</object>
         <object>objects\immortalchunk</object>
+        <object>objects\immortalarm</object>
       </objects>
       <objects name="necro">
         <object>objects\necro</object>
@@ -506,6 +508,11 @@
         <object>objects\seed2</object>
         <object>objects\portalseed</object>
         <object>objects\skeleportal</object>
+      </objects>
+      <objects name="fisherman">
+        <object>objects\fisherman</object>
+        <object>objects\pole</object>
+        <object>objects\hook</object>
       </objects>
       <objects name="fishman">
         <object>objects\fishman</object>
@@ -608,15 +615,13 @@
   <rooms name="rooms">
     <room>rooms\init_rom</room>
     <room>rooms\DEMOROOM</room>
-    <room>rooms\LIGHTING_TEST</room>
+    <room>rooms\LEVEL_THREE</room>
+    <room>rooms\SEWER</room>
     <rooms name="DUNGEON">
       <room>rooms\LEVEL_ONE</room>
       <room>rooms\LEVEL_TWO</room>
       <room>rooms\SECRET_ONE</room>
       <room>rooms\BOSS_ONE</room>
-    </rooms>
-    <rooms name="DOCKS">
-      <room>rooms\LEVEL_THREE</room>
     </rooms>
     <rooms name="FOREST">
       <room>rooms\LEVEL_FOUR</room>
@@ -630,6 +635,7 @@
       <room>rooms\LEVEL_TEN</room>
       <room>rooms\BOSS_THREE</room>
     </rooms>
+    <room>rooms\LIGHTING_TEST</room>
     <room>rooms\SPAWN_ROOM</room>
     <room>rooms\BOSS_SCRAP</room>
     <room>rooms\BOSS_SCRAP2</room>

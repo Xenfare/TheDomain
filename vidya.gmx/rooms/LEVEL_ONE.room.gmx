@@ -521,7 +521,7 @@
     <instance objName="wall" x="832" y="1216" name="inst_58CF8CC8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="chest" x="896" y="1152" name="inst_5A05E4B7" locked="0" code="loot = thirstshield&#xA;loottype = 1" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="bloodpuzzle" x="704" y="1920" name="inst_28533F0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="roomchanger" x="1920" y="2176" name="inst_0787A80D" locked="0" code="dest_r = LEVEL_TWO&#xA;dest_x = 736&#xA;dest_y = 2240&#xA;" scaleX="4.2857141494751" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="roomchanger" x="1920" y="2176" name="inst_0787A80D" locked="0" code="dest_r = LEVEL_TWO&#xA;dest_x = 736&#xA;dest_y = 2240" scaleX="4.2857141494751" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="2752" y="640" name="inst_732AE66E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="2816" y="640" name="inst_2916C19E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="2880" y="640" name="inst_1224034A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

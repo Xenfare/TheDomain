@@ -3,17 +3,17 @@ var maxw = ds_grid_width(global.wall_grid)
 var size_cuttoff = maxw * maxh
 var g = ds_grid_create(maxw,maxh)
 ds_grid_copy(g, global.wall_grid)
-
+ 
 ds_list_clear(global.light_objects)
-
+ 
 var left, right, top, bottom;
-var ind = 1;
+var ind = 2;
 for(var ii = 0; ii < maxh; ++ii)
 for(var i = 0; i < maxw; ++i)
 {
     if g[# i, ii] = 1
     {
-        ++ind;
+        //++ind;
         left = i;
         right = left;
         top = ii;
@@ -31,12 +31,12 @@ for(var i = 0; i < maxw; ++i)
             var last_start = xxx;
             var early_exit = false;
             for(; xxx <= right; ++xxx)
-                if !g[# xxx, yy] 
+                if !g[# xxx, yy]
                 {
                     if last_start != -1{
                     bottom = yy - 1;
                     if xxx != left
-                    { 
+                    {
                         if last_start - xxx - 1 > 1 || (last_start > 0 && g[# last_start - 1, yy])
                         ds_list_add(global.light_objects,last_start,bottom,xxx - 1,yy);
                     }
@@ -68,8 +68,9 @@ for(var i = 0; i < maxw; ++i)
             if yy > bottom
             {
                 left = potential_left
-                
             }
+            else if yy > top
+                ds_list_add(global.light_objects,potential_left,top,left,yy - 1);
         }
         var potential_top = top - 1;
         var potential_top_val = g[# left, potential_top]
@@ -91,7 +92,7 @@ for(var i = 0; i < maxw; ++i)
         ds_list_add(global.light_objects,left,top,right,bottom);
     }
 }
-
+ 
 //2nd pass to block holes
 /*
 for(var ii = 0; ii < maxh - 1; ++ii)
@@ -114,5 +115,5 @@ for(var i = 0; i < maxh - 1; ++i)
 }
     //show_debug_message(str)
 }*/
-
+ 
 ds_grid_destroy(g)
