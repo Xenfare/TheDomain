@@ -164,6 +164,8 @@
     </sprites>
     <sprites name="enemies">
       <sprite>sprites\spr_zombie</sprite>
+      <sprite>sprites\spr_bloodgiver</sprite>
+      <sprite>sprites\spr_spearadvancer</sprite>
       <sprite>sprites\spr_roach</sprite>
       <sprite>sprites\spr_psycho</sprite>
       <sprite>sprites\spr_ghost</sprite>
@@ -530,6 +532,7 @@
       <object>objects\overgrowntest</object>
       <object>objects\roach</object>
       <object>objects\zombie</object>
+      <object>objects\bloodgiver</object>
       <object>objects\psycho</object>
       <object>objects\psycho2</object>
       <object>objects\badger</object>
@@ -614,7 +617,11 @@
     <object>objects\dialogtestman</object>
     <object>objects\tut_spinningblade</object>
     <object>objects\tut_spinningbladeblade</object>
+    <object>objects\spearadvancerspear</object>
     <object>objects\tut_particleshooter</object>
+    <object>objects\spearadvancer</object>
+    <object>objects\tut_runcontroller</object>
+    <object>objects\tut_exitor</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\TLchase</timeline>
@@ -622,6 +629,7 @@
   <rooms name="rooms">
     <room>rooms\init_rom</room>
     <room>rooms\DEMOROOM</room>
+    <room>rooms\TUTORIAL</room>
     <room>rooms\LEVEL_THREE</room>
     <room>rooms\SEWER</room>
     <rooms name="DUNGEON">
@@ -648,7 +656,6 @@
     <room>rooms\BOSS_SCRAP2</room>
     <room>rooms\LEVEL_THREESCRAP</room>
     <room>rooms\TUTCAVE</room>
-    <room>rooms\TUTORIAL</room>
   </rooms>
   <constants number="6">
     <constant name="print">show_debug_message</constant>
