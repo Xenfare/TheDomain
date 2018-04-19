@@ -224,6 +224,11 @@ else if kb &gt; 0
                 y -= ymov;
             ++i;
         }
+        if false//place_meeting(x, y, worldwall)
+        {
+            x -= xmov;
+            y -= ymov;
+        }
     --kb
 }
 
@@ -358,6 +363,7 @@ if keyboard_check(ord('P')) &amp;&amp; keyboard_check(ord('L')) &amp;&amp; keybo
 if keyboard_check(ord('A')) &amp;&amp; keyboard_check(ord('G')) &amp;&amp; keyboard_check(ord('D')) {room_goto(BOSS_ONE); x = 704 ; y = 768}
 if keyboard_check_pressed(ord('O')) {display *= -1}
 if keyboard_check_pressed(ord('P')) {comfymode *= -1}
+//if keyboard_check_pressed(ord('K')) {kb = 100;kbdir = image_angle}
 
 //equipment code
 if weapon != pweapon {instance_destroy(pweapon); pweapon = weapon; instance_create(x, y, weapon)}

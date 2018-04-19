@@ -151,7 +151,7 @@ if kb &gt; 0
         var i = 0;
         var xmov = lengthdir_x(1,kbdir)
         var ymov = lengthdir_y(1,kbdir) 
-        while(i &lt; kb)
+        while(i &lt; kb / fric)
         {
             if !place_meeting(x + xmov, y, worldwall) &amp;&amp; !place_meeting(x + xmov, y, enemyparent)
                 x += xmov;
