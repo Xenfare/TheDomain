@@ -29,6 +29,7 @@
 ychain = 159
 base_angle = point_direction(sprite_get_xoffset(spr_pole),sprite_get_yoffset(spr_pole),xchain,ychain)
 base_distance = point_distance(sprite_get_xoffset(spr_pole),sprite_get_yoffset(spr_pole),xchain,ychain)
+
 </string>
           </argument>
         </arguments>
@@ -80,7 +81,7 @@ mask_index = spr_debris
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(owner) {image_angle = (owner.image_angle); x = owner.x; y = owner.y;} else {instance_destroy()}
+            <string>if instance_exists(owner) {image_angle = owner.image_angle + owner.swing; x = owner.x; y = owner.y;} else {instance_destroy()}
 </string>
           </argument>
         </arguments>

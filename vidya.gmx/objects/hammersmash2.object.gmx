@@ -30,8 +30,8 @@ damage = 160;
 audio_play_sound(choose(smash, smash2), 0, 0);
 image_xscale = 0.75
 image_yscale = 0.75
-kbx = x
-kby = y
+kbx = x + lengthdir_x(distance_to_object(player) / 2, point_direction(x, y, player.x, player.y))
+kby = y + lengthdir_y(distance_to_object(player) / 2, point_direction(x, y, player.x, player.y))
 </string>
           </argument>
         </arguments>

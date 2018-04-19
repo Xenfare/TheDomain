@@ -29,15 +29,16 @@
 aggro = false
 inv = false
 hp = 180
+swing = 15
 image_speed = 0
 aggro_range = 600
 fric = 3
 
-enemyhook = noone
+enemyhook = noone;
 //enemyhook.owner = id
 
-enemypole = instance_create(x, y, pole)
-enemypole.owner = id
+enemypole = instance_create(x, y, pole);
+enemypole.owner = id;
 </string>
           </argument>
         </arguments>
@@ -87,6 +88,7 @@ player.pothp += 7
           <argument>
             <kind>1</kind>
             <string>alarm[1] = 100
+swing = 15
 {enemyhook = instance_create(x, y, hook) enemyhook.owner = id}
 </string>
           </argument>
@@ -139,10 +141,16 @@ if hp &lt;= 0 {instance_destroy()}
 
 if aggro = true
 {
+
+if !instance_exists(enemyhook)
+{
+if alarm[1] &gt; 8 {swing -= 0.5} else {swing += 8}
+}
+
 if instance_exists(enemyhook) {alarm[1] = 80} else 
 {
-if angle_difference(image_angle, point_direction(x, y, player.x, player.y)) &lt; -5 {image_angle += 2; if angle_difference(image_angle, point_direction(x, y, player.x, player.y)) &lt; -20 {alarm[1] = 100}} else
-if angle_difference(image_angle, point_direction(x, y, player.x, player.y)) &gt; 5 {image_angle -= 2; if angle_difference(image_angle, point_direction(x, y, player.x, player.y)) &gt; 20 {alarm[1] = 100}} else
+if angle_difference(image_angle, point_direction(x, y, player.x, player.y)) &lt; -5 {image_angle += 2; if angle_difference(image_angle, point_direction(x, y, player.x, player.y)) &lt; -20 {alarm[1] = 100; swing = 15}} else
+if angle_difference(image_angle, point_direction(x, y, player.x, player.y)) &gt; 5 {image_angle -= 2; if angle_difference(image_angle, point_direction(x, y, player.x, player.y)) &gt; 20 {alarm[1] = 100; swing = 15}} else
 {}
 }
 
@@ -212,6 +220,29 @@ if inv = true {}
           <argument>
             <kind>0</kind>
             <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="deathinvis">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hp-=100
+</string>
           </argument>
         </arguments>
       </action>

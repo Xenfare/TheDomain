@@ -115,7 +115,7 @@ if hooked = 0 {speed -= 0.4}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if damaging = true {if global.shielddir = 5 {audio_play_sound(clang, 10, false); speed = -10; damaging = false}}
+            <string>if damaging = true {if global.shielddir = 5 {audio_play_sound(clang, 10, false); speed = -10; damaging = false}; player.kbdir = point_direction(x, y, other.x, other.y); player.kb += 6;}
 </string>
           </argument>
         </arguments>

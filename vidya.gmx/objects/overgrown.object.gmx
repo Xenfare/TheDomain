@@ -166,7 +166,7 @@ if twitch &lt; 0 {twitchspd += 0.05}
 
 speed = 0
 if distance_to_object(player) &lt; 300 &amp;&amp; kb = 0 
-{
+{/*
     if collision_line(x,y,player.x,player.y,worldwall,false,true)
     {
         mp_grid_path(global.pathfindgrid,path,x,y,player.x,player.y,false)
@@ -179,8 +179,8 @@ if distance_to_object(player) &lt; 300 &amp;&amp; kb = 0
         path_end()
         speed = 3
         direction = point_direction(x,y,player.x,player.y)
-        //mp_potential_step(player.x, player.y, 3, false)
-    }
+    }*/
+    mp_potential_step(player.x, player.y, 3, false)
 }
 image_angle = direction;
 if hp &lt;= 0 {instance_destroy()}
@@ -228,6 +228,29 @@ if grab &gt; 0 &amp;&amp; distance_to_object (player) &gt; 2 {grab -= 4; fric = 
           <argument>
             <kind>0</kind>
             <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="deathinvis">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hp-=100
+</string>
           </argument>
         </arguments>
       </action>

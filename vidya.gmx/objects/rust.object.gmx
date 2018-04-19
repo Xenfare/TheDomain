@@ -33,6 +33,7 @@ hp = 300
 hurt = 0
 alarm[0] = 40
 image_speed = 0
+drowned = false
 aggro = false
 image_xscale = 0.25
 image_yscale = 0.25
@@ -62,7 +63,9 @@ enemysword.owner = id
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with instance_create(x, y, debris) 
+            <string>if drowned = false
+{
+with instance_create(x, y, debris) 
 {
 direction = image_angle - 90;
 sprite_index = spr_rustdebris;
@@ -70,6 +73,7 @@ image_xscale = 0.42
 image_yscale = 0.42
 }
 event_inherited()
+}
 player.pothp += 15
 </string>
           </argument>
@@ -228,6 +232,32 @@ if hp &lt;= 150 &amp;&amp; hurt = 0 {image_index = 1; hurt = 1; with instance_cr
           <argument>
             <kind>0</kind>
             <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="deathinvis">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hp-=10000
+drowned = true
+repeat(16) {instance_create(x+random_range(-32,32), y+random_range(-32,32), splash)}
+ds_list_add(player.defeated, id)
+</string>
           </argument>
         </arguments>
       </action>

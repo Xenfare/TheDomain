@@ -149,6 +149,7 @@
       <sprite>sprites\spr_druidparticle</sprite>
       <sprite>sprites\spr_squidparticle</sprite>
       <sprite>sprites\spr_whiteparticle</sprite>
+      <sprite>sprites\spr_splash</sprite>
       <sprite>sprites\spr_fireparticle</sprite>
       <sprite>sprites\spr_moss</sprite>
       <sprite>sprites\spr_nightmareparticle</sprite>
@@ -161,6 +162,7 @@
       <sprite>sprites\spr_immortalparticle</sprite>
       <sprite>sprites\spr_healthpickup</sprite>
       <sprite>sprites\spr_spark</sprite>
+      <sprite>sprites\spr_sharkfade</sprite>
     </sprites>
     <sprites name="enemies">
       <sprite>sprites\spr_zombie</sprite>
@@ -186,6 +188,7 @@
       </sprites>
       <sprites name="fishman">
         <sprite>sprites\spr_fishman</sprite>
+        <sprite>sprites\spr_squid</sprite>
         <sprite>sprites\spr_fishmantentacle</sprite>
         <sprite>sprites\spr_fishsword</sprite>
         <sprite>sprites\spr_fishcannonswing</sprite>
@@ -193,9 +196,15 @@
         <sprite>sprites\spr_fishpistol</sprite>
         <sprite>sprites\spr_fishswordmask</sprite>
       </sprites>
+      <sprites name="shellface">
+        <sprite>sprites\spr_shellface</sprite>
+        <sprite>sprites\spr_sewermon</sprite>
+        <sprite>sprites\spr_shellgas</sprite>
+      </sprites>
       <sprite>sprites\spr_archer</sprite>
       <sprite>sprites\spr_wizard</sprite>
       <sprite>sprites\spr_kelpie</sprite>
+      <sprite>sprites\spr_sewershark</sprite>
       <sprite>sprites\spr_ninja</sprite>
       <sprite>sprites\spr_immortal</sprite>
       <sprite>sprites\spr_lefty</sprite>
@@ -316,6 +325,7 @@
     <sprite>sprites\spr_spiderweb</sprite>
     <sprite>sprites\spr_spinningblade</sprite>
     <sprite>sprites\spr_spinningbladeblade</sprite>
+    <sprite>sprites\spr_board1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg1</background>
@@ -324,8 +334,10 @@
     <background>background\background1</background>
     <background>background\bgrass</background>
     <background>background\bg_dungeon</background>
+    <background>background\bg_sewer</background>
     <background>background\bg_dungeontile</background>
     <background>background\bg_classselect</background>
+    <background>background\background8</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\serpentpath</path>
@@ -443,6 +455,15 @@
       <object>objects\immortalshot</object>
     </objects>
     <objects name="enemies">
+      <objects name="overgrown">
+        <object>objects\overgrown</object>
+        <object>objects\overgrown2</object>
+        <object>objects\overgrowntest</object>
+      </objects>
+      <objects name="skeleton">
+        <object>objects\skeleton</object>
+        <object>objects\skeleton2</object>
+      </objects>
       <objects name="rust">
         <object>objects\rust</object>
         <object>objects\rustsword</object>
@@ -526,22 +547,21 @@
         <object>objects\fishcannon</object>
         <object>objects\fishpistol</object>
       </objects>
-      <object>objects\overgrown</object>
-      <object>objects\spiderweb</object>
-      <object>objects\overgrown2</object>
-      <object>objects\overgrowntest</object>
+      <objects name="ghost">
+        <object>objects\ghost</object>
+        <object>objects\ghost2</object>
+        <object>objects\ghost3</object>
+      </objects>
       <object>objects\roach</object>
       <object>objects\zombie</object>
       <object>objects\bloodgiver</object>
       <object>objects\psycho</object>
       <object>objects\psycho2</object>
       <object>objects\badger</object>
-      <object>objects\skeleton</object>
-      <object>objects\skeleton2</object>
+      <object>objects\shellface</object>
+      <object>objects\sewersniper</object>
+      <object>objects\sewershark</object>
       <object>objects\kelpie</object>
-      <object>objects\ghost</object>
-      <object>objects\ghost2</object>
-      <object>objects\ghost3</object>
       <object>objects\hedgebeast</object>
       <object>objects\magician</object>
       <object>objects\doll</object>
@@ -550,12 +570,14 @@
       <object>objects\bonemaster</object>
       <object>objects\wizard</object>
       <object>objects\wizardspec</object>
+      <object>objects\spiderweb</object>
     </objects>
     <objects name="particles">
       <object>objects\blood</object>
       <object>objects\smoke</object>
       <object>objects\immortalparticle</object>
       <object>objects\moss</object>
+      <object>objects\poisonparticle</object>
       <object>objects\ghostparticle</object>
       <object>objects\boneparticle</object>
       <object>objects\spark</object>
@@ -567,6 +589,8 @@
       <object>objects\holyparticle</object>
       <object>objects\druidparticle</object>
       <object>objects\druidparticle2</object>
+      <object>objects\sharkfade</object>
+      <object>objects\splash</object>
       <object>objects\squidparticle</object>
       <object>objects\whiteparticle</object>
       <object>objects\whitespread</object>
@@ -622,6 +646,7 @@
     <object>objects\spearadvancer</object>
     <object>objects\tut_runcontroller</object>
     <object>objects\tut_exitor</object>
+    <object>objects\board</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\TLchase</timeline>
@@ -629,9 +654,7 @@
   <rooms name="rooms">
     <room>rooms\init_rom</room>
     <room>rooms\DEMOROOM</room>
-    <room>rooms\TUTORIAL</room>
     <room>rooms\LEVEL_THREE</room>
-    <room>rooms\SEWER</room>
     <rooms name="DUNGEON">
       <room>rooms\LEVEL_ONE</room>
       <room>rooms\LEVEL_TWO</room>
@@ -650,12 +673,15 @@
       <room>rooms\LEVEL_TEN</room>
       <room>rooms\BOSS_THREE</room>
     </rooms>
-    <room>rooms\LIGHTING_TEST</room>
     <room>rooms\SPAWN_ROOM</room>
     <room>rooms\BOSS_SCRAP</room>
     <room>rooms\BOSS_SCRAP2</room>
+    <room>rooms\LEVEL_ONESCRAP</room>
     <room>rooms\LEVEL_THREESCRAP</room>
+    <room>rooms\LEVEL_THREESCRAP2</room>
     <room>rooms\TUTCAVE</room>
+    <room>rooms\TUTORIAL</room>
+    <room>rooms\LIGHTING_TEST</room>
   </rooms>
   <constants number="6">
     <constant name="print">show_debug_message</constant>
