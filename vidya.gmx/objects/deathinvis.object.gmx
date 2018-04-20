@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_deathwall</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>100</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -28,6 +28,9 @@
             <string>image_speed = 0
 breakable = false
 image_alpha = 0
+suction = true
+suction_border = 14
+suction_speed = .25
 </string>
           </argument>
         </arguments>
