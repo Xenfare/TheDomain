@@ -191,10 +191,10 @@
         <sprite>sprites\spr_squid</sprite>
         <sprite>sprites\spr_fishmantentacle</sprite>
         <sprite>sprites\spr_fishsword</sprite>
+        <sprite>sprites\spr_fishswordmask</sprite>
         <sprite>sprites\spr_fishcannonswing</sprite>
         <sprite>sprites\spr_fishcannon</sprite>
         <sprite>sprites\spr_fishpistol</sprite>
-        <sprite>sprites\spr_fishswordmask</sprite>
       </sprites>
       <sprites name="shellface">
         <sprite>sprites\spr_shellface</sprite>
@@ -209,6 +209,7 @@
       <sprite>sprites\spr_immortal</sprite>
       <sprite>sprites\spr_lefty</sprite>
       <sprite>sprites\spr_shopkeep</sprite>
+      <sprite>sprites\spr_sewerwizard</sprite>
       <sprite>sprites\spr_druid</sprite>
       <sprite>sprites\spr_druidgolem</sprite>
       <sprite>sprites\spr_grossenemy</sprite>
@@ -326,6 +327,7 @@
     <sprite>sprites\spr_spinningblade</sprite>
     <sprite>sprites\spr_spinningbladeblade</sprite>
     <sprite>sprites\spr_board1</sprite>
+    <sprite>sprites\spr_board2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg1</background>
@@ -455,6 +457,7 @@
       <object>objects\immortalshot</object>
     </objects>
     <objects name="enemies">
+      <object>objects\DEFAULTENEMY</object>
       <objects name="overgrown">
         <object>objects\overgrown</object>
         <object>objects\overgrown2</object>
@@ -561,6 +564,7 @@
       <object>objects\shellface</object>
       <object>objects\sewersniper</object>
       <object>objects\sewershark</object>
+      <object>objects\sewerwizard</object>
       <object>objects\kelpie</object>
       <object>objects\hedgebeast</object>
       <object>objects\magician</object>
@@ -647,6 +651,7 @@
     <object>objects\tut_runcontroller</object>
     <object>objects\tut_exitor</object>
     <object>objects\board</object>
+    <object>objects\board2</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\TLchase</timeline>

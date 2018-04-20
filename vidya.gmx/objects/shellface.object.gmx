@@ -28,9 +28,9 @@
             <string>event_inherited();
 aggro = 0
 inv = false
-hp = 190
+hp = 160
 phase = 1
-fric = 2
+fric = 1.5
 image_speed = 0
 aggro_range = 250
 vibrate = 0
@@ -166,9 +166,10 @@ if aggro = true
 
 if phase = 1
 {
+if distance_to_object(player) &gt; 750 {aggro = false; speed = 0; spd = 0; }
 image_index = 0
-if angle_difference(direction, point_direction(x, y, player.x, player.y)) &lt; -8 {direction += 3; speed = spd} else
-if angle_difference(direction, point_direction(x, y, player.x, player.y)) &gt; 8 {direction -= 3; speed = spd} else
+if angle_difference(direction, point_direction(x, y, player.x, player.y)) &lt; -8 {direction += 2.5; speed = spd} else
+if angle_difference(direction, point_direction(x, y, player.x, player.y)) &gt; 8 {direction -= 2.5; speed = spd} else
 {if distance_to_object(player) &gt; 30 {speed = spd} else {speed = 0}}
 if momentum = true {spd += 0.1} else {spd -= 0.1}
 if spd &lt; 0 {spd = 0}
@@ -188,9 +189,6 @@ if distance_to_object(player) &lt; 60 &amp;&amp; alarm[2] &lt;= 80 &amp;&amp; al
 }
 
 }
-
-show_debug_message(spd)
-show_debug_message(momentum)
 </string>
           </argument>
         </arguments>

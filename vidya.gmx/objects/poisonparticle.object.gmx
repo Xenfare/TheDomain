@@ -49,10 +49,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.1
+            <string>scale = random_range(4, 8)
+image_speed = 0.1
 image_alpha = 0.2
-image_xscale = random_range(4, 8)
-image_yscale = random_range(4, 8)
+image_xscale = scale
+image_yscale = scale
 image_angle = random(360)
 </string>
           </argument>
