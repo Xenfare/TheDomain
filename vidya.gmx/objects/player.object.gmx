@@ -2635,7 +2635,9 @@ if (inv = 0) &amp;&amp; shieldcol = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if other.suction
+            <string>if alive = true
+{
+if other.suction
 {
     with(other)
         if !collision_rectangle(bbox_left + suction_border,bbox_top + suction_border,bbox_right - suction_border, bbox_bottom - suction_border,other,false,false)
@@ -2651,6 +2653,7 @@ if (inv = 0) &amp;&amp; shieldcol = 0
         }
 }
 if !place_meeting(x,y,hook) &amp;&amp; alive = true {hp-=1000; repeat(16) {instance_create(x+random_range(-32,32), y+random_range(-32,32), splash)}}
+}
 </string>
           </argument>
         </arguments>

@@ -29,8 +29,8 @@
 breakable = false
 image_alpha = 0
 suction = true
-suction_border = 14
-suction_speed = .25
+suction_border = 30
+suction_speed = .5
 </string>
           </argument>
         </arguments>
@@ -54,6 +54,38 @@ suction_speed = .25
           <argument>
             <kind>1</kind>
             <string>repeat (15) instance_create(x + random_range(-20, 20), y + random_range(-20, 20), boneparticle)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*draw_set_alpha(.3)
+draw_set_color(c_red)
+draw_rectangle(bbox_left + suction_border,bbox_top + suction_border,bbox_right - suction_border, bbox_bottom - suction_border,false)
+draw_set_color(c_yellow)
+draw_rectangle(bbox_left,bbox_top,bbox_left + suction_border, bbox_bottom,false)
+draw_rectangle(bbox_left,bbox_top,bbox_right, bbox_top + suction_border,false)
+draw_rectangle(bbox_right - suction_border,bbox_top,bbox_right, bbox_bottom,false)
+draw_rectangle(bbox_left,bbox_bottom - suction_border,bbox_right, bbox_bottom,false)
+draw_set_alpha(1)
+draw_set_color(c_black)
 </string>
           </argument>
         </arguments>

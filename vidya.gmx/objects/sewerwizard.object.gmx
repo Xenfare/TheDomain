@@ -35,6 +35,9 @@ image_speed = 0
 aggro_range = 300
 vibrate = 0
 direction = image_angle
+tp = instance_create(x, y, wizardtp)
+tp.owner = id
+count = 0
 </string>
           </argument>
         </arguments>
@@ -80,8 +83,15 @@ direction = image_angle
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>phase = 1
+            <string>if count = 4
+{
+phase = 1
 alarm[1] = 150
+}
+else
+{
+alarm[2] = 50
+}
 </string>
           </argument>
         </arguments>
@@ -104,8 +114,19 @@ alarm[1] = 150
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>phase = 2
-alarm[2] = 100
+            <string>with tp if distance_to_object(player) &lt;= 100
+{
+owner.alarm[1] = 4
+}
+
+else
+
+with owner
+{
+phase = 2
+alarm[2] = 40
+count = 0
+}
 </string>
           </argument>
         </arguments>
@@ -180,6 +201,7 @@ if alarm[1] mod 8 = 0 &amp;&amp; alarm[1] &lt; 130 {instance_create(x, y, squids
 
 if phase = 2
 {
+
 }
 
 }

@@ -659,7 +659,6 @@
   <rooms name="rooms">
     <room>rooms\init_rom</room>
     <room>rooms\DEMOROOM</room>
-    <room>rooms\LEVEL_THREE</room>
     <rooms name="DUNGEON">
       <room>rooms\LEVEL_ONE</room>
       <room>rooms\LEVEL_TWO</room>
@@ -678,6 +677,7 @@
       <room>rooms\LEVEL_TEN</room>
       <room>rooms\BOSS_THREE</room>
     </rooms>
+    <room>rooms\LEVEL_THREE</room>
     <room>rooms\SPAWN_ROOM</room>
     <room>rooms\BOSS_SCRAP</room>
     <room>rooms\BOSS_SCRAP2</room>
