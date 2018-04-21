@@ -328,6 +328,7 @@
     <sprite>sprites\spr_spinningbladeblade</sprite>
     <sprite>sprites\spr_board1</sprite>
     <sprite>sprites\spr_board2</sprite>
+    <sprite>sprites\spr_mask_nocolide</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg1</background>
