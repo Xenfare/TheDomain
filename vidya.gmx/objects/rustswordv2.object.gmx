@@ -37,6 +37,29 @@ swing = 0
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_index = (state != 0)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -55,7 +78,8 @@ swing = 0
           <argument>
             <kind>1</kind>
             <string>state = -state
-if state = 1
+mask_index = sprite_index
+/*if state = 1
 {
     state = 0
     swing = 0
@@ -115,31 +139,38 @@ y = owner.y;
     switch(state)
     {
         case 1:
-            if swing &lt; 180
-                swing += swingspeed
-            else
+            swing += swingspeed
+            if swing &gt; 180
             {
-                swing += .5
-                if swing &gt;= 200
-                    state = 2
+                state = 3
+                mask_index = spr_mask_nocolide
             }
         break;
+        case 3:
+             swing += .5
+             if swing &gt;= 200
+             {
+                mask_index = sprite_index
+                state = 2
+             }
+        break;
         case 2:
-            if swing &gt; 20
+            swing -= swingspeed
+            if swing &lt; 20
             {
-                swing -= swingspeed
+                mask_index = spr_mask_nocolide
+                state = 4
             }
-            else if swing &lt;= 0
+        break;
+        case 4:
+            if swing &lt;= 0
             {
-                
                 swing = 0
                 state = 0
-                image_index = 0
+                alarm[1] = room_speed * .5
             }
             else
-            {
                 swing -= .5
-            }
         break;
         case -1:
             swing -= swingspeed * .1
@@ -149,7 +180,7 @@ y = owner.y;
         case -2:
             swing += swingspeed * .1
             if swing &gt; 200
-                state = 200
+                swing = 200
     }
     
     image_angle = (owner.image_angle) + swing; 
@@ -203,7 +234,8 @@ else instance_destroy()
             <string>if state != 0 exit
 state = 1
 image_index = 1
-
+mask_index = sprite_index
+alarm[1] = -1
 </string>
           </argument>
         </arguments>

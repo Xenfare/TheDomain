@@ -1505,8 +1505,8 @@ if (other.owner.spindir &gt; 3 or other.owner.spindir &lt; -3) &amp;&amp; (inv =
 var shieldcol = 0
 if global.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,player.guard)}
-if (inv = 0) &amp;&amp; other.image_index = 1 &amp;&amp; other.state &gt; 0 &amp;&amp; shieldcol = 0
-{script_execute(interrupt); kbdir = point_direction(other.x, other.y, x, y); kb = 12; hp -= 20; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood);}
+if (inv = 0) &amp;&amp; other.image_index = 1 &amp;&amp; (other.state = 2 || other.state = 1) &amp;&amp; shieldcol = 0
+{script_execute(interrupt); other.mask_index = spr_mask_nocolide; kbdir = point_direction(other.x, other.y, x, y); kb = 12; hp -= 20; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood);}
 </string>
           </argument>
         </arguments>

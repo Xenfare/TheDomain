@@ -137,12 +137,15 @@ if aggro or collision_line(x,y,player.x,player.y,worldwall,false,false)
 {
     var dir = point_direction(x, y, player.x, player.y)
     var diff = angle_difference(direction,dir)
-    if weapon.state = 0 
+    if weapon.state &gt;= 0 
     {
-        if abs(diff) &lt; turn_speed
+        var tspeed = turn_speed;
+        if weapon.state != 0
+            tspeed *= 1.5
+        if abs(diff) &lt; tspeed
             direction = dir
         else
-            direction -= sign(diff) * turn_speed
+            direction -= sign(diff) * tspeed
     }
     if abs(diff) &lt; 10
     {
@@ -153,7 +156,6 @@ if aggro or collision_line(x,y,player.x,player.y,worldwall,false,false)
             speed = 0
         else
             speed = 3
-            
     }
     else
         speed = 0
