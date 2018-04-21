@@ -81,7 +81,14 @@ if distance_to_object (player) &lt; 60 &amp;&amp; myroom = room {image_index = 1
 else
 {instance_activate_object(self); x = myx; y = myy}
 if player.checkpoint = id &amp;&amp; player.alarm[7] &gt; 0 {player.x = x; player.y = y}
-
+//deactivate surounding enemies
+var inst = collision_circle(x,y,128,enemyparent,false,true);
+while(instance_exists(inst))
+{
+    instance_deactivate_object(inst);
+    inst = collision_circle(x,y,128,enemyparent,false,true)
+}
+/*
 //move colliding enemy homies 
 var inst = collision_circle(x,y,CELL_SIZE * .5,enemyparent,false,true);
 while(instance_exists(inst))
@@ -106,7 +113,7 @@ while(instance_exists(inst))
     }
     until(spawn_moved)  
     inst = collision_circle(x,y,CELL_SIZE * .5,enemyparent,false,true)
-}
+}*/
 
 </string>
           </argument>
