@@ -115,17 +115,30 @@ y = owner.y;
     switch(state)
     {
         case 1:
-            swing += swingspeed
-            if swing &gt;= 200
-                state = 2
+            if swing &lt; 180
+                swing += swingspeed
+            else
+            {
+                swing += .5
+                if swing &gt;= 200
+                    state = 2
+            }
         break;
         case 2:
-            swing -= swingspeed
-            if swing &lt;= 0
+            if swing &gt; 20
             {
+                swing -= swingspeed
+            }
+            else if swing &lt;= 0
+            {
+                
                 swing = 0
                 state = 0
                 image_index = 0
+            }
+            else
+            {
+                swing -= .5
             }
         break;
         case -1:
