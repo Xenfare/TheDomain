@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_magicshot</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>-3</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>speed = 7
 direction = random_range(0, 360)
-image_angle = direction
 </string>
           </argument>
         </arguments>
