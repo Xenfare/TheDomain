@@ -514,34 +514,6 @@ surface_resize(application_surface, view_wport, view_hport);
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="rustswordv2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>with(other){place_meeting(x,y,player.guard)}
-var shieldcol = 0
-if global.shielddir = 5
-with(other){shieldcol = place_meeting(x,y,player.guard)}
-if (inv = 0) &amp;&amp; other.image_index = 1 &amp;&amp; other.alarm[1] &lt; 1 &amp;&amp; shieldcol = 0
-{script_execute(interrupt); kbdir = point_direction(other.x, other.y, x, y); kb = 12; hp -= 20; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood);}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="spikes2">
       <action>
         <libid>1</libid>
@@ -1507,6 +1479,34 @@ with(other){shieldcol = place_meeting(x,y,shield)}
 if (other.owner.spindir &gt; 3 or other.owner.spindir &lt; -3) &amp;&amp; (inv = 0 &amp;&amp; other.image_index = 0 &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0)
 
 {hp -= 20; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); script_execute(interrupt); kbdir = point_direction(other.x, other.y, x, y); kb = 10;}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="rustswordv2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(other){place_meeting(x,y,player.guard)}
+var shieldcol = 0
+if global.shielddir = 5
+with(other){shieldcol = place_meeting(x,y,player.guard)}
+if (inv = 0) &amp;&amp; other.image_index = 1 &amp;&amp; other.state &gt; 0 &amp;&amp; shieldcol = 0
+{script_execute(interrupt); kbdir = point_direction(other.x, other.y, x, y); kb = 12; hp -= 20; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood);}
 </string>
           </argument>
         </arguments>

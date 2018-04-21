@@ -149,7 +149,7 @@ if aggro or collision_line(x,y,player.x,player.y,worldwall,false,false)
         if pdist &lt; 60
             with(weapon)
                 event_user(0)
-        if pdist &lt; 35 
+        if pdist &lt; 35 || weapon.state &lt; 0
             speed = 0
         else
             speed = 3
