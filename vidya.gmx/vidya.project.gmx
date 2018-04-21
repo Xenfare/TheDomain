@@ -469,7 +469,9 @@
       </objects>
       <objects name="rust">
         <object>objects\rust</object>
+        <object>objects\rustv2_no_pathfinding</object>
         <object>objects\rustsword</object>
+        <object>objects\rustswordv2</object>
       </objects>
       <objects name="lefty">
         <object>objects\lefty</object>
@@ -659,6 +661,7 @@
   <rooms name="rooms">
     <room>rooms\init_rom</room>
     <room>rooms\DEMOROOM</room>
+    <room>rooms\LIGHTING_TEST</room>
     <rooms name="DUNGEON">
       <room>rooms\LEVEL_ONE</room>
       <room>rooms\LEVEL_TWO</room>
@@ -686,7 +689,6 @@
     <room>rooms\LEVEL_THREESCRAP2</room>
     <room>rooms\TUTCAVE</room>
     <room>rooms\TUTORIAL</room>
-    <room>rooms\LIGHTING_TEST</room>
   </rooms>
   <constants number="6">
     <constant name="print">show_debug_message</constant>
