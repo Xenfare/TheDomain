@@ -29,7 +29,7 @@
 image_xscale = 0.5
 image_yscale = 0.5
 state = 0
-swingspeed = 6
+swingspeed = 7
 swing = 0
 
 </string>
@@ -147,7 +147,7 @@ y = owner.y;
             }
         break;
         case 3:
-             swing += .5
+             swing += 1
              if swing &gt;= 200
              {
                 mask_index = sprite_index
@@ -208,7 +208,7 @@ else instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.shielddir = 5 &amp;&amp; state &gt; 0 {alarm[0] = room_speed * 1.5; state = -state; audio_play_sound(clang, 10, false); player.kbdir = point_direction(x, y, other.x, other.y); player.kb = 12;}
+            <string>if global.shielddir = 5 &amp;&amp; state &gt; 0 {alarm[0] = room_speed * 1.5; state = -state; owner.vibrate = 3; audio_play_sound(clang, 10, false); player.kbdir = point_direction(x, y, other.x, other.y); player.kb = 12;}
 </string>
           </argument>
         </arguments>
@@ -236,6 +236,29 @@ state = 1
 image_index = 1
 mask_index = sprite_index
 alarm[1] = -1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_sprite_ext(sprite_index, image_index, x + random_range(-owner.vibrate, owner.vibrate), y + random_range(-owner.vibrate, owner.vibrate), image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 </string>
           </argument>
         </arguments>

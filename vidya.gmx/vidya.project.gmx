@@ -631,6 +631,10 @@
       <object>objects\darkhallway</object>
       <object>objects\lake</object>
       <object>objects\spawndoor</object>
+      <object>objects\board</object>
+      <object>objects\board2</object>
+      <object>objects\torch</object>
+      <object>objects\door</object>
     </objects>
     <object>objects\lighting</object>
     <object>objects\nextroom</object>
@@ -643,8 +647,6 @@
     <object>objects\enemy_chunk</object>
     <object>objects\YOUDIED</object>
     <object>objects\selector</object>
-    <object>objects\torch</object>
-    <object>objects\door</object>
     <object>objects\dialogtestman</object>
     <object>objects\tut_spinningblade</object>
     <object>objects\tut_spinningbladeblade</object>
@@ -653,8 +655,6 @@
     <object>objects\spearadvancer</object>
     <object>objects\tut_runcontroller</object>
     <object>objects\tut_exitor</object>
-    <object>objects\board</object>
-    <object>objects\board2</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\TLchase</timeline>
