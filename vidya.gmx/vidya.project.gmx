@@ -613,6 +613,7 @@
       <object>objects\whitespread</object>
       <object>objects\fireparticle</object>
       <object>objects\nightmareparticle</object>
+      <object>objects\drownparticle</object>
     </objects>
     <objects name="onetimes">
       <object>objects\summon</object>
@@ -660,8 +661,8 @@
     <object>objects\dialogtestman</object>
     <object>objects\tut_spinningblade</object>
     <object>objects\tut_spinningbladeblade</object>
-    <object>objects\spearadvancerspear</object>
     <object>objects\tut_particleshooter</object>
+    <object>objects\spearadvancerspear</object>
     <object>objects\spearadvancer</object>
     <object>objects\tut_runcontroller</object>
     <object>objects\tut_exitor</object>

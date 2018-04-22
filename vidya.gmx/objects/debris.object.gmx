@@ -105,7 +105,16 @@ if image_alpha &lt;= 0 {instance_destroy()}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>repeat(16) {instance_create(x+random_range(-32,32), y+random_range(-32,32), splash)}
+            <string>if other.suction
+{
+    with(other)
+        if !point_in_rectangle(other.x,other.y,bbox_left + suction_border,bbox_top + suction_border,bbox_right - suction_border, bbox_bottom - suction_border)
+        {
+        exit
+        }
+}
+instance_create(x, y, drownparticle)
+repeat(16) {instance_create(x+random_range(-16,16), y+random_range(-16,16), splash)}
 instance_destroy()
 </string>
           </argument>

@@ -256,6 +256,7 @@ if hp &lt;= 150 &amp;&amp; hurt = 0 {image_index = 1; hurt = 1; with instance_cr
             <string>hp-=10000
 drowned = true
 repeat(16) {instance_create(x+random_range(-32,32), y+random_range(-32,32), splash)}
+instance_create(x, y, drownparticle)
 ds_list_add(player.defeated, id)
 </string>
           </argument>

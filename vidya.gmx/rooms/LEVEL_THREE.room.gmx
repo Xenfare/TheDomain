@@ -3,8 +3,8 @@
   <caption></caption>
   <width>3008</width>
   <height>3264</height>
-  <vsnap>64</vsnap>
-  <hsnap>64</hsnap>
+  <vsnap>8</vsnap>
+  <hsnap>8</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -454,7 +454,7 @@
     <instance objName="wall" x="-320" y="2432" name="inst_A70D5A7D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="-256" y="2432" name="inst_C6BBB859" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="-384" y="2752" name="inst_9059FC1A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="spawnpoint" x="1920" y="960" name="inst_88907B5D" locked="0" code="myx += B&#xA;myy += B&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="spawnpoint" x="-128" y="2624" name="inst_88907B5D" locked="0" code="myx += B&#xA;myy += B&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="640" y="2432" name="inst_A08A394F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="704" y="2432" name="inst_D4D3166D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="768" y="2432" name="inst_23D5332A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -801,20 +801,10 @@
     <instance objName="wall" x="-64" y="2752" name="inst_428CB21A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="-320" y="2496" name="inst_F9FA4FA8" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="-320" y="2688" name="inst_030331F9" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="-192" y="2944" name="inst_42DC9B6B" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="-192" y="3136" name="inst_B7AB5D04" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="320" y="3136" name="inst_DFA70537" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="704" y="2944" name="inst_94F4A0C4" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="1216" y="3136" name="inst_2AE7DBCD" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="1792" y="2944" name="inst_DD48EFE2" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="2496" y="3136" name="inst_AAF271B7" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="2496" y="2944" name="inst_942D3D3D" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="320" y="704" name="inst_08FE499C" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="192" y="832" name="inst_B0D29BE4" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="192" y="896" name="inst_8F1FBAA5" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="512" y="896" name="inst_D58DA3E7" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="256" y="1152" name="inst_1B6677EE" locked="0" code="" scaleX="1" scaleY="21" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="320" y="1920" name="inst_A42BEA1F" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="448" y="1792" name="inst_C10FFE54" locked="0" code="" scaleX="1" scaleY="11" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="512" y="1792" name="inst_FB4E9014" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="832" y="1792" name="inst_DC5DD09F" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
@@ -862,12 +852,6 @@
     <instance objName="deathinvis" x="1152" y="2432" name="inst_4689C775" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="1856" y="2688" name="inst_112D565A" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="1856" y="2496" name="inst_465F3E96" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="-448" y="3008" name="inst_6D954CD0" locked="0" code="" scaleX="9.625" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="216" y="3008" name="inst_8822A173" locked="0" code="" scaleX="5.25" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="600" y="3008" name="inst_143EAF5A" locked="0" code="" scaleX="5.25" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="984" y="3008" name="inst_BAF50DED" locked="0" code="" scaleX="10.25" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="1688" y="3008" name="inst_42340D68" locked="0" code="" scaleX="5.25" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="deathinvis" x="2072" y="3008" name="inst_1D4EA9DE" locked="0" code="" scaleX="13.625" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="-448" y="3328" name="inst_2679F021" locked="0" code="" scaleX="8" scaleY="2.625" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="-448" y="3544" name="inst_418FDB83" locked="0" code="" scaleX="8" scaleY="2.625" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="1984" y="256" name="inst_0A5D534C" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
@@ -882,6 +866,20 @@
     <instance objName="rustv2_no_pathfinding" x="1728" y="1728" name="inst_4B00D41F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="rustv2_no_pathfinding" x="1184" y="1344" name="inst_63025106" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="shellface" x="960" y="1024" name="inst_0E938CA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="deathinvis" x="256" y="1920" name="inst_04F501CB" locked="0" code="" scaleX="4" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="deathinvis" x="704" y="2944" name="inst_55F1F40F" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="deathinvis" x="320" y="3008" name="inst_BCC1E4A4" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="deathinvis" x="-192" y="2944" name="inst_0735C9E9" locked="0" code="" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="deathinvis" x="1792" y="2944" name="inst_3A1FF99B" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="deathinvis" x="2496" y="2944" name="inst_BE575799" locked="0" code="" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="deathinvis" x="320" y="704" name="inst_60E5C38E" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="deathinvis" x="1216" y="3008" name="inst_3F542FEA" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="deathinvis" x="-448" y="3008" name="inst_2E35434B" locked="0" code="" scaleX="9.75" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="deathinvis" x="208" y="3008" name="inst_4614A7E7" locked="0" code="" scaleX="5.5" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="deathinvis" x="592" y="3008" name="inst_1FA9E5F4" locked="0" code="" scaleX="5.5" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="deathinvis" x="976" y="3008" name="inst_3C9C37B3" locked="0" code="" scaleX="10.5" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="deathinvis" x="1680" y="3008" name="inst_6284391A" locked="0" code="" scaleX="5.5" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="deathinvis" x="2064" y="3008" name="inst_7F6994E6" locked="0" code="" scaleX="13.75" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_dungeon" x="-512" y="2560" w="64" h="64" xo="448" yo="64" id="10023831" name="inst_E4871654" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

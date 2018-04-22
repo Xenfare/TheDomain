@@ -2680,7 +2680,7 @@ if other.suction
             exit
         }
 }
-if !place_meeting(x,y,hook) &amp;&amp; alive = true {hp-=1000; repeat(16) {instance_create(x+random_range(-32,32), y+random_range(-32,32), splash)}}
+if !place_meeting(x,y,hook) &amp;&amp; alive = true {hp-=1000; repeat(16) {instance_create(x+random_range(-16,16), y+random_range(-16,16), splash); instance_create(x, y, drownparticle)}}
 }
 </string>
           </argument>

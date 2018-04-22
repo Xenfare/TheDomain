@@ -215,7 +215,7 @@ if spin = 40 {instance_create(x, y, squidshot); spin = round(random_range(-160, 
 
 slide_move()
 
-if place_meeting(x, y, deathinvis) {repeat(4){instance_create(x + random_range(-16, 16), y + random_range(-16, 16), splash)}; rightv = 3; leftv = 3}
+if place_meeting(x, y, deathinvis) {repeat(4) instance_create(x + random_range(-16, 16), y + random_range(-16, 16), splash)}
 }
 
 

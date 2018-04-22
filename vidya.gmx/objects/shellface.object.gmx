@@ -297,7 +297,7 @@ script_execute(damagedscript)
             <string>if other.suction
 {
     with(other)
-        if !collision_rectangle(bbox_left + suction_border,bbox_top + suction_border,bbox_right - suction_border, bbox_bottom - suction_border,other,false,false)
+        if !point_in_rectangle(other.x,other.y,bbox_left + suction_border,bbox_top + suction_border,bbox_right - suction_border, bbox_bottom - suction_border)
         {
             var dir = point_direction((other.x &gt; bbox_right - suction_border) - (other.x &lt; bbox_left + suction_border),(other.y &gt; bbox_bottom - suction_border) - (other.y &lt; bbox_top + suction_border),0,0)
             var cx = lengthdir_x(other.kb,other.kbdir);
@@ -311,6 +311,7 @@ script_execute(damagedscript)
 }
 hp-=10000
 drowned = true
+instance_create(x, y, drownparticle)
 repeat(16) {instance_create(x+random_range(-32,32), y+random_range(-32,32), splash)}
 ds_list_add(player.defeated, id)
 
