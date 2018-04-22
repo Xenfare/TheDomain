@@ -2210,7 +2210,7 @@ var shieldcol = 0
 if global.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 if (inv = 0) &amp;&amp; shieldcol = 0
-{hp -= 14; repeat(8) instance_create(x, y, blood); script_execute(interrupt); kb = 8; kbdir = point_direction(other.x, other.y, x, y); instance_destroy(other)}
+{hp -= 15; repeat(8) instance_create(x, y, blood); script_execute(interrupt); kb = 8; kbdir = point_direction(other.x, other.y, x, y); instance_destroy(other)}
 </string>
           </argument>
         </arguments>

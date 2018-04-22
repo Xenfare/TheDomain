@@ -30,6 +30,7 @@ direction = image_angle
 rustspeed = 0
 inv = false
 hp = 300
+aggro_range = 200
 hurt = 0
 alarm[0] = 40
 image_speed = 0
@@ -125,16 +126,20 @@ inv = false
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+if player_seen = true &amp;&amp; aggro = false {aggro = true}
+if distance_to_object(player) &gt; 600 {aggro = false}
 image_angle = direction
 if vibrate &gt; 0 {vibrate -= 0.1}
 if vibrate &lt; 0 {vibrate = 0}
+
+if aggro = true
+{
 
 if hp &lt; 1 {
     instance_destroy()
 }
 var pdist = distance_to_object(player);
-if pdist &gt; 600 aggro = false
-else if pdist &lt; 200 aggro = true
+//if pdist &gt; 600 aggro = false
 
 if aggro or collision_line(x,y,player.x,player.y,worldwall,false,false)
 {
@@ -165,6 +170,7 @@ if aggro or collision_line(x,y,player.x,player.y,worldwall,false,false)
 }
 
 if hp &lt;= 150 &amp;&amp; hurt = 0 {image_index = 1; hurt = 1; with instance_create(x,y,debris) {direction = other.image_angle + random_range(-80, 80);sprite_index = spr_rustvisor; image_xscale = 0.25; image_yscale = 0.25;}}
+}
 </string>
           </argument>
         </arguments>
@@ -268,10 +274,26 @@ if hp &lt;= 150 &amp;&amp; hurt = 0 {image_index = 1; hurt = 1; with instance_cr
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hp-=10000
+            <string>if other.suction
+{
+    with(other)
+        if !collision_rectangle(bbox_left + suction_border,bbox_top + suction_border,bbox_right - suction_border, bbox_bottom - suction_border,other,false,false)
+        {
+            var dir = point_direction((other.x &gt; bbox_right - suction_border) - (other.x &lt; bbox_left + suction_border),(other.y &gt; bbox_bottom - suction_border) - (other.y &lt; bbox_top + suction_border),0,0)
+            var cx = lengthdir_x(other.kb,other.kbdir);
+            var cy = lengthdir_y(other.kb,other.kbdir);
+            cx += lengthdir_x(suction_speed,dir)
+            cy += lengthdir_y(suction_speed,dir)
+            other.kbdir = point_direction(0,0,cx,cy)
+            other.kb = point_distance(0,0,cx,cy)
+            exit
+        }
+}
+hp-=10000
 drowned = true
 repeat(16) {instance_create(x+random_range(-32,32), y+random_range(-32,32), splash)}
 ds_list_add(player.defeated, id)
+
 </string>
           </argument>
         </arguments>

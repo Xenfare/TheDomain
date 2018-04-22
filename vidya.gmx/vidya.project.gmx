@@ -459,125 +459,135 @@
     </objects>
     <objects name="enemies">
       <object>objects\DEFAULTENEMY</object>
-      <objects name="overgrown">
-        <object>objects\overgrown</object>
-        <object>objects\overgrown2</object>
-        <object>objects\overgrowntest</object>
+      <objects name="DUNGEON">
+        <objects name="overgrown">
+          <object>objects\overgrown</object>
+          <object>objects\overgrown2</object>
+          <object>objects\overgrowntest</object>
+        </objects>
+        <objects name="skeleton">
+          <object>objects\skeleton</object>
+          <object>objects\skeleton2</object>
+        </objects>
+        <objects name="rust">
+          <object>objects\rust</object>
+          <object>objects\rustsword</object>
+          <object>objects\rustv2_no_pathfinding</object>
+          <object>objects\rustswordv2</object>
+        </objects>
+        <objects name="immortal">
+          <object>objects\immortal</object>
+          <object>objects\immortalchunk</object>
+          <object>objects\immortalarm</object>
+        </objects>
+        <objects name="lefty">
+          <object>objects\lefty</object>
+          <object>objects\eleftysword</object>
+          <object>objects\eleftyshield</object>
+          <object>objects\leftyheal</object>
+          <object>objects\spritefade</object>
+        </objects>
+        <objects name="swallower">
+          <object>objects\swallower</object>
+          <object>objects\swallowerjaw</object>
+          <object>objects\pustule</object>
+          <object>objects\swallowergrowth</object>
+          <object>objects\swallowerspear</object>
+          <object>objects\swallowersword</object>
+          <object>objects\swallowerwep</object>
+          <object>objects\dagger</object>
+        </objects>
+        <object>objects\magician</object>
+        <object>objects\wizard</object>
+        <object>objects\roach</object>
       </objects>
-      <objects name="skeleton">
-        <object>objects\skeleton</object>
-        <object>objects\skeleton2</object>
+      <objects name="SEWER">
+        <objects name="fishman">
+          <object>objects\fishman</object>
+          <object>objects\fishmancannon</object>
+          <object>objects\fishsword</object>
+          <object>objects\fishcannon</object>
+          <object>objects\fishpistol</object>
+        </objects>
+        <object>objects\shellface</object>
+        <object>objects\sewersniper</object>
+        <object>objects\sewershark</object>
+        <object>objects\sewerwizard</object>
       </objects>
-      <objects name="rust">
-        <object>objects\rust</object>
-        <object>objects\rustv2_no_pathfinding</object>
-        <object>objects\rustsword</object>
-        <object>objects\rustswordv2</object>
+      <objects name="FOREST">
+        <objects name="druid">
+          <object>objects\druid</object>
+        </objects>
+        <objects name="druidgolem">
+          <object>objects\druidgolem</object>
+          <object>objects\druidgolemmask</object>
+          <object>objects\druidgolemthorns</object>
+        </objects>
+        <objects name="riverserpent">
+          <object>objects\serpentminion</object>
+          <object>objects\serpentminion2</object>
+          <object>objects\riverserpent1</object>
+          <object>objects\riverserpent2</object>
+        </objects>
+        <object>objects\bonemaster</object>
+        <object>objects\badger</object>
+        <object>objects\hedgebeast</object>
+        <object>objects\archer</object>
       </objects>
-      <objects name="lefty">
-        <object>objects\lefty</object>
-        <object>objects\eleftysword</object>
-        <object>objects\eleftyshield</object>
-        <object>objects\leftyheal</object>
-        <object>objects\spritefade</object>
+      <objects name="ASYLUM">
+        <objects name="gross">
+          <object>objects\grossenemy</object>
+          <object>objects\grossenemy2</object>
+          <object>objects\grosssword</object>
+        </objects>
+        <objects name="nightmare">
+          <object>objects\nightmare</object>
+          <object>objects\nightmareeyes</object>
+        </objects>
+        <objects name="ninja">
+          <object>objects\ninja</object>
+          <object>objects\ninjasword1</object>
+          <object>objects\ninjasword2</object>
+        </objects>
+        <object>objects\psycho</object>
+        <object>objects\psycho2</object>
+        <object>objects\doll</object>
+        <object>objects\spitter</object>
       </objects>
-      <objects name="swallower">
-        <object>objects\swallower</object>
-        <object>objects\swallowerjaw</object>
-        <object>objects\pustule</object>
-        <object>objects\swallowergrowth</object>
-        <object>objects\swallowerspear</object>
-        <object>objects\swallowersword</object>
-        <object>objects\swallowerwep</object>
-        <object>objects\dagger</object>
+      <objects name="UNUSED">
+        <objects name="frenzyzombie">
+          <object>objects\frenziedzombie</object>
+          <object>objects\deadfrenzy</object>
+        </objects>
+        <objects name="fisherman">
+          <object>objects\fisherman</object>
+          <object>objects\pole</object>
+          <object>objects\hook</object>
+        </objects>
+        <objects name="ghost">
+          <object>objects\ghost</object>
+          <object>objects\ghost2</object>
+          <object>objects\ghost3</object>
+        </objects>
+        <objects name="necro">
+          <object>objects\necro</object>
+          <object>objects\necrostaff</object>
+          <object>objects\seed</object>
+          <object>objects\seed2</object>
+          <object>objects\portalseed</object>
+          <object>objects\skeleportal</object>
+        </objects>
+        <objects name="denizen">
+          <object>objects\denizen</object>
+          <object>objects\denizenjacket</object>
+          <object>objects\denizensnare</object>
+        </objects>
+        <object>objects\kelpie</object>
+        <object>objects\zombie</object>
+        <object>objects\wizardspec</object>
+        <object>objects\spiderweb</object>
+        <object>objects\bloodgiver</object>
       </objects>
-      <objects name="riverserpent">
-        <object>objects\serpentminion</object>
-        <object>objects\serpentminion2</object>
-        <object>objects\riverserpent1</object>
-        <object>objects\riverserpent2</object>
-      </objects>
-      <objects name="frenzyzombie">
-        <object>objects\frenziedzombie</object>
-        <object>objects\deadfrenzy</object>
-      </objects>
-      <objects name="ninja">
-        <object>objects\ninja</object>
-        <object>objects\ninjasword1</object>
-        <object>objects\ninjasword2</object>
-      </objects>
-      <objects name="denizen">
-        <object>objects\denizen</object>
-        <object>objects\denizenjacket</object>
-        <object>objects\denizensnare</object>
-      </objects>
-      <objects name="druid">
-        <object>objects\druid</object>
-      </objects>
-      <objects name="druidgolem">
-        <object>objects\druidgolem</object>
-        <object>objects\druidgolemmask</object>
-        <object>objects\druidgolemthorns</object>
-      </objects>
-      <objects name="nightmare">
-        <object>objects\nightmare</object>
-        <object>objects\nightmareeyes</object>
-      </objects>
-      <objects name="gross">
-        <object>objects\grossenemy</object>
-        <object>objects\grossenemy2</object>
-        <object>objects\grosssword</object>
-      </objects>
-      <objects name="immortal">
-        <object>objects\immortal</object>
-        <object>objects\immortalchunk</object>
-        <object>objects\immortalarm</object>
-      </objects>
-      <objects name="necro">
-        <object>objects\necro</object>
-        <object>objects\necrostaff</object>
-        <object>objects\seed</object>
-        <object>objects\seed2</object>
-        <object>objects\portalseed</object>
-        <object>objects\skeleportal</object>
-      </objects>
-      <objects name="fisherman">
-        <object>objects\fisherman</object>
-        <object>objects\pole</object>
-        <object>objects\hook</object>
-      </objects>
-      <objects name="fishman">
-        <object>objects\fishman</object>
-        <object>objects\fishmancannon</object>
-        <object>objects\fishsword</object>
-        <object>objects\fishcannon</object>
-        <object>objects\fishpistol</object>
-      </objects>
-      <objects name="ghost">
-        <object>objects\ghost</object>
-        <object>objects\ghost2</object>
-        <object>objects\ghost3</object>
-      </objects>
-      <object>objects\roach</object>
-      <object>objects\zombie</object>
-      <object>objects\bloodgiver</object>
-      <object>objects\psycho</object>
-      <object>objects\psycho2</object>
-      <object>objects\badger</object>
-      <object>objects\shellface</object>
-      <object>objects\sewersniper</object>
-      <object>objects\sewershark</object>
-      <object>objects\sewerwizard</object>
-      <object>objects\kelpie</object>
-      <object>objects\hedgebeast</object>
-      <object>objects\magician</object>
-      <object>objects\doll</object>
-      <object>objects\spitter</object>
-      <object>objects\archer</object>
-      <object>objects\bonemaster</object>
-      <object>objects\wizard</object>
-      <object>objects\wizardspec</object>
-      <object>objects\spiderweb</object>
     </objects>
     <objects name="particles">
       <object>objects\blood</object>
@@ -635,11 +645,11 @@
       <object>objects\board2</object>
       <object>objects\torch</object>
       <object>objects\door</object>
+      <object>objects\darkoverlay</object>
     </objects>
     <object>objects\lighting</object>
     <object>objects\nextroom</object>
     <object>objects\projectilewall</object>
-    <object>objects\darkoverlay</object>
     <object>objects\roomchanger</object>
     <object>objects\debris</object>
     <object>objects\enemyparent</object>
@@ -662,7 +672,6 @@
   <rooms name="rooms">
     <room>rooms\init_rom</room>
     <room>rooms\DEMOROOM</room>
-    <room>rooms\LIGHTING_TEST</room>
     <room>rooms\LEVEL_THREE</room>
     <rooms name="DUNGEON">
       <room>rooms\LEVEL_ONE</room>
@@ -682,6 +691,7 @@
       <room>rooms\LEVEL_TEN</room>
       <room>rooms\BOSS_THREE</room>
     </rooms>
+    <room>rooms\LIGHTING_TEST</room>
     <room>rooms\SPAWN_ROOM</room>
     <room>rooms\BOSS_SCRAP</room>
     <room>rooms\BOSS_SCRAP2</room>

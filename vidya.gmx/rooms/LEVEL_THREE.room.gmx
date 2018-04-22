@@ -550,7 +550,6 @@
     <instance objName="wall" x="1920" y="2176" name="inst_C2C58241" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1920" y="2240" name="inst_7905BCFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1536" y="1984" name="inst_7D408F06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="rust" x="1728" y="1728" name="inst_36EBC5FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="sewersniper" x="1984" y="2048" name="inst_21BF047D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="-448" y="2496" name="inst_0769D3FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="-448" y="2688" name="inst_9A25510E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -585,7 +584,6 @@
     <instance objName="wall" x="1472" y="1152" name="inst_C4762CD4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1344" y="1152" name="inst_BE4CC408" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1408" y="1152" name="inst_FBC45BF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="rust" x="1184" y="1344" name="inst_B6F32F3B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="wall" x="1024" y="832" name="inst_2D7D5649" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="832" y="832" name="inst_BA777311" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="960" y="832" name="inst_55F9F0E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -642,7 +640,6 @@
     <instance objName="wall" x="1792" y="-64" name="inst_2DD6F714" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1984" y="-64" name="inst_1C476D26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="2816" y="1536" name="inst_D7B78501" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="shellface" x="1232" y="1024" name="inst_64854C85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-135"/>
     <instance objName="wall" x="256" y="704" name="inst_1854F86D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="448" y="704" name="inst_19966AE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="448" y="640" name="inst_BB9CCFD6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -800,7 +797,7 @@
     <instance objName="sewersniper" x="-383" y="3648" name="inst_61E37F6C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="sewersniper" x="-128" y="3329" name="inst_6C790E3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="board2" x="-192" y="3520" name="inst_A70DD0C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="1"/>
-    <instance objName="sewerwizard" x="1696" y="416" name="inst_440853F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="sewerwizard" x="1920" y="576" name="inst_440853F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="wall" x="-64" y="2752" name="inst_428CB21A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="-320" y="2496" name="inst_F9FA4FA8" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="deathinvis" x="-320" y="2688" name="inst_030331F9" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
@@ -882,6 +879,9 @@
     <instance objName="projectilewall" x="1632" y="672" name="inst_42E8DE5F" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="projectilewall" x="2208" y="32" name="inst_3E0505C8" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="projectilewall" x="1632" y="32" name="inst_9C04D518" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="rustv2_no_pathfinding" x="1728" y="1728" name="inst_4B00D41F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="rustv2_no_pathfinding" x="1184" y="1344" name="inst_63025106" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
+    <instance objName="shellface" x="960" y="1024" name="inst_0E938CA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_dungeon" x="-512" y="2560" w="64" h="64" xo="448" yo="64" id="10023831" name="inst_E4871654" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

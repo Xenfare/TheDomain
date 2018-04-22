@@ -113,7 +113,6 @@
     <instance objName="overgrown" x="704" y="1408" name="inst_342B9322" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-180"/>
     <instance objName="overgrown" x="704" y="1152" name="inst_61151408" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-180"/>
     <instance objName="overgrown" x="704" y="896" name="inst_3CF454DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-180"/>
-    <instance objName="rust" x="192" y="1472" name="inst_AF21283A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="spawnpoint" x="672" y="2208" name="inst_117494FB" locked="0" code="myx += B&#xA;myy += B" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="bars" x="1856" y="576" name="inst_921DBFFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="bars" x="1920" y="576" name="inst_FDDB6B42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -172,8 +171,7 @@
     <instance objName="wall" x="1216" y="896" name="inst_E75A6A2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1152" y="896" name="inst_10BF621D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1088" y="896" name="inst_460366E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="skeleton" x="1216" y="1024" name="inst_09B7AFD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="skeleton" x="1408" y="1024" name="inst_E03725A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="skeleton" x="1280" y="1024" name="inst_09B7AFD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1344" y="2368" name="inst_613584CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1344" y="2432" name="inst_B61CAE54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1408" y="2432" name="inst_C4DD10B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -538,8 +536,6 @@
     <instance objName="wall" x="2368" y="1472" name="inst_3E54E290" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="2368" y="896" name="inst_06E4F835" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="2304" y="896" name="inst_19FB508A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="rust" x="2176" y="1280" name="inst_4B7B822A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="rust" x="2624" y="1600" name="inst_A678C9A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="wall" x="2368" y="1408" name="inst_F185618C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="2368" y="1344" name="inst_7682E9FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="2432" y="1344" name="inst_EA6E76FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -586,8 +582,10 @@
     <instance objName="wall" x="2496" y="512" name="inst_C443F555" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="2240" y="512" name="inst_C148F4F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="2304" y="512" name="inst_3B3325F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="skeleton" x="128" y="672" name="inst_A4656FB6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="skeleton" x="256" y="672" name="inst_D7735B31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="skeleton" x="192" y="576" name="inst_A4656FB6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-270"/>
+    <instance objName="rustv2_no_pathfinding" x="2176" y="1280" name="inst_EB8B1204" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="rustv2_no_pathfinding" x="2592" y="1600" name="inst_1A7F1EB9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="rustv2_no_pathfinding" x="192" y="1472" name="inst_C87A1505" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
   </instances>
   <tiles>
     <tile bgName="bg_dungeon" x="320" y="1024" w="64" h="64" xo="512" yo="64" id="10022148" name="inst_6265E6C5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
