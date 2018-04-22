@@ -670,98 +670,6 @@ if other.owner.phase &lt;= 2 &amp;&amp; place_meeting(x, y, trapwall) {hp -= 100
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="hedgebeast">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>{hp -= 15; repeat(8) instance_create(x, y, blood); inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; alarm[0] = 12}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="badger">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>{hp -= 0.6; repeat(8) instance_create(x, y, blood); inv = true; alarm[0] = 12}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="psycho2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>{hp -= 0.4; repeat(8) instance_create(x, y, blood); inv = true; alarm[0] = 12}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="psycho">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>{hp -= 0.4; repeat(8) instance_create(x, y, blood); inv = true; alarm[0] = 12}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="zombie">
       <action>
         <libid>1</libid>
@@ -780,6 +688,53 @@ if other.owner.phase &lt;= 2 &amp;&amp; place_meeting(x, y, trapwall) {hp -= 100
           <argument>
             <kind>1</kind>
             <string>{hp -= 0.8; repeat(8) instance_create(x, y, blood); inv = true; alarm[0] = 12}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="denizensnare">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>x = xprevious
+y = yprevious
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="denizen">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>{hp -= 1; repeat(8) instance_create(x, y, blood); inv = true; alarm[0] = 12}
 </string>
           </argument>
         </arguments>
@@ -857,65 +812,6 @@ repeat (2) instance_create(random_range(x-32, x+32), random_range(y-32, y+32), g
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="fishcannon">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>with(other){place_meeting(x,y,shield)}
-var shieldcol = 0
-if global.shielddir = 5
-with(other){shieldcol = place_meeting(x,y,shield)}
-if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0
-{hp -= 25; kbdir = point_direction(other.owner.x, other.owner.y, x, y); kb = 20; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); script_execute(interrupt); other.damaging = false}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="fishsword">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if instance_exists(other)
-{
-with(other){place_meeting(x,y,shield)}
-var shieldcol = 0
-if global.shielddir = 5
-with(other){shieldcol = place_meeting(x,y,shield)}
-if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0
-{hp -= 15; kbdir = point_direction(other.owner.x, other.owner.y, x, y); kb = 10; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); script_execute(interrupt); other.damaging = false}
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="hook">
       <action>
         <libid>1</libid>
@@ -966,173 +862,7 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="immortal">
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>interrupt</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if other.speed &gt; 4 &amp;&amp; other.damaging = true {hp -= 18; other.damaging = false; kbdir = point_direction(other.x, other.y, x, y); kb = 18; repeat(8) instance_create(x, y, blood)}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="grosssword">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>with(other){place_meeting(x,y,shield)}
-var shieldcol = 0
-if global.shielddir = 5
-with(other){shieldcol = place_meeting(x,y,shield)}
-if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0
-{hp -= 20; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; alarm[0] = 12;}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="grossenemy">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//lolololololol
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="druidgolemthorns">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>with(other){place_meeting(x,y,shield)}
-var shieldcol = 0
-if global.shielddir = 5
-with(other){shieldcol = place_meeting(x,y,shield)}
-if (inv = 0) &amp;&amp; other.image_index = 0 &amp;&amp; other.hit = false &amp;&amp; other.owner.phase = 2 &amp;&amp; shieldcol = 0 
-{hp -= 15; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; alarm[0] = 12;}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="denizensnare">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>x = xprevious
-y = yprevious
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="denizen">
+    <event eventtype="4" ename="frenziedzombie">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1150,6 +880,52 @@ y = yprevious
           <argument>
             <kind>1</kind>
             <string>{hp -= 1; repeat(8) instance_create(x, y, blood); inv = true; alarm[0] = 12}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="psycho2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>{hp -= 0.4; repeat(8) instance_create(x, y, blood); inv = true; alarm[0] = 12}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="psycho">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>{hp -= 0.4; repeat(8) instance_create(x, y, blood); inv = true; alarm[0] = 12}
 </string>
           </argument>
         </arguments>
@@ -1209,7 +985,7 @@ if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0 {hp -= 25
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="frenziedzombie">
+    <event eventtype="4" ename="grosssword">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -1226,7 +1002,81 @@ if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0 {hp -= 25
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>{hp -= 1; repeat(8) instance_create(x, y, blood); inv = true; alarm[0] = 12}
+            <string>with(other){place_meeting(x,y,shield)}
+var shieldcol = 0
+if global.shielddir = 5
+with(other){shieldcol = place_meeting(x,y,shield)}
+if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0
+{hp -= 20; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; alarm[0] = 12;}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="grossenemy">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//lolololololol
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="hedgebeast">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>{hp -= 15; repeat(8) instance_create(x, y, blood); inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; alarm[0] = 12}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="badger">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>{hp -= 0.6; repeat(8) instance_create(x, y, blood); inv = true; alarm[0] = 12}
 </string>
           </argument>
         </arguments>
@@ -1327,6 +1177,93 @@ if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0 {hp -= 25
           <argument>
             <kind>1</kind>
             <string>{hp -= 0.4; repeat(8) instance_create(x, y, blood); inv = true; alarm[0] = 12}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="druidgolemthorns">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(other){place_meeting(x,y,shield)}
+var shieldcol = 0
+if global.shielddir = 5
+with(other){shieldcol = place_meeting(x,y,shield)}
+if (inv = 0) &amp;&amp; other.image_index = 0 &amp;&amp; other.hit = false &amp;&amp; other.owner.phase = 2 &amp;&amp; shieldcol = 0 
+{hp -= 15; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; alarm[0] = 12;}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="fishcannon">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(other){place_meeting(x,y,shield)}
+var shieldcol = 0
+if global.shielddir = 5
+with(other){shieldcol = place_meeting(x,y,shield)}
+if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0
+{hp -= 25; kbdir = point_direction(other.owner.x, other.owner.y, x, y); kb = 20; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); script_execute(interrupt); other.damaging = false}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="fishsword">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if instance_exists(other)
+{
+with(other){place_meeting(x,y,shield)}
+var shieldcol = 0
+if global.shielddir = 5
+with(other){shieldcol = place_meeting(x,y,shield)}
+if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0
+{hp -= 15; kbdir = point_direction(other.owner.x, other.owner.y, x, y); kb = 10; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); script_execute(interrupt); other.damaging = false}
+}
 </string>
           </argument>
         </arguments>
@@ -1479,6 +1416,69 @@ with(other){shieldcol = place_meeting(x,y,shield)}
 if (other.owner.spindir &gt; 3 or other.owner.spindir &lt; -3) &amp;&amp; (inv = 0 &amp;&amp; other.image_index = 0 &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0)
 
 {hp -= 20; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); script_execute(interrupt); kbdir = point_direction(other.x, other.y, x, y); kb = 10;}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="immortal">
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>interrupt</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if other.speed &gt; 4 &amp;&amp; other.damaging = true {hp -= 18; other.damaging = false; kbdir = point_direction(other.x, other.y, x, y); kb = 18; repeat(8) instance_create(x, y, blood)}
 </string>
           </argument>
         </arguments>
@@ -2668,7 +2668,7 @@ if (inv = 0) &amp;&amp; shieldcol = 0
 if other.suction
 {
     with(other)
-        if !collision_rectangle(bbox_left + suction_border,bbox_top + suction_border,bbox_right - suction_border, bbox_bottom - suction_border,other,false,false)
+        if !point_in_rectangle(other.x,other.y,bbox_left + suction_border,bbox_top + suction_border,bbox_right - suction_border, bbox_bottom - suction_border)
         {
             var dir = point_direction((other.x &gt; bbox_right - suction_border) - (other.x &lt; bbox_left + suction_border),(other.y &gt; bbox_bottom - suction_border) - (other.y &lt; bbox_top + suction_border),0,0)
             var cx = lengthdir_x(other.kb,other.kbdir);

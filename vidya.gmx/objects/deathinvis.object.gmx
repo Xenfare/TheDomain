@@ -31,6 +31,7 @@ image_alpha = 0
 suction = true
 suction_border = 30
 suction_speed = .5
+visible = debug_mode
 </string>
           </argument>
         </arguments>
@@ -76,7 +77,7 @@ suction_speed = .5
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*draw_set_alpha(.3)
+            <string>draw_set_alpha(.3)
 draw_set_color(c_red)
 draw_rectangle(bbox_left + suction_border,bbox_top + suction_border,bbox_right - suction_border, bbox_bottom - suction_border,false)
 draw_set_color(c_yellow)
