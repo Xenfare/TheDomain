@@ -39,6 +39,7 @@ bookspd = .3
 bookdir = 0
 armdir = 25
 anim = 1
+turn_speed = 9
 </string>
           </argument>
         </arguments>
@@ -93,7 +94,8 @@ bookspd = 0.3
 if aggro = true 
 {
 //with instance_create(x + lengthdir_x(30, point_direction(x, y, player.x, player.y)), y + lengthdir_y(30, point_direction(x, y, player.x, player.y)), projectileone) {speed = 5; damage = 14; knock = 8};
-instance_create(x + lengthdir_x(30, point_direction(x, y, player.x, player.y)), y + lengthdir_y(30, point_direction(x, y, player.x, player.y)), magicshot)
+with(instance_create(x + lengthdir_x(30, image_angle/*point_direction(x, y, player.x, player.y)*/), y + lengthdir_y(30, image_angle/*point_direction(x, y, player.x, player.y)*/), magicshot))
+    direction = other.image_angle
 audio_play_sound(choose(fire, fire2), 10, false)
 }
 }
@@ -147,12 +149,20 @@ anim *= -1
 if aggro = true
 {
 event_inherited();
-image_angle = point_direction(x, y, player.x, player.y)
+//image_angle = point_direction(x, y, player.x, player.y)
+
 if hp &lt;= 0 {instance_destroy()}
 bookdir += bookspd
 if bookdir &gt; 15 {bookspd = bookspd * -1}
 if bookdir &lt; -15 {bookspd = bookspd * -1}
-if alarm[1] &lt; 20 {bookspd = bookspd / 1.1; instance_create(x + lengthdir_x(50, point_direction(x, y, player.x, player.y) - 30 + armdir), y + lengthdir_y(50, point_direction(x, y, player.x, player.y) - 30 + armdir), fireparticle)}
+if alarm[1] &lt; 20 {
+var dir = point_direction(x, y, player.x, player.y)
+var diff = angle_difference(image_angle,dir)
+if abs(diff) &lt; turn_speed
+    image_angle = dir
+else
+    image_angle -= sign(diff) * turn_speed
+bookspd = bookspd / 1.1; instance_create(x + lengthdir_x(50, image_angle/*point_direction(x, y, player.x, player.y)*/ - 30 + armdir), y + lengthdir_y(50, image_angle/*point_direction(x, y, player.x, player.y)*/ - 30 + armdir), fireparticle)}
 if alarm[1] &lt; 8 {armdir += 8} else {armdir -= .4}
 
 if anim = 1 

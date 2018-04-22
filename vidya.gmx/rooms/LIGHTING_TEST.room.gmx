@@ -217,6 +217,7 @@
     <instance objName="wall" x="448" y="0" name="inst_8046A248" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="rustv2_no_pathfinding" x="896" y="832" name="inst_CF8BB56F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="player" x="1536" y="832" name="inst_4EE71BF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="magician" x="2048" y="704" name="inst_04E11800" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
