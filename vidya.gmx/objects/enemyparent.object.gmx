@@ -155,11 +155,11 @@ if kb &gt; 0
         {
             if !place_meeting(x + xmov, y, worldwall) &amp;&amp; !place_meeting(x + xmov, y, enemyparent)
                 x += xmov;
-            else
+            else if !place_meeting(x - xmov * kb, y, worldwall)
                 x -= xmov * kb;
             if !place_meeting(x - xmov, y + ymov, worldwall)
                 y += ymov;
-            else
+            else if !place_meeting(x, ymov * kb, worldwall)
                 y -= ymov * kb;
             ++i;
             xprevious = x
