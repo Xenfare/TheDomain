@@ -312,9 +312,8 @@ script_execute(damagedscript)
 hp-=10000
 drowned = true
 instance_create(x, y, drownparticle)
-repeat(16) {instance_create(x+random_range(-32,32), y+random_range(-32,32), splash)}
+repeat(16) {instance_create(x+random_range(-16,16), y+random_range(-16,16), splash)}
 ds_list_add(player.defeated, id)
-
 </string>
           </argument>
         </arguments>

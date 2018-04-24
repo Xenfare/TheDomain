@@ -211,7 +211,7 @@ else if kb &gt; 0
         var i = 0;
         var xmov = lengthdir_x(1,kbdir)
         var ymov = lengthdir_y(1,kbdir) 
-        var effective_kb = kb / fric
+        var effective_kb = (kb / fric) * alive
         while(i &lt; effective_kb)
         {
             if !place_meeting(x + xmov, y, worldwall)
@@ -411,35 +411,14 @@ if alarm[8] &gt; 0
 
 //movement code
 if alive = true
-
 {
-
-if keyboard_check(ord('W')) &amp;&amp; place_free(x,y-spd) { 
-    if keyboard_check(ord('A')) &amp;&amp; place_free(x-spd,y){
-        dir = 135;
-    } else if keyboard_check(ord('D')) &amp;&amp; place_free(x+spd,y) {
-        dir = 45;
-    } else { 
-        dir = 90;
-    }
-} else if keyboard_check(ord('S')) &amp;&amp; place_free(x,y+spd) {
-    if keyboard_check(ord('A')) &amp;&amp; place_free(x-spd,y) {
-        dir = 225;
-    } else if keyboard_check(ord('D')) &amp;&amp; place_free(x+spd,y) {
-        dir = 315;
-    } else {
-        dir = 270;
-    }
-} else {
-    if keyboard_check(ord('A')) &amp;&amp; place_free(x-spd,y) {
-        dir = 180;
-    } else if keyboard_check(ord('D')) &amp;&amp; place_free(x+spd,y){
-        dir = 0;
-    } else {
-        dir = -1;
-    } 
-}
-
+var ydir = keyboard_check(ord('S')) - keyboard_check(ord('W'))
+var xdir = keyboard_check(ord('D')) - keyboard_check(ord('A'))
+if xdir == 0 &amp;&amp; ydir == 0
+    dir = -1
+else
+    dir = point_direction(0,0,xdir,ydir)
+   
 if dir != -1 controller_active = false
 var gp_h = gamepad_axis_value(0,gp_axislh)
 var gp_v = gamepad_axis_value(0,gp_axislv)
@@ -447,33 +426,76 @@ gamepad_set_axis_deadzone(0,.2)
 if gp_h != 0 or gp_v != 0
 {
     dir = point_direction(0,0,gp_h,gp_v)
-    if !place_free(x+lengthdir_x(spd,dir),y+lengthdir_y(spd,dir))
-        dir = -1
+    //if !place_free(x+lengthdir_x(spd,dir),y+lengthdir_y(spd,dir))
+    //    dir = -1
     controller_active = true
 }
-
-
-if (dir != -1) 
-
+ 
+ 
+if (dir != -1)
 {
 if keyboard_check(vk_shift) &amp;&amp; exhausted = false {if spd &lt; 6 {spd += 0.5}} else {if spd &lt; 3.5 {spd += 0.5}; if spd &gt; 3.5 {spd -= 0.5}}
 prevdir = dir
 }
-
 else
-
 {
 if spd &gt; 0 {spd -= 0.5}
 }
-
+ 
 if spd &lt; 0 {spd = 0}
-
-if place_free(x+lengthdir_x(spd+1,prevdir),y+lengthdir_y(spd+1,prevdir))
-{
-x += lengthdir_x(spd, prevdir);
-y += lengthdir_y(spd, prevdir);
-}
-
+if dir != -1
+    if !place_free(x+lengthdir_x(spd+1,prevdir),y+lengthdir_y(spd+1,prevdir))
+    {
+        var movement_left = spd;
+        while(movement_left-- &gt; 0)
+        {
+            var xmov = lengthdir_x(1,prevdir)
+            var ymov = lengthdir_y(1,prevdir)
+            if !place_free(x+xmov,y+ymov)
+            {
+                if xmov != 0 &amp;&amp; place_free(x+xmov,y)
+                {
+                    x += xmov
+                }
+                else if ymov != 0 &amp;&amp; place_free(x,y+ymov)
+                {
+                    y += ymov
+                }
+                else
+                {
+                    var inst = instance_place(x+xmov, y+ymov, worldwall);
+                    if inst != noone
+                    {
+                        var xdir = sign(xmov);
+                        var ydir = sign(ymov);
+                        if xdir != 0 &amp;&amp; !collision_line(bbox_left + xdir,y,bbox_right + xdir,y,worldwall,false,true)
+                        {
+                            var ymove = sign(y - inst.y)
+                            if place_free(x,y+ymove)
+                                y+=ymove
+                        }
+                        else
+                        if ydir != 0 &amp;&amp; !collision_line(x,bbox_top + ydir,x,bbox_bottom + ydir,worldwall,false,true)
+                        {
+                            var xmove = sign(x - inst.x)
+                            if place_free(x+xmove,y)
+                                x+=xmove
+                        }
+                    }
+                }
+            }
+            else
+            {
+                x += xmov
+                y += ymov
+            }
+        }
+    }
+    else
+    {
+        x += lengthdir_x(spd, prevdir);
+        y += lengthdir_y(spd, prevdir);
+    }
 }
 
 //stamina code

@@ -337,6 +337,7 @@
     <background>background\background1</background>
     <background>background\bgrass</background>
     <background>background\bg_dungeon</background>
+    <background>background\bg_dungeonnew</background>
     <background>background\bg_sewer</background>
     <background>background\bg_dungeontile</background>
     <background>background\bg_classselect</background>
@@ -456,6 +457,7 @@
       <object>objects\evileye</object>
       <object>objects\druidshot</object>
       <object>objects\immortalshot</object>
+      <object>objects\sewershot</object>
     </objects>
     <objects name="enemies">
       <object>objects\DEFAULTENEMY</object>
@@ -511,8 +513,8 @@
         </objects>
         <object>objects\shellface</object>
         <object>objects\sewersniper</object>
-        <object>objects\sewershark</object>
         <object>objects\sewerwizard</object>
+        <object>objects\sewershark</object>
       </objects>
       <objects name="FOREST">
         <objects name="druid">
