@@ -28,16 +28,23 @@
             <string>event_inherited();
 aggro = 0
 inv = false
-hp = 500
-phase = 1
-fric = 1
+hp = 600
+phase = 3
+fric = 2
 image_speed = 0
-aggro_range = 300
+aggro_range = 100
 vibrate = 0
-direction = image_angle
-tp = instance_create(x, y, wizardtp)
-tp.owner = id
 count = 0
+direction = image_angle
+
+tp1 = instance_create(1664, 64, wizardtp)
+tp1.owner = id
+
+tp2 = instance_create(2176, 64, wizardtp)
+tp2.owner = id
+
+tp3 = instance_create(1920, 576, wizardtp)
+tp3.owner = id
 </string>
           </argument>
         </arguments>
@@ -60,7 +67,32 @@ count = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.pothp += 10
+            <string>event_inherited()
+player.pothp += 10
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>phase = 2
+alarm[2] = 460
 </string>
           </argument>
         </arguments>
@@ -83,29 +115,17 @@ count = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if count = 4
+            <string>//if phase = 3
+//{
+//phase = 1
+//alarm[1] = 150
+//}
+
+//else
+
 {
-phase = 1
-alarm[1] = 150
-count = 0
-}
-
-else
-
-with tp if distance_to_object(player) &lt;= 100
-{
-owner.alarm[2] = 4
-}
-
-else
-
-with owner
-{
-alarm[2] = 80
-x = tp.x
-y = tp.y
-tp.direction = random(360)
-count++
+phase = 3
+alarm[3] = 180
 }
 </string>
           </argument>
@@ -129,21 +149,8 @@ count++
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with tp if distance_to_object(player) &lt;= 100
-{
-owner.alarm[1] = 4
-}
-
-else
-
-with owner
-{
-phase = 2
-alarm[2] = 40
-count = 0
-x = tp.x
-y = tp.y
-}
+            <string>phase = 2
+alarm[2] = 460
 </string>
           </argument>
         </arguments>
@@ -189,12 +196,13 @@ y = tp.y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if player_seen = true &amp;&amp; aggro = 0 {aggro = 1; phase = 1; alarm [1] = 150}
+            <string>if player_seen = true &amp;&amp; aggro = 0 {aggro = 1; phase = 3; alarm[3] = 180}
 if hp &lt;= 0 {instance_destroy()}
 image_angle = direction
 
 if aggro = true 
 {
+
 
 if phase = 1
 {
@@ -203,11 +211,12 @@ direction = point_direction(x, y, player.x, player.y)
 
 if alarm[1] = 140
 {
-if x != 1920 + B or y != 384 + B
+if x != 1920 + B or y != 320 + B
 {
 repeat(16) instance_create(x + random_range(-32, 32), y + random_range(-32, 32), squidparticle);
 x = 1920 + B; 
-y = 384 + B;
+y = 320 + B;
+kb = 0;
 //show_debug_message("aw ye")
 }
 }
@@ -219,12 +228,54 @@ if alarm[1] mod 30 = 0 &amp;&amp; alarm[1] &lt; 110 {instance_create(x, y, sewer
 if phase = 2
 {
 direction = point_direction(x, y, player.x, player.y)
-if alarm[2] = 20 instance_create(x, y, squidshot)
+if alarm[2] mod 100 = 50 &amp;&amp; alarm[2] &gt; 100 
+{
+ var dist;
+dist[0] = distance_to_object(tp1)
+dist[1] = distance_to_object(tp2)
+dist[2] = distance_to_object(tp3)
+var mid = median(dist[0] ,dist[1] ,dist[2] )
+var mid_inst;
+if dist[0] == mid
+  mid_inst = tp1
+else if dist[1] == mid
+  mid_inst = tp2
+else
+  mid_inst = tp3
+
+with instance_create(mid_inst.x, mid_inst.y, wizardspot) owner = other.id
+
+
+}
+//with choose(tp1, tp2, tp3) {with instance_create(x, y, wizardspot) owner = other.owner}
+
+//if alarm[2] = 350 {with choose(tp1, tp2, tp3) {with instance_create(x, y, wizardspot) owner = other.owner}}
+//if alarm[2] = 250 {with choose(tp1, tp2, tp3) {with instance_create(x, y, wizardspot) owner = other.owner}}
+//if alarm[2] = 150 {with choose(tp1, tp2, tp3) {with instance_create(x, y, wizardspot) owner = other.owner}}
+}
+
+if phase = 3
+{
+
+direction = point_direction(x, y, player.x, player.y)
+
+if alarm[3] = 170
+{
+if x != 1920 + B or y != 320 + B
+{
+repeat(16) instance_create(x + random_range(-32, 32), y + random_range(-32, 32), squidparticle);
+x = 1920 + B; 
+y = 320 + B;
+kb = 0;
+//show_debug_message("aw ye")
+}
+}
+
+if alarm[3] = 80 {with instance_create(x + lengthdir_x(80, image_angle), y + lengthdir_y(80, image_angle), sewershot2) {owner = other.id}}
+if alarm[3] &gt; 60 &amp;&amp; alarm[3] &lt; 160 {instance_create(x + lengthdir_x(80, image_angle), y + lengthdir_y(80, image_angle), squidparticle)}
 }
 
 }
-show_debug_message(alarm[1])
-show_debug_message(alarm[2])
 </string>
           </argument>
         </arguments>

@@ -128,6 +128,8 @@
       <sprite>sprites\spr_denizenshot</sprite>
       <sprite>sprites\spr_wizardshot</sprite>
       <sprite>sprites\spr_squidshot</sprite>
+      <sprite>sprites\spr_squizzardshot</sprite>
+      <sprite>sprites\spr_squizzardshot2</sprite>
       <sprite>sprites\spr_wizardhoming</sprite>
       <sprite>sprites\spr_fireshot</sprite>
       <sprite>sprites\spr_fireshot2</sprite>
@@ -444,6 +446,8 @@
       <object>objects\wizardhoming</object>
       <object>objects\wizardshot</object>
       <object>objects\squidshot</object>
+      <object>objects\sewershot</object>
+      <object>objects\sewershot2</object>
       <object>objects\minisquidshot</object>
       <object>objects\holyshot</object>
       <object>objects\wizardtp</object>
@@ -457,7 +461,6 @@
       <object>objects\evileye</object>
       <object>objects\druidshot</object>
       <object>objects\immortalshot</object>
-      <object>objects\sewershot</object>
     </objects>
     <objects name="enemies">
       <object>objects\DEFAULTENEMY</object>
@@ -514,6 +517,7 @@
         <object>objects\shellface</object>
         <object>objects\sewersniper</object>
         <object>objects\sewerwizard</object>
+        <object>objects\wizardspot</object>
         <object>objects\sewershark</object>
       </objects>
       <objects name="FOREST">

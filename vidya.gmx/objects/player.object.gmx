@@ -32,8 +32,8 @@ instance_destroy()
 exit
 }
 */
-image_xscale = .25
-image_yscale = .25
+image_xscale = .24
+image_yscale = .24
 global.wall_grid = noone
 defeated = ds_list_create()
 
@@ -1968,7 +1968,7 @@ repeat(15) instance_create(other.x + random_range(-20, 20), other.y + random_ran
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>{hp -= 15; repeat(8) instance_create(x, y, blood); script_execute(interrupt); kb = 10; kbdir = point_direction(other.x, other.y, x, y)}
+            <string>{hp -= 15; repeat(8) instance_create(x, y, blood); script_execute(interrupt); kb += 10; kbdir = point_direction(other.x, other.y, x, y)}
 </string>
           </argument>
         </arguments>
