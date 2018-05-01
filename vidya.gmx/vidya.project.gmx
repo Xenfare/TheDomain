@@ -425,8 +425,7 @@
         <object>objects\spear</object>
       </objects>
       <objects name="MACE">
-        <object>objects\actualmace</object>
-        <object>objects\mace2</object>
+        <object>objects\mace3</object>
       </objects>
       <object>objects\shield</object>
       <object>objects\buckler</object>
@@ -438,7 +437,6 @@
     <objects name="OOC">
       <object>objects\leftysword</object>
       <object>objects\leftyshield</object>
-      <object>objects\mace</object>
       <object>objects\sword</object>
       <object>objects\blackout2</object>
       <object>objects\inventory</object>
