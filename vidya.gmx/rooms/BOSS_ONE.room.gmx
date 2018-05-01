@@ -65,7 +65,6 @@
     <instance objName="wall" x="-256" y="640" name="inst_C87226ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="-256" y="832" name="inst_B19803F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="256" y="832" name="inst_11A7298B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="wall" x="64" y="640" name="inst_D3A664F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="192" y="640" name="inst_68A20737" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="64" y="832" name="inst_2ECF57E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="128" y="832" name="inst_32DBD5F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -122,7 +121,6 @@
     <instance objName="wall" x="1152" y="704" name="inst_DBB2D918" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1152" y="576" name="inst_B6ABB72E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1152" y="640" name="inst_8B108CA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="wall" x="128" y="640" name="inst_1C7F5C1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1216" y="832" name="inst_9341D63E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1216" y="640" name="inst_59BFBF31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1280" y="640" name="inst_504750F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -136,6 +134,9 @@
     <instance objName="wall" x="1472" y="704" name="inst_9737371A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1472" y="768" name="inst_F90AB0CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="1472" y="832" name="inst_5D43919D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="spawnpoint" x="64" y="768" name="inst_296441A0" locked="0" code="myx += B&#xA;myy += B&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="wall" x="64" y="640" name="inst_EC0B7FE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="wall" x="128" y="640" name="inst_37CA4209" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_dungeonnew" x="448" y="384" w="64" h="64" xo="64" yo="0" id="10030666" name="inst_50AF96AB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -324,8 +325,6 @@
     <tile bgName="bg_dungeonnew" x="384" y="320" w="64" h="64" xo="448" yo="0" id="10030889" name="inst_A2801E09" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_dungeonnew" x="256" y="640" w="64" h="64" xo="448" yo="0" id="10030890" name="inst_EC36B2C4" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_dungeonnew" x="192" y="640" w="64" h="64" xo="448" yo="0" id="10030891" name="inst_A57FA958" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bg_dungeonnew" x="128" y="640" w="64" h="64" xo="448" yo="0" id="10030892" name="inst_F60DE3A9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bg_dungeonnew" x="64" y="640" w="64" h="64" xo="448" yo="0" id="10030893" name="inst_E95160C8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_dungeonnew" x="0" y="640" w="64" h="64" xo="448" yo="0" id="10030894" name="inst_3C65736A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_dungeonnew" x="-64" y="640" w="64" h="64" xo="448" yo="0" id="10030895" name="inst_1035DBD8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_dungeonnew" x="-128" y="640" w="64" h="64" xo="448" yo="0" id="10030896" name="inst_B1E71F6B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -390,6 +389,8 @@
     <tile bgName="bg_dungeonnew" x="320" y="1152" w="64" h="64" xo="384" yo="128" id="10030963" name="inst_35A2D5E7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_dungeonnew" x="1152" y="1152" w="64" h="64" xo="512" yo="128" id="10030964" name="inst_7016B6B3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_dungeonnew" x="1152" y="320" w="64" h="64" xo="512" yo="0" id="10030965" name="inst_CAB299DA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_dungeonnew" x="64" y="640" w="64" h="64" xo="448" yo="0" id="10031042" name="inst_335D0A5F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_dungeonnew" x="128" y="640" w="64" h="64" xo="448" yo="0" id="10031043" name="inst_4EC82A89" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

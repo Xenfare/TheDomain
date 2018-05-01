@@ -98,11 +98,14 @@
       <sprite>sprites\spr_wapmask</sprite>
       <sprite>sprites\spr_mace</sprite>
       <sprite>sprites\spr_newmace</sprite>
+      <sprite>sprites\spr_newmace2</sprite>
       <sprite>sprites\spr_macemask</sprite>
       <sprite>sprites\spr_spear</sprite>
       <sprite>sprites\spr_spearmask</sprite>
       <sprite>sprites\spr_spearcrit</sprite>
       <sprite>sprites\spr_newspear</sprite>
+      <sprite>sprites\spr_newspear2</sprite>
+      <sprite>sprites\spr_newspearmask</sprite>
       <sprite>sprites\spr_rapier</sprite>
       <sprite>sprites\spr_rapiermask</sprite>
       <sprite>sprites\spr_hammer</sprite>
@@ -111,7 +114,6 @@
       <sprite>sprites\spr_hammersmashmask</sprite>
       <sprite>sprites\spr_hammersmash2</sprite>
       <sprite>sprites\spr_hammersmashmask2</sprite>
-      <sprite>sprites\spr_newspear2</sprite>
       <sprite>sprites\spr_flailhead</sprite>
       <sprite>sprites\spr_flailchain</sprite>
       <sprite>sprites\spr_flailhand</sprite>
@@ -203,6 +205,11 @@
         <sprite>sprites\spr_sewermon</sprite>
         <sprite>sprites\spr_shellgas</sprite>
       </sprites>
+      <sprites name="sewerwizard">
+        <sprite>sprites\spr_sewerwizard</sprite>
+        <sprite>sprites\spr_sewerwizard2</sprite>
+        <sprite>sprites\spr_sewerhat</sprite>
+      </sprites>
       <sprite>sprites\spr_archer</sprite>
       <sprite>sprites\spr_wizard</sprite>
       <sprite>sprites\spr_kelpie</sprite>
@@ -211,7 +218,6 @@
       <sprite>sprites\spr_immortal</sprite>
       <sprite>sprites\spr_lefty</sprite>
       <sprite>sprites\spr_shopkeep</sprite>
-      <sprite>sprites\spr_sewerwizard</sprite>
       <sprite>sprites\spr_druid</sprite>
       <sprite>sprites\spr_druidgolem</sprite>
       <sprite>sprites\spr_grossenemy</sprite>
@@ -397,15 +403,31 @@
     <object>objects\bars</object>
     <object>objects\chest</object>
     <objects name="weapons">
-      <object>objects\sword2</object>
-      <object>objects\hammer</object>
-      <object>objects\hammersmash</object>
-      <object>objects\hammersmash2</object>
-      <object>objects\flail</object>
-      <object>objects\flailhand</object>
-      <object>objects\rapier</object>
-      <object>objects\wapstick</object>
-      <object>objects\mace2</object>
+      <objects name="SWORD">
+        <object>objects\sword2</object>
+      </objects>
+      <objects name="HAMMER">
+        <object>objects\hammer</object>
+        <object>objects\hammersmash</object>
+        <object>objects\hammersmash2</object>
+      </objects>
+      <objects name="RAPIER">
+        <object>objects\rapier</object>
+      </objects>
+      <objects name="FLAIL">
+        <object>objects\flail</object>
+        <object>objects\flailhand</object>
+      </objects>
+      <objects name="WAPSTICK">
+        <object>objects\wapstick</object>
+      </objects>
+      <objects name="SPEAR">
+        <object>objects\spear</object>
+      </objects>
+      <objects name="MACE">
+        <object>objects\actualmace</object>
+        <object>objects\mace2</object>
+      </objects>
       <object>objects\shield</object>
       <object>objects\buckler</object>
       <object>objects\kbshield</object>
@@ -415,7 +437,6 @@
     </objects>
     <objects name="OOC">
       <object>objects\leftysword</object>
-      <object>objects\spear</object>
       <object>objects\leftyshield</object>
       <object>objects\mace</object>
       <object>objects\sword</object>

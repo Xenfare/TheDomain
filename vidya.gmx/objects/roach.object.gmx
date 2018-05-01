@@ -51,7 +51,7 @@ direction = random(360)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[1] = random_range(80, 180)
+            <string>alarm[1] = random_range(80, 240)
 dir = choose(1, -1)
 </string>
           </argument>

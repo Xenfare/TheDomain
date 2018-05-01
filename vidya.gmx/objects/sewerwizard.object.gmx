@@ -32,7 +32,7 @@ hp = 600
 phase = 3
 fric = 2
 image_speed = 0
-aggro_range = 100
+aggro_range = 200
 vibrate = 0
 count = 0
 direction = image_angle
@@ -196,7 +196,7 @@ alarm[2] = 460
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if player_seen = true &amp;&amp; aggro = 0 {aggro = 1; phase = 3; alarm[3] = 180}
+            <string>if player_seen = true &amp;&amp; aggro = 0 {aggro = 1; image_index ++; phase = 3; alarm[3] = 180}
 if hp &lt;= 0 {instance_destroy()}
 image_angle = direction
 
@@ -273,6 +273,13 @@ kb = 0;
 
 if alarm[3] = 80 {with instance_create(x + lengthdir_x(80, image_angle), y + lengthdir_y(80, image_angle), sewershot2) {owner = other.id}}
 if alarm[3] &gt; 60 &amp;&amp; alarm[3] &lt; 160 {instance_create(x + lengthdir_x(80, image_angle), y + lengthdir_y(80, image_angle), squidparticle)}
+}
+
+if hp &lt;= 300 &amp;&amp; sprite_index != spr_sewerwizard2 
+{
+sprite_index = spr_sewerwizard2; 
+with instance_create(x, y, debris) {sprite_index = spr_sewerhat; image_angle = other.image_angle; direction = other.image_angle + 90};
+with instance_create(x, y, debris) {sprite_index = spr_sewerhat; image_index = 1; image_angle = other.image_angle; direction = other.image_angle - 90};
 }
 
 }
@@ -363,6 +370,44 @@ if alarm[3] &gt; 60 &amp;&amp; alarm[3] &lt; 160 {instance_create(x + lengthdir_
           <argument>
             <kind>1</kind>
             <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self()
+if sprite_index = spr_sewerwizard2
+{
+draw_sprite_ext(sprite_index, 2, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+
+if alarm[3] &gt; 60 &amp;&amp; alarm[3] &lt; 160
+{
+draw_sprite_ext(sprite_index, 4, x + random_range(-2, 2), y + random_range(-2, 2), image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+}
+
+else
+{
+draw_sprite_ext(sprite_index, 3, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+}
+
+}
+</string>
           </argument>
         </arguments>
       </action>

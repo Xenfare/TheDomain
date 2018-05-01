@@ -47,6 +47,7 @@ comfymode = -1
 
 alive = true
 
+
 if controller.class = 2
 {
 weapon = sword2
@@ -359,7 +360,7 @@ else if view_yview + view_hview &gt; room_height - b
           <argument>
             <kind>1</kind>
             <string>//D E M O 
-if keyboard_check(ord('P')) &amp;&amp; keyboard_check(ord('L')) &amp;&amp; keyboard_check(ord('S')) {room_goto(BOSS_TWO); x = 512; y = 1472}
+//if keyboard_check(ord('P')) &amp;&amp; keyboard_check(ord('L')) &amp;&amp; keyboard_check(ord('S')) {room_goto(BOSS_TWO); x = 512; y = 1472}
 if keyboard_check(ord('A')) &amp;&amp; keyboard_check(ord('G')) &amp;&amp; keyboard_check(ord('D')) {room_goto(BOSS_ONE); x = 704 ; y = 768}
 if keyboard_check_pressed(ord('O')) {display *= -1}
 if keyboard_check_pressed(ord('P')) {comfymode *= -1}

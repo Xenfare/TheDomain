@@ -36,6 +36,7 @@ globalvar damage;
 sworddir = 0
 alarm[0] = 0
 stab = 0
+spin = 0
 hitlist = ds_list_create();
 charge = 0
 </string>

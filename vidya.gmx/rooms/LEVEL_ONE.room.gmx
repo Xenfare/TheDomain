@@ -1794,6 +1794,9 @@
     <tile bgName="bg_dungeonnew" x="64" y="2112" w="64" h="64" xo="0" yo="64" id="10029142" name="inst_D1818856" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_dungeonnew" x="64" y="2048" w="64" h="64" xo="0" yo="64" id="10029143" name="inst_6F3F32F6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bg_dungeonnew" x="64" y="1984" w="64" h="64" xo="0" yo="64" id="10029144" name="inst_7D556087" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_dungeonnew" x="2304" y="448" w="64" h="64" xo="64" yo="128" id="10031034" name="inst_0893ABEC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_dungeonnew" x="2304" y="384" w="64" h="64" xo="64" yo="0" id="10031035" name="inst_E2B5F67E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bg_dungeonnew" x="1920" y="768" w="64" h="64" xo="192" yo="128" id="10031036" name="inst_09CB529D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>
