@@ -521,8 +521,6 @@
     <instance objName="wall" x="-512" y="2624" name="inst_989AC40E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="-512" y="2688" name="inst_5313F22A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="roomchanger" x="-448" y="2624" name="inst_62AF18EC" locked="0" code="dest_r = BOSS_ONE&#xA;dest_x = 1280&#xA;dest_y = 768&#xA;" scaleX="1.25" scaleY="2.25" colour="4294967295" rotation="0"/>
-    <instance objName="wall" x="-384" y="2560" name="inst_DCAC40BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="wall" x="-384" y="2624" name="inst_7C3584BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="2560" y="896" name="inst_75299D95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="2496" y="896" name="inst_E65B31CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="2816" y="896" name="inst_DFD2A379" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -891,7 +889,8 @@
     <instance objName="deathinvis" x="1344" y="1792" name="inst_305DE984" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="256" y="256" name="inst_112C1418" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="448" y="384" name="inst_E43EC2B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="chest" x="-576" y="3520" name="inst_3FF2ED76" locked="0" code="loottype = 0&#xA;loot = mace3&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="chest" x="-576" y="3520" name="inst_3FF2ED76" locked="0" code="loottype = 0&#xA;loot = mace&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="chest" x="2720" y="224" name="inst_0A81AB55" locked="0" code="loottype = 0&#xA;loot = spear&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_dungeon" x="-512" y="2560" w="64" h="64" xo="448" yo="64" id="10023831" name="inst_E4871654" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

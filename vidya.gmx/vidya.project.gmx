@@ -425,7 +425,7 @@
         <object>objects\spear</object>
       </objects>
       <objects name="MACE">
-        <object>objects\mace3</object>
+        <object>objects\mace</object>
       </objects>
       <object>objects\shield</object>
       <object>objects\buckler</object>
@@ -698,13 +698,13 @@
   <rooms name="rooms">
     <room>rooms\init_rom</room>
     <room>rooms\DEMOROOM</room>
-    <room>rooms\LEVEL_THREE</room>
     <rooms name="DUNGEON">
       <room>rooms\LEVEL_ONE</room>
       <room>rooms\LEVEL_TWO</room>
       <room>rooms\SECRET_ONE</room>
       <room>rooms\BOSS_ONE</room>
     </rooms>
+    <room>rooms\LEVEL_THREE</room>
     <rooms name="FOREST">
       <room>rooms\LEVEL_FOUR</room>
       <room>rooms\LEVEL_FIVE</room>

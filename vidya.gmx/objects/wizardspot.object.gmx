@@ -61,8 +61,8 @@ owner.xprevious = x
 owner.yprevious = y
 with owner {if place_meeting(x, y, player) {player.hp -= 100}}
 owner.kb = 0
-for(i = 0; i &lt; 18; i ++)
-{with instance_create(x, y, squidshot) direction = other.i * 20}
+for(i = 0; i &lt; 12; i ++)
+{with instance_create(x, y, squidshot) direction = other.i * 30}
 }
 else
 instance_destroy()
