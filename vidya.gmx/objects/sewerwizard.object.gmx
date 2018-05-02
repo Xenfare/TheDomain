@@ -69,6 +69,12 @@ tp3.owner = id
             <kind>1</kind>
             <string>event_inherited()
 player.pothp += 10
+//deploy shortcut
+if room = LEVEL_THREE
+{
+    global.progress[?"sewer wizard shortcut"] = true;
+    shortcut_deploy_sewer(true)
+}
 </string>
           </argument>
         </arguments>

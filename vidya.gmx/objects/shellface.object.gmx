@@ -222,6 +222,9 @@ audio_play_sound(clang, 10, false);
 kb = player.weapon.kbvalue;
 kbdir = point_direction(other.kbx, other.kby, x, y);
 ds_list_add(player.weapon.hitlist, id);
+if player.weapon.object_index = flail {ds_list_add(player.weapon.hitlist, player.weapon.swing); player.weapon.charge -= 5}
+
+
 //with player script_execute(interrupt)
 }
 

@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>state = 0
+            <string>destroywall1 = noone
+destroywall2 = noone
+
+state = 0
 
 y1 = 1408
 

@@ -12,6 +12,8 @@
   <showcolour>-1</showcolour>
   <code>global.darkness = noone
 global.fog = noone
+global.progress = ds_map_create()
+
 audio_master_gain(0.1)
 room_goto_next()
 /*ini_open('savedata.ini');
