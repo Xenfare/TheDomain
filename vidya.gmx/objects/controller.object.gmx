@@ -32,15 +32,6 @@ bg_surf = noone
 
 cur_sword = 0
 cur_shield = 0
-
-var i;
-i = 9;
-repeat(10)
-   {
-   progress[i] = 0;
-   i -= 1;
-   }
-   
 blackout = 0;
 blackoutvar = 0;
 destination = 0;

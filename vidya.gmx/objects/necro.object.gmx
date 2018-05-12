@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 enemysword = instance_create(x, y, necrostaff)
-if controller.progress[3] = 1 {instance_deactivate_object(self)}
+var deactivate = global.progress[? "necro dead"]
+if !is_undefined(deactivate) &amp;&amp; deactivate {instance_deactivate_object(self)}
 enemysword.owner = id
 atks = 0
 aggro = false
@@ -101,7 +102,7 @@ base_distance = point_distance(sprite_get_xoffset(spr_staff2),sprite_get_yoffset
             <string>event_inherited()
 with enemysword instance_destroy()
 player.pothp += 100
-controller.progress[3] = 1
+global.progress[?"necro dead"] = 1
 player.interference = false;
 </string>
           </argument>

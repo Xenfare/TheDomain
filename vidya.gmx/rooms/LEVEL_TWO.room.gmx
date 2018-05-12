@@ -303,8 +303,8 @@
     <instance objName="wall" x="192" y="1792" name="inst_24CEAFA2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="192" y="1600" name="inst_B22C89BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="320" y="1792" name="inst_93B9503D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="magician" x="-16" y="2192" name="inst_CF981C64" locked="0" code="if controller.progress[4] = 1 {instance_deactivate_object(self)}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="magician" x="272" y="2192" name="inst_76AB91C5" locked="0" code="if controller.progress[4] = 1 {instance_deactivate_object(self)}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="magician" x="-16" y="2192" name="inst_CF981C64" locked="0" code="var deactivate = global.progress[?&quot;level 2 spawn door&quot;]&#xA;if !is_undefined(deactivate) &amp;&amp; deactivate {instance_deactivate_object(self)}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="magician" x="272" y="2192" name="inst_76AB91C5" locked="0" code="var deactivate = global.progress[?&quot;level 2 spawn door&quot;]&#xA;if !is_undefined(deactivate) &amp;&amp; deactivate {instance_deactivate_object(self)}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="roach" x="1984" y="1216" name="inst_B720B466" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="roach" x="2688" y="1472" name="inst_5DC21E10" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="roach" x="2400" y="1184" name="inst_67482E3B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

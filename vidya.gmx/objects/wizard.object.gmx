@@ -60,7 +60,7 @@ armdir = 40
             <kind>1</kind>
             <string>event_inherited()
 player.pothp += 50
-controller.progress[0] = 1
+global.progress[?"wizard dead"] = 1
 </string>
           </argument>
         </arguments>

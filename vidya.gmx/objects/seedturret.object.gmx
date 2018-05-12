@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if controller.progress[1] = 1 {instance_destroy()}
+            <string>var deactivate = global.progress[?"seedturret dead"]
+if is_undefined(deactivate) &amp;&amp; deaactivate {instance_destroy()}
 alpha = 0
 aggro = false
 spawn = 24
@@ -280,7 +281,7 @@ if aggro = true &amp;&amp; alarm[1] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[1] = r
 if aggro = true &amp;&amp; alarm[2] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[2] = random_range(170 + B, 350 + B)}
 if aggro = true &amp;&amp; alarm[3] &lt; 0 &amp;&amp; spawn &gt; 0 {alarm[3] = random_range(170 + B, 350 + B)}
 
-if spawn &lt;= 0 &amp;&amp; !instance_exists(overgrown2) &amp;&amp; !instance_exists(seed) &amp;&amp; !instance_exists(summon) {controller.progress[1] = 1; instance_destroy(); player.interference = false}
+if spawn &lt;= 0 &amp;&amp; !instance_exists(overgrown2) &amp;&amp; !instance_exists(seed) &amp;&amp; !instance_exists(summon) {global.progress[?"seedturret dead"] = 1; instance_destroy(); player.interference = false}
 </string>
           </argument>
         </arguments>

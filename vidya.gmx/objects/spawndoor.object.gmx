@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if controller.progress[4] = 1 {instance_destroy()}
+            <string>var deactivate = global.progress[?"level 2 spawn door"]
+if !is_undefined(deactivate) &amp;&amp; deactivate {instance_destroy()}
 image_speed = 0
 </string>
           </argument>
@@ -49,7 +50,7 @@ image_speed = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>controller.progress[4] = 1
+            <string>global.progress[?"level 2 spawn door"] = 1
 </string>
           </argument>
         </arguments>

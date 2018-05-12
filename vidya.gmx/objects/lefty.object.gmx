@@ -45,8 +45,8 @@ enemysword = instance_create(x, y, eleftysword)
 enemysword.owner = id
 enemyshield = instance_create(x, y, eleftyshield)
 enemyshield.owner = id
-
-if controller.progress[2] = 1 {instance_deactivate_object(self)}
+var deactivate = global.progress[?"lefty dead"];
+if !is_undefined(deactivate) &amp;&amp; deactivate {instance_deactivate_object(self)}
 </string>
           </argument>
         </arguments>
@@ -71,7 +71,7 @@ if controller.progress[2] = 1 {instance_deactivate_object(self)}
             <kind>1</kind>
             <string>event_inherited()
 player.pothp += 150
-controller.progress[2] = 1
+global.progress[?"lefty dead"] = true
 player.interference = false;
 </string>
           </argument>
