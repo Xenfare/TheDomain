@@ -682,6 +682,7 @@
     <object>objects\enemyparent</object>
     <object>objects\trapwall</object>
     <object>objects\enemy_chunk</object>
+    <object>objects\devconsole</object>
     <object>objects\YOUDIED</object>
     <object>objects\selector</object>
     <object>objects\dialogtestman</object>
