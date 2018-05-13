@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var deactivate = global.progress[?"seedturret dead"]
-if is_undefined(deactivate) &amp;&amp; deaactivate {instance_destroy()}
+            <string>if global.progress[?"seedturret dead"] {instance_destroy()}
 alpha = 0
 aggro = false
 spawn = 24

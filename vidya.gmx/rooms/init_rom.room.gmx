@@ -13,7 +13,10 @@
   <code>global.darkness = noone
 global.fog = noone
 global.progress = ds_map_create()
-
+if global.progress[?"test"]
+show_debug_message("yes")
+else
+show_debug_message("no")
 audio_master_gain(0.1)
 room_goto_next()
 /*ini_open('savedata.ini');

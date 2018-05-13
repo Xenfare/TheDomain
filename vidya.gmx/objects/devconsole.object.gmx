@@ -79,7 +79,10 @@ ds_list_destroy(lines)
           <argument>
             <kind>1</kind>
             <string>if keyboard_check_pressed(vk_f1)
+{
+    keyboard_string = ""
     visible = !visible
+}
 if !visible exit
 
 if keyboard_check_pressed(vk_enter)
@@ -105,13 +108,21 @@ if keyboard_check_pressed(vk_enter)
     
     switch(args[|0])
     {
+    case "load":
+        load()
+        ds_list_add(lines,"loaded successfully")
+        break;
+    case "save":
+        save()
+        ds_list_add(lines,"progress saved")
+        break;
     case "godmode":
         with(player)
             godmode = !godmode
         break;
     case "help":
         ds_list_add(lines,"Format: command var",
-        "Commands: help godmode")
+        "Commands: help godmode save load")
         break;
     default:
         ds_list_add(lines,"Unknown Command","'" + args[|0] +"'")

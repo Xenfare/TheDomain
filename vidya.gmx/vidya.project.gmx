@@ -383,6 +383,8 @@
       <script>scripts\dialog_update_size.gml</script>
     </scripts>
     <script>scripts\shortcut_deploy_sewer.gml</script>
+    <script>scripts\save.gml</script>
+    <script>scripts\load.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader_torch.shader</shader>
