@@ -337,6 +337,7 @@
     <sprite>sprites\spr_board1</sprite>
     <sprite>sprites\spr_board2</sprite>
     <sprite>sprites\spr_mask_nocolide</sprite>
+    <sprite>sprites\spr_preasureplate</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg1</background>
@@ -695,6 +696,8 @@
     <object>objects\spearadvancer</object>
     <object>objects\tut_runcontroller</object>
     <object>objects\tut_exitor</object>
+    <object>objects\preasureplate</object>
+    <object>objects\arrowtrap</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\TLchase</timeline>
