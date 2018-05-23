@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>10</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -30,6 +30,7 @@ myy = y
 myroom = room
 image_speed = 0
 depth = 105
+hassaved = false
 </string>
           </argument>
         </arguments>
@@ -53,7 +54,20 @@ depth = 105
           <argument>
             <kind>1</kind>
             <string>if player.checkpoint = id {image_index = 1; image_angle += 1} else image_index = 0
-if distance_to_object (player) &lt; 60 &amp;&amp; myroom = room {image_index = 1; player.checkroom = room; player.checkpoint = id}
+if distance_to_object (player) &lt; 60
+{
+    image_index = 1; player.checkroom = room; player.checkpoint = id
+    global.progress[?"has checkpoint"] = true
+    global.progress[?"checkpoint x"] = x
+    global.progress[?"checkpoint y"] = y
+    if !hassaved
+    {
+        save()
+        hassaved = true
+    }
+}
+else
+    hassaved = false
 </string>
           </argument>
         </arguments>

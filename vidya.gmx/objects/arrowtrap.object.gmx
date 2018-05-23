@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(instance_create(x+33,y,arrow)){direction = other.direction}
+            <string>with(instance_create(x+lengthdir_x(33,direction),y+lengthdir_y(33,direction),arrow)){direction = other.direction}
 </string>
           </argument>
         </arguments>

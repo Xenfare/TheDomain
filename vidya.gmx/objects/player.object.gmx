@@ -413,7 +413,14 @@ if keyboard_check_pressed(ord('R'))
 if mana != 50 {error = "Insufficient Blood"; alarm[8] = 50} else
 if distance_to_object(spawnpoint) &lt; 500 {error = "Ritual Interference"; alarm[8] = 50} else
 if interference = true {error = "Magical Interference"; alarm[8] = 50} else
-{instance_create(x, y, spawnpoint); mana = 0}
+{
+    instance_create(x, y, spawnpoint); mana = 0
+    if !ds_map_exists(global.progress,"r" + string(room))
+    {
+        ds_map_add_list(global.progress,"r" + string(room),ds_list_create())
+    }
+    ds_list_add(global.progress[?"r" + string(room)],x,y)
+}
 }
 
 //death code
@@ -2745,13 +2752,27 @@ view_wport = view_wview
 view_hport = view_hview
 
 
-
 if !instance_exists(lighting)
 instance_create(0,0,lighting)
 else
 {
 x += B
 y += B
+}
+
+if ds_map_exists(global.progress,"r" + string(room))
+{
+    var sp = global.progress[?"r" + string(room)];
+    for(var i = 0; i &lt; ds_list_size(sp); i += 2)
+    {
+        instance_create(sp[|i],sp[|i + 1],spawnpoint)
+    }
+}
+if global.progress[?"has checkpoint"]
+{
+    checkpoint = collision_point(global.progress[?"checkpoint x"],global.progress[?"checkpoint y"],spawnpoint,false,true)
+    if !instance_exists(checkpoint)
+        checkpoint = instance_create(global.progress[?"checkpoint x"],global.progress[?"checkpoint y"],spawnpoint)
 }
 
 {
