@@ -674,6 +674,7 @@
       <object>objects\board2</object>
       <object>objects\torch</object>
       <object>objects\door</object>
+      <object>objects\tut_test</object>
       <object>objects\darkoverlay</object>
     </objects>
     <object>objects\lighting</object>
@@ -697,7 +698,6 @@
     <object>objects\tut_exitor</object>
     <object>objects\preasureplate</object>
     <object>objects\arrowtrap</object>
-    <object>objects\swagdaddy</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\TLchase</timeline>
