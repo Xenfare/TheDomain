@@ -44,7 +44,6 @@ name = "Mangling Flail"
 desc = "A brutal, worn flail used to bring monsters within inches of death. #Hold the attack button to swing the flail, it will continuously swing as long as the button is held."
 image_index = 1
 image_speed = 0
-globalvar sworddir;
 globalvar damage;
 swing = 0
 alarm[0] = 0

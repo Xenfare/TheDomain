@@ -56,7 +56,6 @@
             <string>ready = true
 ready2 = false
 ready3 = false
-globalvar sworddir;
 globalvar damage;
 sworddir = 0
 alarm[0] = 0

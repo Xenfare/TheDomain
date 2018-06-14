@@ -42,7 +42,6 @@ vibrate = 0
 
 image_index = 1
 image_speed = 0
-globalvar sworddir;
 globalvar damage;
 sworddir = 0
 alarm[0] = 0

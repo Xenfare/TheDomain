@@ -210,6 +210,11 @@
         <sprite>sprites\spr_sewerwizard2</sprite>
         <sprite>sprites\spr_sewerhat</sprite>
       </sprites>
+      <sprites name="paladin">
+        <sprite>sprites\spr_paladin</sprite>
+        <sprite>sprites\spr_paladinsword</sprite>
+        <sprite>sprites\spr_paladinshield</sprite>
+      </sprites>
       <sprite>sprites\spr_archer</sprite>
       <sprite>sprites\spr_wizard</sprite>
       <sprite>sprites\spr_kelpie</sprite>
@@ -246,20 +251,28 @@
       <sprite>sprites\spr_killarm</sprite>
       <sprite>sprites\spr_killarm2</sprite>
       <sprite>sprites\spr_killarmbox</sprite>
+      <sprite>sprites\spr_heal</sprite>
+      <sprite>sprites\spr_egg</sprite>
+      <sprite>sprites\spr_bar</sprite>
       <sprite>sprites\spr_smallchunk</sprite>
+      <sprite>sprites\spr_spawndoor</sprite>
+      <sprite>sprites\spr_dark</sprite>
+      <sprite>sprites\spr_blackout</sprite>
     </sprites>
-    <sprite>sprites\spr_heal</sprite>
-    <sprite>sprites\spr_egg</sprite>
-    <sprite>sprites\spr_bar</sprite>
     <sprite>sprites\spr_bossbar</sprite>
     <sprite>sprites\spr_spawnpoint</sprite>
-    <sprite>sprites\spr_spawndoor</sprite>
     <sprite>sprites\spr_staircase</sprite>
-    <sprite>sprites\spr_dark</sprite>
     <sprite>sprites\spr_magicfield</sprite>
-    <sprite>sprites\spr_blackout</sprite>
     <sprite>sprites\spr_torch</sprite>
     <sprite>sprites\spr_torchfire</sprite>
+    <sprite>sprites\spr_testportrait</sprite>
+    <sprite>sprites\spr_spiderweb</sprite>
+    <sprite>sprites\spr_spinningblade</sprite>
+    <sprite>sprites\spr_spinningbladeblade</sprite>
+    <sprite>sprites\spr_board1</sprite>
+    <sprite>sprites\spr_board2</sprite>
+    <sprite>sprites\spr_mask_nocolide</sprite>
+    <sprite>sprites\spr_preasureplate</sprite>
     <sprites name="NEW">
       <sprites name="player">
         <sprite>sprites\spr_loadout</sprite>
@@ -330,14 +343,6 @@
       </sprites>
       <sprite>sprites\spr_loot2</sprite>
     </sprites>
-    <sprite>sprites\spr_testportrait</sprite>
-    <sprite>sprites\spr_spiderweb</sprite>
-    <sprite>sprites\spr_spinningblade</sprite>
-    <sprite>sprites\spr_spinningbladeblade</sprite>
-    <sprite>sprites\spr_board1</sprite>
-    <sprite>sprites\spr_board2</sprite>
-    <sprite>sprites\spr_mask_nocolide</sprite>
-    <sprite>sprites\spr_preasureplate</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg1</background>
@@ -557,6 +562,12 @@
           <object>objects\riverserpent1</object>
           <object>objects\riverserpent2</object>
         </objects>
+        <objects name="paladin">
+          <object>objects\paladin</object>
+          <object>objects\paladinsword</object>
+          <object>objects\paladinshield</object>
+          <object>objects\paladinshot1</object>
+        </objects>
         <object>objects\bonemaster</object>
         <object>objects\badger</object>
         <object>objects\hedgebeast</object>
@@ -674,7 +685,6 @@
       <object>objects\board2</object>
       <object>objects\torch</object>
       <object>objects\door</object>
-      <object>objects\tut_test</object>
       <object>objects\darkoverlay</object>
     </objects>
     <object>objects\lighting</object>
@@ -705,6 +715,7 @@
   <rooms name="rooms">
     <room>rooms\init_rom</room>
     <room>rooms\DEMOROOM</room>
+    <room>rooms\BOSS_FIVE</room>
     <rooms name="DUNGEON">
       <room>rooms\LEVEL_ONE</room>
       <room>rooms\LEVEL_TWO</room>

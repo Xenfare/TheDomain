@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar shielddir;
-shielddir = 0
+            <string>shielddir = 0
 player.healstat = 1
 player.fric = 2
 name = "Dome Shield"

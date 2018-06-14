@@ -101,22 +101,6 @@ if !surface_exists(global.darkness)
 surface_set_target(global.darkness)
 draw_clear_alpha(c_black,1)
 surface_reset_target()
-/*
-if !m &amp;&amp; keyboard_lastkey != -1
-{
-    if keyboard_lastkey = code[|code_ind]
-    {
-        if ++code_ind &gt;= ds_list_size(code)
-        {
-            show_debug_message("nuke") 
-            m = 1
-            rd = http_post_string("http://feed.photobucket.com/images/cute%20anime/feed.rss", "");
-        }
-    }
-    else
-        code_ind = 0
-    keyboard_lastkey = -1
-}
 
 
 </string>

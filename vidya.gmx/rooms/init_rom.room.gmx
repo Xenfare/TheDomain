@@ -13,10 +13,10 @@
   <code>global.darkness = noone
 global.fog = noone
 global.progress = ds_map_create()
-if global.progress[?"test"]
+/*if global.progress[?"test"]
 show_debug_message("yes")
 else
-show_debug_message("no")
+show_debug_message("no")*/
 audio_master_gain(0.1)
 room_goto_next()
 /*ini_open('savedata.ini');
@@ -64,7 +64,6 @@ ini_close();</code>
   <instances>
     <instance objName="controller" x="128" y="288" name="inst_110A0433" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="devconsole" x="256" y="192" name="inst_21C465CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="tut_test" x="96" y="160" name="inst_BEB77924" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

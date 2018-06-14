@@ -42,11 +42,11 @@ desc = "Wapwapwapwapwap"
 kbx = x
 kby = y
 vibrate = 0
+sworddir = 0
 image_xscale = 1
 image_yscale = 1
 image_index = 1
 image_speed = 0
-globalvar sworddir;
 globalvar damage;
 alarm[0] = 0
 hitlist = ds_list_create();
