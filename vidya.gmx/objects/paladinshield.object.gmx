@@ -76,7 +76,10 @@ y = owner.y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = owner.image_angle + owner.shielddir;
+            <string>if instance_exists(owner)
+{
+image_angle = owner.image_angle - (owner.shieldaim * 17);
+}
 </string>
           </argument>
         </arguments>

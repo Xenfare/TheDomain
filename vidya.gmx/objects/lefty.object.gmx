@@ -426,7 +426,7 @@ image_index = 2
 if phase = 6
 {
 healed = true
-if alarm[6] = 149 {for (var i = -4; i &lt; 5; i += 1;){with (instance_create(x,y,holyshot)) direction = image_angle + 8 * i}}
+//if alarm[6] = 149 {for (var i = -4; i &lt; 5; i += 1;){with (instance_create(x,y,holyshot)) direction = image_angle + 8 * i}}
 enemyshield.image_index = 2
 if alarm[6] &gt; 100 {direction = point_direction(player.x, player.y, x, y); speed = 4; image_angle = direction}
 else
