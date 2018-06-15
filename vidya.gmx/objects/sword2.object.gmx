@@ -157,9 +157,9 @@ if alarm[1] &gt; 20 {image_index = 6; sworddir += 1} else
 if alarm[1] &gt; 10 {damaging = true; image_index += 0.5} else
 if alarm[1] &gt; 0 {damaging = false;} 
 
-if (mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; global.shielddir = 0 &amp;&amp; player.alive = true {global.damage = 50; image_index = 0; ready = false; alarm[0] = 45; damaging = true; ds_list_clear(hitlist);}
+if (mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; player.guard.shielddir = 0 &amp;&amp; player.alive = true {global.damage = 50; image_index = 0; ready = false; alarm[0] = 45; damaging = true; ds_list_clear(hitlist);}
 
-if (mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready2 = true &amp;&amp; global.shielddir = 0 &amp;&amp; player.alive = true {global.damage = 80; alarm[0] = 0; image_index = 6; sworddir = 0; ready2 = false; alarm[1] = 35; damaging = true; ds_list_clear(hitlist);}
+if (mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready2 = true &amp;&amp; player.guard.shielddir = 0 &amp;&amp; player.alive = true {global.damage = 80; alarm[0] = 0; image_index = 6; sworddir = 0; ready2 = false; alarm[1] = 35; damaging = true; ds_list_clear(hitlist);}
 
 image_angle = player.image_angle + sworddir
 

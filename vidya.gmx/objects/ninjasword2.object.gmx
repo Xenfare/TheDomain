@@ -138,7 +138,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.shielddir = 5 &amp;&amp; damaging = true {audio_play_sound(clang, 10, false); owner.alarm[5] = 100; owner.alarm[2] = 0}
+            <string>if player.guard.shielddir = 5 &amp;&amp; damaging = true {audio_play_sound(clang, 10, false); owner.alarm[5] = 100; owner.alarm[2] = 0}
 damaging = false
 </string>
           </argument>

@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.shielddir = 0
+            <string>player.guard.shielddir = 0
 </string>
           </argument>
         </arguments>
@@ -78,7 +78,7 @@ image_angle += 5
 player.stamina -= 1
 x = player.x
 y = player.y
-global.shielddir = 5
+player.guard.shielddir = 5
 
 if player.exhausted = true
 {

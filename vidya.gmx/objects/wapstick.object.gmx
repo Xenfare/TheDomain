@@ -148,9 +148,9 @@ y = player.y
             <string>if instance_exists(player)
 
 {
-if (mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; global.shielddir = 0 &amp;&amp; player.alive = true {maxcharge += 6}
+if (mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; player.guard.shielddir = 0 &amp;&amp; player.alive = true {maxcharge += 6}
 
-if (mouse_check_button(mb_left) or gamepad_button_check(0,gp_shoulderrb)) &amp;&amp; global.shielddir = 0 &amp;&amp; player.alive = true 
+if (mouse_check_button(mb_left) or gamepad_button_check(0,gp_shoulderrb)) &amp;&amp; player.guard.shielddir = 0 &amp;&amp; player.alive = true 
 
 {
 if image_index = 0 {image_index = slice2}

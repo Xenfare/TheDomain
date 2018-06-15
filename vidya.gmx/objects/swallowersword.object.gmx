@@ -85,7 +85,7 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.shielddir = 5 &amp;&amp; damaging = true {audio_play_sound(clang, 10, false); player.kbdir = point_direction(x, y, other.x, other.y); player.kb = 16; damaging = false}
+            <string>if player.guard.shielddir = 5 &amp;&amp; damaging = true {audio_play_sound(clang, 10, false); player.kbdir = point_direction(x, y, other.x, other.y); player.kb = 16; damaging = false}
 </string>
           </argument>
         </arguments>

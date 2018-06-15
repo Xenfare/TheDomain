@@ -151,7 +151,7 @@ else instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.shielddir = 5 &amp;&amp; alarm[1] &lt; 1 {alarm[1] = 120; audio_play_sound(clang, 10, false); player.kbdir = point_direction(x, y, other.x, other.y); player.kb = 12;}
+            <string>if player.guard.shielddir = 5 &amp;&amp; alarm[1] &lt; 1 {alarm[1] = 120; audio_play_sound(clang, 10, false); player.kbdir = point_direction(x, y, other.x, other.y); player.kb = 12;}
 </string>
           </argument>
         </arguments>

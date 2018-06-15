@@ -96,7 +96,7 @@ image_angle += swing
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.shielddir = 5 &amp;&amp; damaging = true {audio_play_sound(clang, 10, false); swing = swing * -1; damaging = false; alarm[0] = 12}
+            <string>if player.guard.shielddir = 5 &amp;&amp; damaging = true {audio_play_sound(clang, 10, false); swing = swing * -1; damaging = false; alarm[0] = 12}
 </string>
           </argument>
         </arguments>

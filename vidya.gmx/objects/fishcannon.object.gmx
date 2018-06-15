@@ -200,7 +200,7 @@ damaging = (sprite_index = spr_fishcannonswing)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if damaging = true &amp;&amp; global.shielddir = 5 {damaging = false; audio_play_sound(clang, 10, false); player.kb =30; player.kbdir = point_direction(x, y, player.x, player.y)}
+            <string>if damaging = true &amp;&amp; player.guard.shielddir = 5 {damaging = false; audio_play_sound(clang, 10, false); player.kb =30; player.kbdir = point_direction(x, y, player.x, player.y)}
 </string>
           </argument>
         </arguments>

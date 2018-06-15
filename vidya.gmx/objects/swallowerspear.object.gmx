@@ -113,7 +113,7 @@ if swallower.alarm[2] &lt; 32 &amp;&amp; place_meeting(x, y, swallower) &amp;&am
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.shielddir = 5 &amp;&amp; damaging = true {audio_play_sound(clang2, 10, false); player.kbdir = point_direction(x, y, other.x, other.y); player.kb = 4; swallower.alarm[2] = 15; global.shielddir = 0}
+            <string>if player.guard.shielddir = 5 &amp;&amp; damaging = true {audio_play_sound(clang2, 10, false); player.kbdir = point_direction(x, y, other.x, other.y); player.kb = 4; swallower.alarm[2] = 15; player.guard.shielddir = 0}
 </string>
           </argument>
         </arguments>

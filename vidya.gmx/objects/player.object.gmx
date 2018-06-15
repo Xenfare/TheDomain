@@ -990,7 +990,7 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
             <kind>1</kind>
             <string>with(other){place_meeting(x,y,shield)}
 var shieldcol = 0
-if global.shielddir = 5
+if player.guard.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0 {hp -= 25; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; alarm[0] = 12;}
 </string>
@@ -1017,7 +1017,7 @@ if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0 {hp -= 25
             <kind>1</kind>
             <string>with(other){place_meeting(x,y,shield)}
 var shieldcol = 0
-if global.shielddir = 5
+if player.guard.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0 {hp -= 25; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; alarm[0] = 12;}
 </string>
@@ -1044,7 +1044,7 @@ if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0 {hp -= 25
             <kind>1</kind>
             <string>with(other){place_meeting(x,y,shield)}
 var shieldcol = 0
-if global.shielddir = 5
+if player.guard.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0
 {hp -= 20; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; alarm[0] = 12;}
@@ -1241,7 +1241,7 @@ if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0
             <kind>1</kind>
             <string>with(other){place_meeting(x,y,shield)}
 var shieldcol = 0
-if global.shielddir = 5
+if player.guard.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 if (inv = 0) &amp;&amp; other.image_index = 0 &amp;&amp; other.hit = false &amp;&amp; other.owner.phase = 2 &amp;&amp; shieldcol = 0 
 {hp -= 15; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); inv = true; sword.alarm[0] = 1; sword.alarm[2] = 1; alarm[0] = 12;}
@@ -1269,7 +1269,7 @@ if (inv = 0) &amp;&amp; other.image_index = 0 &amp;&amp; other.hit = false &amp;
             <kind>1</kind>
             <string>with(other){place_meeting(x,y,shield)}
 var shieldcol = 0
-if global.shielddir = 5
+if player.guard.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0
 {hp -= 25; kbdir = point_direction(other.owner.x, other.owner.y, x, y); kb = 20; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); script_execute(interrupt); other.damaging = false}
@@ -1299,7 +1299,7 @@ if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0
 {
 with(other){place_meeting(x,y,shield)}
 var shieldcol = 0
-if global.shielddir = 5
+if player.guard.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0
 {hp -= 15; kbdir = point_direction(other.owner.x, other.owner.y, x, y); kb = 10; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); script_execute(interrupt); other.damaging = false}
@@ -1328,7 +1328,7 @@ if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0
             <kind>1</kind>
             <string>with(other){place_meeting(x,y,shield)}
 var shieldcol = 0
-if global.shielddir = 5
+if player.guard.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 if (inv = 0) &amp;&amp; shieldcol = 0
 {hp -= 8; repeat(8) instance_create(x, y, blood); script_execute(interrupt); kb = 6; kbdir = point_direction(other.x, other.y, x, y)}
@@ -1370,7 +1370,7 @@ if (inv = 0) &amp;&amp; shieldcol = 0
             <kind>1</kind>
             <string>with(other){place_meeting(x,y,shield)}
 var shieldcol = 0
-if global.shielddir = 5
+if player.guard.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 if (inv = 0) &amp;&amp; shieldcol = 0 &amp;&amp; other.owner.damaging = true
 {hp -= 20; kbdir = point_direction(other.owner.x, other.owner.y, x, y); kb = 15; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); script_execute(interrupt); other.owner.damaging = false}
@@ -1398,7 +1398,7 @@ if (inv = 0) &amp;&amp; shieldcol = 0 &amp;&amp; other.owner.damaging = true
             <kind>1</kind>
             <string>with(other){place_meeting(x,y,shield)}
 var shieldcol = 0
-if global.shielddir = 5
+if player.guard.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 if (inv = 0) &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0
 {hp -= 20; kbdir = point_direction(other.owner.x, other.owner.y, x, y); kb = 15; shielddir = 0; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood); script_execute(interrupt); other.damaging = false}
@@ -1450,7 +1450,7 @@ if other.hooked = 1 {sword.alarm[0] = 1; sword.alarm[2] = 1; shielddir = 0}
             <kind>1</kind>
             <string>with(other){place_meeting(x,y,shield)}
 var shieldcol = 0
-if global.shielddir = 5
+if player.guard.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 
 if (other.owner.spindir &gt; 3 or other.owner.spindir &lt; -3) &amp;&amp; (inv = 0 &amp;&amp; other.image_index = 0 &amp;&amp; other.damaging = true &amp;&amp; shieldcol = 0)
@@ -1543,7 +1543,7 @@ if (other.owner.spindir &gt; 3 or other.owner.spindir &lt; -3) &amp;&amp; (inv =
             <kind>1</kind>
             <string>with(other){place_meeting(x,y,player.guard)}
 var shieldcol = 0
-if global.shielddir = 5
+if player.guard.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,player.guard)}
 if (inv = 0) &amp;&amp; other.image_index = 1 &amp;&amp; (other.state = 2 || other.state = 1) &amp;&amp; shieldcol = 0
 {script_execute(interrupt); other.mask_index = spr_mask_nocolide; kbdir = point_direction(other.x, other.y, x, y); kb = 12; hp -= 20; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood);}
@@ -1571,7 +1571,7 @@ if (inv = 0) &amp;&amp; other.image_index = 1 &amp;&amp; (other.state = 2 || oth
             <kind>1</kind>
             <string>with(other){place_meeting(x,y,player.guard)}
 var shieldcol = 0
-if global.shielddir = 5
+if player.guard.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,player.guard)}
 if (inv = 0) &amp;&amp; other.image_index = 1 &amp;&amp; other.alarm[1] &lt; 1 &amp;&amp; shieldcol = 0
 {script_execute(interrupt); kbdir = point_direction(other.x, other.y, x, y); kb = 12; hp -= 20; audio_play_sound(choose(slash, slash2, slash3), 10, false); repeat(8) instance_create(x, y, blood);}
@@ -2247,7 +2247,7 @@ repeat(15) instance_create(other.x + random_range(-20, 20), other.y + random_ran
             <kind>1</kind>
             <string>with(other){place_meeting(x,y,shield)}
 var shieldcol = 0
-if global.shielddir = 5
+if player.guard.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 if (inv = 0) &amp;&amp; shieldcol = 0
 {hp -= 15; repeat(8) instance_create(x, y, blood); script_execute(interrupt); kb = 8; kbdir = point_direction(other.x, other.y, x, y); instance_destroy(other)}
@@ -2677,7 +2677,7 @@ if (inv = 0) &amp;&amp; shieldcol = 0
             <kind>1</kind>
             <string>with(other){place_meeting(x,y,shield)}
 var shieldcol = 0
-if global.shielddir = 5
+if player.guard.shielddir = 5
 with(other){shieldcol = place_meeting(x,y,shield)}
 if (inv = 0) &amp;&amp; shieldcol = 0
 {hp -= other.damage; repeat(8) instance_create(x, y, blood); script_execute(interrupt); kb = other.knock; kbdir = point_direction(other.x, other.y, x, y); instance_destroy(other)}

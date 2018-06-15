@@ -51,7 +51,7 @@ anim = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.shielddir = 0
+            <string>player.guard.shielddir = 0
 </string>
           </argument>
         </arguments>

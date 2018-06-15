@@ -79,7 +79,7 @@ if owner.phase = 1 {image_angle = point_direction(x, y, player.x, player.y)}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.shielddir = 5 &amp;&amp; owner.phase = 2 {owner.phase = 3; audio_play_sound(clang, 0, false)}
+            <string>if player.guard.shielddir = 5 &amp;&amp; owner.phase = 2 {owner.phase = 3; audio_play_sound(clang, 0, false)}
 </string>
           </argument>
         </arguments>

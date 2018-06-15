@@ -208,7 +208,7 @@ else instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.shielddir = 5 &amp;&amp; state &gt; 0 {alarm[0] = room_speed * 1.5; state = -state; owner.vibrate = 3; audio_play_sound(clang, 10, false); player.kbdir = point_direction(x, y, other.x, other.y); player.kb = 12;}
+            <string>if player.guard.shielddir = 5 &amp;&amp; state &gt; 0 {alarm[0] = room_speed * 1.5; state = -state; owner.vibrate = 3; audio_play_sound(clang, 10, false); player.kbdir = point_direction(x, y, other.x, other.y); player.kb = 12;}
 </string>
           </argument>
         </arguments>

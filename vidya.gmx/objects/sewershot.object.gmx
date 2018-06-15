@@ -99,7 +99,7 @@ speed += 0.3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.shielddir = 5 {audio_play_sound(clang2, 10, false); instance_destroy(); player.kbdir = point_direction(x, y, other.x, other.y); player.kb = 20}
+            <string>if player.guard.shielddir = 5 {audio_play_sound(clang2, 10, false); instance_destroy(); player.kbdir = point_direction(x, y, other.x, other.y); player.kb = 20}
 </string>
           </argument>
         </arguments>

@@ -124,7 +124,7 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.shielddir = 5 {audio_play_sound(clang2, 10, false); instance_destroy()}
+            <string>if player.guard.shielddir = 5 {audio_play_sound(clang2, 10, false); instance_destroy()}
 </string>
           </argument>
         </arguments>

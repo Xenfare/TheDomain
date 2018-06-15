@@ -167,10 +167,10 @@ if alarm[1] &gt; 20 {vibrate = 2;} else
 if alarm[1] &gt; 8 {sprite_index = spr_newspear2; vibrate = 0; damging = true; sworddir = 0; global.damage = 70; image_index += 0.5; if stab &lt; 12 stab += 4} else
 if alarm[1] &gt; 0 {damaging = false; image_index = 1; sworddir = 0; stab = 0} 
 
-//if (mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; global.shielddir = 0 &amp;&amp; angle_difference(player.image_angle, critdir) &lt; 15 &amp;&amp; angle_difference(player.image_angle, critdir) &gt; -15 {crit = 1; sprite_index = spr_newrapier2; global.damage = 110; image_index = 1; stab = 0; ready = false; alarm[0] = 40; damaging = true; ds_list_clear(hitlist);} else
-if (mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; global.shielddir = 0 {global.damage = 40; image_index = 1; stab = 0; ready = false; alarm[0] = 30; damaging = true; ds_list_clear(hitlist);}
+//if (mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; player.guard.shielddir = 0 &amp;&amp; angle_difference(player.image_angle, critdir) &lt; 15 &amp;&amp; angle_difference(player.image_angle, critdir) &gt; -15 {crit = 1; sprite_index = spr_newrapier2; global.damage = 110; image_index = 1; stab = 0; ready = false; alarm[0] = 40; damaging = true; ds_list_clear(hitlist);} else
+if (mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; player.guard.shielddir = 0 {global.damage = 40; image_index = 1; stab = 0; ready = false; alarm[0] = 30; damaging = true; ds_list_clear(hitlist);}
 
-//if (mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready2 = true &amp;&amp; global.shielddir = 0 {global.damage = 80; alarm[0] = 0; image_index = 6; sworddir = 0; ready2 = false; alarm[1] = 30; damaging = true; ds_list_clear(hitlist);}
+//if (mouse_check_button_pressed(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready2 = true &amp;&amp; player.guard.shielddir = 0 {global.damage = 80; alarm[0] = 0; image_index = 6; sworddir = 0; ready2 = false; alarm[1] = 30; damaging = true; ds_list_clear(hitlist);}
 
 image_angle = player.image_angle + sworddir
 

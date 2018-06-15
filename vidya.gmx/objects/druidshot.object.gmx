@@ -148,7 +148,7 @@ if owner.phase = 2 {instance_create(x, y, druidparticle2)}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.shielddir = 5 &amp;&amp; owner.shotdist &gt; 40 &amp;&amp; inv = false {if owner.shot = 0 {owner.shot = 1} else owner.shot = 0; repeat (8) instance_create(x, y, druidparticle); inv = true; alarm[0] = 8; audio_play_sound(clang2, 0, false)}
+            <string>if player.guard.shielddir = 5 &amp;&amp; owner.shotdist &gt; 40 &amp;&amp; inv = false {if owner.shot = 0 {owner.shot = 1} else owner.shot = 0; repeat (8) instance_create(x, y, druidparticle); inv = true; alarm[0] = 8; audio_play_sound(clang2, 0, false)}
 </string>
           </argument>
         </arguments>

@@ -73,7 +73,7 @@ if speed &lt;= 0 {instance_destroy()}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.shielddir = 5 {player.kb += 4; player.kbdir = point_direction(x, y, player.x, player.y); audio_play_sound(clang, 10, false); instance_destroy()}
+            <string>if player.guard.shielddir = 5 {player.kb += 4; player.kbdir = point_direction(x, y, player.x, player.y); audio_play_sound(clang, 10, false); instance_destroy()}
 </string>
           </argument>
         </arguments>

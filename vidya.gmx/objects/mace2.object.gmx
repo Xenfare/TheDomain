@@ -146,20 +146,20 @@ if alarm[0] &gt; 0 {alarm[1] = 0}
 if ready2 = true {ready = false}
 if ready = true {ready2 = false}
 
-if (mouse_check_button(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; global.shielddir = 0 {image_index = 0; charge--; ds_list_clear(hitlist);}
+if (mouse_check_button(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; player.guard.shielddir = 0 {image_index = 0; charge--; ds_list_clear(hitlist);}
 
-if (mouse_check_button_released(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; global.shielddir = 0 &amp;&amp; charge &gt;= -16 {global.damage = 50; image_index = 0; ready = false; alarm[0] = 30 + (16 - (charge*-1)); damaging = true; ds_list_clear(hitlist);} else
-if (mouse_check_button_released(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; global.shielddir = 0 &amp;&amp; charge &gt;= -36 {global.damage = 90; image_index = 0; ready = false; alarm[0] = 30 + (16 - (charge*-1)); damaging = true; ds_list_clear(hitlist);} else
-if (mouse_check_button(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; global.shielddir = 0 &amp;&amp; charge = -50 {global.damage = 90; image_index = 0; ready = false; alarm[0] = 30; damaging = true; ds_list_clear(hitlist);}
-if (mouse_check_button_released(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; global.shielddir = 0 {global.damage = 50; image_index = 0; ready = false; alarm[0] = 30; damaging = true; ds_list_clear(hitlist);}
+if (mouse_check_button_released(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; player.guard.shielddir = 0 &amp;&amp; charge &gt;= -16 {global.damage = 50; image_index = 0; ready = false; alarm[0] = 30 + (16 - (charge*-1)); damaging = true; ds_list_clear(hitlist);} else
+if (mouse_check_button_released(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; player.guard.shielddir = 0 &amp;&amp; charge &gt;= -36 {global.damage = 90; image_index = 0; ready = false; alarm[0] = 30 + (16 - (charge*-1)); damaging = true; ds_list_clear(hitlist);} else
+if (mouse_check_button(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; player.guard.shielddir = 0 &amp;&amp; charge = -50 {global.damage = 90; image_index = 0; ready = false; alarm[0] = 30; damaging = true; ds_list_clear(hitlist);}
+if (mouse_check_button_released(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready = true &amp;&amp; player.guard.shielddir = 0 {global.damage = 50; image_index = 0; ready = false; alarm[0] = 30; damaging = true; ds_list_clear(hitlist);}
 
 
-if (mouse_check_button(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready2 = true &amp;&amp; global.shielddir = 0 {alarm[0] = 0; image_index = 0; sworddir = 0; image_index = 6; charge++; ds_list_clear(hitlist);}
+if (mouse_check_button(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready2 = true &amp;&amp; player.guard.shielddir = 0 {alarm[0] = 0; image_index = 0; sworddir = 0; image_index = 6; charge++; ds_list_clear(hitlist);}
 
-if (mouse_check_button_released(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready2 = true &amp;&amp; global.shielddir = 0 &amp;&amp; charge &lt;= 16 {sworddir = 0; global.damage = 90; image_index = 0; ready2 = false; alarm[1] = 20 + (16 - (charge)); damaging = true; ds_list_clear(hitlist);} else
-if (mouse_check_button_released(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready2 = true &amp;&amp; global.shielddir = 0 &amp;&amp; charge &lt;= 36 {sworddir = 0; global.damage = 140; image_index = 0; ready2 = false; alarm[1] = 20 + (16 - (charge)); damaging = true; ds_list_clear(hitlist);} else
-if (mouse_check_button(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready2 = true &amp;&amp; global.shielddir = 0 &amp;&amp; charge = 50 {sworddir = 0; global.damage = 140; image_index = 0; ready2 = false; alarm[1] = 20; damaging = true; ds_list_clear(hitlist);}
-if (mouse_check_button_released(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready2 = true &amp;&amp; global.shielddir = 0 {sworddir = 0; global.damage = 140; image_index = 0; ready2 = false; alarm[1] = 20; damaging = true; ds_list_clear(hitlist);}
+if (mouse_check_button_released(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready2 = true &amp;&amp; player.guard.shielddir = 0 &amp;&amp; charge &lt;= 16 {sworddir = 0; global.damage = 90; image_index = 0; ready2 = false; alarm[1] = 20 + (16 - (charge)); damaging = true; ds_list_clear(hitlist);} else
+if (mouse_check_button_released(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready2 = true &amp;&amp; player.guard.shielddir = 0 &amp;&amp; charge &lt;= 36 {sworddir = 0; global.damage = 140; image_index = 0; ready2 = false; alarm[1] = 20 + (16 - (charge)); damaging = true; ds_list_clear(hitlist);} else
+if (mouse_check_button(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready2 = true &amp;&amp; player.guard.shielddir = 0 &amp;&amp; charge = 50 {sworddir = 0; global.damage = 140; image_index = 0; ready2 = false; alarm[1] = 20; damaging = true; ds_list_clear(hitlist);}
+if (mouse_check_button_released(mb_left) or gamepad_button_check_pressed(0,gp_shoulderrb)) &amp;&amp; ready2 = true &amp;&amp; player.guard.shielddir = 0 {sworddir = 0; global.damage = 140; image_index = 0; ready2 = false; alarm[1] = 20; damaging = true; ds_list_clear(hitlist);}
 
 if alarm[0] &gt; 30 {sworddir -= 0.7} else
 if alarm[0] &gt; 18 {charge = 0; damaging = true; sworddir = 0; image_index += 0.5} else
