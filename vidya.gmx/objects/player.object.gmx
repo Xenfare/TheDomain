@@ -2768,7 +2768,7 @@ if ds_map_exists(global.progress,"r" + string(room))
         instance_create(sp[|i],sp[|i + 1],spawnpoint)
     }
 }
-if global.progress[?"has checkpoint"]
+if global.progress[?"has checkpoint"] &amp;&amp; global.progress[?"current room"] == room
 {
     checkpoint = collision_point(global.progress[?"checkpoint x"],global.progress[?"checkpoint y"],spawnpoint,false,true)
     if !instance_exists(checkpoint)
