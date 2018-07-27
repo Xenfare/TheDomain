@@ -25,9 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index = 0 {image_speed = 0.5}
+            <string>if instance_exists(necro) 
+{
+if image_index = 0 {image_speed = 0.5}
 if image_index = 9 {image_speed = -0.5}
 move_towards_point(necro.x, necro.y, 10)
+}
+else
+instance_destroy()
 </string>
           </argument>
         </arguments>
@@ -119,7 +124,7 @@ move_towards_point(necro.x, necro.y, 10)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.shielddir = 5 {audio_play_sound(clang2, 10, false); instance_destroy()}
+            <string>if player.guard.shielddir = 5 {audio_play_sound(clang2, 10, false); instance_destroy()}
 </string>
           </argument>
         </arguments>

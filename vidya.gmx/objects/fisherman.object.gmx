@@ -25,17 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>aggro = 0
+            <string>event_inherited();
+aggro = false
 inv = false
 hp = 180
-alarm[1] = 80
+swing = 15
 image_speed = 0
+aggro_range = 600
+fric = 3
 
-enemyhook = instance_create(x, y, hook)
-enemyhook.owner = id
+enemyhook = noone;
+//enemyhook.owner = id
 
-enemypole = instance_create(x, y, pole)
-enemypole.owner = id
+enemypole = instance_create(x, y, pole);
+enemypole.owner = id;
 </string>
           </argument>
         </arguments>
@@ -60,6 +63,7 @@ enemypole.owner = id
             <kind>1</kind>
             <string>with (enemyhook) {instance_destroy();}
 with (enemypole) {instance_destroy();}
+event_inherited()
 player.pothp += 7
 </string>
           </argument>
@@ -84,7 +88,8 @@ player.pothp += 7
           <argument>
             <kind>1</kind>
             <string>alarm[1] = 100
-if distance_to_object(player) &lt; 600 &amp;&amp; distance_to_object(player) &gt; 70 &amp;&amp; !instance_exists(enemyhook) {enemyhook = instance_create(x, y, hook) enemyhook.owner = id}
+swing = 15
+{enemyhook = instance_create(x, y, hook) enemyhook.owner = id}
 </string>
           </argument>
         </arguments>
@@ -130,16 +135,32 @@ if distance_to_object(player) &lt; 600 &amp;&amp; distance_to_object(player) &gt
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(player) &lt; 600) aggro = true
+            <string>if player_seen = true &amp;&amp; aggro = false {alarm[1] = 80; aggro = true}
 
-image_angle = point_direction(x, y, player.x, player.y)
-if hp &lt; 1 {instance_destroy()}
+if hp &lt;= 0 {instance_destroy()}
 
-if aggro = 1
+if aggro = true
+{
+
+if !instance_exists(enemyhook)
+{
+if alarm[1] &gt; 8 {swing -= 0.5} else {swing += 8}
+}
+
+if instance_exists(enemyhook) {alarm[1] = 80} else 
+{
+if angle_difference(image_angle, point_direction(x, y, player.x, player.y)) &lt; -5 {image_angle += 2; if angle_difference(image_angle, point_direction(x, y, player.x, player.y)) &lt; -20 {alarm[1] = 100; swing = 15}} else
+if angle_difference(image_angle, point_direction(x, y, player.x, player.y)) &gt; 5 {image_angle -= 2; if angle_difference(image_angle, point_direction(x, y, player.x, player.y)) &gt; 20 {alarm[1] = 100; swing = 15}} else
+{}
+}
+
+/*if aggro = 1
 {
 if (distance_to_object(player)) &lt; 100 {mp_potential_step(player.x, player.y, 2, false)}
 }
+*/
 if inv = true {}
+}
 </string>
           </argument>
         </arguments>
@@ -199,6 +220,29 @@ if inv = true {}
           <argument>
             <kind>0</kind>
             <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="deathinvis">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hp-=100
+</string>
           </argument>
         </arguments>
       </action>

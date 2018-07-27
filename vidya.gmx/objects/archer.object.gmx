@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>aggro = 0
+            <string>aggro = false
 inv = false
-hp = 180
+hp = 120
+aggro_range = 800
 alarm[1] = 120
 image_speed = 0
 </string>
@@ -52,7 +53,35 @@ image_speed = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.pothp += 6
+            <string>with instance_create(x, y, debris) 
+{
+direction = other.image_angle - 30
+sprite_index = spr_debris
+image_index = 7
+mask_index = spr_debris
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited()
+player.pothp += 6
 </string>
           </argument>
         </arguments>
@@ -78,7 +107,7 @@ image_speed = 0
             <string>image_speed = 0
 image_index = 0
 alarm[1] = 120
-if distance_to_object(player) &lt; 800 {instance_create(x, y, arrow)}
+if aggro = true {instance_create(x, y, arrow)}
 </string>
           </argument>
         </arguments>
@@ -124,18 +153,18 @@ if distance_to_object(player) &lt; 800 {instance_create(x, y, arrow)}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(player) &lt; 500) aggro = true
+            <string>if player_seen {aggro = true} else {aggro = false}
 
 image_angle = point_direction(x, y, player.x, player.y)
 if hp &lt;= 0 {instance_destroy()}
 
-if alarm[1] &lt; 21 {image_speed = 0.3}
-if alarm[1] = 20 {if distance_to_object(player) &lt; 800 {instance_create(x, y, arrow)}}
-if alarm[1] = 10 {if distance_to_object(player) &lt; 800 {instance_create(x, y, arrow)}}
+if aggro = true
+{
 
-if aggro = 1{
-if distance_to_object(player) &gt; 700 {mp_potential_step(player.x, player.y, 1, false)} else if (distance_to_object(player)) &lt; 700 {speed = 0} 
-if inv = true {}
+if alarm[1] &lt; 21 {image_speed = 0.3}
+if alarm[1] = 20 {instance_create(x, y, arrow)}
+if alarm[1] = 10 {instance_create(x, y, arrow)}
+
 }
 </string>
           </argument>

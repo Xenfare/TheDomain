@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-2</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>enemyparent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,11 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.2
+            <string>event_inherited();
+image_speed = 0.2
 image_index = 0
 alarm[1] = 5
 inv = false
-hp = 200
+hp = 120
 </string>
           </argument>
         </arguments>
@@ -52,8 +53,7 @@ hp = 200
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.pothp += 8
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -124,8 +124,8 @@ alarm[1] = 5
             <kind>1</kind>
             <string>if instance_exists(player) {
 image_angle = direction
-if distance_to_object(player) &lt; 300 {mp_potential_step(player.x, player.y, 5, false)}
-if hp &lt;= 0 {instance_destroy()}
+if distance_to_object(player) &lt; 300 {mp_potential_step(player.x, player.y, 4, false)}
+if hp &lt;= 0 {instance_change(deadfrenzy, true)}
 }
 </string>
           </argument>

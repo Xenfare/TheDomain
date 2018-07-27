@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0
+            <string>event_inherited()
+image_speed = 0
 image_index = (choose(0,1))
 aggro = false
 inv = false
@@ -52,7 +53,8 @@ hp = 100
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.pothp += 5
+            <string>event_inherited()
+player.pothp += 5
 </string>
           </argument>
         </arguments>

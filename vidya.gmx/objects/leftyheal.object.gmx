@@ -28,6 +28,8 @@
             <string>alarm[0] = 65
 image_alpha = 0
 spin = 1
+image_xscale = 1.5
+image_yscale = 1.5
 </string>
           </argument>
         </arguments>
@@ -64,7 +66,7 @@ spin = 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(owner) {owner.hp += 300}
+            <string>if instance_exists(owner) {owner.hp += 100}
 </string>
           </argument>
         </arguments>

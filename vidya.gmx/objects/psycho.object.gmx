@@ -33,6 +33,9 @@ inv = false
 hp = 140
 run = 0
 shotdir = 0
+aggro_range = 600
+visibility = 0
+image_index = (choose(0,2,4,6))
 </string>
           </argument>
         </arguments>
@@ -55,7 +58,8 @@ shotdir = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.pothp += 5
+            <string>event_inherited()
+player.pothp += 1
 </string>
           </argument>
         </arguments>
@@ -126,9 +130,8 @@ shotdir = 0
             <kind>1</kind>
             <string>if instance_exists(player) {
 
-image_angle = direction
-
-if distance_to_object(player) &lt; 300 &amp;&amp; player.sprinting = true &amp;&amp; aggro = false 
+///aggro
+if aggro = false &amp;&amp; point_distance(x,y,player.x,player.y) &lt;= 48
 {
 image_index += 1;
 vibrate += 1;
@@ -139,6 +142,32 @@ for (var i = 0; i&lt;19; i++)
 
 alarm[1] = 20;
 }
+
+
+image_angle = direction
+
+if aggro = false 
+{
+visibility = (distance_to_object(player) * -1) / 100 + 1
+image_alpha = visibility
+}
+else
+{visibility = 1; image_alpha = visibility}
+
+/*
+if player_seen = true &amp;&amp; player.sprinting = true &amp;&amp; aggro = false 
+{
+image_index += 1;
+vibrate += 1;
+aggro = true;
+
+
+for (var i = 0; i&lt;19; i++)
+{with instance_create(x, y, bloodshot) direction = i*18;}
+
+alarm[1] = 20;
+}
+*/
 
 if hp &lt; 140 &amp;&amp; aggro = false 
 {
@@ -158,6 +187,30 @@ if aggro = true {mp_potential_step(player.x, player.y, run, false);}
 if hp &lt;= 0 {instance_destroy()}
 
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="spikes">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if other.owner.phase &lt;= 2 {x += (other.owner.x - other.owner.xprevious); y += (other.owner.y - other.owner.yprevious); repeat(8) instance_create(x, y, blood);}
+if other.owner.phase &lt;= 2 &amp;&amp; place_meeting(x, y, trapwall) {hp -= 100; repeat(25) instance_create(x, y, blood);}
 </string>
           </argument>
         </arguments>
@@ -205,6 +258,39 @@ if hp &lt;= 0 {instance_destroy()}
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if aggro = false 
+{
+image_index += 1;
+vibrate += 1;
+aggro = true;
+
+for (var i = 0; i&lt;19; i++)
+{with instance_create(x, y, bloodshot) direction = i*18;}
+
+alarm[1] = 20;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -223,7 +309,7 @@ if hp &lt;= 0 {instance_destroy()}
           <argument>
             <kind>1</kind>
             <string>draw_self()
-draw_sprite_ext(spr_psycho, image_index, x+(random_range(-vibrate,vibrate)), y+(random_range(-vibrate,vibrate)), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+draw_sprite_ext(spr_psycho, image_index, x+(random_range(-vibrate,vibrate)), y+(random_range(-vibrate,vibrate)), image_xscale, image_yscale, image_angle, image_blend, visibility);
 </string>
           </argument>
         </arguments>

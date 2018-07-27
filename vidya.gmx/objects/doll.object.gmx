@@ -28,11 +28,9 @@
             <string>aggro = 0
 inv = false
 hp = 180
-vibrate = 2
-alarm[1] = 80
-alarm[2] = 75
-alarm[3] = 70
+vibrate = 0
 image_speed = 0
+aggro_range = 300
 </string>
           </argument>
         </arguments>
@@ -55,7 +53,8 @@ image_speed = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player.pothp += 5
+            <string>event_inherited()
+player.pothp += 15
 </string>
           </argument>
         </arguments>
@@ -79,8 +78,7 @@ image_speed = 0
           <argument>
             <kind>1</kind>
             <string>alarm[3] = 100
-if distance_to_object(player) &lt; 600 {
-    image_index = 1;
+if aggro = 1 {
     with (instance_create(x, y, bloodshot)){ owner = other.id; direction = owner.image_angle;}
     with (instance_create(x, y, bloodshot)){ owner = other.id; direction = owner.image_angle + 15;}
     with (instance_create(x, y, bloodshot)){ owner = other.id; direction = owner.image_angle + 30;}
@@ -112,8 +110,7 @@ if distance_to_object(player) &lt; 600 {
           <argument>
             <kind>1</kind>
             <string>alarm[2] = 100
-if distance_to_object(player) &lt; 600 {
-    image_index = 1;
+if aggro = 1 {
     with (instance_create(x, y, bloodshot)){ owner = other.id; direction = owner.image_angle + 7.5;}
     with (instance_create(x, y, bloodshot)){ owner = other.id; direction = owner.image_angle + 22.5;}
     with (instance_create(x, y, bloodshot)){ owner = other.id; direction = owner.image_angle + 37.5;}
@@ -146,8 +143,7 @@ if distance_to_object(player) &lt; 600 {
           <argument>
             <kind>1</kind>
             <string>alarm[1] = 100
-if distance_to_object(player) &lt; 600 {
-    image_index = 1;
+if aggro = 1 {
     with (instance_create(x, y, bloodshot)){ owner = other.id; direction = owner.image_angle;}
     with (instance_create(x, y, bloodshot)){ owner = other.id; direction = owner.image_angle + 15;}
     with (instance_create(x, y, bloodshot)){ owner = other.id; direction = owner.image_angle + 30;}
@@ -201,9 +197,9 @@ if distance_to_object(player) &lt; 600 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (distance_to_object(player) &lt; 70) aggro = true
-
-if hp &lt;= 0 {instance_destroy()}
+            <string>if hp &lt;= 0 {instance_destroy()}
+if player_seen &amp;&amp; aggro = 0 {aggro = 1; vibrate += 4}
+image_index = aggro
 </string>
           </argument>
         </arguments>
@@ -269,7 +265,7 @@ if hp &lt;= 0 {instance_destroy()}
           <argument>
             <kind>1</kind>
             <string>draw_self()
-draw_sprite_ext(spr_doll, 2, x+(random_range(-vibrate,vibrate)), y+(random_range(-vibrate,vibrate)), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+if aggro = true draw_sprite_ext(spr_doll, 2, x+(random_range(-vibrate,vibrate)), y+(random_range(-vibrate,vibrate)), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 </string>
           </argument>
         </arguments>

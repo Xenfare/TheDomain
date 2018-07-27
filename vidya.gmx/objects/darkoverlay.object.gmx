@@ -6,7 +6,7 @@
   <depth>-120</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_mask_nocolide</maskName>
   <events>
     <event eventtype="3" enumb="1">
       <action>

@@ -8,6 +8,177 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>kb = 0
+kbdir = 0
+fric = 1
+inv = 0;
+/*
+if instance_exists(player)
+{
+    var p = instance_place(x, y, player);
+    if p != noone
+    {
+    var dir = point_direction(x, y, p.x, p.y);
+    if !place_meeting(x + lengthdir_x(sprite_width * .5 + p.sprite_width * .5,dir), y + lengthdir_y(sprite_width * .5 + p.sprite_width * .5,dir), wall) 
+    {
+        x = x + lengthdir_x(sprite_width + p.sprite_width,dir)
+        y = y + lengthdir_y(sprite_width + p.sprite_width,dir)
+    }
+    else
+    {
+        dir = floor(dir)
+        var dir2 = dir
+        do
+        {
+            dir2 += 30
+            dir2 = dir2 mod 360
+        }
+        until(!place_meeting(x + lengthdir_x(sprite_width * .5 + p.sprite_width * .5,dir2), y + lengthdir_y(sprite_width * .5 + p.sprite_width * .5,dir2), wall) and dir2 != dir)
+        if dir != dir2
+        {
+            x = x + lengthdir_x(sprite_width + p.sprite_width,dir)
+            y = y + lengthdir_y(sprite_width + p.sprite_width,dir)       
+        }
+        else
+            instance_destroy()
+    }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(instance_create(x+lengthdir_x(sprite_width * .25,image_angle-90),y+lengthdir_y(sprite_width * .25,image_angle-90),enemy_chunk))
+{
+    surf = surface_create(other.sprite_width,other.sprite_height * .5)
+    surface_set_target(surf)
+    draw_sprite_ext(other.sprite_index,other.image_index,other.sprite_xoffset,other.sprite_yoffset-other.sprite_height*.5,other.image_xscale,other.image_yscale,0,c_gray,1)
+    surface_reset_target()
+    image_angle = other.image_angle
+    direction = image_angle - 90
+    speed = 4
+}
+with(instance_create(x+lengthdir_x(sprite_width * .25,image_angle+90),y+lengthdir_y(sprite_width * .25,image_angle+90),enemy_chunk))
+{
+    surf = surface_create(other.sprite_width,other.sprite_height * .5)
+    surface_set_target(surf)
+    draw_sprite_ext(other.sprite_index,other.image_index,other.sprite_xoffset,other.sprite_yoffset,other.image_xscale,other.image_yscale,0,c_gray,1)
+    surface_reset_target()
+    image_angle = other.image_angle
+    direction = image_angle + 90
+    speed = 4
+}
+event_perform(ev_other,ev_room_end)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*
+if kb &gt; 0
+{
+{
+var i;
+for (i = 0; place_meeting(x+lengthdir_x((kb / fric + 1) - i, kbdir), y+lengthdir_y((kb / fric + 1) - i, kbdir), worldwall); i += 1)
+   {
+   }
+}
+kb -= 1;
+x += lengthdir_x((kb / fric) - i, kbdir);
+y += lengthdir_y((kb / fric) - i, kbdir);
+}
+*/
+
+if kb &lt; 0 {kb = 0}
+
+if kb &gt; 0
+{
+    
+    //if place_meeting(x+lengthdir_x(kb, kbdir), y+lengthdir_y(kb, kbdir), worldwall)
+    //{
+        var i = 0;
+        var xmov = lengthdir_x(1,kbdir)
+        var ymov = lengthdir_y(1,kbdir) 
+        while(i &lt; kb / fric)
+        {
+            if !place_meeting(x + xmov, y, worldwall) &amp;&amp; !place_meeting(x + xmov, y, enemyparent)
+                x += xmov;
+            else if !place_meeting(x - xmov * kb, y, worldwall)
+                x -= xmov * kb;
+            if !place_meeting(x - xmov, y + ymov, worldwall)
+                y += ymov;
+            else if !place_meeting(x, ymov * kb, worldwall)
+                y -= ymov * kb;
+            ++i;
+            xprevious = x
+            yprevious = y
+        }
+        
+    /*}
+    else
+    {
+    x += lengthdir_x((kb / fric), kbdir);
+    y += lengthdir_y((kb / fric), kbdir);
+    }*/
+    --kb
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
@@ -27,6 +198,61 @@
             <kind>1</kind>
             <string>event_inherited();
 if !instance_exists(player) {instance_deactivate_object(id)}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="enemyparent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var o_dir = point_direction(x,y,other.x,other.y) 
+var x_change = lengthdir_x(.5,o_dir)
+var y_change = lengthdir_y(.5,o_dir)
+var me_wall = false
+var other_wall = false
+do
+{
+    if !me_wall
+    {
+        x -= x_change
+        y -= y_change
+        if place_meeting(x,y,wall)
+        {
+            x += x_change
+            y += y_change
+            me_wall = true
+        }
+    }
+    if !other_wall
+    {
+        other.x += x_change
+        other.y += y_change
+        with(other)
+            if place_meeting(x,y,wall)
+            {
+                x -= x_change
+                y -= y_change
+                other_wall = true
+            }
+    }
+}
+until(!place_meeting(x,y,other) or (other_wall and me_wall))
+
 </string>
           </argument>
         </arguments>

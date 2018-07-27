@@ -29,22 +29,26 @@
 
 if surface_exists(global.darkness)
     surface_free(global.darkness)
+if surface_exists(global.fog)
+    surface_free(global.fog)
 global.darkness = surface_create(view_wview,view_hview)
+global.fog = surface_create(view_wview,view_hview)
 global.cell_size = CELL_SIZE
-global.wall_grid = ds_grid_create(room_width/CELL_SIZE + BUFFER_CELLS * 2,room_height/CELL_SIZE + BUFFER_CELLS * 2)
-
+global.light_objects = ds_list_create();
 
 with(all)
 {
-    x+= BUFFER_CELLS * CELL_SIZE
-    y+= BUFFER_CELLS * CELL_SIZE
+    x += B
+    y += B
 }
-room_width += BUFFER_CELLS * CELL_SIZE * 2
-room_height += BUFFER_CELLS * CELL_SIZE * 2
-with(wall)
-{
-    global.wall_grid[# x/CELL_SIZE,y/CELL_SIZE] = 1
-}
+room_width += B * 2
+room_height += B * 2
+im = ds_list_create()
+m = false
+code = ds_list_create()
+ds_list_add(code,vk_up,vk_up,vk_down,vk_down,vk_left,vk_right,vk_left,vk_right,ord('B'),ord('A'))
+code_ind = 0
+
 </string>
           </argument>
         </arguments>
@@ -97,6 +101,38 @@ if !surface_exists(global.darkness)
 surface_set_target(global.darkness)
 draw_clear_alpha(c_black,1)
 surface_reset_target()
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if ds_exists(global.wall_grid,ds_type_grid)
+ds_grid_destroy(global.wall_grid)
+global.wall_grid = ds_grid_create(room_width/CELL_SIZE + BUFFER_CELLS * 2,room_height/CELL_SIZE + BUFFER_CELLS * 2)
+with(wall)
+{
+    global.wall_grid[# x/CELL_SIZE,y/CELL_SIZE] = 1
+}
+GenerateLightWalls()
 </string>
           </argument>
         </arguments>
@@ -120,8 +156,38 @@ surface_reset_target()
           <argument>
             <kind>1</kind>
             <string>if !surface_exists(global.darkness)
+{
     global.darkness = surface_create(view_wview,view_hview)
+    with(player)
+        draw_lighting()
+}
+if !surface_exists(global.fog)
+    global.fog = surface_create(view_wview,view_hview)
+surface_set_target(global.fog)
+draw_clear(c_black)
+//with(torch){event_user(0)}
+
+if !shader_is_compiled(shader_torch)
+    show_debug_message("SHADER NOT COMPILED")
+var lx = player.x - view_xview
+var ly = player.y - view_yview
+var radius = 104 * 5 + sin(3 * pi * (current_time % 1000) / 1000)
+draw_set_blend_mode_ext(bm_src_alpha,bm_zero)
+shader_set(shader_torch)
+shader_params = shader_get_uniform(shader_torch, "center");
+shader_set_uniform_f(shader_params, lx,ly);
+shader_params = shader_get_uniform(shader_torch, "radius");
+shader_set_uniform_f(shader_params, radius);
+draw_circle(lx,ly,radius,false)
+shader_reset()
+draw_set_blend_mode(bm_normal)
+
+surface_reset_target()
+draw_set_alpha(.35)
+draw_surface(global.fog,view_xview,view_yview)
+draw_set_alpha(1)
 draw_surface(global.darkness,view_xview,view_yview)
+
 </string>
           </argument>
         </arguments>

@@ -53,9 +53,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar shielddir;
-shielddir = 0
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
