@@ -711,9 +711,6 @@
     <object>objects\preasureplate</object>
     <object>objects\arrowtrap</object>
   </objects>
-  <timelines name="timelines">
-    <timeline>timelines\TLchase</timeline>
-  </timelines>
   <rooms name="rooms">
     <room>rooms\init_rom</room>
     <room>rooms\DEMOROOM</room>
